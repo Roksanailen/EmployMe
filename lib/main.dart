@@ -1,8 +1,7 @@
-import 'dart:io';
-import 'package:emplooo/Auth/presentation/signin.dart';
-import 'package:emplooo/main_text_field.dart';
-import 'package:emplooo/Auth/presentation/sign%20up.dart';
 import 'package:flutter/material.dart';
+
+import 'features/auth/presentation/signin.dart';
+
 void main() {
   runApp(MainApp());
 }
@@ -19,12 +18,7 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    final isDesktop = MediaQuery.of(context).size.width >= 600;
-    final ismobile = MediaQuery.of(context).size.width <= 600;
     MediaQuery.of(context).size.height;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home:Signin()
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Signin());
   }
 }

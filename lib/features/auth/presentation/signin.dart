@@ -1,6 +1,7 @@
-import 'package:emplooo/Auth/presentation/sign%20up.dart';
-import 'package:emplooo/main_text_field.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/widgets/main_text_field.dart';
+import 'sign up.dart';
 
 class Signin extends StatelessWidget {
   Signin({super.key});
@@ -21,35 +22,29 @@ class Signin extends StatelessWidget {
               SizedBox(
                 height: 40,
               ),
-              MainTextFormField(
+              MainTextField(
                   controller: TextEditingController(),
                   label: 'Email',
-                  filled: true,
-                  labelStyle: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
                   fillColor: Colors.transparent,
                   hint: 'enter your email',
-                  hintStyle: TextStyle(color: Color.fromARGB(255, 44, 43, 43), fontSize: 17, fontWeight: FontWeight.bold),
                   borderColor: Color.fromARGB(255, 25, 25, 65),
                   borderRadius: BorderRadius.circular(20),
                   width: MediaQuery.of(context).size.width * 0.55,
                   contentPadding: EdgeInsets.all(5),
-                  prefix: Icon(Icons.email)),
+                  prefixIcon: Icon(Icons.email)),
               SizedBox(
                 height: 30,
               ),
-              MainTextFormField(
+              MainTextField(
                   controller: TextEditingController(),
                   fillColor: Colors.transparent,
-                  filled: true,
                   borderRadius: BorderRadius.circular(20),
                   label: 'Password',
-                  labelStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
                   borderColor: Color.fromARGB(255, 25, 25, 65),
                   hint: 'enter your password',
-                  hintStyle: TextStyle(color: Color.fromARGB(255, 44, 43, 43), fontSize: 17, fontWeight: FontWeight.bold),
                   contentPadding: EdgeInsets.all(5),
                   width: MediaQuery.of(context).size.width * 0.55,
-                  prefix: Icon(Icons.lock)),
+                  prefixIcon: Icon(Icons.lock)),
               SizedBox(
                 height: 50,
               ),
