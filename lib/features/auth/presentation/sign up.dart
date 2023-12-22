@@ -10,7 +10,9 @@ class Signup extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Container(
-        decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/log6.jpg'), fit: BoxFit.fill)),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/log6.jpg'), fit: BoxFit.fill)),
         child: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             MainTextField(
@@ -78,7 +80,10 @@ class Signup extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent, side: BorderSide(style: BorderStyle.solid), elevation: 0, fixedSize: Size(100, 35)),
+                  backgroundColor: Colors.transparent,
+                  side: BorderSide(style: BorderStyle.solid),
+                  elevation: 0,
+                  fixedSize: Size(100, 35)),
               child: Text(
                 'Register',
                 style: TextStyle(color: Colors.black, fontSize: 16),
