@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../core/widgets/main_text_field.dart';
 
@@ -9,10 +10,12 @@ class ResetPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.transparent,
-        body: Container(
-          decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/log6.jpg'), fit: BoxFit.cover)),
-          child: Center(
-            child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        body:Stack(children: [
+          Lottie.asset('assets/images/Animation - 1705013705322.json',
+              width: double.infinity, height: double.infinity,fit: BoxFit.cover),
+          Center(
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               MainTextField(
                   controller: TextEditingController(),
                   label: 'Email',
@@ -37,7 +40,7 @@ class ResetPassword extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.55,
                   prefixIcon: Icon(Icons.lock))
             ]),
-          ),
+          ),]
         ));
   }
 }

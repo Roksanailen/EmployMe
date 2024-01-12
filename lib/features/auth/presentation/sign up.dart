@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../core/widgets/main_text_field.dart';
+import '../../mainscreen/homescreen.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -8,16 +10,22 @@ class Signup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Container(
-        decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/log6.jpg'), fit: BoxFit.fill)),
-        child: Center(
+      body:Stack(children: [
+          Lottie.asset('assets/images/Animation - 1705013705322.json',
+              width: double.infinity, height: double.infinity,fit: BoxFit.cover),
+         Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Container(
+              width: 400,
+              height: 200,
+              child: Lottie.asset('assets/images/signup.json'),
+            ),
             MainTextField(
                 controller: TextEditingController(),
                 label: 'Name',
+                keyboardType: TextInputType.name,
                 fillColor: Colors.transparent,
-                borderColor: Color.fromARGB(255, 25, 25, 65),
+                borderColor: Colors.black,
                 width: MediaQuery.of(context).size.width * 0.55,
                 contentPadding: EdgeInsets.all(5),
                 prefixIcon: Icon(Icons.person)),
@@ -29,7 +37,8 @@ class Signup extends StatelessWidget {
                 fillColor: Colors.transparent,
                 borderRadius: BorderRadius.circular(20),
                 label: 'Email',
-                borderColor: Color.fromARGB(255, 25, 25, 65),
+                keyboardType: TextInputType.emailAddress,
+                borderColor: Colors.black,
                 hint: 'enter your email',
                 contentPadding: EdgeInsets.all(5),
                 width: MediaQuery.of(context).size.width * 0.55,
@@ -40,8 +49,8 @@ class Signup extends StatelessWidget {
             MainTextField(
                 controller: TextEditingController(),
                 label: 'password',
-                fillColor: Colors.transparent,
-                borderColor: Color.fromARGB(255, 25, 25, 65),
+                fillColor: const Color.fromARGB(0, 0, 0, 0),
+                borderColor: Colors.black,
                 width: MediaQuery.of(context).size.width * 0.55,
                 contentPadding: EdgeInsets.all(5),
                 prefixIcon: Icon(Icons.email)),
@@ -53,32 +62,25 @@ class Signup extends StatelessWidget {
               fillColor: Colors.transparent,
               borderRadius: BorderRadius.circular(20),
               label: 'Phone',
-              borderColor: Color.fromARGB(255, 25, 25, 65),
+              keyboardType: TextInputType.phone,
+              borderColor: Colors.black,
+              keyboardAppearance: true,
               hint: 'enter your phone',
               contentPadding: EdgeInsets.all(5),
               width: MediaQuery.of(context).size.width * 0.55,
               prefixIcon: Icon(Icons.phone),
             ),
             SizedBox(
-              height: 30,
-            ),
-            MainTextField(
-                controller: TextEditingController(),
-                fillColor: Colors.transparent,
-                borderRadius: BorderRadius.circular(20),
-                label: 'Password',
-                borderColor: Color.fromARGB(255, 25, 25, 65),
-                hint: 'enter your password',
-                contentPadding: EdgeInsets.all(5),
-                width: MediaQuery.of(context).size.width * 0.55,
-                prefixIcon: Icon(Icons.lock)),
-            SizedBox(
               height: 50,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Home_Screen()));},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent, side: BorderSide(style: BorderStyle.solid), elevation: 0, fixedSize: Size(100, 35)),
+                  backgroundColor: Colors.transparent,
+                  side: BorderSide(style: BorderStyle.solid),
+                  elevation: 0,
+                  fixedSize: Size(100, 35)),
               child: Text(
                 'Register',
                 style: TextStyle(color: Colors.black, fontSize: 16),
@@ -87,7 +89,7 @@ class Signup extends StatelessWidget {
             ),
           ]),
         ),
-      ),
+      ]),
     );
   }
 }

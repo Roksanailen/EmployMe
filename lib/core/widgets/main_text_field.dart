@@ -9,6 +9,7 @@ class MainTextField extends StatefulWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.validator,
+    this.keyboardAppearance=false,
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.done,
     this.isPassword = true,
@@ -27,7 +28,8 @@ class MainTextField extends StatefulWidget {
     this.onSubmitted,
     required this.controller,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
-    this.contentPadding = const EdgeInsets.symmetric(vertical: 18.0, horizontal: 15),
+    this.contentPadding =
+        const EdgeInsets.symmetric(vertical: 18.0, horizontal: 15),
     this.textAlign = TextAlign.start,
   }) : super(key: key);
 
@@ -43,6 +45,7 @@ class MainTextField extends StatefulWidget {
   final String? Function(String?)? validator;
   final TextEditingController controller;
   final TextInputType keyboardType;
+  final bool keyboardAppearance;
   final bool isPassword;
   final bool enabled;
   final bool autoFocus;
@@ -61,7 +64,8 @@ class MainTextField extends StatefulWidget {
   State<MainTextField> createState() => _MainTextFieldState();
 }
 
-class _MainTextFieldState extends State<MainTextField> with WidgetsBindingObserver {
+class _MainTextFieldState extends State<MainTextField>
+    with WidgetsBindingObserver {
   @override
   void didChangeDependencies() {
     WidgetsBinding.instance.addObserver(this);
@@ -86,8 +90,11 @@ class _MainTextFieldState extends State<MainTextField> with WidgetsBindingObserv
         textInputAction: widget.textInputAction,
         cursorColor: widget.borderColor ?? Theme.of(context).primaryColor,
         enabled: widget.enabled,
-        inputFormatters: widget.keyboardType == TextInputType.number ? [FilteringTextInputFormatter.digitsOnly] : null,
+        inputFormatters: widget.keyboardType == TextInputType.number
+            ? [FilteringTextInputFormatter.digitsOnly]
+            : null,
         keyboardType: widget.keyboardType,
+        
         maxLines: widget.maxLines,
         onChanged: widget.onChanged,
         autofocus: widget.autoFocus,
@@ -112,27 +119,30 @@ class _MainTextFieldState extends State<MainTextField> with WidgetsBindingObserv
         decoration: InputDecoration(
           contentPadding: widget.contentPadding,
           label: widget.label == null ? null : Text(widget.label!),
+          labelStyle:
+              TextStyle(fontSize: 16, color: widget.hintColor ?? Colors.black),
           filled: true,
           fillColor: widget.fillColor,
           focusColor: widget.fillColor,
           hintText: widget.hint,
-          hintStyle: TextStyle(
-            fontSize: 16,
-            color: widget.hintColor ?? Colors.grey.shade700,
-          ),
+          hintStyle:
+              TextStyle(fontSize: 16, color: widget.hintColor ?? Colors.black),
           enabledBorder: OutlineInputBorder(
-            borderRadius: widget.borderRadius ?? BorderRadius.circular(10),
+            borderRadius: widget.borderRadius ?? BorderRadius.circular(20),
             borderSide: BorderSide(color: widget.fillColor),
           ),
           disabledBorder: OutlineInputBorder(
             borderRadius: widget.borderRadius ?? BorderRadius.circular(10),
             borderSide: BorderSide(
-              color: widget.error ? Theme.of(context).colorScheme.error : widget.fillColor,
+              color: widget.error
+                  ? Theme.of(context).colorScheme.error
+                  : widget.fillColor,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: widget.borderRadius ?? BorderRadius.circular(10),
-            borderSide: BorderSide(color: widget.borderColor ?? widget.fillColor),
+            borderRadius: widget.borderRadius ?? BorderRadius.circular(20),
+            borderSide:
+                BorderSide(color: widget.borderColor ?? widget.fillColor),
           ),
           border: OutlineInputBorder(
             borderRadius: widget.borderRadius ?? BorderRadius.circular(10),
@@ -140,9 +150,12 @@ class _MainTextFieldState extends State<MainTextField> with WidgetsBindingObserv
           ),
 
           prefixIcon: widget.prefixIcon,
-          prefixIconConstraints: widget.smallSuffixIcon ? BoxConstraints(maxWidth: 75) : null,
+          prefixIconColor: Colors.black,
+          prefixIconConstraints:
+              widget.smallSuffixIcon ? BoxConstraints(maxWidth: 75) : null,
           suffixIcon: widget.suffixIcon,
-          suffixIconConstraints: widget.smallSuffixIcon ? BoxConstraints(maxWidth: 75) : null,
+          suffixIconConstraints:
+              widget.smallSuffixIcon ? BoxConstraints(maxWidth: 75) : null,
           // contentPadding: widget.maxLines != 1 ? null : const EdgeInsets.symmetric(horizontal: 16.0),
         ),
       ),

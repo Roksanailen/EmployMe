@@ -8,7 +8,7 @@ class MainAppBar extends AppBar {
     required this.titleText,
     this.leadingWidget,
     this.backColor = Colors.white,
-    this.foreColor = Colors.orange,
+    this.foreColor = const Color.fromARGB(255, 25, 0, 255),
     this.bottomWidget,
     this.fontSize,
     this.onTap,
