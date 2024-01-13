@@ -15,12 +15,16 @@ class SharedPreferencesService {
   }
 
   static Future<String?> getToken() async {
+    return null;
+  
     // final sp = await SharedPreferences.getInstance();
     // String? token = sp.getString(PrefsKeys.accessToken);
     // return token;
   }
 
   static Future<String?> getFCMToken() async {
+    return null;
+  
     // final sp = await SharedPreferences.getInstance();
     // String? fcmToken = sp.getString(PrefsKeys.fcmToken);
     // return fcmToken;

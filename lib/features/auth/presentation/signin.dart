@@ -1,7 +1,4 @@
-import 'dart:ui';
 
-import 'package:emplooo/core/widgets/main_app_bar.dart';
-import 'package:emplooo/features/mainscreen/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -9,12 +6,12 @@ import '../../../core/widgets/main_text_field.dart';
 import 'sign up.dart';
 
 class Signin extends StatelessWidget {
-  Signin({super.key});
+  const Signin({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Form(
-        key: ValueKey(1),
+        key: const ValueKey(1),
         child: Scaffold(
             body: Stack(children: [
           Lottie.asset('assets/images/Animation - 1705013705322.json',
@@ -22,12 +19,12 @@ class Signin extends StatelessWidget {
           Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Container(
+              SizedBox(
                 width: 500,
                 height: 200,
                 child: Lottie.asset('assets/images/Animation - 17 (1).json'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               MainTextField(
@@ -39,10 +36,10 @@ class Signin extends StatelessWidget {
                 borderColor: Colors.black,
                 borderRadius: BorderRadius.circular(20),
                 width: MediaQuery.of(context).size.width * 0.55,
-                contentPadding: EdgeInsets.all(5),
-                prefixIcon: Icon(Icons.email),
+                contentPadding: const EdgeInsets.all(5),
+                prefixIcon: const Icon(Icons.email),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               MainTextField(
@@ -52,26 +49,26 @@ class Signin extends StatelessWidget {
                   label: 'Password',
                   borderColor: Colors.black,
                   hint: 'enter your password',
-                  contentPadding: EdgeInsets.all(5),
+                  contentPadding: const EdgeInsets.all(5),
                   width: MediaQuery.of(context).size.width * 0.55,
-                  prefixIcon: Icon(Icons.lock)),
-              SizedBox(
+                  prefixIcon: const Icon(Icons.lock)),
+              const SizedBox(
                 height: 50,
               ),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
-                    side: BorderSide(style: BorderStyle.solid),
+                    side: const BorderSide(style: BorderStyle.solid),
                     elevation: 0,
-                    fixedSize: Size(90, 35)),
-                child: Text(
+                    fixedSize: const Size(90, 35)),
+                child: const Text(
                   'Login',
                   style: TextStyle(color: Colors.black, fontSize: 16),
                   textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Row(
@@ -80,20 +77,20 @@ class Signin extends StatelessWidget {
                   TextButton(
                       onPressed: () {
                         Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => Signup()));
+                            MaterialPageRoute(builder: (context) => const Signup()));
                       },
-                      child: Text(
+                      child: const Text(
                         'sign Up',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.black),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     width: 40,
                   ),
                   TextButton(
                       onPressed: () {},
                       style: TextButton.styleFrom(),
-                      child: Text(
+                      child: const Text(
                         'forget password',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,

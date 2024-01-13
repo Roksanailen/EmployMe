@@ -152,10 +152,10 @@ class _MainTextFieldState extends State<MainTextField>
           prefixIcon: widget.prefixIcon,
           prefixIconColor: Colors.black,
           prefixIconConstraints:
-              widget.smallSuffixIcon ? BoxConstraints(maxWidth: 75) : null,
+              widget.smallSuffixIcon ? const BoxConstraints(maxWidth: 75) : null,
           suffixIcon: widget.suffixIcon,
           suffixIconConstraints:
-              widget.smallSuffixIcon ? BoxConstraints(maxWidth: 75) : null,
+              widget.smallSuffixIcon ? const BoxConstraints(maxWidth: 75) : null,
           // contentPadding: widget.maxLines != 1 ? null : const EdgeInsets.symmetric(horizontal: 16.0),
         ),
       ),

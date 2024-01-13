@@ -15,7 +15,7 @@ class Signup extends StatelessWidget {
               width: double.infinity, height: double.infinity,fit: BoxFit.cover),
          Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Container(
+            SizedBox(
               width: 400,
               height: 200,
               child: Lottie.asset('assets/images/signup.json'),
@@ -27,9 +27,9 @@ class Signup extends StatelessWidget {
                 fillColor: Colors.transparent,
                 borderColor: Colors.black,
                 width: MediaQuery.of(context).size.width * 0.55,
-                contentPadding: EdgeInsets.all(5),
-                prefixIcon: Icon(Icons.person)),
-            SizedBox(
+                contentPadding: const EdgeInsets.all(5),
+                prefixIcon: const Icon(Icons.person)),
+            const SizedBox(
               height: 30,
             ),
             MainTextField(
@@ -40,10 +40,10 @@ class Signup extends StatelessWidget {
                 keyboardType: TextInputType.emailAddress,
                 borderColor: Colors.black,
                 hint: 'enter your email',
-                contentPadding: EdgeInsets.all(5),
+                contentPadding: const EdgeInsets.all(5),
                 width: MediaQuery.of(context).size.width * 0.55,
-                prefixIcon: Icon(Icons.lock)),
-            SizedBox(
+                prefixIcon: const Icon(Icons.lock)),
+            const SizedBox(
               height: 30,
             ),
             MainTextField(
@@ -52,9 +52,9 @@ class Signup extends StatelessWidget {
                 fillColor: const Color.fromARGB(0, 0, 0, 0),
                 borderColor: Colors.black,
                 width: MediaQuery.of(context).size.width * 0.55,
-                contentPadding: EdgeInsets.all(5),
-                prefixIcon: Icon(Icons.email)),
-            SizedBox(
+                contentPadding: const EdgeInsets.all(5),
+                prefixIcon: const Icon(Icons.email)),
+            const SizedBox(
               height: 30,
             ),
             MainTextField(
@@ -66,22 +66,22 @@ class Signup extends StatelessWidget {
               borderColor: Colors.black,
               keyboardAppearance: true,
               hint: 'enter your phone',
-              contentPadding: EdgeInsets.all(5),
+              contentPadding: const EdgeInsets.all(5),
               width: MediaQuery.of(context).size.width * 0.55,
-              prefixIcon: Icon(Icons.phone),
+              prefixIcon: const Icon(Icons.phone),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             ElevatedButton(
               onPressed: () {  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Home_Screen()));},
+                      MaterialPageRoute(builder: (context) => const Home_Screen()));},
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,
-                  side: BorderSide(style: BorderStyle.solid),
+                  side: const BorderSide(style: BorderStyle.solid),
                   elevation: 0,
-                  fixedSize: Size(100, 35)),
-              child: Text(
+                  fixedSize: const Size(100, 35)),
+              child: const Text(
                 'Register',
                 style: TextStyle(color: Colors.black, fontSize: 16),
                 textAlign: TextAlign.center,

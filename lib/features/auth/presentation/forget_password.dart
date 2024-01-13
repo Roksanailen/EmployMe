@@ -21,12 +21,12 @@ class ResetPassword extends StatelessWidget {
                   label: 'Email',
                   fillColor: Colors.transparent,
                   hint: 'enter your email',
-                  borderColor: Color.fromARGB(255, 25, 25, 65),
+                  borderColor: const Color.fromARGB(255, 25, 25, 65),
                   borderRadius: BorderRadius.circular(20),
                   width: MediaQuery.of(context).size.width * 0.55,
-                  contentPadding: EdgeInsets.all(5),
-                  prefixIcon: Icon(Icons.email)),
-              SizedBox(
+                  contentPadding: const EdgeInsets.all(5),
+                  prefixIcon: const Icon(Icons.email)),
+              const SizedBox(
                 height: 30,
               ),
               MainTextField(
@@ -34,11 +34,11 @@ class ResetPassword extends StatelessWidget {
                   fillColor: Colors.transparent,
                   borderRadius: BorderRadius.circular(20),
                   label: 'Password',
-                  borderColor: Color.fromARGB(255, 25, 25, 65),
+                  borderColor: const Color.fromARGB(255, 25, 25, 65),
                   hint: 'enter your password',
-                  contentPadding: EdgeInsets.all(5),
+                  contentPadding: const EdgeInsets.all(5),
                   width: MediaQuery.of(context).size.width * 0.55,
-                  prefixIcon: Icon(Icons.lock))
+                  prefixIcon: const Icon(Icons.lock))
             ]),
           ),]
         ));

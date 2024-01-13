@@ -34,7 +34,7 @@ class MainRadio extends StatelessWidget {
         ),
         Text(
           title,
-          style: style ?? TextStyle(fontSize: 16),
+          style: style ?? const TextStyle(fontSize: 16),
         )
       ],
     );
