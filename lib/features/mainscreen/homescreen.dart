@@ -1,8 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:emplooo/features/mainscreen/recmondation.dart';
-import 'package:emplooo/features/mainscreen/yourcv.dart';
 import 'package:emplooo/features/mainscreen/profile.dart';
+import 'package:emplooo/features/mainscreen/recmondation.dart';
 import 'package:emplooo/features/mainscreen/search.dart';
+import 'package:emplooo/features/mainscreen/yourcv.dart';
 import 'package:flutter/material.dart';
 
 import 'Home.dart';
@@ -15,13 +15,20 @@ class Home_Screen extends StatefulWidget {
 }
 
 class _Home_ScreenState extends State<Home_Screen> {
-  List Screens = [const Home(), const Search(), const Profile(), const YourCv(),const Information()];
+  List screens = [
+    const Home(),
+    const Search(),
+    const Profile(),
+    const YourCv(),
+    const Information()
+  ];
   int _selectedIndex = 0;
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: screens[_selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
         index: _selectedIndex,
