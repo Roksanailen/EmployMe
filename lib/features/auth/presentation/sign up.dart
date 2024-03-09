@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../core/widgets/main_text_field.dart';
-import '../../mainscreen/homescreen.dart';
+import '../../mainscreen/home_screen.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});

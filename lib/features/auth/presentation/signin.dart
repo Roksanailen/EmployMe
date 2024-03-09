@@ -37,7 +37,7 @@ class Signin extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 width: MediaQuery.of(context).size.width * 0.55,
                 contentPadding: const EdgeInsets.all(5),
-                prefixIcon: const Icon(Icons.email),
+                prefixIcon: const Icon(Icons.email,color: Colors.black,),
               ),
               const SizedBox(
                 height: 30,

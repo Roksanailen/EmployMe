@@ -1,8 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:emplooo/features/mainscreen/profile.dart';
-import 'package:emplooo/features/mainscreen/recmondation.dart';
-import 'package:emplooo/features/mainscreen/search.dart';
-import 'package:emplooo/features/mainscreen/yourcv.dart';
+
+import 'package:emplooo/features/profile/presentation/Profile_screen.dart';
+import 'package:emplooo/features/recomendation/presentation/recmondation_screen.dart';
+import 'package:emplooo/features/search/presentation/search_screen.dart';
+import 'package:emplooo/features/cv/presentation/yourcv_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'Home.dart';
@@ -18,7 +19,7 @@ class _Home_ScreenState extends State<Home_Screen> {
   List screens = [
     const Home(),
     const Search(),
-    const Profile(),
+    Profile(),
     const YourCv(),
     const Information()
   ];
