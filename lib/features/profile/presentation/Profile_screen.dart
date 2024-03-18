@@ -1,4 +1,5 @@
 import 'package:emplooo/core/widgets/text_field.dart';
+import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/profile/presentation/profile_edit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -22,9 +23,15 @@ class _ProfileState extends State<Profile> {
         toolbarHeight: 30,
         backgroundColor: Colors.transparent,
         actions: [
-          Icon(
-            Icons.settings,
-            color: Colors.black,
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Information()));
+            },
+            child: Icon(
+              Icons.info,
+              color: Colors.black,
+            ),
           ),
           SizedBox(
             width: 20,

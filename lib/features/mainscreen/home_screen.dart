@@ -1,7 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import 'package:emplooo/features/profile/presentation/Profile_screen.dart';
-import 'package:emplooo/features/recomendation/presentation/recmondation_screen.dart';
+import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/search/presentation/search_screen.dart';
 import 'package:emplooo/features/cv/presentation/yourcv_screen.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,7 @@ class _Home_ScreenState extends State<Home_Screen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( 
       body: screens[_selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
