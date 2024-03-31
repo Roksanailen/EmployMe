@@ -1,8 +1,7 @@
-import 'package:emplooo/features/auth/presentation/sign_in.dart';
-import 'package:emplooo/features/mainscreen/home_screen.dart';
-import 'package:emplooo/features/profile/presentation/Profile_screen.dart';
+import 'package:emplooo/features/auth/bloc/auth_bloc.dart';
 import 'package:emplooo/features/splashscreen/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MainApp());
@@ -21,7 +20,10 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     MediaQuery.of(context).size.height;
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: Splash_Screen());
+    return BlocProvider<AuthBloc>(
+      create: (context) => AuthBloc(),
+      child: const MaterialApp(
+          debugShowCheckedModeBanner: false, home: Splash_Screen()),
+    );
   }
 }

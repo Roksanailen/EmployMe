@@ -1,21 +1,20 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-
-import 'package:emplooo/features/profile/presentation/Profile_screen.dart';
-import 'package:emplooo/features/information/presentation/information_screen.dart';
-import 'package:emplooo/features/search/presentation/search_screen.dart';
 import 'package:emplooo/features/cv/presentation/yourcv_screen.dart';
+import 'package:emplooo/features/information/presentation/information_screen.dart';
+import 'package:emplooo/features/profile/presentation/Profile_screen.dart';
+import 'package:emplooo/features/search/presentation/search_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'Home.dart';
 
-class Home_Screen extends StatefulWidget {
-  const Home_Screen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<Home_Screen> createState() => _Home_ScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _Home_ScreenState extends State<Home_Screen> {
+class _HomeScreenState extends State<HomeScreen> {
   List screens = [
     const Home(),
     const Search(),
@@ -28,7 +27,7 @@ class _Home_ScreenState extends State<Home_Screen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
+    return Scaffold(
       body: screens[_selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
