@@ -1,9 +1,9 @@
-
+import 'package:emplooo/features/auth/presentation/reset_password.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../core/widgets/main_text_field.dart';
-import 'sign up.dart';
+import 'sign_up.dart';
 
 class Signin extends StatelessWidget {
   const Signin({super.key});
@@ -15,7 +15,9 @@ class Signin extends StatelessWidget {
         child: Scaffold(
             body: Stack(children: [
           Lottie.asset('assets/images/Animation - 1705013705322.json',
-              width: double.infinity, height: double.infinity,fit: BoxFit.cover),
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover),
           Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -29,15 +31,18 @@ class Signin extends StatelessWidget {
               ),
               MainTextField(
                 controller: TextEditingController(),
-                label: 'Email',
+                label: 'UserName',
                 keyboardType: TextInputType.emailAddress,
                 fillColor: Colors.transparent,
-                hint: 'enter your email',
+                hint: 'enter your Name',
                 borderColor: Colors.black,
                 borderRadius: BorderRadius.circular(20),
                 width: MediaQuery.of(context).size.width * 0.55,
                 contentPadding: const EdgeInsets.all(5),
-                prefixIcon: const Icon(Icons.email,color: Colors.black,),
+                prefixIcon: const Icon(
+                  Icons.person,
+                  color: Colors.black,
+                ),
               ),
               const SizedBox(
                 height: 30,
@@ -77,7 +82,7 @@ class Signin extends StatelessWidget {
                   TextButton(
                       onPressed: () {
                         Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => const Signup()));
+                            MaterialPageRoute(builder: (context) => Signup()));
                       },
                       child: const Text(
                         'sign Up',
@@ -88,7 +93,13 @@ class Signin extends StatelessWidget {
                     width: 40,
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                               
+                     builder: (context) => ResetPassword()));
+                      },
                       style: TextButton.styleFrom(),
                       child: const Text(
                         'forget password',

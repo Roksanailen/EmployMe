@@ -19,9 +19,9 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 20,
+        elevation: 10,
         toolbarHeight: 30,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white54,
         actions: [
           InkWell(
             onTap: () {

@@ -10,9 +10,11 @@ class ResetPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.transparent,
-        body:Stack(children: [
+        body: Stack(children: [
           Lottie.asset('assets/images/Animation - 1705013705322.json',
-              width: double.infinity, height: double.infinity,fit: BoxFit.cover),
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover),
           Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -38,9 +40,25 @@ class ResetPassword extends StatelessWidget {
                   hint: 'enter your password',
                   contentPadding: const EdgeInsets.all(5),
                   width: MediaQuery.of(context).size.width * 0.55,
-                  prefixIcon: const Icon(Icons.lock))
+                  prefixIcon: const Icon(Icons.lock)),
+              SizedBox(
+                height: 40,
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    side: const BorderSide(style: BorderStyle.solid),
+                    elevation: 0,
+                    fixedSize: const Size(90, 35)),
+                child: const Text(
+                  'Reset',
+                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ]),
-          ),]
-        ));
+          ),
+        ]));
   }
 }

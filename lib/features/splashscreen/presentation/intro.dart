@@ -1,5 +1,5 @@
-import 'package:emplooo/features/auth/presentation/sign%20up.dart';
-import 'package:emplooo/features/auth/presentation/signin.dart';
+import 'package:emplooo/features/auth/presentation/sign_up.dart';
+import 'package:emplooo/features/auth/presentation/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -14,7 +14,7 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor:const Color.fromARGB(255, 177, 208, 216),
+      backgroundColor: const Color.fromARGB(255, 177, 208, 216),
       body: Center(
         child: Column(children: [
           const SizedBox(
@@ -29,14 +29,20 @@ class _IntroScreenState extends State<IntroScreen> {
           ),
           Lottie.asset('assets/images/introo.json', width: 400, height: 400),
           ElevatedButton(
-            onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=>const Signin()));},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Signin()));
+            },
             style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.transparent,
-                side: const BorderSide(style: BorderStyle.solid,color: Color.fromARGB(255, 21, 68, 200),width: 3),
+                side: const BorderSide(
+                    style: BorderStyle.solid,
+                    color: Color.fromARGB(255, 21, 68, 200),
+                    width: 3),
                 elevation: 0,
                 fixedSize: const Size(250, 40)),
             child: const Text(
-              'Login',
+              'Signin',
               style: TextStyle(color: Colors.black, fontSize: 16),
               textAlign: TextAlign.center,
             ),
@@ -44,15 +50,19 @@ class _IntroScreenState extends State<IntroScreen> {
           const SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const Signup()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Signup()));
             },
             style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.transparent,
-                side: const BorderSide(style: BorderStyle.solid,color: Color.fromARGB(255, 21, 68, 200),width: 3),
+                side: const BorderSide(
+                    style: BorderStyle.solid,
+                    color: Color.fromARGB(255, 21, 68, 200),
+                    width: 3),
                 elevation: 0,
                 fixedSize: const Size(250, 40)),
             child: const Text(
-              'Logout',
+              'Signup',
               style: TextStyle(color: Colors.black, fontSize: 16),
               textAlign: TextAlign.center,
             ),

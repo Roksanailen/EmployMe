@@ -21,6 +21,7 @@ dependencies:
   menu_button: ^1.4.2+1
   shared_preferences: ^2.2.2
   curved_navigation_bar: ^1.0.3
+  bloc: ^8.1.4
 
 dev_dependencies:
   flutter_test:

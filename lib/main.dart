@@ -1,4 +1,4 @@
-import 'package:emplooo/features/auth/presentation/signin.dart';
+import 'package:emplooo/features/auth/presentation/sign_in.dart';
 import 'package:emplooo/features/mainscreen/home_screen.dart';
 import 'package:emplooo/features/profile/presentation/Profile_screen.dart';
 import 'package:emplooo/features/splashscreen/presentation/splash_screen.dart';
@@ -21,6 +21,7 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     MediaQuery.of(context).size.height;
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: Home_Screen());
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false, home: Splash_Screen());
   }
 }
