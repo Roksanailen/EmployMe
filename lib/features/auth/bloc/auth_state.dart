@@ -5,15 +5,19 @@ enum AuthStatus { loading, success, failed, init }
 
 class AuthState {
   final AuthStatus status;
+  final String? token;
   AuthState({
     this.status = AuthStatus.init,
+    this.token,
   });
 
   AuthState copyWith({
     AuthStatus? status,
+    String? token,
   }) {
     return AuthState(
       status: status ?? this.status,
+      token: token ?? this.token,
     );
   }
 }

@@ -1,5 +1,8 @@
+import 'package:emplooo/core/extensions/validation_extensions.dart';
+import 'package:emplooo/core/resources/global_function.dart';
 import 'package:emplooo/core/toaster.dart';
 import 'package:emplooo/features/auth/bloc/auth_bloc.dart';
+import 'package:emplooo/features/cv/presentation/cvscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
@@ -23,18 +26,19 @@ class Signup extends StatelessWidget {
         Lottie.asset('assets/images/Animation - 1705013705322.json',
             width: double.infinity, height: double.infinity, fit: BoxFit.cover),
         BlocListener<AuthBloc, AuthState>(
-          listener: (context, state) {
+          listener: (context, state) async {
             if (state.status == AuthStatus.loading) {
               Toaster.showLoading();
             } else if (state.status == AuthStatus.failed) {
               Toaster.closeLoading();
               Toaster.showToast('Try Again');
             } else if (state.status == AuthStatus.success) {
+              await GlobalFunctions().storeToken(state.token!);
               Toaster.closeLoading();
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
+                    builder: (context) => const Cv_Screen(),
                   ));
             }
           },
@@ -49,7 +53,7 @@ class Signup extends StatelessWidget {
                       child: Lottie.asset('assets/images/signup.json'),
                     ),
                     MainTextField(
-                        controller: TextEditingController(),
+                        controller: usernameController,
                         label: 'Name',
                         keyboardType: TextInputType.name,
                         fillColor: Colors.transparent,
@@ -58,10 +62,15 @@ class Signup extends StatelessWidget {
                         contentPadding: const EdgeInsets.all(5),
                         prefixIcon: const Icon(Icons.person)),
                     const SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
                     MainTextField(
-                        controller: TextEditingController(),
+                         validator: (value) {
+                          if (value!=null&& value.isValidEmail()){
+                           return null;}
+                            else return 'please add a valid email';
+                              },
+                        controller: emailController,
                         fillColor: Colors.transparent,
                         borderRadius: BorderRadius.circular(20),
                         label: 'Email',
@@ -70,23 +79,40 @@ class Signup extends StatelessWidget {
                         hint: 'enter your email',
                         contentPadding: const EdgeInsets.all(5),
                         width: MediaQuery.of(context).size.width * 0.55,
-                        prefixIcon: const Icon(Icons.lock)),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    MainTextField(
-                        controller: TextEditingController(),
-                        label: 'password',
-                        fillColor: const Color.fromARGB(0, 0, 0, 0),
-                        borderColor: Colors.black,
-                        width: MediaQuery.of(context).size.width * 0.55,
-                        contentPadding: const EdgeInsets.all(5),
                         prefixIcon: const Icon(Icons.email)),
                     const SizedBox(
-                      height: 30,
+                      height: 20,
+                    ),
+                    ValueListenableBuilder(
+                      valueListenable: isPassword,
+                      builder: (context, isPasswordValue, child) =>
+                          MainTextField(
+                              isPassword: isPasswordValue,
+                              controller: passwordController,
+                           validator: (value) {
+                          if (value!=null&& value.isValidPassword()){
+                           return null;}
+                            else return 'please add a valid email';
+                              },
+                              label: 'password',
+                              fillColor: const Color.fromARGB(0, 0, 0, 0),
+                              borderColor: Colors.black,
+                              width: MediaQuery.of(context).size.width * 0.55,
+                              contentPadding: const EdgeInsets.all(5),
+                              prefixIcon: const Icon(Icons.lock),
+                              suffixIcon: IconButton(
+                                  onPressed: () {
+                                    isPassword.value = !isPasswordValue;
+                                  },
+                                  icon: Icon(Icons.remove_red_eye))),
+                    ),
+                    const SizedBox(
+                      height: 20,
                     ),
                     MainTextField(
-                      controller: TextEditingController(),
+                      controller: phoneController,
+                      
+                        
                       fillColor: Colors.transparent,
                       borderRadius: BorderRadius.circular(20),
                       label: 'Phone',
@@ -103,10 +129,11 @@ class Signup extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const HomeScreen()));
+                        context.read<AuthBloc>().add(RegisterEvent(
+                            phone: phoneController.text,
+                            password: passwordController.text,
+                            email: emailController.text,
+                            username: usernameController.text));
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,

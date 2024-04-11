@@ -1,7 +1,13 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:emplooo/features/auth/bloc/auth_bloc.dart';
+import 'package:emplooo/features/auth/presentation/sign_in.dart';
+import 'package:emplooo/features/mainscreen/home_screen.dart';
 import 'package:emplooo/features/splashscreen/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+
+// import 'features/mainscreen/drawerscreen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -22,8 +28,10 @@ class _MainAppState extends State<MainApp> {
     MediaQuery.of(context).size.height;
     return BlocProvider<AuthBloc>(
       create: (context) => AuthBloc(),
-      child: const MaterialApp(
-          debugShowCheckedModeBanner: false, home: Splash_Screen()),
+      child: MaterialApp(
+          builder: BotToastInit(),
+          debugShowCheckedModeBanner: false,
+          home: HomeScreen()),
     );
   }
 }

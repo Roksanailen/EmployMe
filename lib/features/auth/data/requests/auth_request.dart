@@ -16,7 +16,7 @@ class AuthDataSource {
     return await postApi.call();
   }
 
-  Future<AuthModel> logout() async {
+  Future<void> logout() async {
     PostApi postApi = PostApi(
         uri: ApiVariables.logout(), body: {}, fromJson: authModelFromJson);
     return await postApi.call();

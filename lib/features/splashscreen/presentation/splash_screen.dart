@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'package:emplooo/features/splashscreen/presentation/intro.dart';
+import 'package:emplooo/core/resources/global_function.dart';
+import 'package:emplooo/features/mainscreen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:page_transition/page_transition.dart';
@@ -22,21 +23,22 @@ class _Splash_ScreenState extends State<Splash_Screen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    Future.delayed(const Duration(seconds: 4), () {
+    Future.delayed(const Duration(seconds: 5), () async {
+      // final isAuth = await GlobalFunctions().isAuth();
       Navigator.pushReplacement(
           context,
           PageTransition(
-              child: const IntroScreen(),
+              // child: isAuth ? HomeScreen() : const IntroScreen(),
+              child: HomeScreen(),
               type: PageTransitionType.fade,
               duration: const Duration(milliseconds: 600)));
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:const Color.fromARGB(255, 177, 208, 216),
+      backgroundColor: const Color.fromARGB(255, 177, 208, 216),
       body: Center(
         child: Lottie.asset('assets/images/Animation - 2.json'),
       ),

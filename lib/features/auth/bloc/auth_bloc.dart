@@ -6,6 +6,7 @@ part 'auth_event.dart';
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
+  
   AuthBloc() : super(AuthState()) {
     on<RegisterEvent>(
       (event, emit) async {
@@ -14,12 +15,27 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           'userName': event.username,
           'email': event.email,
           'password': event.password,
-          'fullName': 'Omar Kaialy',
+          'fullName': 'Flutter Dash',
           'phone': event.phone,
         });
         result.fold((l) => emit(state.copyWith(status: AuthStatus.failed)),
             (r) {
-          emit(state.copyWith(status: AuthStatus.success));
+          emit(state.copyWith(
+              status: AuthStatus.success, token: r.data?.accessToken));
+        });
+      },
+    );
+    on<LoginEvent>(
+      (event, emit) async {
+        emit(state.copyWith(status: AuthStatus.loading));
+        final result = await AuthRepo(dataSource: AuthDataSource()).login({
+          'userName': event.userName,
+          'password': event.password,
+        });
+        result.fold((l) => emit(state.copyWith(status: AuthStatus.failed)),
+            (r) {
+          emit(state.copyWith(
+              status: AuthStatus.success, token: r.data?.accessToken));
         });
       },
     );

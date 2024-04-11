@@ -15,4 +15,10 @@ class AuthRepo with HandlingExceptionManager {
       return Right(await dataSource.register(body));
     });
   }
+
+  Future<Either<Failure, AuthModel>> login(Map<String, dynamic> body) async {
+    return wrapHandling(tryCall: () async {
+      return Right(await dataSource.login(body));
+    });
+  }
 }

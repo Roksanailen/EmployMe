@@ -1,36 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:emplooo/core/extensions/validation_extensions.dart';
+
 class MainTextField extends StatefulWidget {
   const MainTextField({
     Key? key,
+   
+    this.textInputAction = TextInputAction.done,
     this.borderColor,
-    this.onChanged,
+    this.width,
+    this.onSubmitted,
+    this.height,
+    this.hint,
+    this.hintColor,
     this.prefixIcon,
     this.suffixIcon,
     this.validator,
-    this.keyboardAppearance=false,
+    required this.controller,
     this.keyboardType = TextInputType.text,
-    this.textInputAction = TextInputAction.done,
+    this.keyboardAppearance = false,
     this.isPassword = true,
     this.enabled = true,
     this.autoFocus = false,
-    this.error = false,
     this.smallSuffixIcon = false,
-    this.borderRadius,
+    this.error = false,
     this.maxLines = 1,
-    this.hintColor,
-    this.width,
-    this.height,
-    this.label,
+    this.borderRadius,
     this.fillColor = Colors.white,
-    this.hint,
-    this.onSubmitted,
-    required this.controller,
+    this.onChanged,
+    this.label,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
-    this.contentPadding =
-        const EdgeInsets.symmetric(vertical: 18.0, horizontal: 15),
+    this.contentPadding = const EdgeInsets.symmetric(vertical: 18.0, horizontal: 15),
     this.textAlign = TextAlign.start,
+    this.obsecuretext,
+    this.borderSide,
+    this.outlineInputBorder,
+    this.inputBorder,
   }) : super(key: key);
 
   final TextInputAction textInputAction;
@@ -59,7 +65,10 @@ class MainTextField extends StatefulWidget {
   final AutovalidateMode? autovalidateMode;
   final EdgeInsetsGeometry contentPadding;
   final TextAlign textAlign;
-
+  final Widget? obsecuretext;
+  final BorderSide? borderSide;
+  final OutlineInputBorder? outlineInputBorder;
+  final InputBorder? inputBorder;
   @override
   State<MainTextField> createState() => _MainTextFieldState();
 }
@@ -94,7 +103,6 @@ class _MainTextFieldState extends State<MainTextField>
             ? [FilteringTextInputFormatter.digitsOnly]
             : null,
         keyboardType: widget.keyboardType,
-        
         maxLines: widget.maxLines,
         onChanged: widget.onChanged,
         autofocus: widget.autoFocus,
@@ -125,11 +133,12 @@ class _MainTextFieldState extends State<MainTextField>
           fillColor: widget.fillColor,
           focusColor: widget.fillColor,
           hintText: widget.hint,
+
           hintStyle:
               TextStyle(fontSize: 16, color: widget.hintColor ?? Colors.black),
           enabledBorder: OutlineInputBorder(
             borderRadius: widget.borderRadius ?? BorderRadius.circular(20),
-            borderSide: BorderSide(color: widget.fillColor),
+            borderSide: BorderSide(color: Colors.black),
           ),
           disabledBorder: OutlineInputBorder(
             borderRadius: widget.borderRadius ?? BorderRadius.circular(10),
@@ -146,16 +155,18 @@ class _MainTextFieldState extends State<MainTextField>
           ),
           border: OutlineInputBorder(
             borderRadius: widget.borderRadius ?? BorderRadius.circular(10),
-            borderSide: BorderSide(color: Colors.grey.shade300),
+            borderSide: BorderSide(color: Colors.black),
           ),
 
           prefixIcon: widget.prefixIcon,
           prefixIconColor: Colors.black,
-          prefixIconConstraints:
-              widget.smallSuffixIcon ? const BoxConstraints(maxWidth: 75) : null,
+          prefixIconConstraints: widget.smallSuffixIcon
+              ? const BoxConstraints(maxWidth: 75)
+              : null,
           suffixIcon: widget.suffixIcon,
-          suffixIconConstraints:
-              widget.smallSuffixIcon ? const BoxConstraints(maxWidth: 75) : null,
+          suffixIconConstraints: widget.smallSuffixIcon
+              ? const BoxConstraints(maxWidth: 75)
+              : null,
           // contentPadding: widget.maxLines != 1 ? null : const EdgeInsets.symmetric(horizontal: 16.0),
         ),
       ),

@@ -1,5 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:emplooo/features/cv/presentation/yourcv_screen.dart';
+import 'package:emplooo/features/cv/presentation/authsplash.dart';
 import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/profile/presentation/Profile_screen.dart';
 import 'package:emplooo/features/search/presentation/search_screen.dart';
@@ -16,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List screens = [
-    const Home(),
+   Home(),
     const Search(),
     Profile(),
     const YourCv(),
@@ -37,8 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
           Icon(Icons.home, size: 30),
           Icon(Icons.search, size: 30),
           Icon(Icons.person, size: 30),
-          Icon(Icons.file_present_rounded),
-          Icon(Icons.info)
+          Icon(Icons.propane_sharp),
+          Icon(Icons.help)
         ],
         color: const Color.fromARGB(255, 69, 133, 245),
         buttonBackgroundColor: const Color.fromARGB(255, 111, 169, 197),
