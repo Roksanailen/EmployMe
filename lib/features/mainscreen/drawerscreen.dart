@@ -1,19 +1,18 @@
-// import 'package:emplooo/features/mainscreen/Home.dart';
-// import 'package:emplooo/features/mainscreen/menuscreen.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-// class DrawerScreen extends StatelessWidget {
-//   DrawerScreen({super.key});
-//   final zoomDrawerController = ZoomDrawerController();
-//   @override
-//   Widget build(BuildContext context) {
-//     return ZoomDrawer(
-//       controller: zoomDrawerController,
-//       mainScreen: Home(),
-//       menuScreen: MenuScreen(),
-//       showShadow: true,
-//       style: DrawerStyle.style2,
-//     );
-//   }
-// }
+class _SliderView extends StatelessWidget {
+  final Function(String)? onItemClick;
+
+  const _SliderView({Key? key, this.onItemClick}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      padding: const EdgeInsets.only(top: 30),
+      child: ListView(
+        children: <Widget>[
+          const SizedBox(
+            height: 30,
+          ),]),);}}
