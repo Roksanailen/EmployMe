@@ -18,28 +18,30 @@ class _InformationState extends State<Information> {
         body: SingleChildScrollView(
             child: Center(
                 child: Column(children: [
-      SizedBox(height: 20),
+      const SizedBox(height: 20),
       InkWell(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Home_Information()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const Home_Information()));
         },
         child: Container(
             height: MediaQuery.of(context).size.height * 0.35,
             width: MediaQuery.of(context).size.width * 0.75,
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 232, 240, 247),
+              color: const Color.fromARGB(255, 232, 240, 247),
               border: Border.all(color: Colors.blue, width: 3),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'About Home',
                   style: TextStyle(fontSize: 20, color: Colors.black),
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 Lottie.asset(
                   'assets/images/home.json',
                   height: MediaQuery.of(context).size.height * 0.35,
@@ -48,11 +50,13 @@ class _InformationState extends State<Information> {
               ],
             )),
       ),
-      SizedBox(height: 20),
+      const SizedBox(height: 20),
       InkWell(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Search_Information()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const Search_Information()));
         },
         child: Container(
             height: MediaQuery.of(context).size.height * 0.35,
@@ -60,16 +64,16 @@ class _InformationState extends State<Information> {
             decoration: BoxDecoration(
               border: Border.all(color: Colors.blue, width: 3),
               borderRadius: BorderRadius.circular(20),
-              color: Color.fromARGB(255, 232, 240, 247),
+              color: const Color.fromARGB(255, 232, 240, 247),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'About search',
                   style: TextStyle(fontSize: 20, color: Colors.black),
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 Lottie.asset(
                   'assets/images/search.json',
                   height: MediaQuery.of(context).size.height * 0.35,
@@ -78,27 +82,27 @@ class _InformationState extends State<Information> {
               ],
             )),
       ),
-      SizedBox(height: 20),
+      const SizedBox(height: 20),
       InkWell(
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Cv_Information()));
+              MaterialPageRoute(builder: (context) => const Cv_Information()));
         },
         child: Container(
             height: MediaQuery.of(context).size.height * 0.35,
             width: MediaQuery.of(context).size.width * 0.75,
             decoration: BoxDecoration(
-                color: Color.fromARGB(255, 232, 240, 247),
+                color: const Color.fromARGB(255, 232, 240, 247),
                 border: Border.all(color: Colors.blue, width: 3),
                 borderRadius: BorderRadius.circular(20)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'About Cv',
                   style: TextStyle(fontSize: 20, color: Colors.black),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Lottie.asset(
@@ -109,7 +113,7 @@ class _InformationState extends State<Information> {
               ],
             )),
       ),
-      SizedBox(height: 20),
+      const SizedBox(height: 20),
     ]))));
   }
 }
