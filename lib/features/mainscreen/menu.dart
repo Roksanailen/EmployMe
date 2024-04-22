@@ -1,4 +1,4 @@
-import 'package:emplooo/features/mainscreen/Home.dart';
+import 'package:emplooo/features/mainscreen/home/presentation/Home.dart';
 import 'package:emplooo/features/profile/presentation/Profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
