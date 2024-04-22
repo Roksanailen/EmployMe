@@ -5,7 +5,7 @@ import 'package:emplooo/features/search/presentation/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 
-import 'Home.dart';
+import 'home/presentation/Home.dart';
 import 'menu.dart';
 
 class HomeScreen extends StatefulWidget {
