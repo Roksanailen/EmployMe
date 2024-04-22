@@ -18,7 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
   List screens = [
    Home(),
     const Search(),
-   
     const YourCv(),
     const Information()
   ];
@@ -36,7 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const [
           Icon(Icons.home, size: 30),
           Icon(Icons.search, size: 30),
-       
           Icon(Icons.propane_sharp),
           Icon(Icons.help)
         ],

@@ -2,6 +2,7 @@ import 'package:emplooo/features/mainscreen/Home.dart';
 import 'package:emplooo/features/profile/presentation/Profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -13,8 +14,18 @@ class Menu extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            width: MediaQuery.of(context).size.width * 0.55,
-            height: MediaQuery.of(context).size.height * 0.30,
+              width: MediaQuery.of(context).size.width * 0.50,
+              height: MediaQuery.of(context).size.height * 0.20,
+              child: Column(
+                children: [
+                  Text(
+                    'EmployMe',
+                    style: TextStyle(color: Colors.blue, fontSize: 30),
+                  ),
+                ],
+              )),
+          SizedBox(
+            height: 20,
           ),
           DrawerButton(
               iconData: Icons.home,
