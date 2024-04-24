@@ -28,6 +28,7 @@ class _HomeState extends State<Home> {
     'Architecture opportunities',
     'Architecture opportunities',
     'Architecture opportunities',
+    'Architecture opportunities',
   ];
   @override
   Widget build(BuildContext context) {
