@@ -2,7 +2,11 @@ import 'package:emplooo/features/mainscreen/home/presentation/businessclassifica
 import 'package:flutter/material.dart';
 
 class Type_Work extends StatelessWidget {
-  const Type_Work({super.key});
+  const Type_Work({super.key,
+  required this.image,
+  required this.type});
+  final List<String> type;
+  final List<String> image;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,7 @@ class Type_Work extends StatelessWidget {
                         topLeft: Radius.circular(20),
                        
                       ),
-                      child: Image.asset('assets/images/mm.png',
+                      child: Image.asset('$image.index',
                       height: 250,
                       width: double.infinity,
                       fit: BoxFit.cover,

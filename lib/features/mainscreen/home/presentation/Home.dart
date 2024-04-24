@@ -11,6 +11,22 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final image = [
+    'assets/images/vv.png',
+    'assets/images/mm.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+  ];
+  final type =['Medical opportunities',
+  'Administrative opportunities',
+  'Information opportunities',
+  'Architecture opportunities',
+  'Architecture opportunities',
+  'Architecture opportunities',
+  ];
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -39,7 +55,7 @@ class _HomeState extends State<Home> {
               child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: 7,itemBuilder: (BuildContext context, int index){
-              return Type_Work();
+              return Type_Work(image: image,type: type,);
               },),
               ),
             SizedBox(height: 20,),
