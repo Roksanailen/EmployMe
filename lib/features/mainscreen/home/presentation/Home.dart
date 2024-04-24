@@ -14,97 +14,133 @@ class _HomeState extends State<Home> {
   final image = [
     'assets/images/vv.png',
     'assets/images/mm.png',
+    'assets/images/dd.png',
     'assets/images/rr.png',
     'assets/images/rr.png',
     'assets/images/rr.png',
     'assets/images/rr.png',
     'assets/images/rr.png',
   ];
-  final type =['Medical opportunities',
-  'Administrative opportunities',
-  'Information opportunities',
-  'Architecture opportunities',
-  'Architecture opportunities',
-  'Architecture opportunities',
+  final type = [
+    'Medical opportunities',
+    'Administrative opportunities',
+    'Information opportunities',
+    'Architecture opportunities',
+    'Architecture opportunities',
+    'Architecture opportunities',
   ];
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-       body: SingleChildScrollView(
-         child: Container(
-          margin: EdgeInsets.only(top: 40.0 ,left: 20.0 ,right:20.0 ),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.only(top: 40.0, left: 20.0, right: 20.0),
           child: SingleChildScrollView(
-            child: Column(
-             crossAxisAlignment: CrossAxisAlignment.start,
-             children: [
-             Text("Discover", 
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              const Text(
+                "Discover",
                 style: TextStyle(
-                color: Colors.black, 
-                fontSize: 30.0, 
-                fontWeight: FontWeight.bold
-                ),),
-             SizedBox(height: 10.0,),
-             Text("Suitable job ",
-                style: TextStyle( 
-                color:Colors.black, 
-                fontSize: 30.0,
-                ),),
-             SizedBox(height: 20.0,),
-             Container(
-              height: 320,
-              child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 7,itemBuilder: (BuildContext context, int index){
-              return Type_Work(image: image,type: type,);
-              },),
+                    color: Colors.black,
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold),
               ),
-            SizedBox(height: 20,),
-            Stack(
+              const SizedBox(
+                height: 10.0,
+              ),
+              const Text(
+                "Suitable job ",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30.0,
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              SizedBox(
+                height: 320,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 7,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Type_Work(
+                      image: image[index],
+                      type: type[index],
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Stack(
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    child: Opacity(
-                      opacity: 0.8,
-                      child: Image.asset('assets/images/work.png',
-                      height: 250,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                      
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(20),
                       ),
-                    )),
-                   Positioned(
-                    top:40 ,
-                    left: 50,
-                    child: Text('Remot Work',style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),)),
-              ],
-            ),
-            SizedBox(height: 20,),
-            Container(
-              height: 270,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 7,
-                itemBuilder: (BuildContext context ,int index){
-                      return Remote_Work();
-                }
-            ) ,
-            ), SizedBox(height: 20,),
-            Text('Take a look at our companies ',style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold)),
-            SizedBox(height: 10,),
-              Container(
-              height: 320,
-              child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 7,itemBuilder: (BuildContext context, int index){
-              return Company();
-              },),
+                      child: Opacity(
+                        opacity: 0.8,
+                        child: Image.asset(
+                          'assets/images/work.png',
+                          height: 250,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                        ),
+                      )),
+                  const Positioned(
+                      top: 40,
+                      left: 50,
+                      child: Text(
+                        'Remot Work',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold),
+                      )),
+                ],
               ),
-              SizedBox(height: 30,),    
-             ]
+              const SizedBox(
+                height: 20,
               ),
-             ),),),
-       );
+              SizedBox(
+                height: 270,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 7,
+                    itemBuilder: (BuildContext context, int index) {
+                      return const Remote_Work();
+                    }),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text('Take a look at our companies ',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold)),
+              const SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                height: 320,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 7,
+                  itemBuilder: (BuildContext context, int index) {
+                    return const Company();
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+            ]),
+          ),
+        ),
+      ),
+    );
   }
 }
