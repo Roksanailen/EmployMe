@@ -1,14 +1,14 @@
+import 'package:emplooo/core/extensions/validation_extensions.dart';
 import 'package:emplooo/features/auth/bloc/auth_bloc.dart';
 import 'package:emplooo/features/auth/presentation/reset_password.dart';
 import 'package:emplooo/features/cv/presentation/cvscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:emplooo/core/extensions/validation_extensions.dart';
+
 import '../../../core/resources/global_function.dart';
 import '../../../core/toaster.dart';
 import '../../../core/widgets/main_text_field.dart';
-import '../../mainscreen/home_screen.dart';
 import 'sign_up.dart';
 
 class Signin extends StatelessWidget {
@@ -18,7 +18,6 @@ class Signin extends StatelessWidget {
   Widget build(BuildContext context) {
     var userNameController = TextEditingController();
     var passwordController = TextEditingController();
-    String passwordEror;
     var isPassword = ValueNotifier(true);
     return Form(
         key: const ValueKey(1),
@@ -61,7 +60,7 @@ class Signin extends StatelessWidget {
                     MainTextField(
                       controller: userNameController,
                       label: 'UserName',
-                      borderSide: BorderSide(width: 1),
+                      borderSide: const BorderSide(width: 1),
                       keyboardType: TextInputType.emailAddress,
                       fillColor: Colors.transparent,
                       hint: 'enter your Name',
@@ -82,11 +81,12 @@ class Signin extends StatelessWidget {
                       builder: (_, bool isPasswordValue, child) =>
                           MainTextField(
                               validator: (value) {
-                                if (value!=null&& value.isValidPassword()){
-                                    return null;}
-                                    else return 'please add a valid password';
+                                if (value != null && value.isValidPassword()) {
+                                  return null;
+                                } else {
+                                  return 'please add a valid password';
+                                }
                               },
-                              
                               isPassword: isPasswordValue,
                               controller: passwordController,
                               fillColor: Colors.transparent,
@@ -104,7 +104,7 @@ class Signin extends StatelessWidget {
                                   onPressed: () {
                                     isPassword.value = !isPasswordValue;
                                   },
-                                  icon: Icon(Icons.remove_red_eye))),
+                                  icon: const Icon(Icons.remove_red_eye))),
                     ),
                     const SizedBox(
                       height: 50,
@@ -137,7 +137,7 @@ class Signin extends StatelessWidget {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Signup()));
+                                      builder: (context) => const Signup()));
                             },
                             child: const Text(
                               'sign Up',
@@ -153,7 +153,8 @@ class Signin extends StatelessWidget {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ResetPassword()));
+                                      builder: (context) =>
+                                          const ResetPassword()));
                             },
                             style: TextButton.styleFrom(),
                             child: const Text(

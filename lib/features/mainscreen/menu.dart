@@ -1,9 +1,6 @@
-
 import 'package:emplooo/features/mainscreen/Section/presentation/Home.dart';
-import 'package:emplooo/features/profile/presentation/Profile_screen.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:emplooo/features/profile/presentation/profile_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -11,13 +8,13 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 232, 240, 247),
+      backgroundColor: const Color.fromARGB(255, 232, 240, 247),
       body: Column(
         children: [
-          Container(
+          SizedBox(
               width: MediaQuery.of(context).size.width * 0.50,
               height: MediaQuery.of(context).size.height * 0.20,
-              child: Column(
+              child: const Column(
                 children: [
                   Text(
                     'EmployMe',
@@ -25,17 +22,17 @@ class Menu extends StatelessWidget {
                   ),
                 ],
               )),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           DrawerButton(
               iconData: Icons.home,
               name: 'Home',
               onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Home()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Home()));
               }),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           DrawerButton(
@@ -43,9 +40,9 @@ class Menu extends StatelessWidget {
               name: 'profile',
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Profile()));
+                    MaterialPageRoute(builder: (context) => const Profile()));
               }),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           DrawerButton(
@@ -86,7 +83,7 @@ DrawerButton({
           ),
           Text(
             name,
-            style: TextStyle(color: Colors.black, fontSize: 20),
+            style: const TextStyle(color: Colors.black, fontSize: 20),
           )
         ],
       ),

@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:emplooo/core/resources/global_function.dart';
+
 import 'package:emplooo/features/mainscreen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -14,7 +14,6 @@ class Splash_Screen extends StatefulWidget {
 
 class _Splash_ScreenState extends State<Splash_Screen>
     with TickerProviderStateMixin {
-  late final AnimationController _controller;
   @override
   void initState() {
     super.initState();
@@ -29,7 +28,7 @@ class _Splash_ScreenState extends State<Splash_Screen>
           context,
           PageTransition(
               // child: isAuth ? HomeScreen() : const IntroScreen(),
-              child: HomeScreen(),
+              child: const HomeScreen(),
               type: PageTransitionType.fade,
               duration: const Duration(milliseconds: 600)));
     });
