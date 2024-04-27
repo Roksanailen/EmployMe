@@ -1,7 +1,8 @@
-import 'package:emplooo/features/mainscreen/home/presentation/company.dart';
-import 'package:emplooo/features/mainscreen/home/presentation/remotework.dart';
-import 'package:emplooo/features/mainscreen/home/presentation/typework.dart';
 import 'package:flutter/material.dart';
+
+import '../../Section/presentation/company.dart';
+import '../../Section/presentation/remotework.dart';
+import '../../Section/presentation/typework.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -65,9 +66,12 @@ class _HomeState extends State<Home> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 7,
                   itemBuilder: (BuildContext context, int index) {
-                    return Type_Work(
+                    return TypeWork(
                       image: image[index],
                       type: type[index],
+                      list: '',
+                      locationcompany: '',
+                      name: '',
                     );
                   },
                 ),

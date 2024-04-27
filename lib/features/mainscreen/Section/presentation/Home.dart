@@ -1,11 +1,9 @@
-
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/company.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/remotework.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/typework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -20,6 +18,7 @@ class _HomeState extends State<Home> {
     super.didChangeDependencies();
     context.read<SectionBloc>().add(GetSectionsEvent());
   }
+
   final image = [
     'assets/images/vv.png',
     'assets/images/mm.png',
@@ -30,7 +29,7 @@ class _HomeState extends State<Home> {
     'assets/images/rr.png',
     'assets/images/rr.png',
   ];
-   final type = [
+  final type = [
     'Medical opportunities',
     'Administrative opportunities',
     'Information opportunities',
@@ -39,7 +38,7 @@ class _HomeState extends State<Home> {
     'Architecture opportunities',
     'Architecture opportunities',
   ];
-       final list = [
+  final list = [
     'assets/images/vv.png',
     'assets/images/mm.png',
     'assets/images/dd.png',
@@ -49,7 +48,7 @@ class _HomeState extends State<Home> {
     'assets/images/rr.png',
     'assets/images/rr.png',
   ];
-     final name = [
+  final name = [
     'surgeon',
     'techer',
     'surgeon',
@@ -58,7 +57,7 @@ class _HomeState extends State<Home> {
     'surgeon',
     'surgeon',
   ];
-       final locationcompany= [
+  final locationcompany = [
     'Aleppo',
     'Aleppo',
     'Aleppo',
@@ -98,28 +97,29 @@ class _HomeState extends State<Home> {
               ),
               SizedBox(
                 height: 320,
-                child: BlocBuilder<SectionBloc,SectionsState>(
-                  builder: (context, state){
-                    if (state is SectionsLoading){
-                      return Center(child: CircularProgressIndicator(),);
-                    }else if(state is SecionsSuccess){
+                child: BlocBuilder<SectionBloc, SectionsState>(
+                    builder: (context, state) {
+                  if (state is SectionsLoading) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else if (state is SecionsSuccess) {
                     return ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: state.sections.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Type_Work(
-                        image: image[index],
-                        type: state.sections[index].name!,
-                        list: list[index],
-                        name: name[index],
-                        locationcompany: locationcompany[index],
-                      );
-                    },
-                  );}
-                  
-                  else return Center(child: Text('Try again'));
-                  }
-                ),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: state.sections.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return TypeWork(
+                          image: image[index],
+                          type: state.sections[index].name!,
+                          list: list[index],
+                          name: name[index],
+                          locationcompany: locationcompany[index],
+                        );
+                      },
+                    );
+                  } else
+                    return const Center(child: Text('Try again'));
+                }),
               ),
               const SizedBox(
                 height: 20,
