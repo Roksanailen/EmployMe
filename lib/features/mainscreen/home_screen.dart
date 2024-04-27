@@ -1,11 +1,12 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:emplooo/features/cv/presentation/authsplash.dart';
 import 'package:emplooo/features/information/presentation/information_screen.dart';
+import 'package:emplooo/features/mainscreen/Section/presentation/Home.dart';
 import 'package:emplooo/features/search/presentation/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 
-import 'home/presentation/Home.dart';
+
 import 'menu.dart';
 
 class HomeScreen extends StatefulWidget {

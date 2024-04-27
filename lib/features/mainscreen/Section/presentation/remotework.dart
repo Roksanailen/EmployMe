@@ -1,4 +1,5 @@
-import 'package:emplooo/features/mainscreen/home/presentation/remoteworkdetails.dart';
+
+import 'package:emplooo/features/mainscreen/Section/presentation/remoteworkdetails.dart';
 import 'package:flutter/material.dart';
 
 class Remote_Work extends StatelessWidget {

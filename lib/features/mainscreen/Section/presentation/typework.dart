@@ -1,10 +1,18 @@
-import 'package:emplooo/features/mainscreen/home/presentation/businessclassification.dart';
+
+import 'package:emplooo/features/mainscreen/Section/presentation/businessclassification.dart';
 import 'package:flutter/material.dart';
 
 class Type_Work extends StatelessWidget {
-  const Type_Work({super.key, required this.image, required this.type});
-  final String type;
+
+
+
+  Type_Work({super.key, required this.image, required this.type,required this.list,required this.locationcompany,required this.name});
+  final String type ;
   final String image;
+  final String list;
+  final String name;
+  final String locationcompany;
+
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +20,7 @@ class Type_Work extends StatelessWidget {
         onTap: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (BuildContext context) {
-            return const Business_Classification();
+            return  Business_Classification(type: type,list: list,locationcompany: locationcompany,name: name, );
           }));
         },
         child: SizedBox(
@@ -39,16 +47,15 @@ class Type_Work extends StatelessWidget {
                         )),
                   ],
                 ),
-                const Padding(
+                 Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Row(
                     children: [
                       SizedBox(
                         height: 30.0,
                       ),
-                      Text(
-                        'Madical Opportunities',
-                        style: TextStyle(color: Colors.black),
+                      Text(type,
+                      style: TextStyle(color: Colors.black),
                       )
                     ],
                   ),

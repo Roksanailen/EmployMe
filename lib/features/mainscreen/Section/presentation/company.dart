@@ -1,4 +1,5 @@
-import 'package:emplooo/features/mainscreen/home/presentation/companydetails.dart';
+
+import 'package:emplooo/features/mainscreen/Section/presentation/companydetails.dart';
 import 'package:flutter/material.dart';
 
 class Company extends StatelessWidget {
