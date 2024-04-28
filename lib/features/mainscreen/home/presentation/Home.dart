@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
               const SizedBox(
                 height: 20,
               ),
-              Stack(
+              Stack(   
                 children: [
                   ClipRRect(
                       borderRadius: const BorderRadius.all(

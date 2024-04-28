@@ -45,7 +45,7 @@ class _InformationState extends State<Information> {
                 Lottie.asset(
                   'assets/images/home.json',
                   height: MediaQuery.of(context).size.height * 0.35,
-                  width: MediaQuery.of(context).size.width * 0.40,
+                  width: MediaQuery.of(context).size.width * 0.30,
                 )
               ],
             )),
@@ -108,7 +108,7 @@ class _InformationState extends State<Information> {
                 Lottie.asset(
                   'assets/images/cv.json',
                   height: MediaQuery.of(context).size.height * 0.35,
-                  width: MediaQuery.of(context).size.width * 0.40,
+                  width: MediaQuery.of(context).size.width * 0.30,
                 )
               ],
             )),
