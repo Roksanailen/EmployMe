@@ -1,14 +1,12 @@
-import 'package:emplooo/core/widgets/text_field.dart';
 import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/profile/presentation/profile_edit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../core/widgets/list_tile.dart';
-import '../../../core/widgets/main_text_field.dart';
 
 class Profile extends StatefulWidget {
-  Profile({super.key});
+  const Profile({super.key});
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -26,27 +24,27 @@ class _ProfileState extends State<Profile> {
           InkWell(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Information()));
+                  MaterialPageRoute(builder: (context) => const Information()));
             },
-            child: Icon(
+            child: const Icon(
               Icons.info,
               color: Colors.black,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           InkWell(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ProfilEdit()));
+                  MaterialPageRoute(builder: (context) => const ProfilEdit()));
             },
-            child: Icon(
+            child: const Icon(
               Icons.edit,
               color: Colors.black,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           )
         ],
@@ -56,7 +54,7 @@ class _ProfileState extends State<Profile> {
           width: double.infinity,
           height: 180,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(80),
                   bottomRight: Radius.circular(80)),
               color: Colors.blue.shade200),
@@ -66,8 +64,8 @@ class _ProfileState extends State<Profile> {
               height: 100,
               width: 100,
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'UserName',
               style: TextStyle(
                   color: Colors.black,
@@ -76,12 +74,12 @@ class _ProfileState extends State<Profile> {
             )
           ]),
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Container(
-            padding: EdgeInsets.all(10),
-            child: Column(children: [
+            padding: const EdgeInsets.all(10),
+            child: const Column(children: [
               MainListTile(
                   dense: true,
                   isThreeLine: true,

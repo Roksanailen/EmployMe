@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../core/widgets/main_text_field.dart';
-import '../../mainscreen/home_screen.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -19,7 +18,6 @@ class Signup extends StatelessWidget {
     var phoneController = TextEditingController();
     var emailController = TextEditingController();
     var usernameController = TextEditingController();
-    var confirmPassowrdController = TextEditingController();
     var isPassword = ValueNotifier(true);
     return Scaffold(
       body: Stack(children: [
@@ -65,11 +63,13 @@ class Signup extends StatelessWidget {
                       height: 20,
                     ),
                     MainTextField(
-                         validator: (value) {
-                          if (value!=null&& value.isValidEmail()){
-                           return null;}
-                            else return 'please add a valid email';
-                              },
+                        validator: (value) {
+                          if (value != null && value.isValidEmail()) {
+                            return null;
+                          } else {
+                            return 'please add a valid email';
+                          }
+                        },
                         controller: emailController,
                         fillColor: Colors.transparent,
                         borderRadius: BorderRadius.circular(20),
@@ -89,10 +89,12 @@ class Signup extends StatelessWidget {
                           MainTextField(
                               isPassword: isPasswordValue,
                               controller: passwordController,
-                           validator: (value) {
-                          if (value!=null&& value.isValidPassword()){
-                           return null;}
-                            else return 'please add a valid email';
+                              validator: (value) {
+                                if (value != null && value.isValidPassword()) {
+                                  return null;
+                                } else {
+                                  return 'please add a valid email';
+                                }
                               },
                               label: 'password',
                               fillColor: const Color.fromARGB(0, 0, 0, 0),
@@ -104,15 +106,13 @@ class Signup extends StatelessWidget {
                                   onPressed: () {
                                     isPassword.value = !isPasswordValue;
                                   },
-                                  icon: Icon(Icons.remove_red_eye))),
+                                  icon: const Icon(Icons.remove_red_eye))),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
                     MainTextField(
                       controller: phoneController,
-                      
-                        
                       fillColor: Colors.transparent,
                       borderRadius: BorderRadius.circular(20),
                       label: 'Phone',

@@ -1,8 +1,9 @@
+import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
+import 'package:emplooo/features/mainscreen/Section/presentation/company.dart';
+import 'package:emplooo/features/mainscreen/Section/presentation/remotework.dart';
+import 'package:emplooo/features/mainscreen/Section/presentation/typework.dart';
 import 'package:flutter/material.dart';
-
-import '../../Section/presentation/company.dart';
-import '../../Section/presentation/remotework.dart';
-import '../../Section/presentation/typework.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -12,6 +13,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    context.read<SectionBloc>().add(GetSectionsEvent());
+  }
+
   final image = [
     'assets/images/vv.png',
     'assets/images/mm.png',
@@ -30,6 +37,34 @@ class _HomeState extends State<Home> {
     'Architecture opportunities',
     'Architecture opportunities',
     'Architecture opportunities',
+  ];
+  final list = [
+    'assets/images/vv.png',
+    'assets/images/mm.png',
+    'assets/images/dd.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+  ];
+  final name = [
+    'surgeon',
+    'techer',
+    'surgeon',
+    'surgeon',
+    'surgeon',
+    'surgeon',
+    'surgeon',
+  ];
+  final locationcompany = [
+    'Aleppo',
+    'Aleppo',
+    'Aleppo',
+    'Aleppo',
+    'Aleppo',
+    'Aleppo',
+    'Aleppo',
   ];
   @override
   Widget build(BuildContext context) {
@@ -62,24 +97,34 @@ class _HomeState extends State<Home> {
               ),
               SizedBox(
                 height: 320,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 7,
-                  itemBuilder: (BuildContext context, int index) {
-                    return TypeWork(
-                      image: image[index],
-                      type: type[index],
-                      list: '',
-                      locationcompany: '',
-                      name: '',
+                child: BlocBuilder<SectionBloc, SectionsState>(
+                    builder: (context, state) {
+                  if (state is SectionsLoading) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
                     );
-                  },
-                ),
+                  } else if (state is SecionsSuccess) {
+                    return ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: state.sections.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return TypeWork(
+                          image: image[index],
+                          type: state.sections[index].name ?? "null",
+                          list: list[index],
+                          name: name[index],
+                          locationcompany: locationcompany[index],
+                        );
+                      },
+                    );
+                  } else
+                    return const Center(child: Text('Try again'));
+                }),
               ),
               const SizedBox(
                 height: 20,
               ),
-              Stack(   
+              Stack(
                 children: [
                   ClipRRect(
                       borderRadius: const BorderRadius.all(

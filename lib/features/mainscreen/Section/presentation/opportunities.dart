@@ -1,9 +1,12 @@
-import 'package:emplooo/features/mainscreen/home/presentation/opportunitiesdetails.dart';
+
+import 'package:emplooo/features/mainscreen/Section/presentation/opportunitiesdetails.dart';
 import 'package:flutter/material.dart';
 
 class Opportunities extends StatelessWidget {
-  const Opportunities({super.key});
-
+  const Opportunities({super.key,required this.name, required this.locationcompany ,required this.List,});
+  final String name;
+  final String List;
+  final String locationcompany;
   @override
   Widget build(BuildContext context) {
     return  InkWell(
@@ -27,28 +30,12 @@ class Opportunities extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                     ),
-                    child: Image.asset('assets/images/dd.png',
+                    child: Image.asset(List,
                     height: 250,
                     width: double.infinity,
                     fit: BoxFit.cover,
                     )),
-                    Container(
-                      height: 250,
-                      
-                      alignment: Alignment.bottomLeft,
-                      padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
-                        gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter, colors: [Colors.black.withOpacity(0),Colors.black.withOpacity(0.8)]),
-                     ),
-                      child: Text('surgeon'
-                      , style: TextStyle(
-                        fontSize: 20,color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),),
-                    ),
+                   
                 ],
               ),
               Padding(
@@ -56,21 +43,22 @@ class Opportunities extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Row(
+                       Row(
                       children: [
-                        Icon(Icons.home ,color: Colors.blue,),
-                        SizedBox(width: 7,),
-                        Text('Martini Hospital'),
-                      ],
-                    ),
-                      Row(
-                      children: [
-                        Icon(Icons.price_check_sharp
+                        Icon(Icons.info_outline
                         ,color: Colors.blue,),
                         SizedBox(width: 7,),
-                        Text('1000000 p.s'),
+                        Text(name),
                       ],
-                    )
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.location_on_outlined,color: Colors.blue,),
+                        SizedBox(width: 7,),
+                        Text(locationcompany),
+                      ],
+                    ),
+                   
                   ],
                 ),
               )
