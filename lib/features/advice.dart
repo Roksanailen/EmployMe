@@ -48,13 +48,13 @@ class _AdviceState extends State<Advice> {
                 ),
                 Container(
                   height: MediaQuery.of(context).size.height * 1,
-                  width: MediaQuery.of(context).size.width * 0.90,
+                  width: MediaQuery.of(context).size.width * 0.93,
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 232, 240, 247),
                       border: Border.all(color: Colors.blue, width: 3),
                       borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(65),
-                          bottomRight: Radius.circular(65),
+                          topLeft: Radius.circular(75),
+                          bottomRight: Radius.circular(70),
                           topRight: Radius.circular(16),
                           bottomLeft: Radius.circular(16))),
                   child: SingleChildScrollView(
@@ -62,13 +62,15 @@ class _AdviceState extends State<Advice> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         SizedBox(
-                          height: 20,
+                          height: 30,
                         ),
                         InkWell(
-                          onTap: (){  Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => Informatic()));},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Informatic()));
+                          },
                           child: AdviceType(
                             type:
                                 ('if you are informatic engineer develope your self '),
@@ -79,11 +81,11 @@ class _AdviceState extends State<Advice> {
                           height: 10,
                         ),
                         InkWell(
-                          onTap: (){
-                             Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const Arcitecture())); 
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Arcitecture()));
                           },
                           child: AdviceType(
                             type:
@@ -95,10 +97,12 @@ class _AdviceState extends State<Advice> {
                           height: 10,
                         ),
                         InkWell(
-                          onTap: (){  Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const Economic()));},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Economic()));
+                          },
                           child: AdviceType(
                             type: ('if you are economic develope your self '),
                             image: ('assets/images/ec.jpg'),
@@ -108,17 +112,20 @@ class _AdviceState extends State<Advice> {
                           height: 10,
                         ),
                         InkWell(
-                          onTap: (){
-                              Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => Others()));
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Others()));
                           },
                           child: AdviceType(
                             type: ('develop your self '),
                             image: ('assets/images/ec.jpg'),
                           ),
                         ),
+                        SizedBox(
+                          height: 20,
+                        )
                       ],
                     ),
                   ),
