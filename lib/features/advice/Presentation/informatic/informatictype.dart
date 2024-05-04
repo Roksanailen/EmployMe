@@ -15,7 +15,7 @@ class _Informatic_TypeState extends State<Informatic_Type> {
         onTap: () {},
         child: SizedBox(
           height: 50,
-          width: 200,
+          width: 170,
           child: Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -39,7 +39,6 @@ class _Informatic_TypeState extends State<Informatic_Type> {
                       SizedBox(
                         height: 30.0,
                       ),
-                      
                     ],
                   ),
                 )

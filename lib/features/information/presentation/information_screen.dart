@@ -2,6 +2,7 @@ import 'package:emplooo/features/information/presentation/aboutcv.dart';
 import 'package:emplooo/features/information/presentation/abouthome.dart';
 import 'package:emplooo/features/information/presentation/aboutsearch.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lottie/lottie.dart';
 
 class Information extends StatefulWidget {
@@ -40,7 +41,11 @@ class _InformationState extends State<Information> {
                 const Text(
                   'About Home',
                   style: TextStyle(fontSize: 20, color: Colors.black),
-                ),
+                )
+                    .animate(
+                        onPlay: (controller) => controller.repeat(
+                            reverse: true, period: Duration(seconds: 2)))
+                    .shakeY(duration: 300.ms),
                 const SizedBox(width: 20),
                 Lottie.asset(
                   'assets/images/home.json',
@@ -72,7 +77,11 @@ class _InformationState extends State<Information> {
                 const Text(
                   'About search',
                   style: TextStyle(fontSize: 20, color: Colors.black),
-                ),
+                )
+                    .animate(
+                        onPlay: (controller) => controller.repeat(
+                            reverse: true, period: Duration(seconds: 2)))
+                    .shakeX(duration: 300.ms),
                 const SizedBox(width: 20),
                 Lottie.asset(
                   'assets/images/search.json',
@@ -101,7 +110,11 @@ class _InformationState extends State<Information> {
                 const Text(
                   'About Cv',
                   style: TextStyle(fontSize: 20, color: Colors.black),
-                ),
+                )
+                    .animate(
+                        onPlay: (controller) => controller.repeat(
+                            reverse: true, period: Duration(seconds: 2)))
+                    .shake(duration: 300.ms),
                 const SizedBox(
                   width: 20,
                 ),

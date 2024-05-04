@@ -1,8 +1,9 @@
-import 'package:emplooo/features/advice/Presentation/arcitecture.dart';
-import 'package:emplooo/features/advice/Presentation/economyic.dart';
-import 'package:emplooo/features/advice/Presentation/informatic.dart';
+import 'package:emplooo/features/advice/Presentation/advicetype.dart';
+import 'package:emplooo/features/advice/Presentation/arcitecture/presentation/arcitecture.dart';
+import 'package:emplooo/features/advice/Presentation/economic/economyic.dart';
+import 'package:emplooo/features/advice/Presentation/informatic/informatic.dart';
 import 'package:emplooo/features/advice/Presentation/other.dart';
-import 'package:emplooo/features/splashscreen/advicetype.dart';
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

@@ -1,5 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:emplooo/features/advice.dart';
+import 'package:emplooo/features/advice/Presentation/advice.dart';
 import 'package:emplooo/features/cv/presentation/authsplash.dart';
 import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/Home.dart';

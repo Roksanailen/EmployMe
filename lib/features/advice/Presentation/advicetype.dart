@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class AdviceType extends StatelessWidget {
   AdviceType({super.key, required this.type, required this.image});
@@ -17,8 +18,12 @@ class AdviceType extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset(image,
-              height: MediaQuery.of(context).size.height * 0.25,
-              width: MediaQuery.of(context).size.width * 0.55),
+                  height: MediaQuery.of(context).size.height * 0.25,
+                  width: MediaQuery.of(context).size.width * 0.55)
+              .animate(
+                  onPlay: (controller) => controller.repeat(
+                      reverse: true, period: Duration(seconds: 2)))
+              .shakeY(duration: 200.ms),
           SizedBox(
             height: 10,
           ),

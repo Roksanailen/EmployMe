@@ -1,10 +1,13 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:emplooo/features/advice/Presentation/informatic/informatic.dart';
 import 'package:emplooo/features/auth/bloc/auth_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
 import 'package:emplooo/features/mainscreen/home_screen.dart';
 import 'package:emplooo/features/splashscreen/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'features/advice/Presentation/advice.dart';
 // import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 // import 'features/mainscreen/drawerscreen.dart';
@@ -38,7 +41,7 @@ class _MainAppState extends State<MainApp> {
       child: MaterialApp(
           builder: BotToastInit(),
           debugShowCheckedModeBanner: false,
-          home: const Splash_Screen()),
+          home: Splash_Screen()),
     );
   }
 }
