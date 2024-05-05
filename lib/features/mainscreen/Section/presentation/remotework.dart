@@ -14,7 +14,7 @@ class Remote_Work extends StatelessWidget {
         }));
       },
       child: SizedBox(
-        height: 270,
+        height: 250,
         width: 250,
         child: Stack(
           children: [

@@ -71,29 +71,16 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(top: 40.0, left: 20.0, right: 20.0),
+          margin: const EdgeInsets.only(top: 40.0, left: 30.0, right: 30.0),
           child: SingleChildScrollView(
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const Text(
-                "Discover",
+                "Discover your Suitable job ",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 30.0,
+                    fontSize: 25.0,
                     fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              const Text(
-                "Suitable job ",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30.0,
-                ),
-              ),
-              const SizedBox(
-                height: 20.0,
               ),
               SizedBox(
                 height: 320,
