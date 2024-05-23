@@ -1,4 +1,6 @@
+import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
+import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/company.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/remotework.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/typework.dart';
@@ -17,6 +19,8 @@ class _HomeState extends State<Home> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     context.read<SectionBloc>().add(GetSectionsEvent());
+    context.read<TypesBloc>().add(GetTypessEvent());
+    context.read<CompanyBloc>().add(GetCompaniesEvent());
   }
 
   final image = [
@@ -28,6 +32,8 @@ class _HomeState extends State<Home> {
     'assets/images/rr.png',
     'assets/images/rr.png',
     'assets/images/rr.png',
+    'assets/images/vv.png',
+    'assets/images/mm.png',
   ];
   final type = [
     'Medical opportunities',
@@ -65,6 +71,27 @@ class _HomeState extends State<Home> {
     'Aleppo',
     'Aleppo',
     'Aleppo',
+  ];
+  final companyname = [
+    'Osman',
+    'Razi',
+    'Al_Ressala',
+    'Al_Ashrafia',
+    'Al_Qaterji Company',
+    'PlatForm',
+    'PlatForm',
+  ];
+  final companyimage = [
+    'assets/images/vv.png',
+    'assets/images/mm.png',
+    'assets/images/dd.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/vv.png',
+    'assets/images/mm.png',
   ];
   @override
   Widget build(BuildContext context) {
@@ -176,11 +203,24 @@ class _HomeState extends State<Home> {
               ),
               SizedBox(
                 height: 320,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 7,
-                  itemBuilder: (BuildContext context, int index) {
-                    return const Company();
+                child: BlocBuilder<CompanyBloc,CompaniesState>(
+                  builder: (context, state) {
+                    if(state is CompaniesLoading){
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }else if(state is CompaniesSuccess){
+                    return ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: state.companies.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Company(
+                          companyimage: companyimage[index],
+                          companyname: companyname[index],
+                        );
+                      },
+                    );}
+                    else return const Center(child: Text('Try Again'),);
                   },
                 ),
               ),

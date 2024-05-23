@@ -1,6 +1,8 @@
 
+import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/opportunities.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Business_Classification extends StatelessWidget {
   const Business_Classification({super.key,required this.type,required this.list,required this.name,required this.locationcompany});
@@ -12,8 +14,19 @@ class Business_Classification extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(title: Text(type),),
-      body: ListView.builder( itemCount: 7,itemBuilder: (BuildContext context, int index){
-        return Opportunities( name: name,locationcompany: locationcompany,List: list,);      }),
+      body: BlocBuilder<TypesBloc,TypesState>(
+        builder: (context, state) {
+           if (state is TypesLoading) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else if(state is TypesSuccess){
+        return ListView.builder( itemCount: state.types.length,itemBuilder: (BuildContext context, int index){
+          return Opportunities( name: state.types[index].title??'null',locationcompany: state.types[index].title??'null',List: list,); }
+          );
+          }
+          else return const Center(child: Text('Try Agian'),);
+        }),
     );
   }
 }

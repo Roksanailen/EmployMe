@@ -3,8 +3,9 @@ import 'package:emplooo/features/mainscreen/Section/presentation/companydetails.
 import 'package:flutter/material.dart';
 
 class Company extends StatelessWidget {
-  const Company({super.key});
-
+  const Company({super.key,required this.companyimage,required this.companyname});
+  final String companyimage;
+  final String companyname;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -31,7 +32,7 @@ class Company extends StatelessWidget {
                         topLeft: Radius.circular(20),
                        
                       ),
-                      child: Image.asset('assets/images/vv.png',
+                      child: Image.asset(companyimage,
                       height: 250,
                       width: double.infinity,
                       fit: BoxFit.cover,
@@ -45,7 +46,7 @@ class Company extends StatelessWidget {
                    
                     children: [
                  SizedBox(height: 30.0,),     
-                 Text('Al_Qaterji Company',style: TextStyle(color: Colors.black),)
+                 Text(companyname,style: TextStyle(color: Colors.black),)
                        
                     ],
                   ),

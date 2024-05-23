@@ -57,20 +57,13 @@ class Company_Details extends StatelessWidget {
                       SizedBox(height: 40.0 ,),
                        Row( 
                       children: [
-                        Text('Number of jobs available:',style: TextStyle(color: Colors.blue,),),
-                        SizedBox(width: 50.0,),
-                        Text('3'),
+                        Text('email:',style: TextStyle(color: Colors.blue,),),
+                        SizedBox(width: 165.0,),
+                        Text('sozan@gmail.com'),
                       ],
                     ),
                       SizedBox(height: 40.0 ,),
-                       Row( 
-                      children: [
-                        Text('Was founded:',style: TextStyle(color: Colors.blue,),),
-                        SizedBox(width: 120.0,),
-                        Text('1999'),
-                      ],
-                    ),
-                     SizedBox(height: 40.0 ,),
+                   
                        Row( 
                       children: [
                         Text('Phone:',style: TextStyle(color: Colors.blue,),),

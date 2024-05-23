@@ -42,10 +42,21 @@ class Oppertunities_Details extends StatelessWidget {
                       children: [
                         Text('Age: ',style: TextStyle(color: Colors.blue,),),
                         SizedBox(width: 150.0,),
-                        Text('18_66'),
+                        Text('18_50'),
                       ],
                     ),
+                   
                     SizedBox(height: 40.0,),
+                   
+                      Row(
+                      
+                      children: [
+                        Text('Gender: ',style: TextStyle(color: Colors.blue,),),
+                        SizedBox(width: 125.0,),
+                        Text('feminine and masculine'),
+                      ],
+                    ),
+                      SizedBox(height: 40.0,),
                       Row(
                       
                       children: [
@@ -64,6 +75,16 @@ class Oppertunities_Details extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 40.0,),
+                     
+                      Row(
+                      
+                      children: [
+                        Text('The required number:',style: TextStyle(color: Colors.blue,),),
+                        SizedBox(width: 55.0,),
+                        Text('2'),
+                      ],
+                    ),
+                     SizedBox(height: 40.0,),
                     Row(
                       
                       children: [
@@ -76,9 +97,9 @@ class Oppertunities_Details extends StatelessWidget {
                        Row(
                      
                       children: [
-                        Text('Location:',style: TextStyle(color: Colors.blue,),),
-                        SizedBox(width: 120.0,),
-                        Text('Aleppo_martini'),
+                        Text('company name:',style: TextStyle(color: Colors.blue,),),
+                        SizedBox(width: 80.0,),
+                        Text('Martini Hospital'),
                       ],
                     ),
                         SizedBox(height: 40.0,),

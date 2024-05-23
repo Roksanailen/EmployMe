@@ -1,6 +1,8 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:emplooo/features/auth/bloc/auth_bloc.dart';
+import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
+import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
 import 'package:emplooo/features/mainscreen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,11 +35,15 @@ class _MainAppState extends State<MainApp> {
         BlocProvider(
           create: (context) => SectionBloc(),
         ),
+        BlocProvider(create: (context)=> CompanyBloc())
       ],
-      child: MaterialApp(
-          builder: BotToastInit(),
-          debugShowCheckedModeBanner: false,
-          home: const HomeScreen()),
+      child: BlocProvider(
+        create: (context) => TypesBloc(),
+        child: MaterialApp(
+            builder: BotToastInit(),
+            debugShowCheckedModeBanner: false,
+            home: const HomeScreen()),
+      ),
     );
   }
 }

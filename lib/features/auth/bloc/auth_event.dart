@@ -10,6 +10,7 @@ class RegisterEvent extends AuthEvent {
   final String email;
   final String phone;
   final String password;
+  final String idNumber;
 
   
   RegisterEvent({
@@ -17,6 +18,7 @@ class RegisterEvent extends AuthEvent {
     required this.password,
     required this.email,
     required this.username,
+    required this.idNumber,
   });
 }
 

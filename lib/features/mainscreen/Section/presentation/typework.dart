@@ -21,7 +21,9 @@ class TypeWork extends StatelessWidget {
         onTap: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (BuildContext context) {
+                
             return Business_Classification(
+              
               type: type,
               list: list,
               locationcompany: locationcompany,

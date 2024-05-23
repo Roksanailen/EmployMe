@@ -16,6 +16,7 @@ class Signup extends StatelessWidget {
   Widget build(BuildContext context) {
     var passwordController = TextEditingController();
     var phoneController = TextEditingController();
+    var national_numberController = TextEditingController();
     var emailController = TextEditingController();
     var usernameController = TextEditingController();
     var isPassword = ValueNotifier(true);
@@ -125,27 +126,45 @@ class Signup extends StatelessWidget {
                       prefixIcon: const Icon(Icons.phone),
                     ),
                     const SizedBox(
+                      height: 20,
+                    ),
+                       MainTextField(
+                      controller: national_numberController,
+                       fillColor: Colors.transparent,
+                       borderRadius: BorderRadius.circular(20),
+                       label: 'national number',
+                       keyboardType: TextInputType.phone,
+                       borderColor: Colors.black,
+                       keyboardAppearance: true,
+                       hint: 'enter your national number',
+                       contentPadding: const EdgeInsets.all(5),
+                       width: MediaQuery.of(context).size.width*0.55,
+                       prefixIcon: const Icon(Icons.numbers),
+                       ),
+                    const SizedBox(
                       height: 50,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        context.read<AuthBloc>().add(RegisterEvent(
-                            phone: phoneController.text,
-                            password: passwordController.text,
-                            email: emailController.text,
-                            username: usernameController.text));
+                     onPressed: () {
+                      context.read<AuthBloc>().add(RegisterEvent(
+                           phone: phoneController.text,
+                           password: passwordController.text,
+                          email: emailController.text,
+                            username: usernameController.text,
+                           idNumber: national_numberController.text
+                            ));
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,
-                          side: const BorderSide(style: BorderStyle.solid),
-                          elevation: 0,
-                          fixedSize: const Size(100, 35)),
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(color: Colors.black, fontSize: 16),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
+                         side: const BorderSide(style: BorderStyle.solid),
+                         elevation: 0,
+                       fixedSize: const Size(100, 35)),
+                     child: const Text(
+                       'Register',
+                       style: TextStyle(color: Colors.black, fontSize: 16),
+                       textAlign: TextAlign.center,
+                     ),
+                   ),
                   ]),
             ),
           ),

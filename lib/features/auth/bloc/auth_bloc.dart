@@ -17,6 +17,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           'password': event.password,
           'fullName': 'Flutter Dash',
           'phone': event.phone,
+          'idNumber': event.idNumber,
         });
         result.fold((l) => emit(state.copyWith(status: AuthStatus.failed)),
             (r) {

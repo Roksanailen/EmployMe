@@ -31,6 +31,27 @@ class _HomeState extends State<Home> {
     'Architecture opportunities',
     'Architecture opportunities',
   ];
+    final companyname = [
+    'Osman',
+    'Razi',
+    'Al_Ressala',
+    'Al_Ashrafia',
+    'Al_Qaterji Company',
+    'PlatForm',
+    'PlatForm',
+  ];
+  final companyimage = [
+    'assets/images/vv.png',
+    'assets/images/mm.png',
+    'assets/images/dd.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/rr.png',
+    'assets/images/vv.png',
+    'assets/images/mm.png',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,9 +154,9 @@ class _HomeState extends State<Home> {
                 height: 320,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 7,
+                  itemCount:7,
                   itemBuilder: (BuildContext context, int index) {
-                    return const Company();
+                    return Company(companyimage: companyimage[index],companyname: companyname[index],);
                   },
                 ),
               ),
