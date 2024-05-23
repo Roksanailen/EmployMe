@@ -36,10 +36,15 @@ class _MainAppState extends State<MainApp> {
         BlocProvider<AuthBloc>(
           create: (context) => AuthBloc(),
         ),
-        BlocProvider(
+        BlocProvider<SectionBloc>(
           create: (context) => SectionBloc(),
         ),
-        BlocProvider(create: (context)=> CompanyBloc())
+        BlocProvider<TypesBloc>(
+          create: (context)=> TypesBloc(),
+          ),
+        BlocProvider<CompanyBloc>(
+          create: (context)=> CompanyBloc(),
+          ),
       ],
       child: MaterialApp(
           builder: BotToastInit(),
