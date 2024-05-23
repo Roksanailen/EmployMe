@@ -1,4 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:emplooo/features/advice/Presentation/advice.dart';
 import 'package:emplooo/features/cv/presentation/authsplash.dart';
 import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/Home.dart';
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const Home(),
     const Search(),
     const YourCv(),
+     Advice(),
     const Information()
   ];
   int _selectedIndex = 0;
@@ -61,7 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
             Icon(Icons.home, size: 30),
             Icon(Icons.search, size: 30),
             Icon(Icons.propane_sharp),
-            Icon(Icons.help)
+            Icon(Icons.library_books_outlined),
+            Icon(Icons.help),
           ],
           color: const Color.fromARGB(255, 69, 133, 245),
           buttonBackgroundColor: const Color.fromARGB(255, 111, 169, 197),

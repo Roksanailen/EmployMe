@@ -23,13 +23,15 @@ class _YourCvState extends State<YourCv> {
                 const SizedBox(
                   height: 40,
                 ),
-                const Text(
-                  'Find your best job in our application EmployMe',
-                  style: TextStyle(
-                      fontStyle: FontStyle.italic,
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 37, 103, 156)),
-                ),
+                 Center(
+                   child: Text(
+                    'Find your best job in our application EmployMe',
+                    style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 37, 103, 156)),
+                                 ),
+                 ),
                 Lottie.asset('assets/images/introo.json',
                     width: 380, height: 380),
                 ElevatedButton(
