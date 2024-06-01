@@ -1,6 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/informatic.dart';
 import 'package:emplooo/features/auth/bloc/auth_bloc.dart';
+import 'package:emplooo/features/cv/presentation/cvscreen.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
@@ -49,7 +50,7 @@ class _MainAppState extends State<MainApp> {
       child: MaterialApp(
           builder: BotToastInit(),
           debugShowCheckedModeBanner: false,
-          home: const HomeScreen()),
+          home:  HomeScreen()),
     );
   }
 }

@@ -36,4 +36,7 @@ class ApiVariables {
 
   static Uri login() => _mobileUri(path: 'login');
   static Uri logout() => _mobileUri(path: 'logout');
+
+  getSectionType(section_id) {}
 }
+// Uri getSectionType(String section_id) => _mainUri('http://localhost:8000/api/admin/jobs/$section_id');

@@ -26,6 +26,9 @@ dependencies:
   shrink_sidemenu: ^2.0.0+2-null-safety
   flutter_animate: ^4.5.0
   animated_widgets: ^1.1.0
+  image_picker: ^1.0.7
+  dotted_border: ^2.1.0
+  
 
 dev_dependencies:
   flutter_test:

@@ -37,7 +37,7 @@ class Signup extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Cv_Screen(),
+                    builder: (context) =>  Cv_Screen(),
                   ));
             }
           },
