@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class Company_Details extends StatelessWidget {
   const Company_Details({super.key});
@@ -14,7 +15,8 @@ class Company_Details extends StatelessWidget {
             Container(
               child: Image.asset('assets/images/vv.png',
               fit: BoxFit.cover,
-             ),
+             ).animate()
+              .fadeIn(duration: Duration(milliseconds: 900)),
               height: screenheight*0.5,),
             Container(
               margin: EdgeInsets.only(top: screenheight*0.3),

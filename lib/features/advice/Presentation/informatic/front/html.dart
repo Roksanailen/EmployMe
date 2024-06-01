@@ -1,3 +1,4 @@
+import 'package:emplooo/core/extensions/widget_extensions.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/course.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,11 +21,7 @@ class Html extends StatelessWidget {
               Text(
                 'أفضل كورسات بتوصية مطورين',
                 style: TextStyle(color: Colors.blue, fontSize: 20),
-              )
-                  .animate(
-                      onPlay: (controller) => controller.repeat(
-                          reverse: true, period: Duration(seconds: 2)))
-                  .scaleX(),
+              ).animate().rotate(duration: Duration(milliseconds: 800)),
               SizedBox(
                 height: 20,
               ),
@@ -32,12 +29,16 @@ class Html extends StatelessWidget {
                 url: 'http///lkckckc',
                 image: 'assets/images/flutter.jpg',
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Course(
                 url: 'http///lkckckc',
                 image: 'assets/images/flutter.jpg',
               ),
-               SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Course(
                 url: 'http///lkckckc',
                 image: 'assets/images/flutter.jpg',

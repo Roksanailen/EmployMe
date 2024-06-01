@@ -21,11 +21,7 @@ class Machine extends StatelessWidget {
               Text(
                 'أفضل كورسات بتوصية مطورين',
                 style: TextStyle(color: Colors.blue, fontSize: 20),
-              )
-                  .animate(
-                      onPlay: (controller) => controller.repeat(
-                          reverse: true, period: Duration(seconds: 2)))
-                  .scaleX(),
+              ).animate().scaleX(),
               SizedBox(
                 height: 20,
               ),
@@ -33,12 +29,16 @@ class Machine extends StatelessWidget {
                 url: 'http///lkckckc',
                 image: 'assets/images/flutter.jpg',
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Course(
                 url: 'http///lkckckc',
                 image: 'assets/images/flutter.jpg',
               ),
-               SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Course(
                 url: 'http///lkckckc',
                 image: 'assets/images/flutter.jpg',

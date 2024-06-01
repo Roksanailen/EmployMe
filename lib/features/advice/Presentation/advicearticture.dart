@@ -1,3 +1,4 @@
+import 'package:emplooo/core/extensions/widget_extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -28,10 +29,8 @@ class AdviceArt extends StatelessWidget {
             Image.asset(image,
                     height: MediaQuery.of(context).size.height * 0.20,
                     width: MediaQuery.of(context).size.width * 0.70)
-                .animate(
-                    onPlay: (controller) => controller.repeat(
-                        reverse: true, period: Duration(seconds: 2)))
-                .shake(),
+                .animate()
+                .slideX(duration: Duration(milliseconds: 900)),
             SizedBox(
               height: 10,
             ),
@@ -41,11 +40,7 @@ class AdviceArt extends StatelessWidget {
                 color: Colors.blue,
                 fontSize: 15,
               ),
-            )
-                .animate(
-                    onPlay: (controller) => controller.repeat(
-                        reverse: true, period: Duration(seconds: 2)))
-                .shake(),
+            ).animate().slide(),
           ],
         ),
       ),

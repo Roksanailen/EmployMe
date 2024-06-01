@@ -1,5 +1,6 @@
 import 'package:emplooo/features/mainscreen/Section/presentation/companydetails.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class Company extends StatelessWidget {
   const Company({super.key,required this.companyimage,required this.companyname});

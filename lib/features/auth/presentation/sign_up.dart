@@ -20,6 +20,7 @@ class Signup extends StatelessWidget {
     var emailController = TextEditingController();
     var usernameController = TextEditingController();
     var isPassword = ValueNotifier(true);
+    var fullnameController = TextEditingController();
     return Scaffold(
       body: Stack(children: [
         Lottie.asset('assets/images/Animation - 1705013705322.json',
@@ -125,6 +126,22 @@ class Signup extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.55,
                       prefixIcon: const Icon(Icons.phone),
                     ),
+                      const SizedBox(
+                      height: 20,
+                    ),
+                       MainTextField(
+                      controller: fullnameController,
+                       fillColor: Colors.transparent,
+                       borderRadius: BorderRadius.circular(20),
+                       label: 'Full Name',
+                       keyboardType: TextInputType.name,
+                       borderColor: Colors.black,
+                       keyboardAppearance: true,
+                       hint: 'enter your full name',
+                       contentPadding: const EdgeInsets.all(5),
+                       width: MediaQuery.of(context).size.width*0.55,
+                       prefixIcon: const Icon(Icons.numbers),
+                       ),
                     const SizedBox(
                       height: 20,
                     ),

@@ -36,11 +36,7 @@ class AdviceType2 extends StatelessWidget {
                 color: Colors.blue,
                 fontSize: 15,
               ),
-            )
-                .animate(
-                    onPlay: (controller) => controller.repeat(
-                        reverse: true, period: Duration(seconds: 2)))
-                .shake(),
+            ).animate().shake(duration: 200 .milliseconds),
           ],
         ),
       ),
