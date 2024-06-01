@@ -1,3 +1,4 @@
+import 'package:emplooo/core/extensions/widget_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -20,10 +21,8 @@ class AdviceType extends StatelessWidget {
           Image.asset(image,
                   height: MediaQuery.of(context).size.height * 0.25,
                   width: MediaQuery.of(context).size.width * 0.55)
-              .animate(
-                  onPlay: (controller) => controller.repeat(
-                      reverse: true, period: Duration(seconds: 2)))
-              .shakeY(duration: 200.ms),
+              .animate()
+              .scale(duration: Duration(milliseconds: 900)),
           SizedBox(
             height: 10,
           ),

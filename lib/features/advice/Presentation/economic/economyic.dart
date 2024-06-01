@@ -3,8 +3,6 @@ import 'package:emplooo/features/advice/Presentation/economic/Bazar.dart';
 import 'package:emplooo/features/advice/Presentation/economic/amin.dart';
 import 'package:flutter/material.dart';
 
-import '../adviceinformatic.dart';
-
 class Economic extends StatefulWidget {
   const Economic({super.key});
 

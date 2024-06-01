@@ -1,5 +1,6 @@
 import 'package:emplooo/features/mainscreen/Section/presentation/companydetails.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class Company extends StatelessWidget {
   const Company({super.key});
@@ -34,7 +35,9 @@ class Company extends StatelessWidget {
                           height: 250,
                           width: double.infinity,
                           fit: BoxFit.cover,
-                        )),
+                        )     .animate()
+              .fadeIn(duration: Duration(milliseconds: 900)),
+                        ),
                   ],
                 ),
                 Padding(

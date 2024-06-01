@@ -3,6 +3,7 @@ import 'package:emplooo/features/mainscreen/Section/presentation/company.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/remotework.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/typework.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Home extends StatefulWidget {
@@ -124,7 +125,8 @@ class _HomeState extends State<Home> {
                           height: 250,
                           width: double.infinity,
                           fit: BoxFit.cover,
-                        ),
+                        ).animate()
+              .scale(duration: Duration(milliseconds: 900)),
                       )),
                   const Positioned(
                       top: 40,

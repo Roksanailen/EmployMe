@@ -4,6 +4,7 @@ import 'package:emplooo/features/cv/presentation/authsplash.dart';
 import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/Home.dart';
 import 'package:emplooo/features/search/presentation/search_screen.dart';
+import 'package:emplooo/features/maps.dart';
 import 'package:flutter/material.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 
@@ -23,7 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
     const Search(),
     const YourCv(),
      Advice(),
-    const Information()
+    const Information(),
+     Map(),
+
   ];
   int _selectedIndex = 0;
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
@@ -65,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Icon(Icons.propane_sharp),
             Icon(Icons.library_books_outlined),
             Icon(Icons.help),
+            Icon(Icons.map_sharp)
           ],
           color: const Color.fromARGB(255, 69, 133, 245),
           buttonBackgroundColor: const Color.fromARGB(255, 111, 169, 197),

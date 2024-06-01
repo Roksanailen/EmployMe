@@ -21,10 +21,7 @@ class NodeJs extends StatelessWidget {
                 'أفضل كورسات بتوصية مطورين',
                 style: TextStyle(color: Colors.blue, fontSize: 20),
               )
-                  .animate(
-                      onPlay: (controller) => controller.repeat(
-                          reverse: true, period: Duration(seconds: 2)))
-                  .scaleX(),
+              .animate().rotate(duration: Duration(milliseconds: 800)),
               SizedBox(
                 height: 20,
               ),

@@ -98,7 +98,7 @@ class _ProfileState extends State<Profile> {
                 leading: Icon(Icons.phone),
                 title: ('0941845129'),
                 isThreeLine: true,
-              ),
+              ), 
               MainListTile(
                   dense: true,
                   isThreeLine: true,

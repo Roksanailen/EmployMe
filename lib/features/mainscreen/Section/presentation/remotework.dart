@@ -1,5 +1,6 @@
 import 'package:emplooo/features/mainscreen/Section/presentation/remoteworkdetails.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class Remote_Work extends StatelessWidget {
   const Remote_Work({super.key});
@@ -38,7 +39,8 @@ class Remote_Work extends StatelessWidget {
                   child: Image.asset(
                     'assets/images/rr.png',
                     fit: BoxFit.cover,
-                  ),
+                  ).animate()
+              .scale(duration: Duration(milliseconds: 900)),
                 ),
               ),
             ),

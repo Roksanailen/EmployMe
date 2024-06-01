@@ -6,7 +6,6 @@ import 'package:emplooo/features/advice/Presentation/informatic/backend/nodejs.d
 import 'package:emplooo/features/advice/Presentation/informatic/backend/php.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/backend/python.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/front/html.dart';
-import 'package:emplooo/features/advice/Presentation/informatic/informatictype.dart';
 import 'package:emplooo/features/advice/Presentation/adviceinformatic.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/front/js.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/wirless/ccna.dart';
