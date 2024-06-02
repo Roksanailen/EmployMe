@@ -75,7 +75,6 @@ class Data {
         "last_name": lastName,
         "email": email,
         "phone": phone,
-        "address": address,
         "idNumber": idNumber,
         "updated_at": updatedAt?.toIso8601String(),
         "created_at": createdAt?.toIso8601String(),

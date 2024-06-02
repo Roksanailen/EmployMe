@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:emplooo/features/advice/Presentation/advice.dart';
 import 'package:emplooo/features/cv/presentation/authsplash.dart';
+import 'package:emplooo/features/cv/presentation/cvscreen.dart';
 import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/Home.dart';
 import 'package:emplooo/features/search/presentation/search_screen.dart';
@@ -21,7 +22,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List screens = [
     const Home(),
-    const Search(),
+    //const Search(),
+    Cv_Screen(),
     const YourCv(),
      Advice(),
     const Information(),

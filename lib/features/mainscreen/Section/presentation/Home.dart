@@ -110,6 +110,7 @@ class _HomeState extends State<Home> {
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold),
               ),
+              SizedBox(height: 25),
               SizedBox(
                 height: 320,
                 child: BlocBuilder<SectionBloc, SectionsState>(

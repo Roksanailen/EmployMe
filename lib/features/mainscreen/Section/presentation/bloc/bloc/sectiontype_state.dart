@@ -1,10 +1,21 @@
-part of 'sectiontype_bloc.dart';
+// part of 'sectiontype_bloc.dart';
 
-sealed class SectiontypeState extends Equatable {
-  const SectiontypeState();
-  
-  @override
-  List<Object> get props => [];
-}
+// enum SectionTyeStatus { loading, success, failed, init }
+// class SectionTypeState {
+//   final SectionTypeState status;
+//   final String? token;
+//   SectionTypeState({
+//     this.status = SectionTyeStatus.init,
+//     this.token,
+//   });
 
-final class SectiontypeInitial extends SectiontypeState {}
+// SectionTypeState copyWith({
+//   SectionTyeStatus? status,
+//     String? token,
+//   }) {
+//     return SectionTypeState(
+//       status: status?? this.status,
+//       token: token ?? this.token,
+//     );
+//   }
+//}

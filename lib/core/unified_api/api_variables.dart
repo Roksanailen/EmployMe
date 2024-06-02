@@ -36,7 +36,23 @@ class ApiVariables {
 
   static Uri login() => _mobileUri(path: 'login');
   static Uri logout() => _mobileUri(path: 'logout');
+  
+     Uri _mainUrisection({
+    required String path,
+    ParamsMap params,
+  }) {
+    final uri = Uri(
+      scheme: _scheme,
+      host: _host,
+      path: path,
+      port: 8000,
+      queryParameters: params,
+    );
+    log(uri.toString().logMagenta);
+    return uri;
+  }
+  static Uri getSectionType(String section_id)=> _mainUri(path: 'api/admin/jobs$section_id',);
 
-  getSectionType(section_id) {}
 }
-// Uri getSectionType(String section_id) => _mainUri('http://localhost:8000/api/admin/jobs/$section_id');
+
+ 

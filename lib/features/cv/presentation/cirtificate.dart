@@ -55,162 +55,164 @@ Future<void> _openImagePicker() async {
               width: double.infinity,
               height: double.infinity,
               fit: BoxFit.cover),
-              Center(
-                child: Column(
-                  children: [
-                    SizedBox(height: 20,),
-                    Text('Education Information',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20),),
-                    SizedBox(height: 10,),
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.65,
-                        padding: EdgeInsets.only(left: 16,right: 16),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(20),
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20))
+              SingleChildScrollView(
+                child: Center(
+                  child: Column(
+                    children: [
+                      SizedBox(height: 20,),
+                      Text('Education Information',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20),),
+                      SizedBox(height: 10,),
+                      Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.65,
+                          padding: EdgeInsets.only(left: 16,right: 16),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.only(topLeft: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20))
+                          ),
+                          child: DropdownButton(hint: Text('cirtificate'),
+                            dropdownColor: Colors.white,
+                            icon: Icon(Icons.arrow_drop_down,color: Colors.black,),
+                            iconSize: 40,
+                            isExpanded: true,
+                            underline: SizedBox(),
+                            style: TextStyle(color: Colors.black,
+                            fontSize: 22,),
+                           value: valueChoose, onChanged: (newValue){
+                          setState(() {
+                            valueChoose =newValue;
+                          });
+                          },
+                          items: listItem.map((valueItem){
+                            return DropdownMenuItem(
+                              value: valueItem,
+                              child: Text(valueItem));
+                          },).toList(),
+                          ),
                         ),
-                        child: DropdownButton(hint: Text('cirtificate'),
-                          dropdownColor: Colors.white,
-                          icon: Icon(Icons.arrow_drop_down,color: Colors.black,),
-                          iconSize: 40,
-                          isExpanded: true,
-                          underline: SizedBox(),
-                          style: TextStyle(color: Colors.black,
-                          fontSize: 22,),
-                         value: valueChoose, onChanged: (newValue){
-                        setState(() {
-                          valueChoose =newValue;
-                        });
-                        },
-                        items: listItem.map((valueItem){
-                          return DropdownMenuItem(
-                            value: valueItem,
-                            child: Text(valueItem));
-                        },).toList(),
-                        ),
-                      ),
-                    ),SizedBox(height: 10,),
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.65,
-                        padding: EdgeInsets.only(left: 16,right: 16),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(20),
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20))
-                        ),
-                        child: DropdownButton(hint: Text('Certificate_name'),
-                          dropdownColor: Colors.white,
-                          icon: Icon(Icons.arrow_drop_down,color: Colors.black,),
-                          iconSize: 40,
-                          isExpanded: true,
-                          underline: SizedBox(),
-                          style: TextStyle(color: Colors.black,
-                          fontSize: 22,),
-                         value: valueChooseinformation, onChanged: (newValue1){
-                        setState(() {
-                          valueChooseinformation =newValue1;
-                        });
-                        },
-                        items: listItem1.map((valueItem1){
-                          return DropdownMenuItem(
-                            value: valueItem1,
-                            child: Text(valueItem1));
-                        },).toList(),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 10,),
-                    Padding(padding: const EdgeInsets.all(15.0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.65,
-                        padding: EdgeInsets.only(left: 16,right: 16),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(20),
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20))
-                        ),
-                        child: DropdownButton(hint: Text('Specialization_name'),
-                          dropdownColor: Colors.white,
-                          icon: Icon(Icons.arrow_drop_down,color: Colors.black,),
-                          iconSize: 40,
-                          isExpanded: true,
-                          underline: SizedBox(),
-                          style: TextStyle(color: Colors.black,
-                          fontSize: 22,),
-                  value: valueChoose1, onChanged: (newValue){
-                        setState(() {
-                          valueChoose1 =newValue;
-                        });
-                        },
-                        items: listIteminformation.map((valueItem){
-                          return DropdownMenuItem(
-                            value: valueItem,
-                            child: Text(valueItem));
-                        },).toList(),
+                      ),SizedBox(height: 10,),
+                      Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.65,
+                          padding: EdgeInsets.only(left: 16,right: 16),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.only(topLeft: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20))
+                          ),
+                          child: DropdownButton(hint: Text('Certificate_name'),
+                            dropdownColor: Colors.white,
+                            icon: Icon(Icons.arrow_drop_down,color: Colors.black,),
+                            iconSize: 40,
+                            isExpanded: true,
+                            underline: SizedBox(),
+                            style: TextStyle(color: Colors.black,
+                            fontSize: 22,),
+                           value: valueChooseinformation, onChanged: (newValue1){
+                          setState(() {
+                            valueChooseinformation =newValue1;
+                          });
+                          },
+                          items: listItem1.map((valueItem1){
+                            return DropdownMenuItem(
+                              value: valueItem1,
+                              child: Text(valueItem1));
+                          },).toList(),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 20,),
-                  ElevatedButton(
-                  onPressed: ()=> _openImagePicker(),
-                  style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          side: const BorderSide(style: BorderStyle.solid),
-                          elevation: 0,
-                          fixedSize: const Size(170, 50)),
-                  child: const Text('Select An Image',style: TextStyle(color: Colors.black,fontSize: 18),),
-                ),
-                SizedBox(height: 20,),
-                  DottedBorder(
-                    color: Colors.black,
-                    borderType: BorderType.RRect,
-                    radius: Radius.circular(20),
-                    dashPattern: [12 ,3],
-                    child: Container(
-                                  alignment: Alignment.center,
-                                  width: MediaQuery.of(context).size.width * 0.40,
-                                  height: 180,
-                                  color:  Colors.transparent,
-                                  child: _image!= null
-                      ? Image.file(_image!, fit: BoxFit.cover)
-                      : Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text('+',style: TextStyle(color: Colors.black, fontSize:40, ),),
-                          const Text('Add a photo of the certificate'),
-                        ],
+                      SizedBox(height: 10,),
+                      Padding(padding: const EdgeInsets.all(15.0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.65,
+                          padding: EdgeInsets.only(left: 16,right: 16),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.only(topLeft: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20))
+                          ),
+                          child: DropdownButton(hint: Text('Specialization_name'),
+                            dropdownColor: Colors.white,
+                            icon: Icon(Icons.arrow_drop_down,color: Colors.black,),
+                            iconSize: 40,
+                            isExpanded: true,
+                            underline: SizedBox(),
+                            style: TextStyle(color: Colors.black,
+                            fontSize: 22,),
+                    value: valueChoose1, onChanged: (newValue){
+                          setState(() {
+                            valueChoose1 =newValue;
+                          });
+                          },
+                          items: listIteminformation.map((valueItem){
+                            return DropdownMenuItem(
+                              value: valueItem,
+                              child: Text(valueItem));
+                          },).toList(),
+                          ),
+                        ),
                       ),
-   ),
+                      SizedBox(height: 20,),
+                    ElevatedButton(
+                    onPressed: ()=> _openImagePicker(),
+                    style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            side: const BorderSide(style: BorderStyle.solid),
+                            elevation: 0,
+                            fixedSize: const Size(170, 50)),
+                    child: const Text('Select An Image',style: TextStyle(color: Colors.black,fontSize: 18),),
                   ),
                   SizedBox(height: 20,),
-                    ElevatedButton(onPressed: (){
-                       Navigator.of(context)
-              .push(MaterialPageRoute(builder: (BuildContext context) {
-                
-            return Skills_Screen();}));
-                    }, 
-                     style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          side: const BorderSide(style: BorderStyle.solid),
-                          elevation: 0,
-                          fixedSize: const Size(90, 35)),
-                          child: Text('Next',style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                            
-                          ),)),
-
-
-
-                    
-                  ],
+                    DottedBorder(
+                      color: Colors.black,
+                      borderType: BorderType.RRect,
+                      radius: Radius.circular(20),
+                      dashPattern: [12 ,3],
+                      child: Container(
+                                    alignment: Alignment.center,
+                                    width: MediaQuery.of(context).size.width * 0.40,
+                                    height: 180,
+                                    color:  Colors.transparent,
+                                    child: _image!= null
+                        ? Image.file(_image!, fit: BoxFit.cover)
+                        : Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text('+',style: TextStyle(color: Colors.black, fontSize:40, ),),
+                            const Text('Add a photo of the certificate'),
+                          ],
+                        ),
+                 ),
+                    ),
+                    SizedBox(height: 20,),
+                      ElevatedButton(onPressed: (){
+                         Navigator.of(context)
+                .push(MaterialPageRoute(builder: (BuildContext context) {
+                  
+                          return Skills_Screen();}));
+                      }, 
+                       style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            side: const BorderSide(style: BorderStyle.solid),
+                            elevation: 0,
+                            fixedSize: const Size(90, 35)),
+                            child: Text('Next',style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              
+                            ),)),
+              
+              
+              
+                      
+                    ],
+                  ),
                 ),
               )
         ],

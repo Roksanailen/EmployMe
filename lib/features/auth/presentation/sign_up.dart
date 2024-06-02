@@ -20,7 +20,8 @@ class Signup extends StatelessWidget {
     var emailController = TextEditingController();
     var usernameController = TextEditingController();
     var isPassword = ValueNotifier(true);
-    var fullnameController = TextEditingController();
+    var firstnameController = TextEditingController();
+     var lastnameController = TextEditingController();
     return Scaffold(
       body: Stack(children: [
         Lottie.asset('assets/images/Animation - 1705013705322.json',
@@ -53,8 +54,8 @@ class Signup extends StatelessWidget {
                       child: Lottie.asset('assets/images/signup.json'),
                     ),
                     MainTextField(
-                        controller: usernameController,
-                        label: 'Name',
+                        controller: firstnameController,
+                        label: 'First Name',
                         keyboardType: TextInputType.name,
                         fillColor: Colors.transparent,
                         borderColor: Colors.black,
@@ -64,6 +65,37 @@ class Signup extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
+                      
+                       MainTextField(
+                      controller: lastnameController,
+                       fillColor: Colors.transparent,
+                       borderRadius: BorderRadius.circular(20),
+                       label: 'Last Name',
+                       keyboardType: TextInputType.name,
+                       borderColor: Colors.black,
+                       keyboardAppearance: true,
+                       hint: 'enter your last name',
+                       contentPadding: const EdgeInsets.all(5),
+                       width: MediaQuery.of(context).size.width*0.55,
+                       prefixIcon: const Icon(Icons.person),
+                       ),
+                          const SizedBox(
+                      height: 20,
+                    ),
+                       MainTextField(
+                      controller: usernameController,
+                       fillColor: Colors.transparent,
+                       borderRadius: BorderRadius.circular(20),
+                       label: 'User Name',
+                       keyboardType: TextInputType.name,
+                       borderColor: Colors.black,
+                       keyboardAppearance: true,
+                       hint: 'enter your full name',
+                       contentPadding: const EdgeInsets.all(5),
+                       width: MediaQuery.of(context).size.width*0.55,
+                       prefixIcon: const Icon(Icons.person),
+                       ),
+                       SizedBox(height: 20,),
                     MainTextField(
                         validator: (value) {
                           if (value != null && value.isValidEmail()) {
@@ -126,22 +158,7 @@ class Signup extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.55,
                       prefixIcon: const Icon(Icons.phone),
                     ),
-                      const SizedBox(
-                      height: 20,
-                    ),
-                       MainTextField(
-                      controller: fullnameController,
-                       fillColor: Colors.transparent,
-                       borderRadius: BorderRadius.circular(20),
-                       label: 'Full Name',
-                       keyboardType: TextInputType.name,
-                       borderColor: Colors.black,
-                       keyboardAppearance: true,
-                       hint: 'enter your full name',
-                       contentPadding: const EdgeInsets.all(5),
-                       width: MediaQuery.of(context).size.width*0.55,
-                       prefixIcon: const Icon(Icons.numbers),
-                       ),
+                   
                     const SizedBox(
                       height: 20,
                     ),
@@ -167,6 +184,8 @@ class Signup extends StatelessWidget {
                            phone: phoneController.text,
                            password: passwordController.text,
                           email: emailController.text,
+                          lastname: lastnameController.text,
+                            firstname: firstnameController.text,
                             username: usernameController.text,
                            idNumber: national_numberController.text
                             ));
@@ -182,6 +201,7 @@ class Signup extends StatelessWidget {
                        textAlign: TextAlign.center,
                      ),
                    ),
+                   SizedBox(height: 20,),
                   ]),
             ),
           ),
