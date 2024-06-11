@@ -61,7 +61,7 @@ class Signin extends StatelessWidget {
                       controller: userNameController,
                       label: 'UserName',
                       borderSide: const BorderSide(width: 1),
-                      keyboardType: TextInputType.emailAddress,
+                      keyboardType: TextInputType.name,
                       fillColor: Colors.transparent,
                       hint: 'enter your Name',
                       borderColor: Colors.black,

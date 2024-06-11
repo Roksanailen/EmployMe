@@ -12,10 +12,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       (event, emit) async {
         emit(state.copyWith(status: AuthStatus.loading));
         final result = await AuthRepo(dataSource: AuthDataSource()).register({
-          'userName': event.username,
+          'user_name': event.userName,
           'email': event.email,
           'password': event.password,
-          'fullName': 'Flutter Dash',
+          'first_name': event.firstName,
+          'last_name': event.lastName,
           'phone': event.phone,
           'idNumber': event.idNumber,
         });
@@ -30,7 +31,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       (event, emit) async {
         emit(state.copyWith(status: AuthStatus.loading));
         final result = await AuthRepo(dataSource: AuthDataSource()).login({
-          'userName': event.userName,
+          'user_name': event.userName,
           'password': event.password,
         });
         result.fold((l) => emit(state.copyWith(status: AuthStatus.failed)),

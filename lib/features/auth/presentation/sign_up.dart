@@ -21,7 +21,7 @@ class Signup extends StatelessWidget {
     var usernameController = TextEditingController();
     var isPassword = ValueNotifier(true);
     var firstnameController = TextEditingController();
-     var lastnameController = TextEditingController();
+    var lastnameController = TextEditingController();
     return Scaffold(
       body: Stack(children: [
         Lottie.asset('assets/images/Animation - 1705013705322.json',
@@ -39,7 +39,7 @@ class Signup extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>  Cv_Screen(),
+                    builder: (context) => Cv_Screen(),
                   ));
             }
           },
@@ -65,37 +65,38 @@ class Signup extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                      
-                       MainTextField(
+                    MainTextField(
                       controller: lastnameController,
-                       fillColor: Colors.transparent,
-                       borderRadius: BorderRadius.circular(20),
-                       label: 'Last Name',
-                       keyboardType: TextInputType.name,
-                       borderColor: Colors.black,
-                       keyboardAppearance: true,
-                       hint: 'enter your last name',
-                       contentPadding: const EdgeInsets.all(5),
-                       width: MediaQuery.of(context).size.width*0.55,
-                       prefixIcon: const Icon(Icons.person),
-                       ),
-                          const SizedBox(
+                      fillColor: Colors.transparent,
+                      borderRadius: BorderRadius.circular(20),
+                      label: 'Last Name',
+                      keyboardType: TextInputType.name,
+                      borderColor: Colors.black,
+                      keyboardAppearance: true,
+                      hint: 'enter your last name',
+                      contentPadding: const EdgeInsets.all(5),
+                      width: MediaQuery.of(context).size.width * 0.55,
+                      prefixIcon: const Icon(Icons.person),
+                    ),
+                    const SizedBox(
                       height: 20,
                     ),
-                       MainTextField(
+                    MainTextField(
                       controller: usernameController,
-                       fillColor: Colors.transparent,
-                       borderRadius: BorderRadius.circular(20),
-                       label: 'User Name',
-                       keyboardType: TextInputType.name,
-                       borderColor: Colors.black,
-                       keyboardAppearance: true,
-                       hint: 'enter your full name',
-                       contentPadding: const EdgeInsets.all(5),
-                       width: MediaQuery.of(context).size.width*0.55,
-                       prefixIcon: const Icon(Icons.person),
-                       ),
-                       SizedBox(height: 20,),
+                      fillColor: Colors.transparent,
+                      borderRadius: BorderRadius.circular(20),
+                      label: 'User Name',
+                      keyboardType: TextInputType.name,
+                      borderColor: Colors.black,
+                      keyboardAppearance: true,
+                      hint: 'enter your full name',
+                      contentPadding: const EdgeInsets.all(5),
+                      width: MediaQuery.of(context).size.width * 0.55,
+                      prefixIcon: const Icon(Icons.person),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     MainTextField(
                         validator: (value) {
                           if (value != null && value.isValidEmail()) {
@@ -158,50 +159,50 @@ class Signup extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.55,
                       prefixIcon: const Icon(Icons.phone),
                     ),
-                   
                     const SizedBox(
                       height: 20,
                     ),
-                       MainTextField(
+                    MainTextField(
                       controller: national_numberController,
-                       fillColor: Colors.transparent,
-                       borderRadius: BorderRadius.circular(20),
-                       label: 'national number',
-                       keyboardType: TextInputType.phone,
-                       borderColor: Colors.black,
-                       keyboardAppearance: true,
-                       hint: 'enter your national number',
-                       contentPadding: const EdgeInsets.all(5),
-                       width: MediaQuery.of(context).size.width*0.55,
-                       prefixIcon: const Icon(Icons.numbers),
-                       ),
+                      fillColor: Colors.transparent,
+                      borderRadius: BorderRadius.circular(20),
+                      label: 'national number',
+                      keyboardType: TextInputType.phone,
+                      borderColor: Colors.black,
+                      keyboardAppearance: true,
+                      hint: 'enter your national number',
+                      contentPadding: const EdgeInsets.all(5),
+                      width: MediaQuery.of(context).size.width * 0.55,
+                      prefixIcon: const Icon(Icons.numbers),
+                    ),
                     const SizedBox(
                       height: 50,
                     ),
                     ElevatedButton(
-                     onPressed: () {
-                      context.read<AuthBloc>().add(RegisterEvent(
-                           phone: phoneController.text,
-                           password: passwordController.text,
-                          email: emailController.text,
-                          lastname: lastnameController.text,
-                            firstname: firstnameController.text,
-                            username: usernameController.text,
-                           idNumber: national_numberController.text
-                            ));
+                      onPressed: () {
+                        context.read<AuthBloc>().add(RegisterEvent(
+                            phone: phoneController.text,
+                            password: passwordController.text,
+                            email: emailController.text,
+                            lastName: lastnameController.text,
+                            firstName: firstnameController.text,
+                            userName: usernameController.text,
+                            idNumber: national_numberController.text));
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,
-                         side: const BorderSide(style: BorderStyle.solid),
-                         elevation: 0,
-                       fixedSize: const Size(100, 35)),
-                     child: const Text(
-                       'Register',
-                       style: TextStyle(color: Colors.black, fontSize: 16),
-                       textAlign: TextAlign.center,
-                     ),
-                   ),
-                   SizedBox(height: 20,),
+                          side: const BorderSide(style: BorderStyle.solid),
+                          elevation: 0,
+                          fixedSize: const Size(100, 35)),
+                      child: const Text(
+                        'Register',
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
                   ]),
             ),
           ),

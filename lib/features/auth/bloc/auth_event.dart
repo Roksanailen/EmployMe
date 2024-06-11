@@ -6,12 +6,13 @@ abstract class AuthEvent {
 }
 
 class RegisterEvent extends AuthEvent {
-  final String username;
-  final String lastname;
+  final String firstName;
+  final String lastName;
+  final String userName;
   final String email;
   final String phone;
   final String password;
-  final String firstname;
+
   final String idNumber;
 
   
@@ -19,9 +20,9 @@ class RegisterEvent extends AuthEvent {
     required this.phone,
     required this.password,
     required this.email,
-    required this.username,
-    required this.lastname,
-    required this.firstname,
+    required this.userName,
+    required this.lastName,
+    required this.firstName,
     required this.idNumber,
   });
 }
