@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:emplooo/features/profile/data/repositry/profile_repo.dart';
 import 'package:emplooo/features/profile/data/request/profile_request.dart';
 
@@ -11,19 +10,20 @@ part 'profile_state.dart';
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ProfileBloc() : super(ProfileState()) {
     on<IndexUser>((event, emit) async {
-      emit(state.copyWith(indexStatus: Status.loading));
+      emit(state.copyWith(indexStatus: ProfileStatus.loading));
       final result =
           await ProfileRepo(dataSource: ProfileDataSource()).indexUser({});
-      result.fold((left) => emit(state.copyWith(indexStatus: Status.failed)),
-          (r) => emit(state.copyWith(indexStatus: Status.success)));
+      result.fold(
+          (left) => emit(state.copyWith(indexStatus: ProfileStatus.failed)),
+          (r) => emit(state.copyWith(indexStatus: ProfileStatus.success)));
       on<UpdateUser>((event, emit) async {
-        emit(state.copyWith(updateStatus: Status.loading));
+        emit(state.copyWith(updateStatus: ProfileStatus.loading));
         final result1 = await ProfileRepo(dataSource: ProfileDataSource())
             .updateUser({}, 4);
         result1.fold(
-            (left) => emit(state.copyWith(updateStatus: Status.failed)),
+            (left) => emit(state.copyWith(updateStatus: ProfileStatus.failed)),
             (r) => emit(state.copyWith(
-                updateStatus: Status.success, User: r.Profile!)));
+                updateStatus: ProfileStatus.success, user: r.data!)));
       });
     });
   }

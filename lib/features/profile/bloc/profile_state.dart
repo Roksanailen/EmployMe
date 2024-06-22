@@ -1,33 +1,24 @@
 part of 'profile_bloc.dart';
 
- enum ProfileStatus{ loading, success, failed, initial }
+enum ProfileStatus { loading, success, failed, initial }
 
 class ProfileState {
-
-  final Status indexStatus;
-  final Status updateStatus;
- final Profile? User;
-  ProfileState( {
-this.indexStatus=Status.initial,
-this.updateStatus=Status.initial,
-
-
- this.User
-  });
+  final ProfileStatus indexStatus;
+  final ProfileStatus updateStatus;
+  final User? user;
+  ProfileState(
+      {this.indexStatus = ProfileStatus.initial,
+      this.updateStatus = ProfileStatus.initial,
+      this.user});
 
   ProfileState copyWith({
-  Status? indexStatus,
-  Status?updateStatus
-  User?Profile,
-  
-  
+    ProfileStatus? indexStatus,
+    ProfileStatus? updateStatus,
+    User? user,
   }) {
     return ProfileState(
-indexStatus: indexStatus??this.indexStatus,
-updateStatus: updateStatus??this.updateStatus,
-User: User??this.User
-    );
+        indexStatus: indexStatus ?? this.indexStatus,
+        updateStatus: updateStatus ?? this.updateStatus,
+        user: user ?? this.user);
   }
-
-
 }

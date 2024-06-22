@@ -1,14 +1,14 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:emplooo/core/resources/global_function.dart';
 import 'package:emplooo/features/advice/Presentation/advice.dart';
-import 'package:emplooo/features/cv/presentation/authsplash.dart';
+import 'package:emplooo/features/auth/presentation/auth_splash.dart';
 import 'package:emplooo/features/cv/presentation/cvscreen.dart';
 import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/Home.dart';
-import 'package:emplooo/features/search/presentation/search_screen.dart';
 import 'package:emplooo/features/maps.dart';
+import 'package:emplooo/features/search/presentation/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
-
 
 import 'menu.dart';
 
@@ -20,15 +20,31 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isAuth = false;
+  @override
+  void initState() {
+    () async {
+      isAuth = await GlobalFunctions().isAuth();
+      print('omar1221 $isAuth');
+      screens = [
+        const Home(),
+        const Search(),
+        isAuth ? const Cv_Screen() : const AuthSplash(),
+        Advice(),
+        const Information(),
+        const Map(),
+      ];
+    }.call();
+    super.initState();
+  }
+
   List screens = [
     const Home(),
-    //const Search(),
-    Cv_Screen(),
-    const YourCv(),
-     Advice(),
+    const Search(),
+    const AuthSplash(),
+    Advice(),
     const Information(),
-     Map(),
-
+    const Map(),
   ];
   int _selectedIndex = 0;
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();

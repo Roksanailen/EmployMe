@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:emplooo/core/extensions/validation_extensions.dart';
-
 class MainTextField extends StatefulWidget {
   const MainTextField({
     Key? key,
-   
     this.textInputAction = TextInputAction.done,
     this.borderColor,
     this.width,
@@ -31,7 +28,8 @@ class MainTextField extends StatefulWidget {
     this.onChanged,
     this.label,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
-    this.contentPadding = const EdgeInsets.symmetric(vertical: 18.0, horizontal: 15),
+    this.contentPadding =
+        const EdgeInsets.symmetric(vertical: 18.0, horizontal: 15),
     this.textAlign = TextAlign.start,
     this.obsecuretext,
     this.borderSide,
@@ -126,6 +124,7 @@ class _MainTextFieldState extends State<MainTextField>
         },
         decoration: InputDecoration(
           contentPadding: widget.contentPadding,
+
           label: widget.label == null ? null : Text(widget.label!),
           labelStyle:
               TextStyle(fontSize: 16, color: widget.hintColor ?? Colors.black),
@@ -138,14 +137,14 @@ class _MainTextFieldState extends State<MainTextField>
               TextStyle(fontSize: 16, color: widget.hintColor ?? Colors.black),
           enabledBorder: OutlineInputBorder(
             borderRadius: widget.borderRadius ?? BorderRadius.circular(20),
-            borderSide: BorderSide(color: Colors.black),
+            borderSide: const BorderSide(color: Colors.black),
           ),
           disabledBorder: OutlineInputBorder(
             borderRadius: widget.borderRadius ?? BorderRadius.circular(10),
             borderSide: BorderSide(
               color: widget.error
                   ? Theme.of(context).colorScheme.error
-                  : widget.fillColor,
+                  : Colors.black,
             ),
           ),
           focusedBorder: OutlineInputBorder(
@@ -155,7 +154,7 @@ class _MainTextFieldState extends State<MainTextField>
           ),
           border: OutlineInputBorder(
             borderRadius: widget.borderRadius ?? BorderRadius.circular(10),
-            borderSide: BorderSide(color: Colors.black),
+            borderSide: const BorderSide(color: Colors.black),
           ),
 
           prefixIcon: widget.prefixIcon,

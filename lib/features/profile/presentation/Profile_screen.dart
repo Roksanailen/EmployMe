@@ -1,19 +1,12 @@
-import 'package:emplooo/features/auth/data/model/auth_model.dart';
 import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/profile/bloc/profile_bloc.dart';
-
-import 'package:emplooo/features/profile/data/model/profile_model.dart';
-import 'package:emplooo/features/profile/data/model/profile_model.dart';
-import 'package:emplooo/features/profile/data/model/profile_model.dart';
 import 'package:emplooo/features/profile/presentation/profile_edit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../core/resources/global_function.dart';
-
 import '../../../core/widgets/list_tile.dart';
-import '../bloc/profile_bloc.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -23,6 +16,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  @override
   void initState() {
     super.initState();
     context.read<ProfileBloc>().add(IndexUser());
@@ -65,16 +59,16 @@ class _ProfileState extends State<Profile> {
         ],
       ),
       body: BlocBuilder<ProfileBloc, ProfileState>(builder: (context, state) {
-        if (state.status == ProfileStatus.loading) {
+        if (state.indexStatus == ProfileStatus.loading) {
           return const Center(
             child: CircularProgressIndicator(),
           );
-        } else if (state.status == ProfileStatus.failed) {
+        } else if (state.indexStatus == ProfileStatus.failed) {
           return const Center(
             child: Text('Try Agian'),
           );
-        } else if (state.status == ProfileStatus.success) {
-          GlobalFunctions().storeToken(state.token!);
+        } else if (state.indexStatus == ProfileStatus.success) {
+          GlobalFunctions().storeToken(state.user!.accessToken!);
 
           return Column(children: [
             Container(
@@ -107,34 +101,34 @@ class _ProfileState extends State<Profile> {
             Container(
                 padding: const EdgeInsets.all(10),
                 child: Column(children: [
-                  MainListTile(
+                  const MainListTile(
                       dense: true,
                       isThreeLine: true,
                       enabled: true,
                       leading: Icon(Icons.man_rounded),
-                      title: "${'state.User.firstName!'}" ?? ""),
-                  MainListTile(
+                      title: 'state.User.firstName!' ?? ""),
+                  const MainListTile(
                       dense: true,
                       isThreeLine: true,
                       enabled: true,
                       leading: Icon(Icons.account_circle),
-                      title: "${'state.indexUser.lastName!'}" ?? ""),
-                  MainListTile(
+                      title: 'state.indexUser.lastName!' ?? ""),
+                  const MainListTile(
                       dense: true,
                       isThreeLine: true,
                       enabled: true,
                       leading: Icon(Icons.account_circle),
-                      title: "${'state.User.userName!'}" ?? ""),
-                  MainListTile(
+                      title: 'state.User.userName!' ?? ""),
+                  const MainListTile(
                       dense: true,
                       isThreeLine: true,
                       enabled: true,
                       leading: Icon(Icons.email),
-                      title: "${'state.User.email!'}" ?? ""),
+                      title: 'state.User.email!' ?? ""),
                   MainListTile(
                     dense: true,
                     enabled: true,
-                    leading: Icon(Icons.phone),
+                    leading: const Icon(Icons.phone),
                     title: ("${state.user?.phone!}" ?? ""),
                     isThreeLine: true,
                   ),
@@ -144,12 +138,12 @@ class _ProfileState extends State<Profile> {
                   //     enabled: true,
                   //     leading: Icon(Icons.lock),
                   //     title: ('******')),
-                  MainListTile(
+                  const MainListTile(
                       dense: true,
                       isThreeLine: true,
                       enabled: true,
                       leading: Icon(Icons.numbers),
-                      title: "${'state.indexUser.idNumber!'}" ?? ""),
+                      title: 'state.indexUser.idNumber!' ?? ""),
                 ]))
           ]);
         } else

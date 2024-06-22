@@ -3,18 +3,18 @@ import 'package:emplooo/features/auth/presentation/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class YourCv extends StatefulWidget {
-  const YourCv({super.key});
+class AuthSplash extends StatefulWidget {
+  const AuthSplash({super.key});
 
   @override
-  State<YourCv> createState() => _YourCvState();
+  State<AuthSplash> createState() => _AuthSplashState();
 }
 
-class _YourCvState extends State<YourCv> {
+class _AuthSplashState extends State<AuthSplash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 232, 240, 247),
+      backgroundColor: const Color.fromARGB(255, 232, 240, 247),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -23,15 +23,15 @@ class _YourCvState extends State<YourCv> {
                 const SizedBox(
                   height: 40,
                 ),
-                 Center(
-                   child: Text(
+                const Center(
+                  child: Text(
                     'Find your best job in our application EmployMe',
                     style: TextStyle(
                         fontStyle: FontStyle.italic,
                         fontSize: 20,
                         color: Color.fromARGB(255, 37, 103, 156)),
-                                 ),
-                 ),
+                  ),
+                ),
                 Lottie.asset('assets/images/introo.json',
                     width: 380, height: 380),
                 ElevatedButton(
@@ -58,8 +58,10 @@ class _YourCvState extends State<YourCv> {
                 const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Signup()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Signup()));
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
@@ -75,7 +77,7 @@ class _YourCvState extends State<YourCv> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 )
               ]),
