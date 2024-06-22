@@ -196,4 +196,10 @@ class CvState {
         specialization != null &&
         age != null;
   }
+
+  bool validate2() {
+    return certificateDegree != null &&
+        certificate != null &&
+        specialization != null;
+  }
 }

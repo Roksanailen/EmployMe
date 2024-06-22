@@ -39,6 +39,42 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
     SpecializationNameAi(name: 'Cardiology', value: 1),
     SpecializationNameAi(name: 'General Surgery', value: 2),
     SpecializationNameAi(name: 'Gastroenterologist', value: 3),
+    SpecializationNameAi(name: 'Gynecology', value: 4),
+    SpecializationNameAi(name: 'Anethesia', value: 5),
+    SpecializationNameAi(name: 'Neuru Surgery', value: 6),
+    SpecializationNameAi(name: 'Pedication', value: 7),
+    SpecializationNameAi(name: 'General Doctor', value: 8),
+    SpecializationNameAi(name: 'Nurse', value: 10),
+    SpecializationNameAi(name: 'Backend Laarvel', value: 15),
+    SpecializationNameAi(name: 'Backend ASP.net', value: 16),
+    SpecializationNameAi(name: 'Backend Nodejs', value: 17),
+    SpecializationNameAi(name: 'Backend django', value: 18),
+    SpecializationNameAi(name: 'Full Stack', value: 19),
+    SpecializationNameAi(name: 'Frontend html,css', value: 20),
+    SpecializationNameAi(name: 'Frontend ', value: 21),
+    SpecializationNameAi(name: 'Frontend Reactjs', value: 22),
+    SpecializationNameAi(name: 'Oracle Database', value: 23),
+    SpecializationNameAi(name: 'Microsoft SQL', value: 24),
+    SpecializationNameAi(name: 'Network Security', value: 26),
+    SpecializationNameAi(name: 'IT Administrator', value: 27),
+    SpecializationNameAi(name: 'UI/UX Designer', value: 28),
+    SpecializationNameAi(name: 'UI/UX Designer', value: 29),
+    SpecializationNameAi(name: 'Devlopers IOS', value: 30),
+    SpecializationNameAi(name: 'Flutter Developer', value: 31),
+    SpecializationNameAi(name: 'Architecture', value: 35),
+    SpecializationNameAi(name: 'Assistant Architecture', value: 36),
+    SpecializationNameAi(name: 'Interior design', value: 37),
+    SpecializationNameAi(name: 'Civil Engineer', value: 39),
+    SpecializationNameAi(name: 'Physics', value: 43),
+    SpecializationNameAi(name: 'Chemistry', value: 45),
+    SpecializationNameAi(name: 'Laboratory Chemist', value: 46),
+    SpecializationNameAi(name: 'Science', value: 48),
+    SpecializationNameAi(name: 'English', value: 52),
+    SpecializationNameAi(name: 'French', value: 54),
+    SpecializationNameAi(name: 'Marketing', value: 58),
+    SpecializationNameAi(name: 'General Managment', value: 59),
+    SpecializationNameAi(name: 'Finances', value: 60),
+    SpecializationNameAi(name: 'Accounting', value: 61),
   ];
   List<EducationalInstituteAi> educational = [
     EducationalInstituteAi(name: 'Faculty of Medicine', value: 1),
@@ -266,25 +302,32 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (BuildContext context) {
-                          return const Skills_Screen();
-                        }));
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          side: const BorderSide(style: BorderStyle.solid),
-                          elevation: 0,
-                          fixedSize: const Size(90, 35)),
-                      child: const Text(
-                        'Next',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                        ),
-                      )),
+                  BlocBuilder<CvBloc, CvState>(
+                    builder: (context, state) {
+                      return ElevatedButton(
+                          onPressed: () {
+                            if (state.validate2()) {
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) {
+                                return const Skills_Screen();
+                              }));
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              side: const BorderSide(style: BorderStyle.solid),
+                              elevation: 0,
+                              fixedSize: const Size(90, 35)),
+                          child: const Text(
+                            'Next',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                            ),
+                          ));
+                    },
+                  ),
                 ],
               ),
             ),

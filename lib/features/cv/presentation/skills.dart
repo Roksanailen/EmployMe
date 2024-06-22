@@ -2,6 +2,8 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:dotted_border/dotted_border.dart';
+import 'package:emplooo/core/enums/request_status.dart';
+import 'package:emplooo/core/toaster.dart';
 import 'package:emplooo/features/cv/presentation/bloc/cv_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -188,321 +190,347 @@ class _Skills_ScreenState extends State<Skills_Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Lottie.asset('assets/images/Animation - 1705013705322.json',
-              width: double.infinity,
-              height: double.infinity,
-              fit: BoxFit.cover),
-          SingleChildScrollView(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const SizedBox(
-                  width: 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                          width: 130,
-                        ),
-                        Text(
-                          'Skills',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                        SizedBox(
-                          width: 130,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        _showMultiSelectLanguage(context);
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          side: const BorderSide(
-                            width: 1,
-                          ),
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                            ),
-                          ),
-                          elevation: 0,
-                          fixedSize: Size(
-                              MediaQuery.of(context).size.width * 0.65, 50)),
-                      child: const Row(
+      body: BlocListener<CvBloc, CvState>(
+        listener: (context, state) {
+          if (state.status == RequestStatus.loading) {
+            Toaster.showLoading();
+          } else if (state.status == RequestStatus.success) {
+            Toaster.closeLoading();
+            //TODO View Response
+          } else {
+            Toaster.closeLoading();
+            //TODO view Error Message
+          }
+        },
+        child: Stack(
+          children: [
+            Lottie.asset('assets/images/Animation - 1705013705322.json',
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover),
+            SingleChildScrollView(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          SizedBox(
+                            width: 130,
+                          ),
                           Text(
-                            'Languages',
-                            style: TextStyle(color: Colors.black, fontSize: 20),
+                            'Skills',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
                           ),
                           SizedBox(
-                            width: 10,
-                          ),
-                          Icon(
-                            Icons.arrow_drop_down,
-                            color: Colors.black,
-                            size: 40,
+                            width: 130,
                           ),
                         ],
                       ),
-                    ),
-                    const Divider(
-                      height: 30,
-                    ),
-                    Wrap(
-                      spacing: 10.0,
-                      runSpacing: 5.0,
-                      children: _selectedItems
-                          .map((e) => Chip(
-                                label: Text(e.name),
-                                shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight: Radius.circular(20),
-                                )),
-                                backgroundColor: Colors.transparent,
-                              ))
-                          .toList(),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.65,
-                      padding: const EdgeInsets.only(left: 16, right: 16),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20))),
-                      child: DropdownButton<int>(
-                        hint: const Text(
-                          'Years Experiences',
-                          style: TextStyle(color: Colors.black, fontSize: 20),
-                        ),
-                        dropdownColor: Colors.white,
-                        icon: const Icon(
-                          Icons.arrow_drop_down,
-                          color: Colors.black,
-                        ),
-                        iconSize: 40,
-                        isExpanded: true,
-                        underline: const SizedBox(),
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 22,
-                        ),
-                        value: valueChoose,
-                        onChanged: (newValue) {
-                          setState(() {
-                            valueChoose = newValue;
-                          });
-                          context
-                              .read<CvBloc>()
-                              .add(EditYearsEvent(years: newValue!));
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          _showMultiSelectLanguage(context);
                         },
-                        items: listItem.map(
-                          (valueItem) {
-                            return DropdownMenuItem(
-                                value: int.parse(valueItem),
-                                child: Text(valueItem));
-                          },
-                        ).toList(),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 50,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        _showMultiSelectskills(context, skills);
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          side: const BorderSide(
-                            width: 1,
-                          ),
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            side: const BorderSide(
+                              width: 1,
                             ),
-                          ),
-                          elevation: 0,
-                          fixedSize: Size(
-                              MediaQuery.of(context).size.width * 0.65, 50)),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Additional Experiences',
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                bottomLeft: Radius.circular(20),
+                                bottomRight: Radius.circular(20),
+                              ),
+                            ),
+                            elevation: 0,
+                            fixedSize: Size(
+                                MediaQuery.of(context).size.width * 0.65, 50)),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Languages',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 20),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Icon(
+                              Icons.arrow_drop_down,
+                              color: Colors.black,
+                              size: 40,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Divider(
+                        height: 30,
+                      ),
+                      Wrap(
+                        spacing: 10.0,
+                        runSpacing: 5.0,
+                        children: _selectedItems
+                            .map((e) => Chip(
+                                  label: Text(e.name),
+                                  shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(20),
+                                  )),
+                                  backgroundColor: Colors.transparent,
+                                ))
+                            .toList(),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.65,
+                        padding: const EdgeInsets.only(left: 16, right: 16),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                bottomLeft: Radius.circular(20),
+                                bottomRight: Radius.circular(20))),
+                        child: DropdownButton<int>(
+                          hint: const Text(
+                            'Years Experiences',
                             style: TextStyle(color: Colors.black, fontSize: 20),
                           ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Icon(
+                          dropdownColor: Colors.white,
+                          icon: const Icon(
                             Icons.arrow_drop_down,
                             color: Colors.black,
-                            size: 40,
                           ),
-                        ],
-                      ),
-                    ),
-                    const Divider(
-                      height: 30,
-                    ),
-                    Wrap(
-                      spacing: 10.0,
-                      runSpacing: 5.0,
-                      children: _selectedItemsskills
-                          .map((e) => Chip(
-                                label: Text(e.name),
-                                shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight: Radius.circular(20),
-                                )),
-                                backgroundColor: Colors.transparent,
-                              ))
-                          .toList(),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const SizedBox(
-                          width: 80,
-                        ),
-                        ElevatedButton(
-                          onPressed: () => _openImagePicker(),
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent,
-                              side: const BorderSide(style: BorderStyle.solid),
-                              elevation: 0,
-                              fixedSize: const Size(170, 50)),
-                          child: const Text(
-                            'Select An Image',
-                            style: TextStyle(color: Colors.black, fontSize: 18),
+                          iconSize: 40,
+                          isExpanded: true,
+                          underline: const SizedBox(),
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 22,
                           ),
-                        ),
-                        const SizedBox(
-                          width: 80,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const SizedBox(
-                          width: 65,
-                        ),
-                        DottedBorder(
-                          color: Colors.black,
-                          borderType: BorderType.RRect,
-                          radius: const Radius.circular(20),
-                          dashPattern: const [12, 3],
-                          child: Container(
-                            alignment: Alignment.center,
-                            width: MediaQuery.of(context).size.width * 0.40,
-                            height: 180,
-                            color: Colors.transparent,
-                            child: image != null
-                                ? Image.memory(image!, fit: BoxFit.cover)
-                                : const Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '+',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 40,
-                                        ),
-                                      ),
-                                      Text('Add a photo of the certificate'),
-                                    ],
-                                  ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 60,
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        const SizedBox(
-                          width: 110,
-                        ),
-                        ElevatedButton(
-                            onPressed: () {
-                              context.read<CvBloc>().add(SendRequestEvent());
-                              // Navigator.of(context).push(MaterialPageRoute(
-                              //     builder: (BuildContext context) {
-                              //   return const Search();
-                              // }));
+                          value: valueChoose,
+                          onChanged: (newValue) {
+                            setState(() {
+                              valueChoose = newValue;
+                            });
+                            context
+                                .read<CvBloc>()
+                                .add(EditYearsEvent(years: newValue!));
+                          },
+                          items: listItem.map(
+                            (valueItem) {
+                              return DropdownMenuItem(
+                                  value: int.parse(valueItem),
+                                  child: Text(valueItem));
                             },
+                          ).toList(),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          _showMultiSelectskills(context, skills);
+                        },
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            side: const BorderSide(
+                              width: 1,
+                            ),
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                bottomLeft: Radius.circular(20),
+                                bottomRight: Radius.circular(20),
+                              ),
+                            ),
+                            elevation: 0,
+                            fixedSize: Size(
+                                MediaQuery.of(context).size.width * 0.65, 50)),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Additional Experiences',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 20),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Icon(
+                              Icons.arrow_drop_down,
+                              color: Colors.black,
+                              size: 40,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Divider(
+                        height: 30,
+                      ),
+                      Wrap(
+                        spacing: 10.0,
+                        runSpacing: 5.0,
+                        children: _selectedItemsskills
+                            .map((e) => Chip(
+                                  label: Text(e.name),
+                                  shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(20),
+                                  )),
+                                  backgroundColor: Colors.transparent,
+                                ))
+                            .toList(),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const SizedBox(
+                            width: 80,
+                          ),
+                          ElevatedButton(
+                            onPressed: () => _openImagePicker(),
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.transparent,
                                 side:
                                     const BorderSide(style: BorderStyle.solid),
                                 elevation: 0,
-                                fixedSize: const Size(120, 35)),
+                                fixedSize: const Size(170, 50)),
                             child: const Text(
-                              'Submit',
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                              ),
-                            )),
-                        const SizedBox(
-                          width: 110,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-              ],
+                              'Select An Image',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 18),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 80,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const SizedBox(
+                            width: 65,
+                          ),
+                          DottedBorder(
+                            color: Colors.black,
+                            borderType: BorderType.RRect,
+                            radius: const Radius.circular(20),
+                            dashPattern: const [12, 3],
+                            child: Container(
+                              alignment: Alignment.center,
+                              width: MediaQuery.of(context).size.width * 0.40,
+                              height: 180,
+                              color: Colors.transparent,
+                              child: image != null
+                                  ? Image.memory(image!, fit: BoxFit.cover)
+                                  : const Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          '+',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 40,
+                                          ),
+                                        ),
+                                        Text('Add a photo of the certificate'),
+                                      ],
+                                    ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 60,
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          const SizedBox(
+                            width: 110,
+                          ),
+                          BlocBuilder<CvBloc, CvState>(
+                            builder: (context, state) {
+                              return ElevatedButton(
+                                  onPressed: () {
+                                    if (state.validate()) {
+                                      context
+                                          .read<CvBloc>()
+                                          .add(SendRequestEvent());
+                                    }
+                                    // Navigator.of(context).push(MaterialPageRoute(
+                                    //     builder: (BuildContext context) {
+                                    //   return const Search();
+                                    // }));
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.transparent,
+                                      side: const BorderSide(
+                                          style: BorderStyle.solid),
+                                      elevation: 0,
+                                      fixedSize: const Size(120, 35)),
+                                  child: const Text(
+                                    'Submit',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                    ),
+                                  ));
+                            },
+                          ),
+                          const SizedBox(
+                            width: 110,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

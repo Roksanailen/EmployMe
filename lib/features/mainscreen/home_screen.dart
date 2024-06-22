@@ -2,7 +2,6 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:emplooo/core/resources/global_function.dart';
 import 'package:emplooo/features/advice/Presentation/advice.dart';
 import 'package:emplooo/features/auth/presentation/auth_splash.dart';
-import 'package:emplooo/features/cv/presentation/cvscreen.dart';
 import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/Home.dart';
 import 'package:emplooo/features/maps.dart';
@@ -10,6 +9,7 @@ import 'package:emplooo/features/search/presentation/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 
+import '../cv/presentation/cv_screen1.dart';
 import 'menu.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
       screens = [
         const Home(),
         const Search(),
-        isAuth ? const Cv_Screen() : const AuthSplash(),
+        isAuth ? const CvScreen1() : const AuthSplash(),
         Advice(),
         const Information(),
         const Map(),
