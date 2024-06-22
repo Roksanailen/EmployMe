@@ -12,7 +12,7 @@ extension Validator on String {
 
   bool isValidPhone() {
     return RegExp(
-      r'^9([0-9]{8})',
+      r'^09([0-9]{8})',
       caseSensitive: false,
       multiLine: false,
     ).hasMatch(this);

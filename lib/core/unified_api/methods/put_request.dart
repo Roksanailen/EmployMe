@@ -4,8 +4,8 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import '../../../services/shared_prefrences_service.dart';
 import '../../extensions/colorful_logging_extension.dart';
+import '../../resources/global_function.dart';
 import '../../resources/type_defs.dart';
 import '../handling_exception_request.dart';
 
@@ -25,9 +25,9 @@ class PutApi<T> with HandlingExceptionRequest {
   });
 
   Future<T> call() async {
-    String? token = await SharedPreferencesService.getToken();
+    String? token = await GlobalFunctions().getToken();
     // String fcmToken = await HelperFunctions.getFCMToken();
-    bool isAuth = await SharedPreferencesService.isAuth();
+    bool isAuth = await GlobalFunctions().isAuth();
     log(token.toString().logWhite, name: 'request manager ==> post function ');
 
     try {
@@ -41,7 +41,8 @@ class PutApi<T> with HandlingExceptionRequest {
       var request = http.Request('Put', uri);
       request.body = jsonEncode(body);
       request.headers.addAll(headers);
-      http.StreamedResponse streamedResponse = await request.send().timeout(timeout);
+      http.StreamedResponse streamedResponse =
+          await request.send().timeout(timeout);
       log(request.body.logGreen, name: "request body");
       http.Response response = await http.Response.fromStream(streamedResponse);
       log(response.body.logGreen);

@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:emplooo/core/resources/global_function.dart';
 import 'package:http/http.dart' as http;
 
-import '../../../services/shared_prefrences_service.dart';
 import '../../extensions/colorful_logging_extension.dart';
 import '../../resources/type_defs.dart';
 import '../handling_exception_request.dart';
@@ -22,10 +22,10 @@ class GetApi<T> with HandlingExceptionRequest {
     this.getFCMToken = false,
   });
   Future<T> call() async {
-    String? token = await SharedPreferencesService.getToken();
+    String? token = await GlobalFunctions().getToken();
     log(token.toString().logWhite, name: 'user token');
     // String fcmToken = await HelperFunctions.getFCMToken(getFCMToken: getFCMToken);
-    bool isAuth = await SharedPreferencesService.isAuth();
+    bool isAuth = await GlobalFunctions().isAuth();
     String? deviceId = "";
     if (getFCMToken) {
       // deviceId = await HelperFunctions.getDeviceId(); TODO: uncomment
@@ -41,7 +41,8 @@ class GetApi<T> with HandlingExceptionRequest {
       var request = http.Request('GET', uri);
       request.body = jsonEncode(body);
       request.headers.addAll(headers);
-      http.StreamedResponse streamedResponse = await request.send().timeout(const Duration(seconds: 20));
+      http.StreamedResponse streamedResponse =
+          await request.send().timeout(const Duration(seconds: 20));
       http.Response response = await http.Response.fromStream(streamedResponse);
       log(response.body.logGreen);
       if (response.statusCode == 200) {

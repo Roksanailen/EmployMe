@@ -4,22 +4,25 @@
 
 import 'dart:convert';
 
-Profile profileFromJson(String str) => Profile.fromJson(json.decode(str));
+ProfileResponseModel profileResponseModelFromJson(String str) =>
+    ProfileResponseModel.fromJson(json.decode(str));
 
-String profileToJson(Profile data) => json.encode(data.toJson());
+String profileResponseModelToJson(ProfileResponseModel data) =>
+    json.encode(data.toJson());
 
-class Profile {
+class ProfileResponseModel {
   final bool? status;
   final String? message;
   final User? data;
 
-  Profile({
+  ProfileResponseModel({
     this.status,
     this.message,
     this.data,
   });
 
-  factory Profile.fromJson(Map<String, dynamic> json) => Profile(
+  factory ProfileResponseModel.fromJson(Map<String, dynamic> json) =>
+      ProfileResponseModel(
         status: json["status"],
         message: json["message"],
         data: json["data"] == null ? null : User.fromJson(json["data"]),

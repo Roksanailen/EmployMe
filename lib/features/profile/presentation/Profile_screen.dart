@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../core/resources/global_function.dart';
 import '../../../core/widgets/list_tile.dart';
 
 class Profile extends StatefulWidget {
@@ -43,15 +42,27 @@ class _ProfileState extends State<Profile> {
           const SizedBox(
             width: 20,
           ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const ProfilEdit()));
+          BlocBuilder<ProfileBloc, ProfileState>(
+            builder: (context, state) {
+              if (state.indexStatus == ProfileStatus.success) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfilEdit(
+                                  user: state.user!,
+                                )));
+                  },
+                  child: const Icon(
+                    Icons.edit,
+                    color: Colors.black,
+                  ),
+                );
+              } else {
+                return const SizedBox();
+              }
             },
-            child: const Icon(
-              Icons.edit,
-              color: Colors.black,
-            ),
           ),
           const SizedBox(
             width: 20,
@@ -64,12 +75,14 @@ class _ProfileState extends State<Profile> {
             child: CircularProgressIndicator(),
           );
         } else if (state.indexStatus == ProfileStatus.failed) {
-          return const Center(
-            child: Text('Try Agian'),
+          return Center(
+            child: GestureDetector(
+                onTap: () {
+                  context.read<ProfileBloc>().add(IndexUser());
+                },
+                child: const Text('Try Agian')),
           );
         } else if (state.indexStatus == ProfileStatus.success) {
-          GlobalFunctions().storeToken(state.user!.accessToken!);
-
           return Column(children: [
             Container(
               width: double.infinity,
@@ -101,30 +114,30 @@ class _ProfileState extends State<Profile> {
             Container(
                 padding: const EdgeInsets.all(10),
                 child: Column(children: [
-                  const MainListTile(
+                  MainListTile(
                       dense: true,
                       isThreeLine: true,
                       enabled: true,
-                      leading: Icon(Icons.man_rounded),
-                      title: 'state.User.firstName!' ?? ""),
-                  const MainListTile(
+                      leading: const Icon(Icons.man_rounded),
+                      title: '${state.user?.firstName}'),
+                  MainListTile(
                       dense: true,
                       isThreeLine: true,
                       enabled: true,
-                      leading: Icon(Icons.account_circle),
-                      title: 'state.indexUser.lastName!' ?? ""),
-                  const MainListTile(
+                      leading: const Icon(Icons.account_circle),
+                      title: '${state.user?.lastName}'),
+                  MainListTile(
                       dense: true,
                       isThreeLine: true,
                       enabled: true,
-                      leading: Icon(Icons.account_circle),
-                      title: 'state.User.userName!' ?? ""),
-                  const MainListTile(
+                      leading: const Icon(Icons.account_circle),
+                      title: '${state.user?.userName}'),
+                  MainListTile(
                       dense: true,
                       isThreeLine: true,
                       enabled: true,
-                      leading: Icon(Icons.email),
-                      title: 'state.User.email!' ?? ""),
+                      leading: const Icon(Icons.email),
+                      title: '${state.user?.email}'),
                   MainListTile(
                     dense: true,
                     enabled: true,

@@ -7,10 +7,8 @@ abstract class ProfileEvent {
 class IndexUser extends ProfileEvent {}
 
 class UpdateUser extends ProfileEvent {
-  final int id;
   final Map<String, dynamic> params;
   UpdateUser({
-    required this.id,
     required this.params,
   });
 }

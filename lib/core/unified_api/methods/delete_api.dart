@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import '../../../services/shared_prefrences_service.dart';
 import '../../extensions/colorful_logging_extension.dart';
+import '../../resources/global_function.dart';
 import '../../resources/type_defs.dart';
 import '../handling_exception_request.dart';
 
@@ -16,9 +16,9 @@ class DeleteApi<T> with HandlingExceptionRequest {
     required this.fromJson,
   });
   Future<T> call() async {
-    String? token = await SharedPreferencesService.getToken();
+    String? token = await GlobalFunctions().getToken();
     // String fcmToken = await Helper.getFCMToken();
-    bool isAuth = await SharedPreferencesService.isAuth();
+    bool isAuth = await GlobalFunctions().isAuth();
     try {
       Map<String, String> headers = {
         'Content-Type': 'application/json',
@@ -28,7 +28,8 @@ class DeleteApi<T> with HandlingExceptionRequest {
       };
       var request = http.Request('DELETE', uri);
       request.headers.addAll(headers);
-      http.StreamedResponse streamedResponse = await request.send().timeout(const Duration(seconds: 20));
+      http.StreamedResponse streamedResponse =
+          await request.send().timeout(const Duration(seconds: 20));
       http.Response response = await http.Response.fromStream(streamedResponse);
       log(response.body.logGreen);
       if (response.statusCode == 200) {
