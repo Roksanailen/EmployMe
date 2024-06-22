@@ -105,3 +105,5 @@ class EditSpecializationEvent extends CvEvent {
     required this.specialization,
   });
 }
+
+class ResetStateEvent extends CvEvent {}

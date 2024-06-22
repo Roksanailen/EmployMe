@@ -9,6 +9,9 @@ part 'cv_state.dart';
 class CvBloc extends Bloc<CvEvent, CvState> {
   CvBloc() : super(CvState()) {
     on<EditAgeEvent>((event, emit) {
+      emit(CvState());
+    });
+    on<EditAgeEvent>((event, emit) {
       emit(state.copyWith(age: event.age));
     });
     on<EditYearsEvent>((event, emit) {
