@@ -151,12 +151,12 @@ class _ProfileState extends State<Profile> {
                   //     enabled: true,
                   //     leading: Icon(Icons.lock),
                   //     title: ('******')),
-                  const MainListTile(
+                  MainListTile(
                       dense: true,
                       isThreeLine: true,
                       enabled: true,
                       leading: Icon(Icons.numbers),
-                      title: 'state.indexUser.idNumber!' ?? ""),
+                      title: '${state.user?.idNumber}'),
                 ]))
           ]);
         } else

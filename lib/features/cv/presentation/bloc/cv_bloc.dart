@@ -8,7 +8,7 @@ part 'cv_state.dart';
 
 class CvBloc extends Bloc<CvEvent, CvState> {
   CvBloc() : super(CvState()) {
-    on<EditAgeEvent>((event, emit) {
+    on<ResetStateEvent>((event, emit) {
       emit(CvState());
     });
     on<EditAgeEvent>((event, emit) {
