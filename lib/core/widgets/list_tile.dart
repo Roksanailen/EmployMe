@@ -1,32 +1,31 @@
 import 'dart:core';
-import 'dart:core';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainListTile extends StatefulWidget {
-  const MainListTile(
-      {Key? key,
-      this.leading,
-      this.title,
-      this.subtitle,
-      this.trailing,
-      required this.isThreeLine,
-      required this.dense,
-      this.shape,
-      this.style,
-      this.selectedColor,
-      this.iconColor,
-      this.onChanged,
-      this.contentPadding,
-      required this.enabled,
-      this.selectedTileColor,
-      this.enableFeedback,
-      this.horizontalTitleGap,
-      this.minVerticalPadding,
-      this.minLeadingWidth,
-      this.titleAlignment})
-      : super(key: key);
+  const MainListTile({
+    Key? key,
+    this.leading,
+    this.title,
+    this.subtitle,
+    this.trailing,
+    required this.isThreeLine,
+    required this.dense,
+    this.shape,
+    this.style,
+    this.selectedColor,
+    this.iconColor,
+    this.onChanged,
+    this.contentPadding,
+    required this.enabled,
+    this.selectedTileColor,
+    this.enableFeedback,
+    this.horizontalTitleGap,
+    this.minVerticalPadding,
+    this.minLeadingWidth,
+    this.titleAlignment,
+  }) : super(key: key);
   final Widget? leading;
   final String? title;
   final String? subtitle;

@@ -1,18 +1,33 @@
-// part of 'profile_bloc.dart';
+part of 'profile_bloc.dart';
 
-// abstract class ProfileState {
-//   const ProfileState();
-// }
+ enum ProfileStatus{ loading, success, failed, initial }
 
-// class ProfileInitial extends ProfileState {}
+class ProfileState {
 
-// class ProfileLoading extends ProfileState {}
+  final Status indexStatus;
+  final Status updateStatus;
+ final Profile? User;
+  ProfileState( {
+this.indexStatus=Status.initial,
+this.updateStatus=Status.initial,
 
-// class ProfileFailure extends ProfileState {}
 
-// class ProfileSuccess extends ProfileState {
-//   final List<ProfileModel> users;
-//   ProfileSuccess({
-//     this.users = const [],
-//   });
-// }
+ this.User
+  });
+
+  ProfileState copyWith({
+  Status? indexStatus,
+  Status?updateStatus
+  User?Profile,
+  
+  
+  }) {
+    return ProfileState(
+indexStatus: indexStatus??this.indexStatus,
+updateStatus: updateStatus??this.updateStatus,
+User: User??this.User
+    );
+  }
+
+
+}

@@ -6,6 +6,7 @@ import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/compa
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
 import 'package:emplooo/features/mainscreen/home_screen.dart';
+import 'package:emplooo/features/profile/bloc/profile_bloc.dart';
 import 'package:emplooo/features/splashscreen/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -42,16 +43,17 @@ class _MainAppState extends State<MainApp> {
           create: (context) => SectionBloc(),
         ),
         BlocProvider<TypesBloc>(
-          create: (context)=> TypesBloc(),
-          ),
+          create: (context) => TypesBloc(),
+        ),
         BlocProvider<CompanyBloc>(
-          create: (context)=> CompanyBloc(),
-          ),
+          create: (context) => CompanyBloc(),
+        ),
+        BlocProvider<ProfileBloc>(create: (context) => ProfileBloc())
       ],
       child: MaterialApp(
           builder: BotToastInit(),
           debugShowCheckedModeBanner: false,
-          home:  HomeScreen()),
+          home: HomeScreen()),
     );
   }
 }

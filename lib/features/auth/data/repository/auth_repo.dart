@@ -22,3 +22,4 @@ class AuthRepo with HandlingExceptionManager {
     });
   }
 }
+
