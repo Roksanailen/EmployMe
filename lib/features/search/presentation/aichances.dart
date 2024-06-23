@@ -1,9 +1,10 @@
-import 'package:emplooo/features/mainscreen/Section/presentation/remoteworkdetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-class Remote_Work extends StatelessWidget {
-  const Remote_Work({super.key});
+import 'chancesdetails.dart';
+
+class AiChances extends StatelessWidget {
+  const AiChances({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class Remote_Work extends StatelessWidget {
       onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (BuildContext context) {
-          return const Remote_Work_Details();
+          return AiDetailes();
         }));
       },
       child: SizedBox(
@@ -24,14 +25,14 @@ class Remote_Work extends StatelessWidget {
               width: 210.0,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
+                    topLeft: Radius.circular(70),
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30)),
               ),
               child: ClipRRect(
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(30),
-                  bottomLeft: Radius.circular(30),
+                  bottomLeft: Radius.circular(40),
                   bottomRight: Radius.circular(30),
                 ),
                 child: Opacity(
@@ -46,7 +47,7 @@ class Remote_Work extends StatelessWidget {
             Positioned(
               bottom: 45,
               child: Container(
-                child: const Column(
+                child: Column(
                   children: [
                     Row(
                       children: [
@@ -55,17 +56,17 @@ class Remote_Work extends StatelessWidget {
                           color: Colors.black,
                         ),
                         SizedBox(
-                          width: 7.0,
+                          width: 9.0,
                         ),
                         Text(
-                          'Flutter developer',
+                          'job name',
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                       ],
-                    ),
+                    ).animate().scale(duration: Duration(milliseconds: 600)),
                     SizedBox(
-                      height: 10.0,
+                      height: 5.0,
                     ),
                     Row(
                       children: [
@@ -82,7 +83,7 @@ class Remote_Work extends StatelessWidget {
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                       ],
-                    ),
+                    ).animate().scale(duration: Duration(milliseconds: 600)),
                   ],
                 ),
               ),
