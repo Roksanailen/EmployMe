@@ -6,7 +6,7 @@ import 'package:emplooo/features/cv/data/datasource/cv_datasource.dart';
 
 class CvRepo with HandlingExceptionManager {
   //! TODO: Edit Model From response
-  Future<Either<Failure, void>> sendCv(BodyMap body) async {
+  Future<Either<Failure, String>> sendCv(BodyMap body) async {
     return wrapHandling(tryCall: () async {
       var result = await CvDatasource().sendCv(body);
       return Right(result);

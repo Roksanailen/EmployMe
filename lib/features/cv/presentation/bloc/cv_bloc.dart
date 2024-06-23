@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:emplooo/core/enums/request_status.dart';
+import 'package:emplooo/core/toaster.dart';
 import 'package:emplooo/features/cv/data/repo/cv_repo.dart';
 import 'package:meta/meta.dart';
 
@@ -68,11 +69,13 @@ class CvBloc extends Bloc<CvEvent, CvState> {
         print(state.toJson());
         final result = await CvRepo().sendCv(state.toJson());
         result.fold((l) {
+          Toaster.showToast(l.message);
           emit(state.copyWith(status: RequestStatus.fail));
         }, (r) {
-          emit(state.copyWith(status: RequestStatus.success));
+          Toaster.showToast(r);
+          emit(state.copyWith(status: RequestStatus.success, response: r));
         });
-        emit(state.copyWith(status: RequestStatus.init));
+        add(ResetStateEvent());
       }
     });
   }

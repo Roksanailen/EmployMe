@@ -5,6 +5,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:emplooo/core/enums/request_status.dart';
 import 'package:emplooo/core/toaster.dart';
 import 'package:emplooo/features/cv/presentation/bloc/cv_bloc.dart';
+import 'package:emplooo/features/search/presentation/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
@@ -196,7 +197,14 @@ class _Skills_ScreenState extends State<Skills_Screen> {
             Toaster.showLoading();
           } else if (state.status == RequestStatus.success) {
             Toaster.closeLoading();
-            //TODO View Response
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Search(
+                  keyword: state.response,
+                ),
+              ),
+            );
           } else {
             Toaster.closeLoading();
             //TODO view Error Message

@@ -2,6 +2,7 @@ part of 'cv_bloc.dart';
 
 class CvState {
   final RequestStatus status;
+  final String? response;
   final int? certificateDegree;
   final int? certificate;
   final int? specialization;
@@ -37,6 +38,7 @@ class CvState {
   final int? bootstrap;
   CvState({
     this.status = RequestStatus.init,
+    this.response,
     this.certificateDegree,
     this.certificate,
     this.specialization,
@@ -74,6 +76,7 @@ class CvState {
 
   CvState copyWith({
     RequestStatus? status,
+    String? response,
     int? certificateDegree,
     int? certificate,
     int? specialization,
@@ -110,6 +113,7 @@ class CvState {
   }) {
     return CvState(
       status: status ?? this.status,
+      response: response ?? this.response,
       certificateDegree: certificateDegree ?? this.certificateDegree,
       certificate: certificate ?? this.certificate,
       specialization: specialization ?? this.specialization,

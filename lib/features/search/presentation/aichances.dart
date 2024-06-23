@@ -1,18 +1,22 @@
+import 'package:emplooo/features/search/data/models/get_jobs_ai_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import 'chancesdetails.dart';
 
 class AiChances extends StatelessWidget {
-  const AiChances({super.key});
-
+  const AiChances({
+    Key? key,
+    required this.job,
+  }) : super(key: key);
+  final SearchJobAi job;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (BuildContext context) {
-          return AiDetailes();
+          return const AiDetailes();
         }));
       },
       child: SizedBox(
@@ -20,7 +24,7 @@ class AiChances extends StatelessWidget {
         width: 250,
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               height: 230.0,
               width: 210.0,
               child: ClipRRect(
@@ -30,7 +34,9 @@ class AiChances extends StatelessWidget {
                   child: Image.asset(
                     'assets/images/rr.png',
                     fit: BoxFit.cover,
-                  ).animate().scale(duration: Duration(milliseconds: 900)),
+                  )
+                      .animate()
+                      .scale(duration: const Duration(milliseconds: 900)),
                 ),
               ),
             ),
@@ -41,39 +47,43 @@ class AiChances extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.info_outline,
                           color: Colors.black,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 9.0,
                         ),
                         Text(
-                          'job name',
-                          style: TextStyle(
+                          job.title ?? '',
+                          style: const TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                       ],
-                    ).animate().scale(duration: Duration(milliseconds: 600)),
-                    SizedBox(
+                    )
+                        .animate()
+                        .scale(duration: const Duration(milliseconds: 600)),
+                    const SizedBox(
                       height: 5.0,
                     ),
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.create_new_folder_outlined,
                           color: Colors.black,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 7.0,
                         ),
                         Text(
-                          'Expertise',
-                          style: TextStyle(
+                          job.salary?.toString() ?? '',
+                          style: const TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                       ],
-                    ).animate().scale(duration: Duration(milliseconds: 600)),
+                    )
+                        .animate()
+                        .scale(duration: const Duration(milliseconds: 600)),
                   ],
                 ),
               ),
