@@ -23,20 +23,10 @@ class AiChances extends StatelessWidget {
             Container(
               height: 230.0,
               width: 210.0,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(70),
-                    bottomLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30)),
-              ),
               child: ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  bottomLeft: Radius.circular(40),
-                  bottomRight: Radius.circular(30),
-                ),
+                borderRadius: const BorderRadius.all(Radius.circular(30)),
                 child: Opacity(
-                  opacity: 0.7,
+                  opacity: 0.8,
                   child: Image.asset(
                     'assets/images/rr.png',
                     fit: BoxFit.cover,
