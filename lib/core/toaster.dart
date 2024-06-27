@@ -23,10 +23,11 @@ class Toaster {
     Color? backgroundColor,
   }) {
     BotToast.showNotification(
-      title: title,
-      subtitle: subtitle,
-      leading: leading,
-      backgroundColor: backgroundColor,
-    );
+        title: title,
+        subtitle: subtitle,
+        leading: leading,
+        backgroundColor: backgroundColor,
+        margin: const EdgeInsets.only(bottom: 50, left: 50, right: 50),
+        align: Alignment.bottomCenter);
   }
 }

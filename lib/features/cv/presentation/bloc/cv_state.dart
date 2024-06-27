@@ -191,19 +191,59 @@ class CvState {
   }
 
   bool validate() {
-    return certificateDegree != null &&
+    if (certificateDegree != null &&
         certificate != null &&
         englishLanguage != null &&
         arabicLanguage != null &&
         germanLanguage != null &&
         experienceYears != null &&
         specialization != null &&
-        age != null;
+        age != null) {
+      return true;
+    } else {
+      if (englishLanguage == null) {
+        Toaster.showNotification(
+          title: (p0) {
+            return const Text('Please Select A Your Languages');
+          },
+        );
+      } else if (experienceYears == null) {
+        Toaster.showNotification(
+          title: (p0) {
+            return const Text('Please Select A Experince Years');
+          },
+        );
+      }
+      return false;
+    }
   }
 
   bool validate2() {
-    return certificateDegree != null &&
+    if (certificateDegree != null &&
         certificate != null &&
-        specialization != null;
+        specialization != null) {
+      return true;
+    } else {
+      if (certificateDegree == null) {
+        Toaster.showNotification(
+          title: (p0) {
+            return const Text('Please Select A Certificate Degree');
+          },
+        );
+      } else if (certificate == null) {
+        Toaster.showNotification(
+          title: (p0) {
+            return const Text('Please Select A Certificate');
+          },
+        );
+      } else if (specialization == null) {
+        Toaster.showNotification(
+          title: (p0) {
+            return const Text('Please Select A Specialization');
+          },
+        );
+      }
+      return false;
+    }
   }
 }

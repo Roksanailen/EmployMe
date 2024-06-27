@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:emplooo/core/enums/request_status.dart';
 import 'package:emplooo/core/toaster.dart';
 import 'package:emplooo/features/cv/data/repo/cv_repo.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
 
 part 'cv_event.dart';
 part 'cv_state.dart';

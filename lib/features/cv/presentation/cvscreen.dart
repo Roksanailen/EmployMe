@@ -1,3 +1,4 @@
+import 'package:emplooo/core/toaster.dart';
 import 'package:emplooo/core/widgets/main_text_field.dart';
 import 'package:emplooo/features/cv/presentation/bloc/cv_bloc.dart';
 import 'package:emplooo/features/cv/presentation/cirtificate.dart';
@@ -165,9 +166,13 @@ class _Cv_ScreenState extends State<Cv_Screen> {
                   MainTextField(
                     controller: locationControler,
                     label: 'Location',
-                    validator: (p0) => p0 != null && p0.isNotEmpty
-                        ? null
-                        : 'Please add A Valid Location',
+                    validator: (p0) {
+                      if (p0 != null && p0.isNotEmpty) {
+                        return null;
+                      } else {
+                        return 'Please add A Valid Location';
+                      }
+                    },
                     borderSide: const BorderSide(width: 1),
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(20),
@@ -262,6 +267,19 @@ class _Cv_ScreenState extends State<Cv_Screen> {
                                   builder: (BuildContext context) {
                             return const Cirtificate_Screen();
                           }));
+                        } else {
+                          Toaster.showNotification(
+                            leading: (p0) {
+                              return const Icon(
+                                Icons.warning_amber,
+                                color: Colors.red,
+                              );
+                            },
+                            title: (p0) {
+                              return const Text(
+                                  'Please Fill All Fields Before Press Next');
+                            },
+                          );
                         }
                       },
                       style: ElevatedButton.styleFrom(

@@ -35,47 +35,6 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
     CertificateAi(name: 'PHD', value: 3),
     CertificateAi(name: 'Diploma', value: 0),
   ];
-  List<SpecializationNameAi> specializationName = [
-    SpecializationNameAi(name: 'Cardiology', value: 1),
-    SpecializationNameAi(name: 'General Surgery', value: 2),
-    SpecializationNameAi(name: 'Gastroenterologist', value: 3),
-    SpecializationNameAi(name: 'Gynecology', value: 4),
-    SpecializationNameAi(name: 'Anethesia', value: 5),
-    SpecializationNameAi(name: 'Neuru Surgery', value: 6),
-    SpecializationNameAi(name: 'Pedication', value: 7),
-    SpecializationNameAi(name: 'General Doctor', value: 8),
-    SpecializationNameAi(name: 'Nurse', value: 10),
-    SpecializationNameAi(name: 'Backend Laarvel', value: 15),
-    SpecializationNameAi(name: 'Backend ASP.net', value: 16),
-    SpecializationNameAi(name: 'Backend Nodejs', value: 17),
-    SpecializationNameAi(name: 'Backend django', value: 18),
-    SpecializationNameAi(name: 'Full Stack', value: 19),
-    SpecializationNameAi(name: 'Frontend html,css', value: 20),
-    SpecializationNameAi(name: 'Frontend ', value: 21),
-    SpecializationNameAi(name: 'Frontend Reactjs', value: 22),
-    SpecializationNameAi(name: 'Oracle Database', value: 23),
-    SpecializationNameAi(name: 'Microsoft SQL', value: 24),
-    SpecializationNameAi(name: 'Network Security', value: 26),
-    SpecializationNameAi(name: 'IT Administrator', value: 27),
-    SpecializationNameAi(name: 'UI/UX Designer', value: 28),
-    SpecializationNameAi(name: 'UI/UX Designer', value: 29),
-    SpecializationNameAi(name: 'Devlopers IOS', value: 30),
-    SpecializationNameAi(name: 'Flutter Developer', value: 31),
-    SpecializationNameAi(name: 'Architecture', value: 35),
-    SpecializationNameAi(name: 'Assistant Architecture', value: 36),
-    SpecializationNameAi(name: 'Interior design', value: 37),
-    SpecializationNameAi(name: 'Civil Engineer', value: 39),
-    SpecializationNameAi(name: 'Physics', value: 43),
-    SpecializationNameAi(name: 'Chemistry', value: 45),
-    SpecializationNameAi(name: 'Laboratory Chemist', value: 46),
-    SpecializationNameAi(name: 'Science', value: 48),
-    SpecializationNameAi(name: 'English', value: 52),
-    SpecializationNameAi(name: 'French', value: 54),
-    SpecializationNameAi(name: 'Marketing', value: 58),
-    SpecializationNameAi(name: 'General Managment', value: 59),
-    SpecializationNameAi(name: 'Finances', value: 60),
-    SpecializationNameAi(name: 'Accounting', value: 61),
-  ];
   List<EducationalInstituteAi> educational = [
     EducationalInstituteAi(name: 'Faculty of Medicine', value: 1),
     EducationalInstituteAi(name: 'Faculty of Pharmacy', value: 2),
@@ -90,6 +49,50 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
     EducationalInstituteAi(name: 'Business Adminstartion Institute', value: 20),
     EducationalInstituteAi(name: 'Faculty Of Economics', value: 22),
   ];
+  List<SpecializationNameAi> specializationName = [
+    SpecializationNameAi(name: 'Cardiology', educationId: 1, value: 1),
+    SpecializationNameAi(name: 'General Surgery', educationId: 1, value: 2),
+    SpecializationNameAi(name: 'Gastroenterologist', educationId: 1, value: 3),
+    SpecializationNameAi(name: 'Gynecology', educationId: 1, value: 4),
+    SpecializationNameAi(name: 'Anethesia', educationId: 1, value: 5),
+    SpecializationNameAi(name: 'Neuru Surgery', educationId: 1, value: 6),
+    SpecializationNameAi(name: 'Pedication', educationId: 1, value: 7),
+    SpecializationNameAi(name: 'General Doctor', educationId: 1, value: 8),
+    SpecializationNameAi(name: 'Nurse', educationId: 3, value: 10),
+    SpecializationNameAi(name: 'Backend Laarvel', educationId: 7, value: 15),
+    SpecializationNameAi(name: 'Backend ASP.net', educationId: 7, value: 16),
+    SpecializationNameAi(name: 'Backend Nodejs', educationId: 7, value: 17),
+    SpecializationNameAi(name: 'Backend django', educationId: 7, value: 18),
+    SpecializationNameAi(name: 'Full Stack', educationId: 7, value: 19),
+    SpecializationNameAi(name: 'Frontend html,css', educationId: 7, value: 20),
+    SpecializationNameAi(name: 'Frontend ', educationId: 7, value: 21),
+    SpecializationNameAi(name: 'Frontend Reactjs', educationId: 7, value: 22),
+    SpecializationNameAi(name: 'Oracle Database', educationId: 7, value: 23),
+    SpecializationNameAi(name: 'Microsoft SQL', educationId: 7, value: 24),
+    SpecializationNameAi(name: 'Network Security', educationId: 7, value: 26),
+    SpecializationNameAi(name: 'IT Administrator', educationId: 7, value: 27),
+    SpecializationNameAi(name: 'UI/UX Designer', educationId: 7, value: 28),
+    SpecializationNameAi(name: 'Developer Android', educationId: 7, value: 29),
+    SpecializationNameAi(name: 'Devlopers IOS', educationId: 7, value: 30),
+    SpecializationNameAi(name: 'Flutter Developer', educationId: 7, value: 31),
+    SpecializationNameAi(name: 'Architecture', educationId: 11, value: 35),
+    SpecializationNameAi(
+        name: 'Assistant Architecture', educationId: 11, value: 36),
+    SpecializationNameAi(name: 'Interior design', educationId: 11, value: 37),
+    SpecializationNameAi(name: 'Civil Engineer', educationId: 19, value: 39),
+    SpecializationNameAi(name: 'Physics', educationId: 14, value: 43),
+    SpecializationNameAi(name: 'Chemistry', educationId: 14, value: 45),
+    SpecializationNameAi(
+        name: 'Laboratory Chemist', educationId: 14, value: 46),
+    SpecializationNameAi(name: 'Science', educationId: 14, value: 48),
+    SpecializationNameAi(name: 'English', educationId: 16, value: 52),
+    SpecializationNameAi(name: 'French', educationId: 16, value: 54),
+    SpecializationNameAi(name: 'Marketing', educationId: 22, value: 58),
+    SpecializationNameAi(name: 'General Managment', educationId: 22, value: 59),
+    SpecializationNameAi(name: 'Finances', educationId: 22, value: 60),
+    SpecializationNameAi(name: 'Accounting', educationId: 22, value: 61),
+  ];
+
   CertificateAi? valueChoose;
   SpecializationNameAi? valueChoose1;
   EducationalInstituteAi? valueChooseinformation;
@@ -195,6 +198,7 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                               certificateName: newValue1!.value));
 
                           setState(() {
+                            valueChoose1 = null;
                             valueChooseinformation = newValue1;
                           });
                         },
@@ -245,7 +249,17 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                             valueChoose1 = newValue;
                           });
                         },
-                        items: specializationName.map(
+                        items: specializationName.where((element) {
+                          return switch (valueChooseinformation?.value) {
+                            7 || 12 => element.educationId == 7,
+                            2 || 14 => element.educationId == 14,
+                            20 || 22 => element.educationId == 22,
+                            3 => element.educationId == 3,
+                            4 => element.educationId == 22 ||
+                                element.educationId == 7,
+                            _ => true
+                          };
+                        }).map(
                           (valueItem) {
                             return DropdownMenuItem(
                                 value: valueItem, child: Text(valueItem.name));

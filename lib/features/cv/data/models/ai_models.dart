@@ -21,9 +21,11 @@ class EducationalInstituteAi {
 class SpecializationNameAi {
   final String name;
   final int value;
+  final int educationId;
   SpecializationNameAi({
     required this.name,
     required this.value,
+    required this.educationId,
   });
 }
 
