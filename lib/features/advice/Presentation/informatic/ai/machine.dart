@@ -1,6 +1,8 @@
+import 'package:emplooo/core/extensions/widget_extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../course.dart';
 
@@ -23,25 +25,20 @@ class Machine extends StatelessWidget {
                 style: TextStyle(color: Colors.blue, fontSize: 20),
               ).animate().scaleX(),
               SizedBox(
-                height: 20,
+                height: 50,
               ),
               Course(
-                url: 'http///lkckckc',
-                image: 'assets/images/flutter.jpg',
+                image: 'assets/images/machine1.jpg',
+                uri: "https://www.youtube.com/watch?v=ukzFI9rgwfU",
+                text: 'Watch this course to develop yourself',
               ),
               SizedBox(
                 height: 20,
               ),
               Course(
-                url: 'http///lkckckc',
-                image: 'assets/images/flutter.jpg',
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Course(
-                url: 'http///lkckckc',
-                image: 'assets/images/flutter.jpg',
+                uri: "https://ai.stanford.edu/~nilsson/MLBOOK.pdf",
+                image: 'assets/images/book.jpg',
+                text: '"Read this book to develop yourself"',
               ),
               SizedBox(
                 height: 20,

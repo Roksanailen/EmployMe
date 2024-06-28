@@ -1,7 +1,7 @@
 import 'package:emplooo/features/advice/Presentation/informatic/Flutter/flutter.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/ai/machine.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/ai/nlp.dart';
-import 'package:emplooo/features/advice/Presentation/informatic/backend/c.dart';
+
 import 'package:emplooo/features/advice/Presentation/informatic/backend/nodejs.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/backend/php.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/backend/python.dart';
@@ -9,7 +9,7 @@ import 'package:emplooo/features/advice/Presentation/informatic/front/html.dart'
 import 'package:emplooo/features/advice/Presentation/adviceinformatic.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/front/js.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/wirless/ccna.dart';
-import 'package:emplooo/features/advice/Presentation/informatic/wirless/ccnawirless.dart';
+
 import 'package:emplooo/features/advice/Presentation/informatic/wirless/cyper.dart';
 
 import 'package:flutter/material.dart';
@@ -37,7 +37,6 @@ class _InformaticState extends State<Informatic> {
   ];
   final image2 = [
     'assets/images/ccna.jpg',
-    'assets/images/wirless.jpg',
     'assets/images/cyper.jpg',
   ];
   final image3 = [
@@ -53,13 +52,13 @@ class _InformaticState extends State<Informatic> {
     ' Html',
     'JavaScript',
   ];
-  final type1 = ['php', ' Nodejs', 'C#', 'Python'];
-  final type2 = ['Ccna Security', 'ccna wireless', 'ccna cybre ops'];
+  final type1 = ['php', ' Nodejs', 'Python'];
+  final type2 = ['Ccna Security', 'ccna cybre ops'];
   final type3 = ['Machine Learning', 'NLP'];
   final type4 = ['flutter'];
   final Page = [Css(), Html(), Js()];
-  final Page1 = [ C(),NodeJs(), Php(), Python()];
-  final Page2 = [Ccna(), CcnaWirless(), Cyper()];
+  final Page1 = [Php(), NodeJs(), Python()];
+  final Page2 = [Ccna(), Cyper()];
   final Page3 = [Machine(), Nlp()];
   final Page4 = [Flutter()];
   @override
@@ -121,11 +120,11 @@ class _InformaticState extends State<Informatic> {
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
                     padding: const EdgeInsets.all(15.0),
-                    child:
-                        AdviceType2(image: image1[index], type: type1[index],
-                        Page: Page1[index],
-                        ),
-                        
+                    child: AdviceType2(
+                      image: image1[index],
+                      type: type1[index],
+                      Page: Page1[index],
+                    ),
                   );
                 },
               ),
@@ -151,10 +150,11 @@ class _InformaticState extends State<Informatic> {
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
                     padding: const EdgeInsets.all(15.0),
-                    child:
-                        AdviceType2(image: image2[index], type: type2[index],
-                        Page: Page2[index],
-                        ),
+                    child: AdviceType2(
+                      image: image2[index],
+                      type: type2[index],
+                      Page: Page2[index],
+                    ),
                   );
                 },
               ),
@@ -180,10 +180,11 @@ class _InformaticState extends State<Informatic> {
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
                     padding: const EdgeInsets.all(15.0),
-                    child:
-                        AdviceType2(image: image3[index], type: type3[index],
-                        Page: Page3[index],
-                        ),
+                    child: AdviceType2(
+                      image: image3[index],
+                      type: type3[index],
+                      Page: Page3[index],
+                    ),
                   );
                 },
               ),
@@ -207,10 +208,11 @@ class _InformaticState extends State<Informatic> {
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
                     padding: const EdgeInsets.all(15.0),
-                    child:
-                        AdviceType2(image: image4[index], type: type4[index],
-                        Page: Page4[index],
-                        ),
+                    child: AdviceType2(
+                      image: image4[index],
+                      type: type4[index],
+                      Page: Page4[index],
+                    ),
                   );
                 },
               ),

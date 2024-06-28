@@ -1,4 +1,3 @@
-
 import 'package:emplooo/features/advice/Presentation/arcitecture/presentation/max.dart';
 import 'package:emplooo/features/advice/Presentation/arcitecture/presentation/revit.dart';
 import 'package:flutter/material.dart';
@@ -21,12 +20,10 @@ class _ArcitectureState extends State<Arcitecture> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             AdviceArt(type: 'Max', image: 'assets/images/3ds.png', Page: Max()),
-           AdviceArt(
+            AdviceArt(
                 type: 'Revit', image: 'assets/images/revit.jpg', Page: Revit()),
-                AdviceArt(
-                type: 'Rino', image: 'assets/images/revit.jpg', Page: Revit()),
-                
-                
+            AdviceArt(
+                type: 'Rino', image: 'assets/images/rino.jpg', Page: Revit()),
           ],
         ),
       ),
