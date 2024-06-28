@@ -1,21 +1,26 @@
 // part of 'sectiontype_bloc.dart';
 
-// enum SectionTyeStatus { loading, success, failed, init }
+
 // class SectionTypeState {
-//   final SectionTypeState status;
+//   final List<Datum> datum;
+//   final SectionTypeResponseModel? sectiontype;
+//   final Status SectionTyeStatus;
 //   final String? token;
 //   SectionTypeState({
-//     this.status = SectionTyeStatus.init,
+//     this.datum = const [],
+//     this.sectiontype,
+//     this.SectionTyeStatus=Status.initial,
 //     this.token,
 //   });
 
 // SectionTypeState copyWith({
-//   SectionTyeStatus? status,
-//     String? token,
+//     String? token, required Status SectionTyeStatus, 
+    
 //   }) {
 //     return SectionTypeState(
-//       status: status?? this.status,
+    
 //       token: token ?? this.token,
 //     );
 //   }
-//}
+// }
+
