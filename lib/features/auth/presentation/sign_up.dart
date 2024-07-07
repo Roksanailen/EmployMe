@@ -19,7 +19,7 @@ class Signup extends StatelessWidget {
     var national_numberController = TextEditingController();
     var emailController = TextEditingController();
     var usernameController = TextEditingController();
-    var isPassword = ValueNotifier(true);
+    var isPassword = ValueNotifier(false);
     var firstnameController = TextEditingController();
     var lastnameController = TextEditingController();
     return Scaffold(
@@ -128,7 +128,7 @@ class Signup extends StatelessWidget {
                                 if (value != null && value.isValidPassword()) {
                                   return null;
                                 } else {
-                                  return 'please add a valid email';
+                                  return 'please add a valid password';
                                 }
                               },
                               label: 'password',

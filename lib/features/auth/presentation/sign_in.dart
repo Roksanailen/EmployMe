@@ -18,7 +18,7 @@ class Signin extends StatelessWidget {
   Widget build(BuildContext context) {
     var userNameController = TextEditingController();
     var passwordController = TextEditingController();
-    var isPassword = ValueNotifier(true);
+    var isPassword = ValueNotifier(false);
     return Form(
         key: const ValueKey(1),
         child: Scaffold(
@@ -40,7 +40,7 @@ class Signin extends StatelessWidget {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>  Cv_Screen(),
+                      builder: (context) => Cv_Screen(),
                     ));
               }
             },

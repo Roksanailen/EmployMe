@@ -1,3 +1,4 @@
+import 'package:emplooo/core/extensions/widget_extensions.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/remoteworkdetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -11,7 +12,10 @@ class Remote_Work extends StatelessWidget {
       onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (BuildContext context) {
-          return const Remote_Work_Details();
+          return const Remote_Work_Details()
+              .animate()
+              .flipH(delay: Duration(milliseconds: 300))
+              .fadeIn(delay: Duration(microseconds: 200));
         }));
       },
       child: SizedBox(

@@ -145,12 +145,6 @@ class _ProfileState extends State<Profile> {
                     title: ("${state.user?.phone!}" ?? ""),
                     isThreeLine: true,
                   ),
-                  // MainListTile(
-                  //     dense: true,
-                  //     isThreeLine: true,
-                  //     enabled: true,
-                  //     leading: Icon(Icons.lock),
-                  //     title: ('******')),
                   MainListTile(
                       dense: true,
                       isThreeLine: true,
