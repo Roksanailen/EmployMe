@@ -99,7 +99,9 @@ class _MainTextFieldState extends State<MainTextField>
         enabled: widget.enabled,
         inputFormatters: widget.keyboardType == TextInputType.number
             ? [FilteringTextInputFormatter.digitsOnly]
-            : null,
+            : widget.keyboardType == TextInputType.name
+                ? [FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]'))]
+                : null,
         keyboardType: widget.keyboardType,
         maxLines: widget.maxLines,
         onChanged: widget.onChanged,
