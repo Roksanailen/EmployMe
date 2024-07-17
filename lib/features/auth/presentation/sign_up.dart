@@ -44,168 +44,191 @@ class Signup extends StatelessWidget {
             }
           },
           child: SingleChildScrollView(
-            child: Center(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 400,
-                      height: 200,
-                      child: Lottie.asset('assets/images/signup.json'),
-                    ),
-                    MainTextField(
-                        controller: firstnameController,
-                        label: 'First Name',
-                        keyboardType: TextInputType.name,
-                        fillColor: Colors.transparent,
-                        borderColor: Colors.black,
-                        width: MediaQuery.of(context).size.width * 0.55,
-                        contentPadding: const EdgeInsets.all(5),
-                        prefixIcon: const Icon(Icons.person)),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    MainTextField(
-                      controller: lastnameController,
-                      fillColor: Colors.transparent,
-                      borderRadius: BorderRadius.circular(20),
-                      label: 'Last Name',
-                      keyboardType: TextInputType.name,
-                      borderColor: Colors.black,
-                      keyboardAppearance: true,
-                      hint: 'enter your last name',
-                      contentPadding: const EdgeInsets.all(5),
-                      width: MediaQuery.of(context).size.width * 0.55,
-                      prefixIcon: const Icon(Icons.person),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    MainTextField(
-                      controller: usernameController,
-                      fillColor: Colors.transparent,
-                      borderRadius: BorderRadius.circular(20),
-                      label: 'User Name',
-                      keyboardType: TextInputType.name,
-                      borderColor: Colors.black,
-                      keyboardAppearance: true,
-                      hint: 'enter your full name',
-                      contentPadding: const EdgeInsets.all(5),
-                      width: MediaQuery.of(context).size.width * 0.55,
-                      prefixIcon: const Icon(Icons.person),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    MainTextField(
-                        validator: (value) {
-                          if (value != null && value.isValidEmail()) {
-                            return null;
-                          } else {
-                            return 'please add a valid email';
-                          }
-                        },
-                        controller: emailController,
-                        fillColor: Colors.transparent,
-                        borderRadius: BorderRadius.circular(20),
-                        label: 'Email',
-                        keyboardType: TextInputType.emailAddress,
-                        borderColor: Colors.black,
-                        hint: 'enter your email',
-                        contentPadding: const EdgeInsets.all(5),
-                        width: MediaQuery.of(context).size.width * 0.55,
-                        prefixIcon: const Icon(Icons.email)),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ValueListenableBuilder(
-                      valueListenable: isPassword,
-                      builder: (context, isPasswordValue, child) =>
-                          MainTextField(
-                              isPassword: isPasswordValue,
-                              controller: passwordController,
-                              validator: (value) {
-                                if (value != null && value.isValidPassword()) {
-                                  return null;
-                                } else {
-                                  return 'please add a valid password';
-                                }
-                              },
-                              label: 'password',
-                              fillColor: const Color.fromARGB(0, 0, 0, 0),
-                              borderColor: Colors.black,
-                              width: MediaQuery.of(context).size.width * 0.55,
-                              contentPadding: const EdgeInsets.all(5),
-                              prefixIcon: const Icon(Icons.lock),
-                              suffixIcon: IconButton(
-                                  onPressed: () {
-                                    isPassword.value = !isPasswordValue;
+              child: Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.68,
+                height: MediaQuery.of(context).size.height * 0.9,
+                decoration: BoxDecoration(
+                    color: Colors.blue.shade100,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(130),
+                        bottomRight: Radius.circular(130))),
+                child: SingleChildScrollView(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 400,
+                          height: 100,
+                          child: Lottie.asset('assets/images/signup.json'),
+                        ),
+                        MainTextField(
+                            controller: firstnameController,
+                            label: 'First Name',
+                            keyboardType: TextInputType.name,
+                            fillColor: Colors.transparent,
+                            height: MediaQuery.of(context).size.height * 0.07,
+                            borderColor: Colors.black,
+                            width: MediaQuery.of(context).size.width * 0.52,
+                            contentPadding: const EdgeInsets.all(5),
+                            prefixIcon: const Icon(Icons.person)),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        MainTextField(
+                          controller: lastnameController,
+                          fillColor: Colors.transparent,
+                          borderRadius: BorderRadius.circular(20),
+                          label: 'Last Name',
+                          keyboardType: TextInputType.name,
+                          borderColor: Colors.black,
+                          keyboardAppearance: true,
+                          hint: 'enter your last name',
+                          contentPadding: const EdgeInsets.all(5),
+                          height: MediaQuery.of(context).size.height * 0.07,
+                          width: MediaQuery.of(context).size.width * 0.52,
+                          prefixIcon: const Icon(Icons.person_2_outlined),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        MainTextField(
+                          controller: usernameController,
+                          fillColor: Colors.transparent,
+                          borderRadius: BorderRadius.circular(20),
+                          label: 'User Name',
+                          keyboardType: TextInputType.name,
+                          borderColor: Colors.black,
+                          height: MediaQuery.of(context).size.height * 0.07,
+                          width: MediaQuery.of(context).size.width * 0.52,
+                          keyboardAppearance: true,
+                          hint: 'enter your full name',
+                          contentPadding: const EdgeInsets.all(5),
+                          prefixIcon: const Icon(Icons.person_3_rounded),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        MainTextField(
+                            validator: (value) {
+                              if (value != null && value.isValidEmail()) {
+                                return null;
+                              } else {
+                                return 'please add a valid email';
+                              }
+                            },
+                            controller: emailController,
+                            fillColor: Colors.transparent,
+                            borderRadius: BorderRadius.circular(20),
+                            label: 'Email',
+                            keyboardType: TextInputType.emailAddress,
+                            borderColor: Colors.black,
+                            hint: 'enter your email',
+                            height: MediaQuery.of(context).size.height * 0.085,
+                            width: MediaQuery.of(context).size.width * 0.52,
+                            contentPadding: const EdgeInsets.all(5),
+                            prefixIcon: const Icon(Icons.email)),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        ValueListenableBuilder(
+                          valueListenable: isPassword,
+                          builder: (context, isPasswordValue, child) =>
+                              MainTextField(
+                                  isPassword: isPasswordValue,
+                                  controller: passwordController,
+                                  validator: (value) {
+                                    if (value != null &&
+                                        value.isValidPassword()) {
+                                      return null;
+                                    } else {
+                                      return 'please add a valid password';
+                                    }
                                   },
-                                  icon: const Icon(Icons.remove_red_eye))),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    MainTextField(
-                      controller: phoneController,
-                      fillColor: Colors.transparent,
-                      borderRadius: BorderRadius.circular(20),
-                      label: 'Phone',
-                      keyboardType: TextInputType.phone,
-                      borderColor: Colors.black,
-                      keyboardAppearance: true,
-                      hint: 'enter your phone',
-                      contentPadding: const EdgeInsets.all(5),
-                      width: MediaQuery.of(context).size.width * 0.55,
-                      prefixIcon: const Icon(Icons.phone),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    MainTextField(
-                      controller: national_numberController,
-                      fillColor: Colors.transparent,
-                      borderRadius: BorderRadius.circular(20),
-                      label: 'national number',
-                      keyboardType: TextInputType.phone,
-                      borderColor: Colors.black,
-                      keyboardAppearance: true,
-                      hint: 'enter your national number',
-                      contentPadding: const EdgeInsets.all(5),
-                      width: MediaQuery.of(context).size.width * 0.55,
-                      prefixIcon: const Icon(Icons.numbers),
-                    ),
-                    const SizedBox(
-                      height: 50,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        context.read<AuthBloc>().add(RegisterEvent(
-                            phone: phoneController.text,
-                            password: passwordController.text,
-                            email: emailController.text,
-                            lastName: lastnameController.text,
-                            firstName: firstnameController.text,
-                            userName: usernameController.text,
-                            idNumber: national_numberController.text));
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          side: const BorderSide(style: BorderStyle.solid),
-                          elevation: 0,
-                          fixedSize: const Size(100, 35)),
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(color: Colors.black, fontSize: 16),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                  ]),
+                                  label: 'password',
+                                  fillColor: const Color.fromARGB(0, 0, 0, 0),
+                                  borderColor: Colors.black,
+                                  height: MediaQuery.of(context).size.height *
+                                      0.090,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.52,
+                                  contentPadding: const EdgeInsets.all(5),
+                                  prefixIcon: const Icon(Icons.lock),
+                                  suffixIcon: IconButton(
+                                      onPressed: () {
+                                        isPassword.value = !isPasswordValue;
+                                      },
+                                      icon: const Icon(Icons.remove_red_eye))),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        MainTextField(
+                          controller: phoneController,
+                          fillColor: Colors.transparent,
+                          borderRadius: BorderRadius.circular(20),
+                          label: 'Phone',
+                          keyboardType: TextInputType.number,
+                          height: MediaQuery.of(context).size.height * 0.07,
+                          width: MediaQuery.of(context).size.width * 0.52,
+                          borderColor: Colors.black,
+                          keyboardAppearance: true,
+                          hint: 'enter your phone',
+                          contentPadding: const EdgeInsets.all(5),
+                          prefixIcon: const Icon(Icons.phone),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        MainTextField(
+                          controller: national_numberController,
+                          fillColor: Colors.transparent,
+                          borderRadius: BorderRadius.circular(20),
+                          label: 'national number',
+                          keyboardType: TextInputType.number,
+                          height: MediaQuery.of(context).size.height * 0.07,
+                          width: MediaQuery.of(context).size.width * 0.52,
+                          borderColor: Colors.black,
+                          keyboardAppearance: true,
+                          hint: 'enter your national number',
+                          contentPadding: const EdgeInsets.all(5),
+                          prefixIcon: const Icon(Icons.numbers),
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            context.read<AuthBloc>().add(RegisterEvent(
+                                phone: phoneController.text,
+                                password: passwordController.text,
+                                email: emailController.text,
+                                lastName: lastnameController.text,
+                                firstName: firstnameController.text,
+                                userName: usernameController.text,
+                                idNumber: national_numberController.text));
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              side: const BorderSide(style: BorderStyle.solid),
+                              elevation: 0,
+                              fixedSize: const Size(100, 35)),
+                          child: const Text(
+                            'Register',
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        )
+                      ]),
+                ),
+              ),
             ),
-          ),
+          )),
         ),
       ]),
     );

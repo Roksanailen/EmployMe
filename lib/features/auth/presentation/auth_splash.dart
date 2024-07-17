@@ -14,7 +14,7 @@ class _AuthSplashState extends State<AuthSplash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 232, 240, 247),
+      backgroundColor: Color.fromARGB(255, 232, 240, 247),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -24,16 +24,19 @@ class _AuthSplashState extends State<AuthSplash> {
                   height: 40,
                 ),
                 const Center(
-                  child: Text(
-                    'Find your best job in our application EmployMe',
-                    style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        fontSize: 20,
-                        color: Color.fromARGB(255, 37, 103, 156)),
+                  child: Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: Text(
+                      'Find your best job in our application EmployMe',
+                      style: TextStyle(
+                          fontStyle: FontStyle.italic,
+                          fontSize: 20,
+                          color: Colors.black),
+                    ),
                   ),
                 ),
                 Lottie.asset('assets/images/introo.json',
-                    width: 380, height: 380),
+                    width: 300, height: 280),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(

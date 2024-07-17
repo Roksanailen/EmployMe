@@ -547,12 +547,16 @@ class _Skills_ScreenState extends State<Skills_Screen> {
 class MultiSelected extends StatefulWidget {
   final List<SkillsAi> items;
   const MultiSelected({super.key, required this.items});
-
+  @override
   @override
   State<MultiSelected> createState() => _MultiSelectedStateState();
 }
 
 class _MultiSelectedStateState extends State<MultiSelected> {
+  void initState() {
+    super.initState();
+  }
+
   final List<SkillsAi> _selectedItems = [];
   void _itemChange(SkillsAi itemValue, bool isSelected) {
     setState(() {

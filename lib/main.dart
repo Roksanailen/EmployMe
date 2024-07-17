@@ -7,6 +7,7 @@ import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.
 import 'package:emplooo/features/mainscreen/home_screen.dart';
 import 'package:emplooo/features/profile/bloc/profile_bloc.dart';
 import 'package:emplooo/features/search/presentation/bloc/search_bloc.dart';
+import 'package:emplooo/features/splashscreen/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
@@ -53,7 +54,7 @@ class _MainAppState extends State<MainApp> {
       child: MaterialApp(
           builder: BotToastInit(),
           debugShowCheckedModeBanner: false,
-          home: const HomeScreen()),
+          home: Splash_Screen()),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:emplooo/features/information/presentation/aboutcourses.dart';
 import 'package:emplooo/features/information/presentation/aboutcv.dart';
 import 'package:emplooo/features/information/presentation/abouthome.dart';
 import 'package:emplooo/features/information/presentation/aboutsearch.dart';
@@ -115,10 +116,10 @@ class _InformationState extends State<Information> {
             )),
       ),
       const SizedBox(height: 20),
-            InkWell(
+      InkWell(
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const Cv_Information()));
+              MaterialPageRoute(builder: (context) => const AboutCourses()));
         },
         child: Container(
             height: MediaQuery.of(context).size.height * 0.35,
@@ -131,17 +132,17 @@ class _InformationState extends State<Information> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'About Cv',
-                  style: TextStyle(fontSize: 20, color: Colors.black),
+                  'About Courses',
+                  style: TextStyle(fontSize: 16, color: Colors.black),
                 ).animate().scale(duration: 850.ms),
                 const SizedBox(
                   width: 20,
                 ),
-                Lottie.asset(
-                  'assets/images/cv.json',
+                Image.asset(
+                  'assets/images/rr.png',
                   height: MediaQuery.of(context).size.height * 0.35,
                   width: MediaQuery.of(context).size.width * 0.30,
-                )
+                ),
               ],
             )),
       ),

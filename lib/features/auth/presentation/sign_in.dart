@@ -45,128 +45,142 @@ class Signin extends StatelessWidget {
               }
             },
             child: Center(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 500,
-                      height: 200,
-                      child:
-                          Lottie.asset('assets/images/Animation - 17 (1).json'),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    MainTextField(
-                      controller: userNameController,
-                      label: 'UserName',
-                      borderSide: const BorderSide(width: 1),
-                      keyboardType: TextInputType.name,
-                      fillColor: Colors.transparent,
-                      hint: 'enter your Name',
-                      borderColor: Colors.black,
-                      borderRadius: BorderRadius.circular(20),
-                      width: MediaQuery.of(context).size.width * 0.55,
-                      contentPadding: const EdgeInsets.all(5),
-                      prefixIcon: const Icon(
-                        Icons.person,
-                        color: Colors.black,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    ValueListenableBuilder(
-                      valueListenable: isPassword,
-                      builder: (_, bool isPasswordValue, child) =>
-                          MainTextField(
-                              validator: (value) {
-                                if (value != null && value.isValidPassword()) {
-                                  return null;
-                                } else {
-                                  return 'please add a valid password';
-                                }
-                              },
-                              isPassword: isPasswordValue,
-                              controller: passwordController,
-                              fillColor: Colors.transparent,
-                              borderRadius: BorderRadius.circular(20),
-                              label: 'Password',
-                              borderColor: Colors.black,
-                              hint: 'enter your password',
-                              autovalidateMode:
-                                  AutovalidateMode.onUserInteraction,
-                              keyboardType: TextInputType.text,
-                              contentPadding: const EdgeInsets.all(5),
-                              width: MediaQuery.of(context).size.width * 0.55,
-                              prefixIcon: const Icon(Icons.lock),
-                              suffixIcon: IconButton(
-                                  onPressed: () {
-                                    isPassword.value = !isPasswordValue;
-                                  },
-                                  icon: const Icon(Icons.remove_red_eye))),
-                    ),
-                    const SizedBox(
-                      height: 50,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        context.read<AuthBloc>().add(LoginEvent(
-                            userName: userNameController.text,
-                            password: passwordController.text));
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          side: const BorderSide(style: BorderStyle.solid),
-                          elevation: 0,
-                          fixedSize: const Size(90, 35)),
-                      child: const Text(
-                        'Login',
-                        style: TextStyle(color: Colors.black, fontSize: 16),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    Row(
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.65,
+                height: MediaQuery.of(context).size.height * 0.80,
+                decoration: BoxDecoration(
+                    color: Colors.blue.shade100,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(80),
+                        bottomRight: Radius.circular(80))),
+                child: SingleChildScrollView(
+                  child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Signup()));
-                            },
-                            child: const Text(
-                              'sign Up',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
-                            )),
-                        const SizedBox(
-                          width: 40,
+                        SizedBox(
+                          width: 500,
+                          height: 200,
+                          child: Lottie.asset(
+                              'assets/images/Animation - 17 (1).json'),
                         ),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ResetPassword()));
-                            },
-                            style: TextButton.styleFrom(),
-                            child: const Text(
-                              'forget password',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 29, 27, 27),
-                                  fontSize: 16),
-                            ))
-                      ],
-                    ),
-                  ]),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        MainTextField(
+                          controller: userNameController,
+                          label: 'UserName',
+                          borderSide: const BorderSide(width: 1),
+                          keyboardType: TextInputType.name,
+                          fillColor: Colors.transparent,
+                          hint: 'enter your Name',
+                          borderColor: Colors.black,
+                          borderRadius: BorderRadius.circular(20),
+                          width: MediaQuery.of(context).size.width * 0.55,
+                          contentPadding: const EdgeInsets.all(5),
+                          prefixIcon: const Icon(
+                            Icons.person,
+                            color: Colors.black,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        ValueListenableBuilder(
+                          valueListenable: isPassword,
+                          builder: (_, bool isPasswordValue, child) =>
+                              MainTextField(
+                                  validator: (value) {
+                                    if (value != null &&
+                                        value.isValidPassword()) {
+                                      return null;
+                                    } else {
+                                      return 'please add a valid password';
+                                    }
+                                  },
+                                  isPassword: isPasswordValue,
+                                  controller: passwordController,
+                                  fillColor: Colors.transparent,
+                                  borderRadius: BorderRadius.circular(20),
+                                  label: 'Password',
+                                  borderColor: Colors.black,
+                                  hint: 'enter your password',
+                                  autovalidateMode:
+                                      AutovalidateMode.onUserInteraction,
+                                  keyboardType: TextInputType.text,
+                                  contentPadding: const EdgeInsets.all(5),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.55,
+                                  prefixIcon: const Icon(Icons.lock),
+                                  suffixIcon: IconButton(
+                                      onPressed: () {
+                                        isPassword.value = !isPasswordValue;
+                                      },
+                                      icon: const Icon(Icons.remove_red_eye))),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            context.read<AuthBloc>().add(LoginEvent(
+                                userName: userNameController.text,
+                                password: passwordController.text));
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              side: const BorderSide(style: BorderStyle.solid),
+                              elevation: 0,
+                              fixedSize: const Size(90, 35)),
+                          child: const Text(
+                            'Login',
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const Signup()));
+                                },
+                                child: const Text(
+                                  'sign Up',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black),
+                                )),
+                            const SizedBox(
+                              width: 40,
+                            ),
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ResetPassword()));
+                                },
+                                style: TextButton.styleFrom(),
+                                child: const Text(
+                                  'forget password',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Color.fromARGB(255, 29, 27, 27),
+                                      fontSize: 16),
+                                ))
+                          ],
+                        ),
+                      ]),
+                ),
+              ),
             ),
           ),
         ])));
