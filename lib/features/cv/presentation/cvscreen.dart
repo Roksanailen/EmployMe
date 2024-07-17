@@ -30,9 +30,10 @@ class _Cv_ScreenState extends State<Cv_Screen> {
     var formKey = GlobalKey<FormState>();
 
     return Scaffold(
+      backgroundColor: Colors.blueGrey.shade100,
       body: Stack(children: [
-        Lottie.asset('assets/images/Animation - 1705013705322.json',
-            width: double.infinity, height: double.infinity, fit: BoxFit.cover),
+        // Lottie.asset('assets/images/Animation - 1705013705322.json',
+        //     width: double.infinity, height: double.infinity, fit: BoxFit.cover),
         SingleChildScrollView(
           child: Center(
             child: Form(

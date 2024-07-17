@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class TypeWork extends StatelessWidget {
   const TypeWork(
       {super.key,
+      
       required this.image,
       required this.type,
       required this.list,

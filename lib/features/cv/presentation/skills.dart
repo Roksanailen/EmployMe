@@ -40,6 +40,7 @@ class _Skills_ScreenState extends State<Skills_Screen> {
     SkillsAi(selectedValue: 1, name: 'Arabic', value: ValueNotifier(0)),
     SkillsAi(selectedValue: 7, name: 'English', value: ValueNotifier(0)),
     SkillsAi(selectedValue: 5, name: 'German', value: ValueNotifier(0)),
+   
   ];
   final List<SkillsAi> skills = [
     SkillsAi(selectedValue: 1, name: 'Communication', value: ValueNotifier(0)),
@@ -186,11 +187,12 @@ class _Skills_ScreenState extends State<Skills_Screen> {
   }
 
   int? valueChoose;
-  List<String> listItem = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  List<String> listItem = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11','12','13','14','15','16','17','18','19','20'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey.shade100,
       body: BlocListener<CvBloc, CvState>(
         listener: (context, state) {
           if (state.status == RequestStatus.loading) {
@@ -212,10 +214,10 @@ class _Skills_ScreenState extends State<Skills_Screen> {
         },
         child: Stack(
           children: [
-            Lottie.asset('assets/images/Animation - 1705013705322.json',
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover),
+            // Lottie.asset('assets/images/Animation - 1705013705322.json',
+            //     width: double.infinity,
+            //     height: double.infinity,
+            //     fit: BoxFit.cover),
             SingleChildScrollView(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -275,7 +277,9 @@ class _Skills_ScreenState extends State<Skills_Screen> {
                             Text(
                               'Languages',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 20),
+                                  TextStyle(color: Colors.black, 
+                                  fontWeight: FontWeight.bold,
+                                fontSize: 22),
                             ),
                             SizedBox(
                               width: 10,
@@ -322,7 +326,8 @@ class _Skills_ScreenState extends State<Skills_Screen> {
                         child: DropdownButton<int>(
                           hint: const Text(
                             'Years Experiences',
-                            style: TextStyle(color: Colors.black, fontSize: 20),
+                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,
+                                fontSize: 22),
                           ),
                           dropdownColor: Colors.white,
                           icon: const Icon(
@@ -382,7 +387,9 @@ class _Skills_ScreenState extends State<Skills_Screen> {
                             Text(
                               'Additional Experiences',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 20),
+                                  TextStyle(color: Colors.black, fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                ),
                             ),
                             SizedBox(
                               width: 10,
@@ -434,7 +441,8 @@ class _Skills_ScreenState extends State<Skills_Screen> {
                             child: const Text(
                               'Select An Image',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 18),
+                                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold,
+                                fontSize: 20),
                             ),
                           ),
                           const SizedBox(
@@ -474,7 +482,10 @@ class _Skills_ScreenState extends State<Skills_Screen> {
                                             fontSize: 40,
                                           ),
                                         ),
-                                        Text('Add a photo of the certificate'),
+                                        Text('Add a photo of the certificate',style:
+                                  TextStyle(color: Colors.black, fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),),
                                       ],
                                     ),
                             ),
@@ -516,6 +527,7 @@ class _Skills_ScreenState extends State<Skills_Screen> {
                                     'Submit',
                                     style: TextStyle(
                                       fontSize: 20,
+                                      fontWeight: FontWeight.bold,
                                       color: Colors.black,
                                     ),
                                   ));
