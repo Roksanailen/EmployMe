@@ -23,6 +23,7 @@ class CvBloc extends Bloc<CvEvent, CvState> {
         arabicLanguage: event.arabic,
         englishLanguage: event.english,
         germanLanguage: event.german,
+        
       ));
     });
     on<EditCertificateEvent>((event, emit) {
