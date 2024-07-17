@@ -94,7 +94,7 @@ class _AdviceState extends State<Advice> {
                             image: ('assets/images/arti.jpg'),
                           ),
                         ),
-                        SizedBox( 
+                        SizedBox(
                           height: 10,
                         ),
                         InkWell(
