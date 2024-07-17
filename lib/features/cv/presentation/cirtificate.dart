@@ -98,13 +98,13 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
   EducationalInstituteAi? valueChooseinformation;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor:Colors.blueGrey.shade100,
       body: Stack(
         children: [
-          Lottie.asset('assets/images/Animation - 1705013705322.json',
-              width: double.infinity,
-              height: double.infinity,
-              fit: BoxFit.cover),
+          // Lottie.asset('assets/images/Animation - 1705013705322.json',
+          //     width: double.infinity,
+          //     height: double.infinity,
+          //     fit: BoxFit.cover),
           SingleChildScrollView(
             child: Center(
               child: Column(
@@ -134,7 +134,10 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                               bottomLeft: Radius.circular(20),
                               bottomRight: Radius.circular(20))),
                       child: DropdownButton<CertificateAi>(
-                        hint: const Text('cirtificate'),
+                        hint: const Text('cirtificate',style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),),
                         dropdownColor: Colors.white,
                         icon: const Icon(
                           Icons.arrow_drop_down,
@@ -179,7 +182,10 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                               bottomLeft: Radius.circular(20),
                               bottomRight: Radius.circular(20))),
                       child: DropdownButton<EducationalInstituteAi>(
-                        hint: const Text('Certificate_name'),
+                        hint: const Text('Certificate_name',style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),),
                         dropdownColor: Colors.white,
                         icon: const Icon(
                           Icons.arrow_drop_down,
@@ -227,7 +233,10 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                               bottomLeft: Radius.circular(20),
                               bottomRight: Radius.circular(20))),
                       child: DropdownButton<SpecializationNameAi>(
-                        hint: const Text('Specialization_name'),
+                        hint: const Text('Specialization_name',style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),),
                         dropdownColor: Colors.white,
                         icon: const Icon(
                           Icons.arrow_drop_down,
@@ -280,7 +289,10 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                         fixedSize: const Size(170, 50)),
                     child: const Text(
                       'Select An Image',
-                      style: TextStyle(color: Colors.black, fontSize: 18),
+                     style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
                     ),
                   ),
                   const SizedBox(
@@ -308,7 +320,10 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                                     fontSize: 40,
                                   ),
                                 ),
-                                Text('Add a photo of the certificate'),
+                                Text('Add a photo of the certificate',style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),),
                               ],
                             ),
                     ),
