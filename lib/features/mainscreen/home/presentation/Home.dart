@@ -52,6 +52,7 @@ class _HomeState extends State<Home> {
     'assets/images/vv.png',
     'assets/images/mm.png',
   ];
+  final sectionid =[];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,6 +89,7 @@ class _HomeState extends State<Home> {
                   itemCount: 7,
                   itemBuilder: (BuildContext context, int index) {
                     return TypeWork(
+                      sectionid: sectionid[index],
                       image: image[index],
                       type: type[index],
                       list: '',

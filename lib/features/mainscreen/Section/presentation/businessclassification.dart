@@ -5,8 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Business_Classification extends StatelessWidget {
-  const Business_Classification({super.key,required this.type,required this.list,required this.name,required this.locationcompany});
+  const Business_Classification({super.key,
+  required this.sectionid,
+  required this.type,
+  required this.list,required this.name,required this.locationcompany});
   final String type; 
+  final int sectionid;
   final String list;
   final String name;
   final String locationcompany;
@@ -22,7 +26,8 @@ class Business_Classification extends StatelessWidget {
                     );
                   } else if(state is TypesSuccess){
         return ListView.builder( itemCount: state.types.length,itemBuilder: (BuildContext context, int index){
-          return Opportunities( name: state.types[index].title??'null',locationcompany: state.types[index].title??'null',List: list,); }
+          return Opportunities( name: state.types[index].title??'null',
+          locationcompany: state.types[index].title??'null',List: list,); }
           );
           }
           else return const Center(child: Text('Try Agian'),);

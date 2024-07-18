@@ -33,8 +33,39 @@ class _Skills_ScreenState extends State<Skills_Screen> {
     }
   }
 
-  List<SkillsAi> _selectedItems = [];
-  List<SkillsAi> _selectedItemsskills = [];
+  List<SkillsAi> _selectedItems = [
+    SkillsAi(selectedValue: 1, name: 'Arabic', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 7, name: 'English', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 5, name: 'German', value: ValueNotifier(0)),
+     SkillsAi(selectedValue: 5, name: 'French', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 2, name: 'Russian', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 2, name: 'Chinese', value: ValueNotifier(0)),
+  ];
+  List<SkillsAi> _selectedItemsskills = [ SkillsAi(selectedValue: 1, name: 'Communication', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 7, name: 'Revit Program', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 7, name: 'AutoCad', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 15, name: 'NCARB', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 3, name: 'Graphic Design', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 2, name: 'Vscode Program', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 2, name: 'MySql', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 15, name: 'Exspress js', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 2, name: 'Html', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 2, name: 'Dart Language', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 3, name: 'FireBase', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 8, name: 'React Native', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 4, name: 'Figma', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 7, name: 'Adobe XD', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 7, name: 'Python', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 3, name: 'PostgreSql', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 7, name: 'php', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 10, name: 'Restful Api', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 2, name: 'C++', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 4, name: 'Managerait', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 4, name: 'ICDL', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 15, name: 'PgMp', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 5, name: 'JavaScript', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 5, name: 'Json', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 5, name: 'Bootstrap', value: ValueNotifier(0)),];
 
   final List<SkillsAi> languages = [
     SkillsAi(selectedValue: 1, name: 'Arabic', value: ValueNotifier(0)),
@@ -91,6 +122,15 @@ class _Skills_ScreenState extends State<Skills_Screen> {
                 ? languages[1].selectedValue
                 : languages[1].value.value,
             german: _selectedItems.contains(languages[2])
+                ? languages[2].selectedValue
+                : languages[2].value.value,
+            French: _selectedItems.contains(languages[2])
+                ? languages[2].selectedValue
+                : languages[2].value.value,
+            Russian: _selectedItems.contains(languages[2])
+                ? languages[2].selectedValue
+                : languages[2].value.value,
+            Chinese: _selectedItems.contains(languages[2])
                 ? languages[2].selectedValue
                 : languages[2].value.value,
                 
@@ -572,10 +612,11 @@ class MultiSelected extends StatefulWidget {
 
 class _MultiSelectedStateState extends State<MultiSelected> {
   void initState() {
-    super.initState();
+    
+    
   }
 
-  final List<SkillsAi> _selectedItems = [];
+  List<SkillsAi> _selectedItems = [];
   void _itemChange(SkillsAi itemValue, bool isSelected) {
     setState(() {
       if (isSelected) {

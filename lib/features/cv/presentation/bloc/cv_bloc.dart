@@ -23,6 +23,9 @@ class CvBloc extends Bloc<CvEvent, CvState> {
         arabicLanguage: event.arabic,
         englishLanguage: event.english,
         germanLanguage: event.german,
+        frenchLanguage: event.French,
+        russianLanguage: event.Russian,
+        chineseLanguage: event.Chinese,
         
       ));
     });

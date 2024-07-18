@@ -9,6 +9,9 @@ class CvState {
   final int? englishLanguage;
   final int? arabicLanguage;
   final int? germanLanguage;
+  final int? frenchLanguage;
+  final int? russianLanguage;
+  final int? chineseLanguage;
   final int? experienceYears;
   final int? age;
   final int? communication;
@@ -45,6 +48,9 @@ class CvState {
     this.englishLanguage = 0,
     this.arabicLanguage = 0,
     this.germanLanguage = 0,
+    this.frenchLanguage=0,
+    this.russianLanguage=0,
+    this.chineseLanguage=0,
     this.experienceYears,
     this.age,
     this.communication = 0,
@@ -83,6 +89,9 @@ class CvState {
     int? englishLanguage,
     int? arabicLanguage,
     int? germanLanguage,
+    int? frenchLanguage,
+    int? russianLanguage,
+    int? chineseLanguage,
     int? experienceYears,
     int? age,
     int? communication,
@@ -120,6 +129,9 @@ class CvState {
       englishLanguage: englishLanguage ?? this.englishLanguage,
       arabicLanguage: arabicLanguage ?? this.arabicLanguage,
       germanLanguage: germanLanguage ?? this.germanLanguage,
+      frenchLanguage: frenchLanguage ?? this.frenchLanguage,
+      russianLanguage: russianLanguage ?? this.russianLanguage,
+      chineseLanguage: chineseLanguage ?? this.chineseLanguage,
       experienceYears: experienceYears ?? this.experienceYears,
       age: age ?? this.age,
       communication: communication ?? this.communication,
@@ -159,6 +171,9 @@ class CvState {
         arabicLanguage,
         englishLanguage,
         germanLanguage,
+        frenchLanguage,
+        russianLanguage,
+        chineseLanguage,
         communication,
         revit,
         autoCad,
@@ -196,6 +211,9 @@ class CvState {
         englishLanguage != null &&
         arabicLanguage != null &&
         germanLanguage != null &&
+        frenchLanguage != null &&
+        russianLanguage !=null &&
+        chineseLanguage != null &&
         experienceYears != null &&
         specialization != null &&
         age != null) {
