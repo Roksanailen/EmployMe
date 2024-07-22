@@ -4,15 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class Remote_Work extends StatelessWidget {
-  const Remote_Work({super.key});
-
+  const Remote_Work({super.key,required this.imageremote,required this.nameremot ,required this.salaryremote,
+  required this.remoteage,required this.experiencesremote,required this.phoneremote});
+  final String imageremote;
+  final String nameremot;
+  final String salaryremote;
+  final String remoteage;
+  final String experiencesremote;
+  final String phoneremote;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (BuildContext context) {
-          return const Remote_Work_Details()
+          return Remote_Work_Details(imageremote: imageremote, nameremot:nameremot,salaryremote: salaryremote,
+          remoteage: remoteage, experiencesremote: experiencesremote,phoneremote: phoneremote,)
               .animate()
               .flipH(delay: Duration(milliseconds: 300))
               .fadeIn(delay: Duration(microseconds: 200));
@@ -40,8 +47,7 @@ class Remote_Work extends StatelessWidget {
                 ),
                 child: Opacity(
                   opacity: 0.7,
-                  child: Image.asset(
-                    'assets/images/rr.png',
+                  child: Image.asset(imageremote,
                     fit: BoxFit.cover,
                   ).animate().scale(duration: Duration(milliseconds: 900)),
                 ),
@@ -50,7 +56,7 @@ class Remote_Work extends StatelessWidget {
             Positioned(
               bottom: 45,
               child: Container(
-                child: const Column(
+                child: Column(
                   children: [
                     Row(
                       children: [
@@ -61,9 +67,7 @@ class Remote_Work extends StatelessWidget {
                         SizedBox(
                           width: 7.0,
                         ),
-                        Text(
-                          'Flutter developer',
-                          style: TextStyle(
+                        Text(nameremot,style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -74,14 +78,13 @@ class Remote_Work extends StatelessWidget {
                     Row(
                       children: [
                         Icon(
-                          Icons.create_new_folder_outlined,
+                          Icons.attach_money_outlined,
                           color: Colors.black,
                         ),
                         SizedBox(
                           width: 7.0,
                         ),
-                        Text(
-                          'Expertise',
+                        Text(salaryremote,
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),

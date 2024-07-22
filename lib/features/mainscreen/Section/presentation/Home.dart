@@ -1,4 +1,5 @@
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
+import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/sectiontype_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/company.dart';
@@ -95,6 +96,34 @@ class _HomeState extends State<Home> {
     'assets/images/vv.png',
     'assets/images/mm.png',
   ];
+   final remotimage=[
+    'assets/images/w0.png',
+    'assets/images/rr.png',
+    'assets/images/w9.png',
+    'assets/images/w3.png',
+    'assets/images/w4.png',
+    'assets/images/w5.png',
+    'assets/images/w6.png',
+    'assets/images/w7.png',
+    'assets/images/w8.png',
+    'assets/images/w9.png',
+  ];
+  final remotename=[
+  'flutter developer',
+  'backend developer',
+  'UI_UX Desiner',
+  'Web developer',
+  'Manual Tester',
+  'flutter developer',
+  'backend developer',
+  'UI\UX Desiner',
+  'Web developer',
+  ];
+  
+  final remoteage=['20_40','24_35','23_30','27_37','20_35','20_40','24_35','23_30','27_37','20_35',];
+  final experiencesremote=['2','4','5','7','1','2','4','5','7','1',];
+  final salaryremote=['1700000 P.s','1600000 P.s','1400000 P.s','2000000 P.s','1400000 P.s','1700000 P.s','1600000 P.s','1400000 P.s','2000000 P.s','1400000 P.s',];
+  final phoneremote=['0935230788','0935450793','0985450793','0935230788','0935450793','0985450793','0935230788','0935450793','0985450793','0985450793',];
   final sectionid=[];
   @override
   Widget build(BuildContext context) {
@@ -180,7 +209,9 @@ class _HomeState extends State<Home> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 7,
                     itemBuilder: (BuildContext context, int index) {
-                      return const Remote_Work();
+                      return  Remote_Work(imageremote:  remotimage[index],nameremot: remotename[index],salaryremote: salaryremote[index],
+                      remoteage: remoteage[index],phoneremote: phoneremote[index],
+                      experiencesremote: experiencesremote[index],);
                     }),
               ),
               const SizedBox(
