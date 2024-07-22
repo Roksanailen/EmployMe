@@ -67,6 +67,13 @@ class Signin extends StatelessWidget {
                           height: 20,
                         ),
                         MainTextField(
+                          validator: (value) {
+                            if (value != null && value.isNotShortText()) {
+                              return null;
+                            } else {
+                              return 'must consisting of letters for example ahmad  ';
+                            }
+                          },
                           controller: userNameController,
                           label: 'UserName',
                           borderSide: const BorderSide(width: 1),
@@ -94,7 +101,7 @@ class Signin extends StatelessWidget {
                                         value.isValidPassword()) {
                                       return null;
                                     } else {
-                                      return 'please add a valid password';
+                                      return 'must consisting of 8 letters or numbers  ';
                                     }
                                   },
                                   isPassword: isPasswordValue,

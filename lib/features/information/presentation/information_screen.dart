@@ -32,7 +32,7 @@ class _InformationState extends State<Information> {
             height: MediaQuery.of(context).size.height * 0.35,
             width: MediaQuery.of(context).size.width * 0.75,
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 232, 240, 247),
+              color: Color.fromARGB(255, 197, 229, 255),
               border: Border.all(color: Colors.blue, width: 3),
               borderRadius: BorderRadius.circular(20),
             ),
@@ -66,7 +66,7 @@ class _InformationState extends State<Information> {
             decoration: BoxDecoration(
               border: Border.all(color: Colors.blue, width: 3),
               borderRadius: BorderRadius.circular(20),
-              color: const Color.fromARGB(255, 232, 240, 247),
+              color: Color.fromARGB(255, 197, 229, 255),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +94,7 @@ class _InformationState extends State<Information> {
             height: MediaQuery.of(context).size.height * 0.35,
             width: MediaQuery.of(context).size.width * 0.75,
             decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 232, 240, 247),
+                color: Color.fromARGB(255, 197, 229, 255),
                 border: Border.all(color: Colors.blue, width: 3),
                 borderRadius: BorderRadius.circular(20)),
             child: Row(
@@ -125,7 +125,7 @@ class _InformationState extends State<Information> {
             height: MediaQuery.of(context).size.height * 0.35,
             width: MediaQuery.of(context).size.width * 0.75,
             decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 232, 240, 247),
+                color: Color.fromARGB(255, 197, 229, 255),
                 border: Border.all(color: Colors.blue, width: 3),
                 borderRadius: BorderRadius.circular(20)),
             child: Row(

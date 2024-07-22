@@ -12,7 +12,7 @@ class AdviceType extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.35,
       width: MediaQuery.of(context).size.width * 0.70,
       decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 232, 240, 247),
+          color: Color.fromARGB(255, 197, 229, 255),
           border: Border.all(color: Colors.blue, width: 3),
           borderRadius: BorderRadius.circular(20)),
       child: Column(
@@ -29,7 +29,7 @@ class AdviceType extends StatelessWidget {
           Text(
             type,
             style: TextStyle(
-              color: Colors.blue,
+              color: Colors.black,
               fontSize: 15,
             ),
           )

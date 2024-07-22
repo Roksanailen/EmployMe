@@ -1,10 +1,10 @@
 import 'package:emplooo/features/mainscreen/Section/presentation/businessclassification.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class TypeWork extends StatelessWidget {
   const TypeWork(
       {super.key,
-      
       required this.image,
       required this.type,
       required this.list,
@@ -22,9 +22,7 @@ class TypeWork extends StatelessWidget {
         onTap: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (BuildContext context) {
-                
             return Business_Classification(
-              
               type: type,
               list: list,
               locationcompany: locationcompany,
@@ -45,15 +43,17 @@ class TypeWork extends StatelessWidget {
                 Stack(
                   children: [
                     ClipRRect(
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                        ),
-                        child: Image.asset(
-                          image,
-                          height: 250,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                        )),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                            ),
+                            child: Image.asset(
+                              image,
+                              height: 250,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ))
+                        .animate()
+                        .slideX(duration: Duration(microseconds: 1000)),
                   ],
                 ),
                 Padding(

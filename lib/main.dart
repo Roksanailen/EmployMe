@@ -54,7 +54,7 @@ class _MainAppState extends State<MainApp> {
       child: MaterialApp(
           builder: BotToastInit(),
           debugShowCheckedModeBanner: false,
-          home: Splash_Screen()),
+          home: HomeScreen()),
     );
   }
 }

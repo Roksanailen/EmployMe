@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../Section/presentation/company.dart';
 import '../../Section/presentation/remotework.dart';
@@ -31,7 +32,7 @@ class _HomeState extends State<Home> {
     'Architecture opportunities',
     'Architecture opportunities',
   ];
-    final companyname = [
+  final companyname = [
     'Osman',
     'Razi',
     'Al_Ressala',
@@ -82,25 +83,24 @@ class _HomeState extends State<Home> {
                 height: 40.0,
               ),
               SizedBox(
-                height: 320,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 7,
-                  itemBuilder: (BuildContext context, int index) {
-                    return TypeWork(
-                      image: image[index],
-                      type: type[index],
-                      list: '',
-                      locationcompany: '',
-                      name: '',
-                    );
-                  },
-                ),
-              ),
+                  height: 320,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 7,
+                    itemBuilder: (BuildContext context, int index) {
+                      return TypeWork(
+                        image: image[index],
+                        type: type[index],
+                        list: '',
+                        locationcompany: '',
+                        name: '',
+                      );
+                    },
+                  )),
               const SizedBox(
                 height: 20,
               ),
-              Stack(   
+              Stack(
                 children: [
                   ClipRRect(
                       borderRadius: const BorderRadius.all(
@@ -154,9 +154,12 @@ class _HomeState extends State<Home> {
                 height: 320,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount:7,
+                  itemCount: 7,
                   itemBuilder: (BuildContext context, int index) {
-                    return Company(companyimage: companyimage[index],companyname: companyname[index],);
+                    return Company(
+                      companyimage: companyimage[index],
+                      companyname: companyname[index],
+                    );
                   },
                 ),
               ),

@@ -39,26 +39,19 @@ class _AdviceState extends State<Advice> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 1,
-                  width: MediaQuery.of(context).size.width * 0.93,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 232, 240, 247),
-                      border: Border.all(color: Colors.blue, width: 3),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(75),
-                          bottomRight: Radius.circular(70),
-                          topRight: Radius.circular(16),
-                          bottomLeft: Radius.circular(16))),
-                  child: SingleChildScrollView(
+        body: Stack(children: [
+      Lottie.asset('assets/images/Animation - 1705013705322.json',
+          width: double.infinity, height: double.infinity, fit: BoxFit.cover),
+      Center(
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -130,13 +123,13 @@ class _AdviceState extends State<Advice> {
                       ],
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                )
-              ]),
+                  SizedBox(
+                    height: 20,
+                  )
+                ]),
+          ),
         ),
-      ),
-    );
+      )
+    ]));
   }
 }

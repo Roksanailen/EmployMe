@@ -8,7 +8,10 @@ class Home_Information extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+        body: Stack(children: [
+      Lottie.asset('assets/images/Animation - 1705013705322.json',
+          width: double.infinity, height: double.infinity, fit: BoxFit.cover),
+      SingleChildScrollView(
         child: Center(
           child: Column(children: [
             Container(
@@ -57,6 +60,6 @@ class Home_Information extends StatelessWidget {
           ]),
         ),
       ),
-    );
+    ]));
   }
 }
