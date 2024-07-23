@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../Section/presentation/company.dart';
 import '../../Section/presentation/remotework.dart';
@@ -162,6 +161,7 @@ class _HomeState extends State<Home> {
                   itemBuilder: (BuildContext context, int index) {
                     return TypeWork(
                       image: image[index],
+                      sectionid: 1,
                       type: type[index],
                       list: '',
                       locationcompany: '',
