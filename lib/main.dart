@@ -2,6 +2,7 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:emplooo/features/auth/bloc/auth_bloc.dart';
 import 'package:emplooo/features/cv/presentation/bloc/cv_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
+import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/sectiontype_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
 import 'package:emplooo/features/mainscreen/home_screen.dart';
@@ -47,6 +48,9 @@ class _MainAppState extends State<MainApp> {
         ),
         BlocProvider<CompanyBloc>(
           create: (context) => CompanyBloc(),
+        ),
+         BlocProvider<SectiontypeBloc>(
+          create: (context) => SectiontypeBloc(),
         ),
         BlocProvider<ProfileBloc>(create: (context) => ProfileBloc()),
         BlocProvider<CvBloc>(create: (context) => CvBloc())

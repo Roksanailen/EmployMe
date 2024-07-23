@@ -5,14 +5,14 @@ import 'package:flutter_animate/flutter_animate.dart';
 class TypeWork extends StatelessWidget {
   const TypeWork(
       {super.key,
-      required this.sectionid,
+      required this.id,
       required this.image,
       required this.type,
       required this.list,
       required this.locationcompany,
       required this.name});
   final String type;
-  final int sectionid;
+  final int id;
   final String image;
   final String list;
   final String name;
@@ -29,7 +29,7 @@ class TypeWork extends StatelessWidget {
               list: list,
               locationcompany: locationcompany,
               name: name,
-              sectionid: sectionid,
+              sectionid: id,
             );
           }));
         },
