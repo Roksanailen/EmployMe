@@ -1,5 +1,4 @@
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
-import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/sectiontype_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/company.dart';
@@ -96,7 +95,7 @@ class _HomeState extends State<Home> {
     'assets/images/vv.png',
     'assets/images/mm.png',
   ];
-   final remotimage=[
+  final remotimage = [
     'assets/images/w0.png',
     'assets/images/rr.png',
     'assets/images/w9.png',
@@ -108,23 +107,67 @@ class _HomeState extends State<Home> {
     'assets/images/w8.png',
     'assets/images/w9.png',
   ];
-  final remotename=[
-  'flutter developer',
-  'backend developer',
-  'UI_UX Desiner',
-  'Web developer',
-  'Manual Tester',
-  'flutter developer',
-  'backend developer',
-  'UI\UX Desiner',
-  'Web developer',
+  final remotename = [
+    'flutter developer',
+    'backend developer',
+    'UI_UX Desiner',
+    'Web developer',
+    'Manual Tester',
+    'flutter developer',
+    'backend developer',
+    'UIUX Desiner',
+    'Web developer',
   ];
-  
-  final remoteage=['20_40','24_35','23_30','27_37','20_35','20_40','24_35','23_30','27_37','20_35',];
-  final experiencesremote=['2','4','5','7','1','2','4','5','7','1',];
-  final salaryremote=['1700000 P.s','1600000 P.s','1400000 P.s','2000000 P.s','1400000 P.s','1700000 P.s','1600000 P.s','1400000 P.s','2000000 P.s','1400000 P.s',];
-  final phoneremote=['0935230788','0935450793','0985450793','0935230788','0935450793','0985450793','0935230788','0935450793','0985450793','0985450793',];
-  final sectionid=[];
+
+  final remoteage = [
+    '20_40',
+    '24_35',
+    '23_30',
+    '27_37',
+    '20_35',
+    '20_40',
+    '24_35',
+    '23_30',
+    '27_37',
+    '20_35',
+  ];
+  final experiencesremote = [
+    '2',
+    '4',
+    '5',
+    '7',
+    '1',
+    '2',
+    '4',
+    '5',
+    '7',
+    '1',
+  ];
+  final salaryremote = [
+    '1700000 P.s',
+    '1600000 P.s',
+    '1400000 P.s',
+    '2000000 P.s',
+    '1400000 P.s',
+    '1700000 P.s',
+    '1600000 P.s',
+    '1400000 P.s',
+    '2000000 P.s',
+    '1400000 P.s',
+  ];
+  final phoneremote = [
+    '0935230788',
+    '0935450793',
+    '0985450793',
+    '0935230788',
+    '0935450793',
+    '0985450793',
+    '0935230788',
+    '0935450793',
+    '0985450793',
+    '0985450793',
+  ];
+  final sectionid = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -141,7 +184,7 @@ class _HomeState extends State<Home> {
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               SizedBox(
                 height: 320,
                 child: BlocBuilder<SectionBloc, SectionsState>(
@@ -185,8 +228,9 @@ class _HomeState extends State<Home> {
                           height: 250,
                           width: double.infinity,
                           fit: BoxFit.cover,
-                        ).animate()
-              .scale(duration: Duration(milliseconds: 900)),
+                        )
+                            .animate()
+                            .scale(duration: const Duration(milliseconds: 900)),
                       )),
                   const Positioned(
                       top: 40,
@@ -209,9 +253,14 @@ class _HomeState extends State<Home> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 7,
                     itemBuilder: (BuildContext context, int index) {
-                      return  Remote_Work(imageremote:  remotimage[index],nameremot: remotename[index],salaryremote: salaryremote[index],
-                      remoteage: remoteage[index],phoneremote: phoneremote[index],
-                      experiencesremote: experiencesremote[index],);
+                      return Remote_Work(
+                        imageremote: remotimage[index],
+                        nameremot: remotename[index],
+                        salaryremote: salaryremote[index],
+                        remoteage: remoteage[index],
+                        phoneremote: phoneremote[index],
+                        experiencesremote: experiencesremote[index],
+                      );
                     }),
               ),
               const SizedBox(
@@ -227,24 +276,27 @@ class _HomeState extends State<Home> {
               ),
               SizedBox(
                 height: 320,
-                child: BlocBuilder<CompanyBloc,CompaniesState>(
+                child: BlocBuilder<CompanyBloc, CompaniesState>(
                   builder: (context, state) {
-                    if(state is CompaniesLoading){
+                    if (state is CompaniesLoading) {
                       return const Center(
                         child: CircularProgressIndicator(),
                       );
-                    }else if(state is CompaniesSuccess){
-                    return ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: state.companies.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Company(
-                          companyimage: companyimage[index],
-                          companyname: companyname[index],
-                        );
-                      },
-                    );}
-                    else return const Center(child: Text('Try Again'),);
+                    } else if (state is CompaniesSuccess) {
+                      return ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: state.companies.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Company(
+                            companyimage: companyimage[index],
+                            companyname: companyname[index],
+                          );
+                        },
+                      );
+                    } else
+                      return const Center(
+                        child: Text('Try Again'),
+                      );
                   },
                 ),
               ),
