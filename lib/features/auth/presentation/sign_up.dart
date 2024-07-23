@@ -65,13 +65,9 @@ class Signup extends StatelessWidget {
                           child: Lottie.asset('assets/images/signup.json'),
                         ),
                         MainTextField(
-                            validator: (value) {
-                              if (value != null && value.isValidEmail()) {
-                                return null;
-                              } else {
-                                return 'It must consist of letters for example Ahmad';
-                              }
-                            },
+                            validator: (p0) => p0 != null && p0.length > 4
+                                ? null
+                                : 'must consisting of letters for example ahmad  ',
                             controller: firstnameController,
                             label: 'First Name',
                             keyboardType: TextInputType.name,
@@ -85,13 +81,9 @@ class Signup extends StatelessWidget {
                           height: 3,
                         ),
                         MainTextField(
-                          validator: (value) {
-                            if (value != null && value.isValidEmail()) {
-                              return null;
-                            } else {
-                              return 'It must consist of letters for example Ali';
-                            }
-                          },
+                          validator: (p0) => p0 != null && p0.length > 4
+                              ? null
+                              : 'must consisting of letters for example ali  ',
                           controller: lastnameController,
                           fillColor: Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
@@ -109,13 +101,9 @@ class Signup extends StatelessWidget {
                           height: 3,
                         ),
                         MainTextField(
-                          validator: (value) {
-                            if (value != null && value.isValidEmail()) {
-                              return null;
-                            } else {
-                              return 'It must consist of letters for example Ahmad';
-                            }
-                          },
+                          validator: (p0) => p0 != null && p0.length > 4
+                              ? null
+                              : 'must consisting of letters for example ahmad  ',
                           controller: usernameController,
                           fillColor: Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
@@ -186,10 +174,10 @@ class Signup extends StatelessWidget {
                         ),
                         MainTextField(
                           validator: (value) {
-                            if (value != null && value.isValidEmail()) {
+                            if (value != null && value.isValidPhone()) {
                               return null;
                             } else {
-                              return 'must consisting of numbers example 098987767 ';
+                              return 'must consisting of numbers example 0989877679 ';
                             }
                           },
                           controller: phoneController,
