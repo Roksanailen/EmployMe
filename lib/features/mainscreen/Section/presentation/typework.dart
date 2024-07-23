@@ -5,6 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 class TypeWork extends StatelessWidget {
   const TypeWork(
       {super.key,
+      required this.sectionid,
       required this.image,
       required this.type,
       required this.list,
