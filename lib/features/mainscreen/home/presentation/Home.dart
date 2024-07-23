@@ -53,6 +53,78 @@ class _HomeState extends State<Home> {
     'assets/images/vv.png',
     'assets/images/mm.png',
   ];
+  final remotimage = [
+    'assets/images/w0.png',
+    'assets/images/rr.png',
+    'assets/images/w9.png',
+    'assets/images/w3.png',
+    'assets/images/w4.png',
+    'assets/images/w5.png',
+    'assets/images/w6.png',
+    'assets/images/w7.png',
+    'assets/images/w8.png',
+    'assets/images/w9.png',
+  ];
+  final remotename = [
+    'flutter developer',
+    'Sales & Call Cenner',
+    'flutter developer',
+    'flutter developer',
+    'flutter developer',
+    'flutter developer',
+    'flutter developer',
+    'flutter developer',
+    'flutter developer',
+  ];
+  final salaryremote = [
+    '1700000 P.s',
+    '1600000 P.s',
+    '1400000 P.s',
+    '2000000 P.s',
+    '1400000 P.s',
+    '1700000 P.s',
+    '1600000 P.s',
+    '1400000 P.s',
+    '2000000 P.s',
+    '1400000 P.s',
+  ];
+  final remoteage = [
+    '20_40',
+    '24_35',
+    '23_30',
+    '27_37',
+    '20_35',
+    '20_40',
+    '24_35',
+    '23_30',
+    '27_37',
+    '20_35',
+  ];
+  final experiencesremote = [
+    '2',
+    '4',
+    '5',
+    '7',
+    '1',
+    '2',
+    '4',
+    '5',
+    '7',
+    '1',
+  ];
+  final phoneremote = [
+    '0935230788',
+    '0935450793',
+    '0985450793',
+    '0935230788',
+    '0935450793',
+    '0985450793',
+    '0935230788',
+    '0935450793',
+    '0985450793',
+    '0985450793',
+  ];
+  final sectionid = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,20 +155,21 @@ class _HomeState extends State<Home> {
                 height: 40.0,
               ),
               SizedBox(
-                  height: 320,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 7,
-                    itemBuilder: (BuildContext context, int index) {
-                      return TypeWork(
-                        image: image[index],
-                        type: type[index],
-                        list: '',
-                        locationcompany: '',
-                        name: '',
-                      );
-                    },
-                  )),
+                height: 320,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 7,
+                  itemBuilder: (BuildContext context, int index) {
+                    return TypeWork(
+                      image: image[index],
+                      type: type[index],
+                      list: '',
+                      locationcompany: '',
+                      name: '',
+                    );
+                  },
+                ),
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -136,7 +209,14 @@ class _HomeState extends State<Home> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 7,
                     itemBuilder: (BuildContext context, int index) {
-                      return const Remote_Work();
+                      return Remote_Work(
+                        imageremote: remotimage[index],
+                        nameremot: remotename[index],
+                        salaryremote: salaryremote[index],
+                        remoteage: remoteage[index],
+                        phoneremote: phoneremote[index],
+                        experiencesremote: experiencesremote[index],
+                      );
                     }),
               ),
               const SizedBox(

@@ -11,6 +11,7 @@ class TypeWork extends StatelessWidget {
       required this.locationcompany,
       required this.name});
   final String type;
+  final int sectionid;
   final String image;
   final String list;
   final String name;
@@ -27,6 +28,7 @@ class TypeWork extends StatelessWidget {
               list: list,
               locationcompany: locationcompany,
               name: name,
+              sectionid: sectionid,
             );
           }));
         },

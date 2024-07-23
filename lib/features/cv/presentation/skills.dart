@@ -80,15 +80,25 @@ class _Skills_ScreenState extends State<Skills_Screen> {
         _selectedItems = results;
         print(_selectedItems);
         context.read<CvBloc>().add(EditLanguagesEvent(
-            arabic: _selectedItems.contains(languages[0])
-                ? languages[0].selectedValue
-                : languages[0].value.value,
-            english: _selectedItems.contains(languages[1])
-                ? languages[1].selectedValue
-                : languages[1].value.value,
-            german: _selectedItems.contains(languages[2])
-                ? languages[2].selectedValue
-                : languages[2].value.value));
+              arabic: _selectedItems.contains(languages[0])
+                  ? languages[0].selectedValue
+                  : languages[0].value.value,
+              english: _selectedItems.contains(languages[1])
+                  ? languages[1].selectedValue
+                  : languages[1].value.value,
+              german: _selectedItems.contains(languages[2])
+                  ? languages[2].selectedValue
+                  : languages[2].value.value,
+              French: _selectedItems.contains(languages[2])
+                  ? languages[2].selectedValue
+                  : languages[2].value.value,
+              Russian: _selectedItems.contains(languages[2])
+                  ? languages[2].selectedValue
+                  : languages[2].value.value,
+              Chinese: _selectedItems.contains(languages[2])
+                  ? languages[2].selectedValue
+                  : languages[2].value.value,
+            ));
       });
     }
   }
@@ -603,11 +613,9 @@ class MultiSelected extends StatefulWidget {
 }
 
 class _MultiSelectedStateState extends State<MultiSelected> {
-  void initState() {
-    super.initState();
-  }
+  void initState() {}
 
-  final List<SkillsAi> _selectedItems = [];
+  List<SkillsAi> _selectedItems = [];
   void _itemChange(SkillsAi itemValue, bool isSelected) {
     setState(() {
       if (isSelected) {

@@ -6,7 +6,7 @@ class SectionsInitial extends SectionsState{}
 class SectionsLoading extends SectionsState{}
 class SectionsFailure extends SectionsState{}
 class SecionsSuccess extends SectionsState{
-final List<SectionModel> sections;
+final List<SectionResponseModel> sections;
 SecionsSuccess(
   {this.sections=const[],}
 );

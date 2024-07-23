@@ -30,10 +30,17 @@ class EditLanguagesEvent extends CvEvent {
   final int arabic;
   final int english;
   final int german;
+  final int French;
+  final int Russian;
+  final int Chinese;
+
   EditLanguagesEvent({
     required this.arabic,
     required this.english,
     required this.german,
+    required this.French,
+    required this.Russian,
+    required this.Chinese,
   });
 }
 

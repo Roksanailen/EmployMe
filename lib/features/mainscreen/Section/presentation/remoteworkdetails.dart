@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 
 class Remote_Work_Details extends StatelessWidget {
-  const Remote_Work_Details({super.key});
-
+  const Remote_Work_Details({super.key,required this.salaryremote,required this.experiencesremote,required this. phoneremote,
+  required this.remoteage,required this.imageremote,required this.nameremot});
+  final String salaryremote;
+  final String experiencesremote;
+  final String phoneremote;
+  final String remoteage;
+  final String imageremote;
+  final String nameremot;
   @override
   Widget build(BuildContext context) {
+    final List<String> skillsremote=['dxcvb','zrxfcgvjhbk','dzxcfvg','zrxfcgvjhbk','dzxcfvg','zrxfcgvjhbk','dzxcfvg','zrxfcgvjhbk','dzxcfvg','zrxfcgvjhbk','dzxcfvg','zrxfcgvjhbk','dzxcfvg'];
     var screenheight=MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(title: Text('Remote Work details'),),
+      appBar: AppBar(title: Text(nameremot),),
         body: SingleChildScrollView(
           child: Stack(
           children: [
             Container(
-              child: Image.asset('assets/images/rr.png',
+              child: Image.asset(imageremote,
+              width: double.infinity,
               fit: BoxFit.cover,
              ),
               height: screenheight*0.5,),
@@ -31,7 +39,7 @@ class Remote_Work_Details extends StatelessWidget {
                         children: [
                             Icon(Icons.info_outline),
                             SizedBox(width: 10,),
-                        Text('profession name',style: TextStyle(
+                        Text(nameremot,style: TextStyle(
                           color: Colors.blue,
                           fontSize: 25.0,
                           fontWeight: FontWeight.bold,
@@ -43,7 +51,7 @@ class Remote_Work_Details extends StatelessWidget {
                       children: [
                         Text('Age: ',style: TextStyle(color: Colors.blue,),),
                         SizedBox(width: 150.0,),
-                        Text('20_35'),
+                        Text(remoteage),
                       ],
                     ),
                     SizedBox(height: 40.0,),
@@ -52,7 +60,7 @@ class Remote_Work_Details extends StatelessWidget {
                       children: [
                         Text('Experience: ',style: TextStyle(color: Colors.blue,),),
                         SizedBox(width: 105.0,),
-                        Text('3 year'),
+                        Text(experiencesremote),
                       ],
                     ),
                     SizedBox(height: 40.0,),
@@ -61,7 +69,7 @@ class Remote_Work_Details extends StatelessWidget {
                       children: [
                       Text('Salary:',style: TextStyle(color: Colors.blue,),),
                       SizedBox(width: 135.0,),
-                      Text('1200000 p.s'),
+                      Text(salaryremote),
                       ],
                     ),
                     SizedBox(height: 40.0,),
@@ -70,39 +78,51 @@ class Remote_Work_Details extends StatelessWidget {
                       children: [
                         Text('Connect With us:',style: TextStyle(color: Colors.blue,),),
                         SizedBox(width: 70.0,),
-                        Text('0935230788'),
+                        Text(phoneremote),
                       ],
                     ),
                 
                         SizedBox(height: 40.0,),
-                          Row(
-                     
+                          Row(crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Certificates required:',style: TextStyle(color: Colors.blue,),),
                         SizedBox(width: 45.0,),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            SizedBox(height: 10.0),
-                            Text('_ high school diploma'),
-                            SizedBox(height: 10.0,),
-                            Text('_ ICDL'),
+                            SizedBox(
+                              width: 250,
+                              height: 160,
+                              child:
+                               ListView.builder(
+                                itemCount: 10,
+                                itemBuilder: (BuildContext context, int index){
+                                return Text(skillsremote[index]);
+                               }),
+                            ),
                           ],
                         ),
                       ],
                     ),
                        SizedBox(height: 40.0,),
                          Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Skills required:',style: TextStyle(color: Colors.blue,),),
                         SizedBox(width: 75.0,),
-                        Column(
-                       
+                          Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            SizedBox(height: 10.0),
-                            Text('_ high school diploma'),
-                            SizedBox(height: 10.0,),
-                            Text('_ ICDL'),
+                            SizedBox(
+                              width: 250,
+                              height: 160,
+                              child:
+                               ListView.builder(
+                                itemCount: 10,
+                                itemBuilder: (BuildContext context, int index){
+                                return Text(skillsremote[index]);
+                               }),
+                            ),
                           ],
                         ),
                       ],
