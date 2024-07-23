@@ -71,7 +71,7 @@ String sectionResponseModelToJson(SectionResponseModel data) => json.encode(data
 
 class SectionResponseModel {
     final bool? success;
-    final List<Datum>? data;
+    final List<SectionResponseModel>? data;
 
     SectionResponseModel({
         this.success,
@@ -80,7 +80,7 @@ class SectionResponseModel {
 
     factory SectionResponseModel.fromJson(Map<String, dynamic> json) => SectionResponseModel(
         success: json["success"],
-        data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
+        data: json["data"] == null ? [] : List<SectionResponseModel>.from(json["data"]!.map((x) => SectionResponseModel.fromJson(x))),
     );
 
     Map<String, dynamic> toJson() => {
