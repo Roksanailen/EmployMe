@@ -69,7 +69,7 @@ class _Cv_ScreenState extends State<Cv_Screen> {
                           controller: firstnameControler,
                           label: 'First_Name',
                           borderSide: const BorderSide(width: 1),
-                          validator: (p0) => p0 != null && p0.length > 4
+                          validator: (p0) => p0 != null && p0.length > 2
                               ? null
                               : 'must consisting of letters for example ali  ',
                           borderRadius: const BorderRadius.only(
@@ -90,7 +90,7 @@ class _Cv_ScreenState extends State<Cv_Screen> {
                         MainTextField(
                           controller: fathernameControler,
                           label: 'Father_Name',
-                          validator: (p0) => p0 != null && p0.length > 4
+                          validator: (p0) => p0 != null && p0.length > 2
                               ? null
                               : 'must consisting of letters for example ahmad  ',
                           borderSide: const BorderSide(width: 1),
@@ -111,7 +111,7 @@ class _Cv_ScreenState extends State<Cv_Screen> {
                         ),
                         MainTextField(
                           controller: lastnameControler,
-                          validator: (p0) => p0 != null && p0.length > 4
+                          validator: (p0) => p0 != null && p0.length > 2
                               ? null
                               : 'must consisting of letters for example ali  ',
                           borderSide: const BorderSide(width: 1),

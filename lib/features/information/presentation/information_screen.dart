@@ -1,6 +1,7 @@
 import 'package:emplooo/features/information/presentation/aboutcourses.dart';
 import 'package:emplooo/features/information/presentation/aboutcv.dart';
 import 'package:emplooo/features/information/presentation/abouthome.dart';
+import 'package:emplooo/features/information/presentation/aboutmaps.dart';
 import 'package:emplooo/features/information/presentation/aboutsearch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -142,6 +143,39 @@ class _InformationState extends State<Information> {
                   'assets/images/rr.png',
                   height: MediaQuery.of(context).size.height * 0.35,
                   width: MediaQuery.of(context).size.width * 0.30,
+                ),
+              ],
+            )),
+      ),
+      SizedBox(
+        height: 20,
+      ),
+      InkWell(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const AboutMaps()));
+        },
+        child: Container(
+            height: MediaQuery.of(context).size.height * 0.35,
+            width: MediaQuery.of(context).size.width * 0.75,
+            decoration: BoxDecoration(
+                color: Color.fromARGB(255, 197, 229, 255),
+                border: Border.all(color: Colors.blue, width: 3),
+                borderRadius: BorderRadius.circular(20)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'About Maps',
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                ).animate().scale(duration: 850.ms),
+                const SizedBox(
+                  width: 20,
+                ),
+                Image.asset(
+                  'assets/images/map.png',
+                  height: MediaQuery.of(context).size.height * 0.35,
+                  width: MediaQuery.of(context).size.width * 0.25,
                 ),
               ],
             )),

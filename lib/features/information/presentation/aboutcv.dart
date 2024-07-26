@@ -47,7 +47,7 @@ class Cv_Information extends StatelessWidget {
                           padding: EdgeInsets.all(10),
                         ),
                         Text(
-                            "This interface helps you create a personal account",
+                            "_This interface helps you create personal account",
                             style: TextStyle(
                               fontSize: 15,
                             )),
@@ -58,7 +58,7 @@ class Cv_Information extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.all(10),
                         ),
-                        Text("This interface helps you create a personal ",
+                        Text("_ By filling in your personal information",
                             style: TextStyle(
                               fontSize: 15,
                             )),
@@ -70,7 +70,18 @@ class Cv_Information extends StatelessWidget {
                           padding: EdgeInsets.all(10),
                         ),
                         Text(
-                            "This interface helps you create a personal account",
+                            " qualifications, skills, and your university major.",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text(" _For the AI to choose the job that suits you.",
                             style: TextStyle(
                               fontSize: 15,
                             )),

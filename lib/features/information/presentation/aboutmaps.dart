@@ -23,8 +23,8 @@ class AboutMaps extends StatelessWidget {
               ),
             ),
             Container(
-                height: MediaQuery.of(context).size.height * 0.65,
-                width: MediaQuery.of(context).size.width * 0.80,
+                height: MediaQuery.of(context).size.height * 0.55,
+                width: MediaQuery.of(context).size.width * 0.70,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 232, 240, 247),
                   border: Border.all(color: Colors.blue, width: 3),
@@ -38,14 +38,8 @@ class AboutMaps extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                        """ _ This interface helps you create a personal account\n  
-   if you are a new user or log in normally.\n   
- _ This interface helps you enter your personal information,\n
-   credentials, and experiences that assist us in determining 
-   
-   the suitable job position for you.\n  
- _ To find the suitable job, all you need to do is fill in the\n    information.
+                    Text(""" _ To find out the company's location via a link to
+                         the map.
 """,
                         style: TextStyle(
                           fontSize: 15,

@@ -65,7 +65,7 @@ class Signup extends StatelessWidget {
                           child: Lottie.asset('assets/images/signup.json'),
                         ),
                         MainTextField(
-                            validator: (p0) => p0 != null && p0.length > 4
+                            validator: (p0) => p0 != null && p0.length > 2
                                 ? null
                                 : 'must consisting of letters for example ahmad  ',
                             controller: firstnameController,
@@ -81,7 +81,7 @@ class Signup extends StatelessWidget {
                           height: 3,
                         ),
                         MainTextField(
-                          validator: (p0) => p0 != null && p0.length > 4
+                          validator: (p0) => p0 != null && p0.length > 2
                               ? null
                               : 'must consisting of letters for example ali  ',
                           controller: lastnameController,
@@ -101,7 +101,7 @@ class Signup extends StatelessWidget {
                           height: 3,
                         ),
                         MainTextField(
-                          validator: (p0) => p0 != null && p0.length > 4
+                          validator: (p0) => p0 != null && p0.length > 2
                               ? null
                               : 'must consisting of letters for example ahmad  ',
                           controller: usernameController,
@@ -123,7 +123,7 @@ class Signup extends StatelessWidget {
                               if (value != null && value.isValidEmail()) {
                                 return null;
                               } else {
-                                return 'please add valid email example (ss@gmail.com) ';
+                                return 'must be valid email as (ss@gmail.com) ';
                               }
                             },
                             controller: emailController,

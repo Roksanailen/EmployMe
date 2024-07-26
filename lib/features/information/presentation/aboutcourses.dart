@@ -48,7 +48,7 @@ class AboutCourses extends StatelessWidget {
                           padding: EdgeInsets.all(10),
                         ),
                         Text(
-                            "This interface helps you create a personal account",
+                            "_Through this interface you can develop your self",
                             style: TextStyle(
                               fontSize: 15,
                             )),
@@ -59,7 +59,7 @@ class AboutCourses extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.all(10),
                         ),
-                        Text("This interface helps you create a personal ",
+                        Text("_ you must choose your specialty  ",
                             style: TextStyle(
                               fontSize: 15,
                             )),
@@ -70,8 +70,18 @@ class AboutCourses extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.all(10),
                         ),
-                        Text(
-                            "This interface helps you create a personal account",
+                        Text("_so we can provide you with useful courses ",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text("_We provide you with abook and a youtube course",
                             style: TextStyle(
                               fontSize: 15,
                             )),
