@@ -25,35 +25,72 @@ class Cv_Information extends StatelessWidget {
             ),
             Container(
                 height: MediaQuery.of(context).size.height * 0.40,
-                width: MediaQuery.of(context).size.width * 0.98,
+                width: MediaQuery.of(context).size.width * 0.90,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 232, 240, 247),
                   border: Border.all(color: Colors.blue, width: 3),
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(180),
                     topLeft: Radius.elliptical(60, 60),
-                    bottomLeft: Radius.circular(170),
+                    bottomLeft: Radius.circular(100),
                     bottomRight: Radius.elliptical(60, 60),
                   ),
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Padding(padding: EdgeInsets.all(25)),
-                    Text(
-                        """ _ This interface helps you create a personal account\n  
-   if you are a new user or log in normally.\n   
- _ This interface helps you enter your personal information,\n
-   credentials, and experiences that assist us in determining 
-   
-   the suitable job position for you.\n  
- _ To find the suitable job, all you need to do is fill in the\n    information.
-""",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black,
-                        )),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text(
+                            "_This interface helps you create personal account",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text("_ By filling in your personal information",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text(
+                            " qualifications, skills, and your university major.",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text(" _For the AI to choose the job that suits you.",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 10,
+                    ),
                   ],
                 )),
             SizedBox(

@@ -16,10 +16,10 @@ class _CvScreen1State extends State<CvScreen1> {
       backgroundColor: Colors.blueGrey.shade100,
       body: Stack(
         children: [
-          // Lottie.asset('assets/images/Animation - 1705013705322.json',
-          //     width: double.infinity,
-          //     height: double.infinity,
-          //     fit: BoxFit.cover),
+          Lottie.asset('assets/images/Animation - 1705013705322.json',
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover),
           Center(
             child: ElevatedButton(
               onPressed: () {

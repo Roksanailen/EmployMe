@@ -25,7 +25,7 @@ class Home_Information extends StatelessWidget {
             ),
             Container(
                 height: MediaQuery.of(context).size.height * 0.65,
-                width: MediaQuery.of(context).size.width * 0.80,
+                width: MediaQuery.of(context).size.width * 0.85,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 232, 240, 247),
                   border: Border.all(color: Colors.blue, width: 3),
@@ -37,21 +37,72 @@ class Home_Information extends StatelessWidget {
                   ),
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                        """ _ This interface helps you create a personal account\n  
-   if you are a new user or log in normally.\n   
- _ This interface helps you enter your personal information,\n
-   credentials, and experiences that assist us in determining 
-   
-   the suitable job position for you.\n  
- _ To find the suitable job, all you need to do is fill in the\n    information.
-""",
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.blue,
-                        )),
+                    // Padding(padding: EdgeInsets.all(25)),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text(
+                            "_ This interface is for browsing job opportunities  ",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text("available in our application. ",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text(
+                            "_ You can browse as a guest without creating an account. ",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text("_You can browse remote job opportunities ",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text(
+                            "_learn about companies participating in our application.",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 10,
+                    ),
                   ],
                 )),
             SizedBox(

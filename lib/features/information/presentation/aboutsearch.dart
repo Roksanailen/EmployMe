@@ -28,7 +28,7 @@ class _Search_InformationState extends State<Search_Information> {
               ),
             ),
             Container(
-                height: MediaQuery.of(context).size.height * 0.65,
+                height: MediaQuery.of(context).size.height * 0.55,
                 width: MediaQuery.of(context).size.width * 0.80,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 232, 240, 247),
@@ -41,22 +41,37 @@ class _Search_InformationState extends State<Search_Information> {
                   ),
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(padding: EdgeInsets.all(10)),
-                    Text(
-                        """   _ This interface helps you create a personal account\n  
-   if you are a new user or log in normally.\n   
-  _ This interface helps you enter your personal information,\n
-   credentials, and experiences that assist us in determining 
-   
-   the suitable job position for you.\n  
-  _ To find the suitable job, all you need to do is fill in the\n    information.
-""",
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.blue,
-                        )),
+                    // Padding(padding: EdgeInsets.all(25)),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text(
+                            "_show you suitable job opportunities based on your CV ",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Text("_And to view the details of this opportunity ",
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 10,
+                    ),
                   ],
                 )),
             SizedBox(
