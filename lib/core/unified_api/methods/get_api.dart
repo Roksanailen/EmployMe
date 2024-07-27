@@ -77,6 +77,4 @@ class GetApi<T> with HandlingExceptionRequest {
       rethrow;
     }
   }
-
-  callRequest() {}
 }

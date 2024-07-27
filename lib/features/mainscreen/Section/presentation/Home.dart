@@ -8,8 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'bloc/bloc/sectiontype_bloc.dart';
-
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -23,7 +21,6 @@ class _HomeState extends State<Home> {
     super.didChangeDependencies();
     context.read<SectionBloc>().add(GetSectionsEvent());
     context.read<TypesBloc>().add(GetTypessEvent());
-    context.read<SectiontypeBloc>().add(GetSectionTypeEvent(section_id: '1'));
     context.read<CompanyBloc>().add(GetCompaniesEvent());
   }
 

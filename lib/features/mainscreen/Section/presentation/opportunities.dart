@@ -8,10 +8,10 @@ class Opportunities extends StatelessWidget {
     super.key,
     required this.name,
     required this.locationcompany,
-    required this.List,
+    required this.list,
   });
   final String name;
-  final String List;
+  final String list;
   final String locationcompany;
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Opportunities extends StatelessWidget {
       onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (BuildContext context) {
-          return Oppertunities_Details();
+          return const Oppertunities_Details();
         }));
       },
       child: BlocBuilder<TypesBloc, TypesState>(builder: (context, state) {
@@ -32,17 +32,17 @@ class Opportunities extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             elevation: 7,
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: Column(
               children: [
                 Stack(
                   children: [
                     ClipRRect(
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(20),
                         ),
                         child: Image.asset(
-                          List,
+                          list,
                           height: 250,
                           width: double.infinity,
                           fit: BoxFit.cover,
@@ -56,11 +56,11 @@ class Opportunities extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.info_outline,
                             color: Colors.blue,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 7,
                           ),
                           Text(name),
@@ -68,11 +68,11 @@ class Opportunities extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.location_on_outlined,
                             color: Colors.blue,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 7,
                           ),
                           Text(

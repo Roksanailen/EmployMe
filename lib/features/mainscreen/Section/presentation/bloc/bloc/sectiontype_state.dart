@@ -1,29 +1,28 @@
 part of 'sectiontype_bloc.dart';
 
-
 class SectionTypeState {
-  final List<Datum> datum;
+  final List<SectionTypeModel> datum;
   final SectionTypeResponseModel? sectiontype;
-  final Status SectionTyeStatus;
+  final Status sectionTyeStatus;
   final String? token;
   SectionTypeState({
     this.datum = const [],
     this.sectiontype,
-    this.SectionTyeStatus=Status.initial,
+    this.sectionTyeStatus = Status.initial,
     this.token,
   });
 
-SectionTypeState copyWith({
+  SectionTypeState copyWith({
     String? token,
-    List<Datum>? datum,
+    List<SectionTypeModel>? datum,
     SectionTypeResponseModel? sectiontype,
-    required Status SectionTyeStatus, 
-    
+    Status? sectionTyeStatus,
   }) {
     return SectionTypeState(
-    
       token: token ?? this.token,
+      datum: datum ?? this.datum,
+      sectiontype: sectiontype ?? this.sectiontype,
+      sectionTyeStatus: sectionTyeStatus ?? this.sectionTyeStatus,
     );
   }
 }
-

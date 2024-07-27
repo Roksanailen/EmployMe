@@ -36,8 +36,8 @@ class ApiVariables {
 
   static Uri login() => _mobileUri(path: 'login');
   static Uri logout() => _mobileUri(path: 'logout');
-  
-     Uri _mainUrisection({
+
+  Uri _mainUrisection({
     required String path,
     ParamsMap params,
   }) {
@@ -51,8 +51,8 @@ class ApiVariables {
     log(uri.toString().logMagenta);
     return uri;
   }
-  static Uri getSectionType(String section_id)=> _mainUri(path: 'api/admin/jobs/$section_id',);
 
+  static Uri getSectionType(String sectionId) => _mainUri(
+        path: 'api/admin/jobs/$sectionId',
+      );
 }
-
- 
