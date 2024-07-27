@@ -1,4 +1,6 @@
+import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../Section/presentation/company.dart';
 import '../../Section/presentation/remotework.dart';
@@ -232,14 +234,32 @@ class _HomeState extends State<Home> {
               ),
               SizedBox(
                 height: 320,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 7,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Company(
-                      companyimage: companyimage[index],
-                      companyname: companyname[index],
-                    );
+                child: BlocBuilder<CompanyBloc, CompaniesState>(
+                  builder: (context, state) {
+                    if (state is CompaniesLoading) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    } else if (state is CompaniesSuccess) {
+                      return ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: state.companies.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Company(
+                            companyimage: companyimage[index],
+                            companyname: state.companies[index].name ?? "null",
+                            Typeofcompany: state.companies[index].type ?? "null",
+                            locationcompany: state.companies[index].address ?? "null",
+                            emailcompany: state.companies[index].email?? "null",
+                            phoncompany: state.companies[index].phone ?? "null",
+                            mobilcompany: state.companies[index].mobile ?? "null",
+                          );
+                        },
+                      );
+                    } else
+                      return const Center(
+                        child: Text('Try Again'),
+                      );
                   },
                 ),
               ),
