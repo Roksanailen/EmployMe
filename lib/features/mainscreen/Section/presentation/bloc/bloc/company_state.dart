@@ -6,7 +6,7 @@ class CompaniesInitial extends CompaniesState{}
 class CompaniesLoading extends CompaniesState{}
 class CompaniesFailure extends CompaniesState{}
 class CompaniesSuccess extends CompaniesState{
-final List<CompanyModel> companies;
+final List<Datum> companies;
 CompaniesSuccess(
   {this.companies=const[],}
 );

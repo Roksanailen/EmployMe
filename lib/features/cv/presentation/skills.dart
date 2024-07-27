@@ -40,6 +40,10 @@ class _Skills_ScreenState extends State<Skills_Screen> {
     SkillsAi(selectedValue: 1, name: 'Arabic', value: ValueNotifier(0)),
     SkillsAi(selectedValue: 7, name: 'English', value: ValueNotifier(0)),
     SkillsAi(selectedValue: 5, name: 'German', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 5, name: 'French', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 2, name: 'Russian', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 2, name: 'Chinese', value: ValueNotifier(0)),
+    
   ];
   final List<SkillsAi> skills = [
     SkillsAi(selectedValue: 1, name: 'Communication', value: ValueNotifier(0)),
@@ -89,15 +93,15 @@ class _Skills_ScreenState extends State<Skills_Screen> {
               german: _selectedItems.contains(languages[2])
                   ? languages[2].selectedValue
                   : languages[2].value.value,
-              French: _selectedItems.contains(languages[2])
-                  ? languages[2].selectedValue
-                  : languages[2].value.value,
-              Russian: _selectedItems.contains(languages[2])
-                  ? languages[2].selectedValue
-                  : languages[2].value.value,
-              Chinese: _selectedItems.contains(languages[2])
-                  ? languages[2].selectedValue
-                  : languages[2].value.value,
+              French: _selectedItems.contains(languages[3])
+                  ? languages[3].selectedValue
+                  : languages[3].value.value,
+              Russian: _selectedItems.contains(languages[4])
+                  ? languages[4].selectedValue
+                  : languages[4].value.value,
+              Chinese: _selectedItems.contains(languages[5])
+                  ? languages[5].selectedValue
+                  : languages[5].value.value,
             ));
       });
     }

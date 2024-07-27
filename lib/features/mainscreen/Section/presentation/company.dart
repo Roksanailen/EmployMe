@@ -3,16 +3,30 @@ import 'package:flutter/material.dart';
 
 
 class Company extends StatelessWidget {
-  const Company({super.key,required this.companyimage,required this.companyname});
+  const Company({super.key,required this.companyimage,required this.companyname,required this.locationcompany,
+  required this.Typeofcompany,required this.emailcompany,required this.phoncompany,required this.mobilcompany, });
   final String companyimage;
   final String companyname;
+  final String locationcompany;
+  final String Typeofcompany;
+  final String emailcompany;
+  final String phoncompany;
+  final String mobilcompany;
   @override
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (BuildContext context) {
-            return Company_Details();
+            return Company_Details(
+              companyname: companyname,
+              companyimage: companyimage,
+              locationcompany: locationcompany,
+              Typeofcompany: Typeofcompany,
+              emailcompany: emailcompany,
+              phoncompany: phoncompany,
+              mobilcompany: mobilcompany,
+            );
           }));
         },
         child: Container(

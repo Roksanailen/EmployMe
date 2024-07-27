@@ -2,8 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class Company_Details extends StatelessWidget {
-  const Company_Details({super.key});
-
+  const Company_Details({super.key,
+  required this.companyname,
+  required this.companyimage,
+  required this.locationcompany,required this.Typeofcompany,required this.emailcompany,required this.phoncompany,
+  required this.mobilcompany,
+  });
+  
+  final String companyname;
+  final String companyimage;
+  final String locationcompany;
+  final String Typeofcompany;
+  final String emailcompany;
+  final String phoncompany;
+  final String mobilcompany;
   @override
   Widget build(BuildContext context) {
      var screenheight=MediaQuery.of(context).size.height;
@@ -13,8 +25,9 @@ class Company_Details extends StatelessWidget {
           child: Stack(
           children: [
             Container(
-              child: Image.asset('assets/images/vv.png',
+              child: Image.asset('assets/images/vv.png', width: double.infinity,
               fit: BoxFit.cover,
+            
              ).animate()
               .fadeIn(duration: Duration(milliseconds: 900)),
               height: screenheight*0.5,),
@@ -33,7 +46,7 @@ class Company_Details extends StatelessWidget {
                         children: [
                           Icon(Icons.info_outline),
                           SizedBox(width: 10,),
-                        Text('Company name',style: TextStyle(
+                        Text(companyname,style: TextStyle(
                           color: Colors.blue,
                           fontSize: 25.0,
                           fontWeight: FontWeight.bold,
@@ -45,7 +58,7 @@ class Company_Details extends StatelessWidget {
                       children: [
                         Text('Location:',style: TextStyle(color: Colors.blue,),),
                         SizedBox(width: 150.0,),
-                        Text('Aleppo Al_Zahraa'),
+                        Text(locationcompany),
                       ],
                     ),
                       SizedBox(height: 40.0 ,),
@@ -53,7 +66,7 @@ class Company_Details extends StatelessWidget {
                       children: [
                         Text('Type of Company:',style: TextStyle(color: Colors.blue,),),
                         SizedBox(width: 95.0,),
-                        Text('Real Estate'),
+                        Text(Typeofcompany),
                       ],
                     ),
                       SizedBox(height: 40.0 ,),
@@ -61,7 +74,7 @@ class Company_Details extends StatelessWidget {
                       children: [
                         Text('email:',style: TextStyle(color: Colors.blue,),),
                         SizedBox(width: 165.0,),
-                        Text('sozan@gmail.com'),
+                        Text(emailcompany),
                       ],
                     ),
                       SizedBox(height: 40.0 ,),
@@ -70,7 +83,7 @@ class Company_Details extends StatelessWidget {
                       children: [
                         Text('Phone:',style: TextStyle(color: Colors.blue,),),
                         SizedBox(width: 160.0,),
-                        Text('2323237'),
+                        Text(phoncompany),
                       ],
                     ),
                      SizedBox(height: 40.0 ,),
@@ -78,7 +91,7 @@ class Company_Details extends StatelessWidget {
                       children: [
                         Text('Mobile:',style: TextStyle(color: Colors.blue,),),
                         SizedBox(width: 160.0,),
-                        Text('0935230788'),
+                        Text(mobilcompany),
                       ],
                     ),
                     ],

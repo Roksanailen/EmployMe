@@ -95,6 +95,10 @@ class _HomeState extends State<Home> {
     'assets/images/vv.png',
     'assets/images/mm.png',
   ];
+  final Typeofcompany=[];
+  final emailcompany=[];
+  final phonecompany=[];
+  final mobilecompany=[];
   final remotimage = [
     'assets/images/w0.png',
     'assets/images/rr.png',
@@ -289,7 +293,12 @@ class _HomeState extends State<Home> {
                         itemBuilder: (BuildContext context, int index) {
                           return Company(
                             companyimage: companyimage[index],
-                            companyname: companyname[index],
+                            companyname: state.companies[index].name ?? "null",
+                            Typeofcompany: state.companies[index].type ?? "null",
+                            locationcompany: state.companies[index].address ?? "null",
+                            emailcompany: state.companies[index].email?? "null",
+                            phoncompany: state.companies[index].phone ?? "null",
+                            mobilcompany: state.companies[index].mobile ?? "null",
                           );
                         },
                       );
