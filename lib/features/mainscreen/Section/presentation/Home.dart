@@ -202,7 +202,7 @@ class _HomeState extends State<Home> {
                       itemCount: state.sections.length,
                       itemBuilder: (BuildContext context, int index) {
                         return TypeWork(
-                          id: state.sections[index].id ?? 1 ,
+                          id: state.sections[index].id ?? 1,
                           image: image[index],
                           type: state.sections[index].name ?? "null",
                           list: list[index],

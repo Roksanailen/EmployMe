@@ -49,7 +49,7 @@ class _MainAppState extends State<MainApp> {
         BlocProvider<CompanyBloc>(
           create: (context) => CompanyBloc(),
         ),
-         BlocProvider<SectiontypeBloc>(
+        BlocProvider<SectiontypeBloc>(
           create: (context) => SectiontypeBloc(),
         ),
         BlocProvider<ProfileBloc>(create: (context) => ProfileBloc()),

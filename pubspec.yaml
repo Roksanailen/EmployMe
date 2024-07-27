@@ -28,7 +28,6 @@ dependencies:
   animated_widgets: ^1.1.0
   image_picker: ^1.0.7
   dotted_border: ^2.1.0
-
   webview_flutter: ^4.5.0
   flutter_map: ^6.1.0
   url_launcher: ^6.1.14
