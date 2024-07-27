@@ -16,7 +16,7 @@ class Signup extends StatelessWidget {
   Widget build(BuildContext context) {
     var passwordController = TextEditingController();
     var phoneController = TextEditingController();
-    var national_numberController = TextEditingController();
+    var nationalNumbercontroller = TextEditingController();
     var emailController = TextEditingController();
     var usernameController = TextEditingController();
     var isPassword = ValueNotifier(false);
@@ -39,7 +39,7 @@ class Signup extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Cv_Screen(),
+                    builder: (context) => const Cv_Screen(),
                   ));
             }
           },
@@ -52,7 +52,7 @@ class Signup extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.92,
                 decoration: BoxDecoration(
                     color: Colors.blue.shade100,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(130),
                         bottomRight: Radius.circular(130))),
                 child: SingleChildScrollView(
@@ -65,13 +65,9 @@ class Signup extends StatelessWidget {
                           child: Lottie.asset('assets/images/signup.json'),
                         ),
                         MainTextField(
-                            validator: (value) {
-                              if (value != null && value.isValidEmail()) {
-                                return null;
-                              } else {
-                                return 'It must consist of letters for example Ahmad';
-                              }
-                            },
+                            validator: (p0) => p0 != null && p0.length > 2
+                                ? null
+                                : 'must consisting of letters for example ahmad  ',
                             controller: firstnameController,
                             label: 'First Name',
                             keyboardType: TextInputType.name,
@@ -81,17 +77,13 @@ class Signup extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.52,
                             contentPadding: const EdgeInsets.all(5),
                             prefixIcon: const Icon(Icons.person)),
-                        SizedBox(
+                        const SizedBox(
                           height: 3,
                         ),
                         MainTextField(
-                          validator: (value) {
-                            if (value != null && value.isValidEmail()) {
-                              return null;
-                            } else {
-                              return 'It must consist of letters for example Ali';
-                            }
-                          },
+                          validator: (p0) => p0 != null && p0.length > 2
+                              ? null
+                              : 'must consisting of letters for example ali  ',
                           controller: lastnameController,
                           fillColor: Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
@@ -109,13 +101,9 @@ class Signup extends StatelessWidget {
                           height: 3,
                         ),
                         MainTextField(
-                          validator: (value) {
-                            if (value != null && value.isValidEmail()) {
-                              return null;
-                            } else {
-                              return 'It must consist of letters for example Ahmad';
-                            }
-                          },
+                          validator: (p0) => p0 != null && p0.length > 2
+                              ? null
+                              : 'must consisting of letters for example ahmad  ',
                           controller: usernameController,
                           fillColor: Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
@@ -129,13 +117,13 @@ class Signup extends StatelessWidget {
                           contentPadding: const EdgeInsets.all(5),
                           prefixIcon: const Icon(Icons.person_3_rounded),
                         ),
-                        SizedBox(height: 3),
+                        const SizedBox(height: 3),
                         MainTextField(
                             validator: (value) {
                               if (value != null && value.isValidEmail()) {
                                 return null;
                               } else {
-                                return 'please add valid email example (ss@gmail.com) ';
+                                return 'must be valid email as (ss@gmail.com) ';
                               }
                             },
                             controller: emailController,
@@ -149,7 +137,7 @@ class Signup extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.52,
                             contentPadding: const EdgeInsets.all(5),
                             prefixIcon: const Icon(Icons.email)),
-                        SizedBox(
+                        const SizedBox(
                           height: 3,
                         ),
                         ValueListenableBuilder(
@@ -181,7 +169,7 @@ class Signup extends StatelessWidget {
                                       },
                                       icon: const Icon(Icons.remove_red_eye))),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 1,
                         ),
                         MainTextField(
@@ -209,7 +197,7 @@ class Signup extends StatelessWidget {
                           height: 3,
                         ),
                         MainTextField(
-                          controller: national_numberController,
+                          controller: nationalNumbercontroller,
                           fillColor: Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
                           label: 'national number',
@@ -222,7 +210,7 @@ class Signup extends StatelessWidget {
                           contentPadding: const EdgeInsets.all(5),
                           prefixIcon: const Icon(Icons.numbers),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         ElevatedButton(
@@ -234,7 +222,7 @@ class Signup extends StatelessWidget {
                                 lastName: lastnameController.text,
                                 firstName: firstnameController.text,
                                 userName: usernameController.text,
-                                idNumber: national_numberController.text));
+                                idNumber: nationalNumbercontroller.text));
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
@@ -247,7 +235,7 @@ class Signup extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         )
                       ]),
