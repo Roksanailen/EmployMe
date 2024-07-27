@@ -1,5 +1,4 @@
 import 'package:emplooo/core/unified_api/status.dart';
-import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/opportunities.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -42,20 +41,15 @@ class _Business_ClassificationState extends State<Business_Classification> {
       ),
       body: BlocBuilder<SectiontypeBloc, SectionTypeState>(
           builder: (context, state) {
-        if (state.SectionTyeStatus == Status.loading) {
+        if (state.sectionTyeStatus == Status.loading) {
           return const Center(
             child: CircularProgressIndicator(),
           );
-        } else if (state.SectionTyeStatus == Status.success) {
-          return ListView.builder(
-              itemCount: state.datum.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Opportunities(
-                  name: state.datum[index].title ?? 'null',
-                  locationcompany: state.datum[index].title ?? 'null',
-                  List: widget.list,
-                );
-              });
+        } else if (state.sectionTyeStatus == Status.success) {
+          return Opportunities(
+              name: state.sectiontype!.data!.title!,
+              locationcompany: state.sectiontype!.data!.jobDescription!,
+              list: state.sectiontype!.data!.title!);
         } else
           return const Center(
             child: Text('Try Agian'),
