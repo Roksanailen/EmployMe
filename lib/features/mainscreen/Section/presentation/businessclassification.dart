@@ -1,3 +1,4 @@
+import 'package:emplooo/core/unified_api/status.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/opportunities.dart';
 import 'package:flutter/material.dart';
@@ -41,11 +42,11 @@ class _Business_ClassificationState extends State<Business_Classification> {
       ),
       body: BlocBuilder<SectiontypeBloc, SectionTypeState>(
           builder: (context, state) {
-        if (state is TypesLoading) {
+        if (state.SectionTyeStatus == Status.loading) {
           return const Center(
             child: CircularProgressIndicator(),
           );
-        } else if (state is TypesSuccess) {
+        } else if (state.SectionTyeStatus == Status.success) {
           return ListView.builder(
               itemCount: state.datum.length,
               itemBuilder: (BuildContext context, int index) {

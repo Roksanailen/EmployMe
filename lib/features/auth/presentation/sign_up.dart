@@ -65,13 +65,13 @@ class Signup extends StatelessWidget {
                           child: Lottie.asset('assets/images/signup.json'),
                         ),
                         MainTextField(
-                            validator: (value) {
-                              if (value != null && value.isValidEmail()) {
-                                return null;
-                              } else {
-                                return 'It must consist of letters for example Ahmad';
-                              }
-                            },
+                            // validator: (value) {
+                            //   if (value != null && value.isValidEmail()) {
+                            //     return null;
+                            //   } else {
+                            //     return 'It must consist of letters for example Ahmad';
+                            //   }
+                            // },
                             controller: firstnameController,
                             label: 'First Name',
                             keyboardType: TextInputType.name,
@@ -85,13 +85,13 @@ class Signup extends StatelessWidget {
                           height: 3,
                         ),
                         MainTextField(
-                          validator: (value) {
-                            if (value != null && value.isValidEmail()) {
-                              return null;
-                            } else {
-                              return 'It must consist of letters for example Ali';
-                            }
-                          },
+                          // validator: (value) {
+                          //   if (value != null && value.isValidEmail()) {
+                          //     return null;
+                          //   } else {
+                          //     return 'It must consist of letters for example Ali';
+                          //   }
+                          // },
                           controller: lastnameController,
                           fillColor: Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
@@ -109,13 +109,13 @@ class Signup extends StatelessWidget {
                           height: 3,
                         ),
                         MainTextField(
-                          validator: (value) {
-                            if (value != null && value.isValidEmail()) {
-                              return null;
-                            } else {
-                              return 'It must consist of letters for example Ahmad';
-                            }
-                          },
+                          // validator: (value) {
+                          //   if (value != null && value.isValidEmail()) {
+                          //     return null;
+                          //   } else {
+                          //     return 'It must consist of letters for example Ahmad';
+                          //   }
+                          // },
                           controller: usernameController,
                           fillColor: Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
@@ -131,13 +131,13 @@ class Signup extends StatelessWidget {
                         ),
                         SizedBox(height: 3),
                         MainTextField(
-                            validator: (value) {
-                              if (value != null && value.isValidEmail()) {
-                                return null;
-                              } else {
-                                return 'please add valid email example (ss@gmail.com) ';
-                              }
-                            },
+                            // validator: (value) {
+                            //   if (value != null && value.isValidEmail()) {
+                            //     return null;
+                            //   } else {
+                            //     return 'please add valid email example (ss@gmail.com) ';
+                            //   }
+                            // },
                             controller: emailController,
                             fillColor: Colors.transparent,
                             borderRadius: BorderRadius.circular(20),

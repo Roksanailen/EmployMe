@@ -51,7 +51,7 @@ class ApiVariables {
     log(uri.toString().logMagenta);
     return uri;
   }
-  static Uri getSectionType(String section_id)=> _mainUri(path: 'api/admin/jobs$section_id',);
+  static Uri getSectionType(String section_id)=> _mainUri(path: 'api/admin/jobs/$section_id',);
 
 }
 
