@@ -285,9 +285,6 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                                   });
                                 },
                                 items: specializationName.where((element) {
-                                  print(element.educationId);
-                                  print(valueChooseinformation?.value);
-
                                   return switch (
                                       valueChooseinformation?.value) {
                                     1 => element.educationId == 1,
