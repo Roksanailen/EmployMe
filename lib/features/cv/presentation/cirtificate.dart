@@ -79,7 +79,7 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
     SpecializationNameAi(
         name: 'Assistant Architecture', educationId: 11, value: 36),
     SpecializationNameAi(name: 'Interior design', educationId: 11, value: 37),
-    SpecializationNameAi(name: 'Civil Engineer', educationId: 19, value: 39),
+    SpecializationNameAi(name: 'Civil Engineer', educationId: 9, value: 39),
     SpecializationNameAi(name: 'Physics', educationId: 14, value: 43),
     SpecializationNameAi(name: 'Chemistry', educationId: 14, value: 45),
     SpecializationNameAi(
@@ -112,7 +112,7 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                   height: MediaQuery.of(context).size.height * 0.90,
                   decoration: BoxDecoration(
                       color: Colors.blue.shade100,
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(80),
                           bottomRight: Radius.circular(80))),
                   child: SingleChildScrollView(
@@ -285,12 +285,19 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                                   });
                                 },
                                 items: specializationName.where((element) {
+                                  print(element.educationId);
+                                  print(valueChooseinformation?.value);
+
                                   return switch (
                                       valueChooseinformation?.value) {
+                                    1 => element.educationId == 1,
+                                    11 => element.educationId == 11,
+                                    16 => element.educationId == 16,
                                     7 || 12 => element.educationId == 7,
                                     2 || 14 => element.educationId == 14,
                                     20 || 22 => element.educationId == 22,
                                     3 => element.educationId == 3,
+                                    9 => element.educationId == 9,
                                     4 => element.educationId == 22 ||
                                         element.educationId == 7,
                                     _ => true
