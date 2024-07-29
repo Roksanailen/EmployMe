@@ -4,7 +4,7 @@ import 'dart:typed_data';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:emplooo/core/enums/request_status.dart';
 import 'package:emplooo/core/toaster.dart';
-import 'package:emplooo/features/advice/Presentation/other.dart';
+import 'package:emplooo/core/widgets/main_text_field.dart';
 import 'package:emplooo/features/cv/presentation/bloc/cv_bloc.dart';
 import 'package:emplooo/features/search/presentation/search_screen.dart';
 import 'package:flutter/material.dart';
@@ -72,13 +72,16 @@ class _Skills_ScreenState extends State<Skills_Screen> {
     SkillsAi(selectedValue: 5, name: 'JavaScript', value: ValueNotifier(0)),
     SkillsAi(selectedValue: 5, name: 'Json', value: ValueNotifier(0)),
     SkillsAi(selectedValue: 5, name: 'Bootstrap', value: ValueNotifier(0)),
-     SkillsAi(selectedValue: 0, name: 'other', value: ValueNotifier(0)),
+    SkillsAi(selectedValue: 0, name: 'other', value: ValueNotifier(0)),
   ];
   void _showMultiSelectLanguage(BuildContext context) async {
     final List<SkillsAi>? results = await showDialog(
       context: context,
       builder: (BuildContext context) {
-        return MultiSelected(items: languages , selectedItems: _selectedItems,);
+        return MultiSelected(
+          items: languages,
+          selectedItems: _selectedItems,
+        );
       },
     );
     if (results != null) {
@@ -117,7 +120,10 @@ class _Skills_ScreenState extends State<Skills_Screen> {
     final List<SkillsAi>? resultsskills = await showDialog(
       context: context,
       builder: (BuildContext context) {
-        return MultiSelected(items: skills ,selectedItems: _selectedItemsskills,);
+        return MultiSelected(
+          items: skills,
+          selectedItems: _selectedItemsskills,
+        );
       },
     );
     if (resultsskills != null) {
@@ -265,7 +271,7 @@ class _Skills_ScreenState extends State<Skills_Screen> {
               height: MediaQuery.of(context).size.height * 0.90,
               decoration: BoxDecoration(
                   color: Colors.blue.shade100,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(80),
                       bottomRight: Radius.circular(80))),
               child: SingleChildScrollView(
@@ -459,23 +465,26 @@ class _Skills_ScreenState extends State<Skills_Screen> {
                         const Divider(
                           height: 30,
                         ),
-                       SizedBox(width: MediaQuery.of(context).size.width*.6,child: Wrap(
-                          spacing: 10.0,
-                          runSpacing: 5.0,
-                          children: _selectedItemsskills
-                              .map((e) => Chip(
-                                    label: Text(e.name),
-                                    shape: const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(20),
-                                      bottomLeft: Radius.circular(20),
-                                      bottomRight: Radius.circular(20),
-                                    )),
-                                    backgroundColor: Colors.transparent,
-                                  ))
-                              .toList(),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * .6,
+                          child: Wrap(
+                            spacing: 10.0,
+                            runSpacing: 5.0,
+                            children: _selectedItemsskills
+                                .map((e) => Chip(
+                                      label: Text(e.name),
+                                      shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(20),
+                                        bottomLeft: Radius.circular(20),
+                                        bottomRight: Radius.circular(20),
+                                      )),
+                                      backgroundColor: Colors.transparent,
+                                    ))
+                                .toList(),
+                          ),
                         ),
-                       ) ,const SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Row(
@@ -619,14 +628,17 @@ class _Skills_ScreenState extends State<Skills_Screen> {
 class MultiSelected extends StatefulWidget {
   final List<SkillsAi> items;
   final List<SkillsAi> selectedItems;
-  
-  const MultiSelected({super.key, required this.items,required this.selectedItems});
-  @override
 
+  const MultiSelected(
+      {super.key, required this.items, required this.selectedItems});
+  @override
   State<MultiSelected> createState() => _MultiSelectedStateState();
 }
 
 class _MultiSelectedStateState extends State<MultiSelected> {
+  bool isOther = false;
+  var textEditingController = TextEditingController();
+  @override
   void initState() {
     _selectedItems = widget.selectedItems;
     super.initState();
@@ -635,6 +647,9 @@ class _MultiSelectedStateState extends State<MultiSelected> {
   List<SkillsAi> _selectedItems = [];
   void _itemChange(SkillsAi itemValue, bool isSelected) {
     setState(() {
+      if (itemValue.name == 'other') {
+        isOther = isSelected;
+      }
       if (isSelected) {
         _selectedItems.add(itemValue);
       } else {
@@ -648,6 +663,14 @@ class _MultiSelectedStateState extends State<MultiSelected> {
   }
 
   void _submit(BuildContext context) {
+    if (isOther) {
+      _selectedItems[_selectedItems.indexWhere((e) {
+        return e.name == 'other';
+      })] = _selectedItems[_selectedItems.indexWhere((e) {
+        return e.name == 'other';
+      })]
+          .copyWith(name: textEditingController.text);
+    }
     Navigator.pop(context, _selectedItems);
   }
 
@@ -656,15 +679,32 @@ class _MultiSelectedStateState extends State<MultiSelected> {
     return AlertDialog(
       title: const Text('Select Topics'),
       content: SingleChildScrollView(
-        child: ListBody(
-          children: widget.items
-              .map((item) => CheckboxListTile(
-                    value: _selectedItems.contains(item),
-                    title: Text(item.name),
-                    controlAffinity: ListTileControlAffinity.leading,
-                    onChanged: (isChecked) => _itemChange(item, isChecked!),
-                  ))
-              .toList(),
+        child: Column(
+          children: [
+            ListBody(
+              children: widget.items
+                  .map((item) => CheckboxListTile(
+                        value: _selectedItems.contains(item),
+                        title: Text(item.name),
+                        controlAffinity: ListTileControlAffinity.leading,
+                        onChanged: (isChecked) => _itemChange(item, isChecked!),
+                      ))
+                  .toList(),
+            ),
+            if (isOther)
+              MainTextField(
+                  validator: (p0) => p0 != null && p0.length > 4
+                      ? null
+                      : 'must consisting of letters  ',
+                  fillColor: Colors.transparent,
+                  borderRadius: BorderRadius.circular(20),
+                  keyboardType: TextInputType.name,
+                  borderColor: Colors.black,
+                  height: MediaQuery.of(context).size.height * 0.1,
+                  width: MediaQuery.of(context).size.width * 0.52,
+                  keyboardAppearance: true,
+                  controller: textEditingController)
+          ],
         ),
       ),
       actions: [
@@ -693,7 +733,7 @@ class _MultiSelectedStateState extends State<MultiSelected> {
             'Submit',
             style: TextStyle(color: Colors.lightBlue),
           ),
-        )
+        ),
       ],
     );
   }

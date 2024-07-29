@@ -38,4 +38,16 @@ class SkillsAi {
     required this.value,
     required this.selectedValue,
   });
+
+  SkillsAi copyWith({
+    String? name,
+    ValueNotifier<int>? value,
+    int? selectedValue,
+  }) {
+    return SkillsAi(
+      name: name ?? this.name,
+      value: value ?? this.value,
+      selectedValue: selectedValue ?? this.selectedValue,
+    );
+  }
 }

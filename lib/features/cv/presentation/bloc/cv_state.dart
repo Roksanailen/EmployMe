@@ -50,10 +50,10 @@ class CvState {
     this.englishLanguage = 0,
     this.arabicLanguage = 0,
     this.germanLanguage = 0,
-    this.frenchLanguage=0,
-    this.russianLanguage=0,
-    this.chineseLanguage=0,
-    this.otherLanguage=0,
+    this.frenchLanguage = 0,
+    this.russianLanguage = 0,
+    this.chineseLanguage = 0,
+    this.otherLanguage = 0,
     this.experienceYears,
     this.age,
     this.communication = 0,
@@ -81,7 +81,7 @@ class CvState {
     this.javaScript = 0,
     this.json = 0,
     this.bootstrap = 0,
-    this.other =0,
+    this.other = 0,
   });
 
   CvState copyWith({
@@ -221,9 +221,9 @@ class CvState {
         arabicLanguage != null &&
         germanLanguage != null &&
         frenchLanguage != null &&
-        russianLanguage !=null &&
+        russianLanguage != null &&
         chineseLanguage != null &&
-        otherLanguage!=null&&
+        otherLanguage != null &&
         experienceYears != null &&
         specialization != null &&
         age != null) {
