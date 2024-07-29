@@ -264,7 +264,7 @@ class _HomeState extends State<Home> {
                         phoneremote: phoneremote[index],
                         experiencesremote: experiencesremote[index],
                       );
-                    }),
+                    }).animate().fadeIn(duration: Duration(seconds: 2)),
               ),
               const SizedBox(
                 height: 20,

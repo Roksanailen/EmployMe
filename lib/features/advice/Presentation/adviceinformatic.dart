@@ -36,7 +36,7 @@ class AdviceType2 extends StatelessWidget {
                 color: Colors.blue,
                 fontSize: 15,
               ),
-            ).animate().shake(duration: 200 .milliseconds),
+            ).animate().shake(duration: 200.milliseconds),
           ],
         ),
       ),
