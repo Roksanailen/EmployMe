@@ -12,6 +12,7 @@ class CvState {
   final int? frenchLanguage;
   final int? russianLanguage;
   final int? chineseLanguage;
+  final int? otherLanguage;
   final int? experienceYears;
   final int? age;
   final int? communication;
@@ -39,6 +40,7 @@ class CvState {
   final int? javaScript;
   final int? json;
   final int? bootstrap;
+  final int? other;
   CvState({
     this.status = RequestStatus.init,
     this.response,
@@ -51,6 +53,7 @@ class CvState {
     this.frenchLanguage=0,
     this.russianLanguage=0,
     this.chineseLanguage=0,
+    this.otherLanguage=0,
     this.experienceYears,
     this.age,
     this.communication = 0,
@@ -78,6 +81,7 @@ class CvState {
     this.javaScript = 0,
     this.json = 0,
     this.bootstrap = 0,
+    this.other =0,
   });
 
   CvState copyWith({
@@ -92,6 +96,7 @@ class CvState {
     int? frenchLanguage,
     int? russianLanguage,
     int? chineseLanguage,
+    int? otherLanguage,
     int? experienceYears,
     int? age,
     int? communication,
@@ -119,6 +124,7 @@ class CvState {
     int? javaScript,
     int? json,
     int? bootstrap,
+    int? other,
   }) {
     return CvState(
       status: status ?? this.status,
@@ -159,6 +165,7 @@ class CvState {
       javaScript: javaScript ?? this.javaScript,
       json: json ?? this.json,
       bootstrap: bootstrap ?? this.bootstrap,
+      other: other ?? this.other,
     );
   }
 
@@ -174,6 +181,7 @@ class CvState {
         frenchLanguage,
         russianLanguage,
         chineseLanguage,
+        otherLanguage,
         communication,
         revit,
         autoCad,
@@ -199,6 +207,7 @@ class CvState {
         javaScript,
         json,
         bootstrap,
+        other,
         experienceYears,
         age,
       ],
@@ -214,6 +223,7 @@ class CvState {
         frenchLanguage != null &&
         russianLanguage !=null &&
         chineseLanguage != null &&
+        otherLanguage!=null&&
         experienceYears != null &&
         specialization != null &&
         age != null) {

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Oppertunities_Details extends StatelessWidget {
-  const Oppertunities_Details({super.key});
+class Oppertunities_Details extends StatefulWidget {
+   Oppertunities_Details({super.key, });
+  
+  @override
+  State<Oppertunities_Details> createState() => _Oppertunities_DetailsState();
+}
 
+class _Oppertunities_DetailsState extends State<Oppertunities_Details> {
   @override
   Widget build(BuildContext context) {
      var screenheight=MediaQuery.of(context).size.height;

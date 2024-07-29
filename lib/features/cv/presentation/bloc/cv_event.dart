@@ -33,6 +33,7 @@ class EditLanguagesEvent extends CvEvent {
   final int French;
   final int Russian;
   final int Chinese;
+  final int other;
 
   EditLanguagesEvent({
     required this.arabic,
@@ -40,7 +41,8 @@ class EditLanguagesEvent extends CvEvent {
     required this.german,
     required this.French,
     required this.Russian,
-    required this.Chinese,
+    required this.Chinese, 
+    required this.other,
   });
 }
 
@@ -70,6 +72,7 @@ class EditSkillsEvent extends CvEvent {
   final int? javaScript;
   final int? json;
   final int? bootstrap;
+  final int? other;
   EditSkillsEvent({
     this.communication,
     this.revit,
@@ -96,6 +99,7 @@ class EditSkillsEvent extends CvEvent {
     this.javaScript,
     this.json,
     this.bootstrap,
+    this.other,
   });
 }
 

@@ -1,4 +1,5 @@
 import 'package:emplooo/features/mainscreen/Section/presentation/companydetails.dart';
+import 'package:emplooo/features/mainscreen/Section/presentation/companyoffers.dart';
 import 'package:flutter/material.dart';
 
 
@@ -15,20 +16,14 @@ class Company extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (BuildContext context) {
-            return Company_Details(
-              companyname: companyname,
-              companyimage: companyimage,
-              locationcompany: locationcompany,
-              Typeofcompany: Typeofcompany,
-              emailcompany: emailcompany,
-              phoncompany: phoncompany,
-              mobilcompany: mobilcompany,
-            );
-          }));
-        },
+       onTap: () {
+        Navigator.of(context)
+              .push(MaterialPageRoute(builder: (BuildContext context){
+                return CompanyOffers(
+                  
+                );
+              }));
+       },
         child: Container(
           height: 200,
           width: 250,
@@ -59,7 +54,29 @@ class Company extends StatelessWidget {
                   child: Row(
                     children: [
                  SizedBox(height: 30.0,),     
-                 Text(companyname,style: TextStyle(color: Colors.black),)
+                 Row(
+             
+                   children: [
+                    
+                     Text(companyname,style: TextStyle(color: Colors.black),),
+                    SizedBox(width: 70,),
+                     InkWell( onTap: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (BuildContext context) {
+            return Company_Details(
+              companyname: companyname,
+              companyimage: companyimage,
+              locationcompany: locationcompany,
+              Typeofcompany: Typeofcompany,
+              emailcompany: emailcompany,
+              phoncompany: phoncompany,
+              mobilcompany: mobilcompany,
+            );
+          }));
+        },
+                      child: Icon(Icons.info))
+                   ],
+                 )
                        
                     ],
                   ),

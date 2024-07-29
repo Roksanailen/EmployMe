@@ -26,6 +26,7 @@ class CvBloc extends Bloc<CvEvent, CvState> {
         frenchLanguage: event.French,
         russianLanguage: event.Russian,
         chineseLanguage: event.Chinese,
+        otherLanguage: event.other,
         
       ));
     });
@@ -59,6 +60,7 @@ class CvBloc extends Bloc<CvEvent, CvState> {
         javaScript: event.javaScript,
         json: event.json,
         bootstrap: event.bootstrap,
+        other: event.other,
       ));
     });
     on<EditCertificateNameEvent>((event, emit) {

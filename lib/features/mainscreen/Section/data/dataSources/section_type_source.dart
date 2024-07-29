@@ -3,10 +3,10 @@ import 'package:emplooo/core/unified_api/methods/get_api.dart';
 import 'package:emplooo/features/mainscreen/Section/data/model/section_type_response_model.dart';
 
 class SectionTypeDataSource {
-  Future<SectionTypeResponseModel> getSectionType(String sectionId) async {
+  Future<SectionTypeRespnoseModel> getSectionType(String sectionId) async {
     final result = GetApi(
         uri: ApiVariables.getSectionType(sectionId),
-        fromJson: sectionTypeResponseModelFromJson);
+        fromJson: sectionTypeRespnoseModelFromJson);
 
     var newVariable = await result.call();
     return newVariable;

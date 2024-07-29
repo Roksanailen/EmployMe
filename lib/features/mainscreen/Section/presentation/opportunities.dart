@@ -1,34 +1,37 @@
-import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
+
 import 'package:emplooo/features/mainscreen/Section/presentation/opportunitiesdetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Opportunities extends StatelessWidget {
+class Opportunities extends StatefulWidget {
   const Opportunities({
     super.key,
     required this.name,
     required this.locationcompany,
     required this.list,
+    required this.salary,
   });
   final String name;
   final String list;
   final String locationcompany;
+  final String salary;
+
+  @override
+  State<Opportunities> createState() => _OpportunitiesState();
+}
+
+class _OpportunitiesState extends State<Opportunities> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (BuildContext context) {
-          return const Oppertunities_Details();
+       
+          return  Oppertunities_Details();
         }));
       },
-      child: BlocBuilder<TypesBloc, TypesState>(builder: (context, state) {
-        if (state is TypesLoading) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        } else if (state is TypesSuccess) {
-          return Card(
+      child: Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             elevation: 7,
@@ -41,8 +44,8 @@ class Opportunities extends StatelessWidget {
                         borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(20),
                         ),
-                        child: Image.asset(
-                          list,
+                        child: Image.network(
+                          widget.list,
                           height: 250,
                           width: double.infinity,
                           fit: BoxFit.cover,
@@ -63,7 +66,7 @@ class Opportunities extends StatelessWidget {
                           const SizedBox(
                             width: 7,
                           ),
-                          Text(name),
+                          Text(widget.name),
                         ],
                       ),
                       Row(
@@ -76,7 +79,7 @@ class Opportunities extends StatelessWidget {
                             width: 7,
                           ),
                           Text(
-                            locationcompany,
+                            widget.locationcompany,
                           ),
                         ],
                       ),
@@ -85,12 +88,7 @@ class Opportunities extends StatelessWidget {
                 )
               ],
             ),
-          );
-        } else
-          return const Center(
-            child: Text('Try Agian'),
-          );
-      }),
-    );
+          ));
+  
   }
 }

@@ -1,8 +1,8 @@
 part of 'sectiontype_bloc.dart';
 
 class SectionTypeState {
-  final List<SectionTypeModel> datum;
-  final SectionTypeResponseModel? sectiontype;
+  final List<JobModel> datum;
+  final SectionTypeRespnoseModel? sectiontype;
   final Status sectionTyeStatus;
   final String? token;
   SectionTypeState({
@@ -14,8 +14,8 @@ class SectionTypeState {
 
   SectionTypeState copyWith({
     String? token,
-    List<SectionTypeModel>? datum,
-    SectionTypeResponseModel? sectiontype,
+    List<JobModel>? datum,
+    SectionTypeRespnoseModel? sectiontype,
     Status? sectionTyeStatus,
   }) {
     return SectionTypeState(

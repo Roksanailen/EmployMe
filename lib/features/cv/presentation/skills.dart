@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:emplooo/core/enums/request_status.dart';
 import 'package:emplooo/core/toaster.dart';
+import 'package:emplooo/features/advice/Presentation/other.dart';
 import 'package:emplooo/features/cv/presentation/bloc/cv_bloc.dart';
 import 'package:emplooo/features/search/presentation/search_screen.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class _Skills_ScreenState extends State<Skills_Screen> {
     SkillsAi(selectedValue: 5, name: 'French', value: ValueNotifier(0)),
     SkillsAi(selectedValue: 2, name: 'Russian', value: ValueNotifier(0)),
     SkillsAi(selectedValue: 2, name: 'Chinese', value: ValueNotifier(0)),
-    
+    SkillsAi(selectedValue: 0, name: 'other', value: ValueNotifier(0)),
   ];
   final List<SkillsAi> skills = [
     SkillsAi(selectedValue: 1, name: 'Communication', value: ValueNotifier(0)),
@@ -71,12 +72,13 @@ class _Skills_ScreenState extends State<Skills_Screen> {
     SkillsAi(selectedValue: 5, name: 'JavaScript', value: ValueNotifier(0)),
     SkillsAi(selectedValue: 5, name: 'Json', value: ValueNotifier(0)),
     SkillsAi(selectedValue: 5, name: 'Bootstrap', value: ValueNotifier(0)),
+     SkillsAi(selectedValue: 0, name: 'other', value: ValueNotifier(0)),
   ];
   void _showMultiSelectLanguage(BuildContext context) async {
     final List<SkillsAi>? results = await showDialog(
       context: context,
       builder: (BuildContext context) {
-        return MultiSelected(items: languages);
+        return MultiSelected(items: languages , selectedItems: _selectedItems,);
       },
     );
     if (results != null) {
@@ -102,6 +104,9 @@ class _Skills_ScreenState extends State<Skills_Screen> {
               Chinese: _selectedItems.contains(languages[5])
                   ? languages[5].selectedValue
                   : languages[5].value.value,
+              other: _selectedItems.contains(languages[6])
+                  ? languages[6].selectedValue
+                  : languages[6].value.value,
             ));
       });
     }
@@ -112,7 +117,7 @@ class _Skills_ScreenState extends State<Skills_Screen> {
     final List<SkillsAi>? resultsskills = await showDialog(
       context: context,
       builder: (BuildContext context) {
-        return MultiSelected(items: skills);
+        return MultiSelected(items: skills ,selectedItems: _selectedItemsskills,);
       },
     );
     if (resultsskills != null) {
@@ -193,6 +198,9 @@ class _Skills_ScreenState extends State<Skills_Screen> {
                   : 0,
               bootstrap: _selectedItemsskills.contains(skills[24])
                   ? skills[24].selectedValue
+                  : 0,
+              other: _selectedItemsskills.contains(skills[25])
+                  ? skills[25].selectedValue
                   : 0,
             ));
       });
@@ -451,7 +459,7 @@ class _Skills_ScreenState extends State<Skills_Screen> {
                         const Divider(
                           height: 30,
                         ),
-                        Wrap(
+                       SizedBox(width: MediaQuery.of(context).size.width*.6,child: Wrap(
                           spacing: 10.0,
                           runSpacing: 5.0,
                           children: _selectedItemsskills
@@ -467,7 +475,7 @@ class _Skills_ScreenState extends State<Skills_Screen> {
                                   ))
                               .toList(),
                         ),
-                        const SizedBox(
+                       ) ,const SizedBox(
                           height: 20,
                         ),
                         Row(
@@ -610,14 +618,19 @@ class _Skills_ScreenState extends State<Skills_Screen> {
 
 class MultiSelected extends StatefulWidget {
   final List<SkillsAi> items;
-  const MultiSelected({super.key, required this.items});
+  final List<SkillsAi> selectedItems;
+  
+  const MultiSelected({super.key, required this.items,required this.selectedItems});
   @override
-  @override
+
   State<MultiSelected> createState() => _MultiSelectedStateState();
 }
 
 class _MultiSelectedStateState extends State<MultiSelected> {
-  void initState() {}
+  void initState() {
+    _selectedItems = widget.selectedItems;
+    super.initState();
+  }
 
   List<SkillsAi> _selectedItems = [];
   void _itemChange(SkillsAi itemValue, bool isSelected) {

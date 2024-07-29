@@ -33,6 +33,8 @@ class _Business_ClassificationState extends State<Business_Classification> {
     super.initState();
   }
 
+  final salary = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,10 +48,15 @@ class _Business_ClassificationState extends State<Business_Classification> {
             child: CircularProgressIndicator(),
           );
         } else if (state.sectionTyeStatus == Status.success) {
-          return Opportunities(
-              name: state.sectiontype!.data!.title!,
-              locationcompany: state.sectiontype!.data!.jobDescription!,
-              list: state.sectiontype!.data!.title!);
+          return ListView.builder(
+            itemCount: state.sectiontype!.data!.length,
+            itemBuilder: (c, i) => Opportunities(
+              name: state.sectiontype!.data![i].title!,
+              locationcompany: '',
+              list: state.sectiontype!.data![i].media!.mediaUrl!,
+              salary: state.sectiontype!.data![i].salary!.toString(),
+            ),
+          );
         } else
           return const Center(
             child: Text('Try Agian'),

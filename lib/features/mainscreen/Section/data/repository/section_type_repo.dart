@@ -5,7 +5,7 @@ import 'package:emplooo/features/mainscreen/Section/data/dataSources/section_typ
 import 'package:emplooo/features/mainscreen/Section/data/model/section_type_response_model.dart';
 
 class SectionTypeRepo with HandlingExceptionManager {
-  Future<Either<Failure, SectionTypeResponseModel>> getSectionType(
+  Future<Either<Failure, SectionTypeRespnoseModel>> getSectionType(
       String section_id) async {
     return await wrapHandling(tryCall: () async {
       final result = await SectionTypeDataSource().getSectionType(section_id);

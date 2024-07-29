@@ -53,6 +53,7 @@ class ApiVariables {
   }
 
   static Uri getSectionType(String sectionId) => _mainUri(
-        path: 'api/admin/jobs/$sectionId',
+        path: 'api/admin/jobs',
+        params: {'section_id':sectionId}
       );
 }

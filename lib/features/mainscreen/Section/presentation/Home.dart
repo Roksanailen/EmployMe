@@ -1,6 +1,6 @@
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
-import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
+
 import 'package:emplooo/features/mainscreen/Section/presentation/company.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/remotework.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/typework.dart';
@@ -20,7 +20,6 @@ class _HomeState extends State<Home> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     context.read<SectionBloc>().add(GetSectionsEvent());
-    context.read<TypesBloc>().add(GetTypessEvent());
     context.read<CompanyBloc>().add(GetCompaniesEvent());
   }
 
@@ -207,7 +206,7 @@ class _HomeState extends State<Home> {
                           image: image[index],
                           type: state.sections[index].name ?? "null",
                           list: list[index],
-                          name: name[index],
+                          name: state.sections[index].name ?? "null",
                           locationcompany: locationcompany[index],
                         );
                       },

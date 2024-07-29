@@ -4,7 +4,7 @@ import 'package:emplooo/features/cv/presentation/bloc/cv_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/sectiontype_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
-import 'package:emplooo/features/mainscreen/Section/presentation/bloc/type_bloc.dart';
+
 import 'package:emplooo/features/mainscreen/home_screen.dart';
 import 'package:emplooo/features/profile/bloc/profile_bloc.dart';
 import 'package:emplooo/features/search/presentation/bloc/search_bloc.dart';
@@ -43,9 +43,7 @@ class _MainAppState extends State<MainApp> {
         BlocProvider<SearchBloc>(
           create: (context) => SearchBloc(),
         ),
-        BlocProvider<TypesBloc>(
-          create: (context) => TypesBloc(),
-        ),
+       
         BlocProvider<CompanyBloc>(
           create: (context) => CompanyBloc(),
         ),
