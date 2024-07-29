@@ -52,8 +52,6 @@ class ApiVariables {
     return uri;
   }
 
-  static Uri getSectionType(String sectionId) => _mainUri(
-        path: 'api/admin/jobs',
-        params: {'section_id':sectionId}
-      );
+  static Uri getSectionType(ParamsMap params) =>
+      _mainUri(path: 'api/admin/jobs', params: params);
 }

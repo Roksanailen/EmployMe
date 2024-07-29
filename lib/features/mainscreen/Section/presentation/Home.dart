@@ -1,12 +1,13 @@
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
-
 import 'package:emplooo/features/mainscreen/Section/presentation/company.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/remotework.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/typework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/unified_api/status.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -94,10 +95,10 @@ class _HomeState extends State<Home> {
     'assets/images/vv.png',
     'assets/images/mm.png',
   ];
-  final Typeofcompany=[];
-  final emailcompany=[];
-  final phonecompany=[];
-  final mobilecompany=[];
+  final Typeofcompany = [];
+  final emailcompany = [];
+  final phonecompany = [];
+  final mobilecompany = [];
   final remotimage = [
     'assets/images/w0.png',
     'assets/images/rr.png',
@@ -264,7 +265,7 @@ class _HomeState extends State<Home> {
                         phoneremote: phoneremote[index],
                         experiencesremote: experiencesremote[index],
                       );
-                    }).animate().fadeIn(duration: Duration(seconds: 2)),
+                    }).animate().fadeIn(duration: const Duration(seconds: 2)),
               ),
               const SizedBox(
                 height: 20,
@@ -281,23 +282,18 @@ class _HomeState extends State<Home> {
                 height: 320,
                 child: BlocBuilder<CompanyBloc, CompaniesState>(
                   builder: (context, state) {
-                    if (state is CompaniesLoading) {
+                    if (state.status == Status.loading) {
                       return const Center(
                         child: CircularProgressIndicator(),
                       );
-                    } else if (state is CompaniesSuccess) {
+                    } else if (state.status == Status.success) {
                       return ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: state.companies.length,
                         itemBuilder: (BuildContext context, int index) {
                           return Company(
-                            companyimage: companyimage[index],
-                            companyname: state.companies[index].name ?? "null",
-                            Typeofcompany: state.companies[index].type ?? "null",
-                            locationcompany: state.companies[index].address ?? "null",
-                            emailcompany: state.companies[index].email?? "null",
-                            phoncompany: state.companies[index].phone ?? "null",
-                            mobilcompany: state.companies[index].mobile ?? "null",
+                            company: state.companies[index],
+                            companyImage: companyimage[index],
                           );
                         },
                       );

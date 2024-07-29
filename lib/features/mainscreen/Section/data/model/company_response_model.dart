@@ -4,68 +4,76 @@
 
 import 'dart:convert';
 
-CompanyResponseModel companyResponseModelFromJson(String str) => CompanyResponseModel.fromJson(json.decode(str));
+CompanyResponseModel companyResponseModelFromJson(String str) =>
+    CompanyResponseModel.fromJson(json.decode(str));
 
-String companyResponseModelToJson(CompanyResponseModel data) => json.encode(data.toJson());
+String companyResponseModelToJson(CompanyResponseModel data) =>
+    json.encode(data.toJson());
 
 class CompanyResponseModel {
-    final bool? status;
-    final String? message;
-    final List<Datum>? data;
+  final bool? status;
+  final String? message;
+  final List<CompanyModel>? data;
 
-    CompanyResponseModel({
-        this.status,
-        this.message,
-        this.data,
-    });
+  CompanyResponseModel({
+    this.status,
+    this.message,
+    this.data,
+  });
 
-    factory CompanyResponseModel.fromJson(Map<String, dynamic> json) => CompanyResponseModel(
+  factory CompanyResponseModel.fromJson(Map<String, dynamic> json) =>
+      CompanyResponseModel(
         status: json["status"],
         message: json["message"],
-        data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
-    );
+        data: json["data"] == null
+            ? []
+            : List<CompanyModel>.from(
+                json["data"]!.map((x) => CompanyModel.fromJson(x))),
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "status": status,
         "message": message,
-        "data": data == null ? [] : List<dynamic>.from(data!.map((x) => x.toJson())),
-    };
+        "data": data == null
+            ? []
+            : List<dynamic>.from(data!.map((x) => x.toJson())),
+      };
 }
 
-class Datum {
-    final int? id;
-    final String? name;
-    final String? type;
-    final String? email;
-    final String? address;
-    final String? website;
-    final String? phone;
-    final String? mobile;
-    final int? confirm;
-    final dynamic emailVerifiedAt;
-    final int? managerId;
-    final DateTime? createdAt;
-    final DateTime? updatedAt;
-    final List<dynamic>? media;
+class CompanyModel {
+  final int? id;
+  final String? name;
+  final String? type;
+  final String? email;
+  final String? address;
+  final String? website;
+  final String? phone;
+  final String? mobile;
+  final int? confirm;
+  final dynamic emailVerifiedAt;
+  final int? managerId;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
+  final List<dynamic>? media;
 
-    Datum({
-        this.id,
-        this.name,
-        this.type,
-        this.email,
-        this.address,
-        this.website,
-        this.phone,
-        this.mobile,
-        this.confirm,
-        this.emailVerifiedAt,
-        this.managerId,
-        this.createdAt,
-        this.updatedAt,
-        this.media,
-    });
+  CompanyModel({
+    this.id,
+    this.name,
+    this.type,
+    this.email,
+    this.address,
+    this.website,
+    this.phone,
+    this.mobile,
+    this.confirm,
+    this.emailVerifiedAt,
+    this.managerId,
+    this.createdAt,
+    this.updatedAt,
+    this.media,
+  });
 
-    factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory CompanyModel.fromJson(Map<String, dynamic> json) => CompanyModel(
         id: json["id"],
         name: json["name"],
         type: json["type"],
@@ -77,12 +85,18 @@ class Datum {
         confirm: json["confirm"],
         emailVerifiedAt: json["email_verified_at"],
         managerId: json["manager_id"],
-        createdAt: json["created_at"] == null ? null : DateTime.parse(json["created_at"]),
-        updatedAt: json["updated_at"] == null ? null : DateTime.parse(json["updated_at"]),
-        media: json["media"] == null ? [] : List<dynamic>.from(json["media"]!.map((x) => x)),
-    );
+        createdAt: json["created_at"] == null
+            ? null
+            : DateTime.parse(json["created_at"]),
+        updatedAt: json["updated_at"] == null
+            ? null
+            : DateTime.parse(json["updated_at"]),
+        media: json["media"] == null
+            ? []
+            : List<dynamic>.from(json["media"]!.map((x) => x)),
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
         "type": type,
@@ -97,5 +111,5 @@ class Datum {
         "created_at": createdAt?.toIso8601String(),
         "updated_at": updatedAt?.toIso8601String(),
         "media": media == null ? [] : List<dynamic>.from(media!.map((x) => x)),
-    };
+      };
 }
