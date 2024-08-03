@@ -1,11 +1,10 @@
 import 'dart:core';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainListTile extends StatefulWidget {
   const MainListTile({
-    Key? key,
+    super.key,
     this.leading,
     this.title,
     this.subtitle,
@@ -25,7 +24,7 @@ class MainListTile extends StatefulWidget {
     this.minVerticalPadding,
     this.minLeadingWidth,
     this.titleAlignment,
-  }) : super(key: key);
+  });
   final Widget? leading;
   final String? title;
   final String? subtitle;
@@ -70,14 +69,14 @@ class _MainListTileState extends State<MainListTile>
       leading: widget.leading,
       trailing: widget.trailing,
       title: widget.title == null ? null : Text(widget.title!),
-      titleTextStyle: TextStyle(
+      titleTextStyle: const TextStyle(
           fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
       subtitle: widget.subtitle == null ? null : Text(widget.subtitle!),
       iconColor: Colors.black,
       style: ListTileStyle.drawer,
       enabled: true,
       isThreeLine: false,
-      contentPadding: EdgeInsets.only(left: 40, right: 50),
+      contentPadding: const EdgeInsets.only(left: 40, right: 50),
       dense: false,
       minLeadingWidth: 20,
       horizontalTitleGap: 60,

@@ -56,7 +56,7 @@ class TypeWork extends StatelessWidget {
                               fit: BoxFit.cover,
                             ))
                         .animate()
-                        .slideX(duration: Duration(microseconds: 1000)),
+                        .slideX(duration: const Duration(microseconds: 1000)),
                   ],
                 ),
                 Padding(

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class MainRadio extends StatelessWidget {
   const MainRadio({
-    Key? key,
+    super.key,
     this.style,
     required this.size,
     required this.value,
     required this.title,
     required this.onChanged,
     this.color,
-  }) : super(key: key);
+  });
 
   final Size size;
   final bool value;
@@ -28,7 +28,7 @@ class MainRadio extends StatelessWidget {
           groupValue: value,
           onChanged: onChanged,
           activeColor: color ?? Colors.orange,
-          overlayColor: MaterialStateProperty.all<Color>(
+          overlayColor: WidgetStateProperty.all<Color>(
             Colors.grey,
           ),
         ),

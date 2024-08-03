@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class YesNoDialog extends StatelessWidget {
   const YesNoDialog({
-    Key? key,
+    super.key,
     required this.size,
     required this.title,
     required this.onTapYes,
-  }) : super(key: key);
+  });
   final String title;
   final Function() onTapYes;
   final Size size;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Text_Field extends StatefulWidget {
   const Text_Field({
-    Key? key,
+    super.key,
     this.borderColor,
     this.onChanged,
     this.prefixIcon,
@@ -30,7 +30,7 @@ class Text_Field extends StatefulWidget {
     this.contentPadding =
         const EdgeInsets.symmetric(vertical: 18.0, horizontal: 15),
     this.textAlign = TextAlign.start,
-  }) : super(key: key);
+  });
 
   final TextInputAction textInputAction;
   final Color? borderColor;

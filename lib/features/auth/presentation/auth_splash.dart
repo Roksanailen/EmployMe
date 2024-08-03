@@ -16,7 +16,7 @@ class _AuthSplashState extends State<AuthSplash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 232, 240, 247),
+      backgroundColor: const Color.fromARGB(255, 232, 240, 247),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -27,10 +27,10 @@ class _AuthSplashState extends State<AuthSplash> {
                 ),
                 Center(
                   child: Padding(
-                    padding: EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(20.0),
                     child: Text(
                       LocaleKeys.authSplash_Authsplash.tr(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 20,
                           color: Colors.black),
@@ -56,7 +56,7 @@ class _AuthSplashState extends State<AuthSplash> {
                       fixedSize: const Size(250, 40)),
                   child:  Text(
                     LocaleKeys.authSplash_Signin.tr(),
-                    style: TextStyle(color: Colors.black, fontSize: 16),
+                    style: const TextStyle(color: Colors.black, fontSize: 16),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -78,7 +78,7 @@ class _AuthSplashState extends State<AuthSplash> {
                       fixedSize: const Size(250, 40)),
                   child:  Text(
                     LocaleKeys.authSplash_Signup.tr(),
-                    style: TextStyle(color: Colors.black, fontSize: 16),
+                    style: const TextStyle(color: Colors.black, fontSize: 16),
                     textAlign: TextAlign.center,
                   ),
                 ),

@@ -7,11 +7,10 @@ class TreeView extends InheritedWidget {
   final bool startExpanded;
 
   TreeView({
-    Key? key,
+    super.key,
     required this.children,
     this.startExpanded = false,
   }) : super(
-          key: key,
           child: _TreeViewData(
             children: children,
           ),

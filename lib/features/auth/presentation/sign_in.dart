@@ -42,7 +42,7 @@ class Signin extends StatelessWidget {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Cv_Screen(),
+                      builder: (context) => const Cv_Screen(),
                     ));
               }
             },
@@ -52,7 +52,7 @@ class Signin extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.80,
                 decoration: BoxDecoration(
                     color: Colors.blue.shade100,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(80),
                         bottomRight: Radius.circular(80))),
                 child: SingleChildScrollView(
@@ -139,10 +139,10 @@ class Signin extends StatelessWidget {
                               backgroundColor: Colors.transparent,
                               side: const BorderSide(style: BorderStyle.solid),
                               elevation: 0,
-                              fixedSize:  Size(90, 35)),
+                              fixedSize:  const Size(90, 35)),
                           child:  Text(
                             LocaleKeys.signIn_Login.tr(),
-                            style: TextStyle(color: Colors.black, fontSize: 16),
+                            style: const TextStyle(color: Colors.black, fontSize: 16),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -162,7 +162,7 @@ class Signin extends StatelessWidget {
                                 },
                                 child:  Text(
                                   LocaleKeys.signIn_Signup.tr(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black),
                                 )),
@@ -180,7 +180,7 @@ class Signin extends StatelessWidget {
                                 style: TextButton.styleFrom(),
                                 child:  Text(
                                   LocaleKeys.signIn_password2.tr(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       color: Color.fromARGB(255, 29, 27, 27),
                                       fontSize: 16),

@@ -184,7 +184,7 @@ class _HomeState extends State<Home> {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                Text(
                 LocaleKeys.Home_home.tr(),
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.black,
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold),
@@ -244,7 +244,7 @@ class _HomeState extends State<Home> {
                       left: 50,
                       child: Text(
                         LocaleKeys.Home_remotwork.tr(),
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.black,
                             fontSize: 25,
                             fontWeight: FontWeight.bold),
@@ -274,7 +274,7 @@ class _HomeState extends State<Home> {
                 height: 20,
               ),
                Text(LocaleKeys.Home_company.tr(),
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.black,
                       fontSize: 20,
                       fontWeight: FontWeight.bold)),

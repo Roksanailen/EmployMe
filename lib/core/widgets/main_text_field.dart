@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 class MainTextField extends StatefulWidget {
   const MainTextField({
-    Key? key,
+    super.key,
     this.textInputAction = TextInputAction.done,
     this.borderColor,
     this.width,
@@ -35,7 +35,7 @@ class MainTextField extends StatefulWidget {
     this.borderSide,
     this.outlineInputBorder,
     this.inputBorder,
-  }) : super(key: key);
+  });
 
   final TextInputAction textInputAction;
   final Color? borderColor;

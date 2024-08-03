@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
         const Home(),
         const Search(),
         isAuth ? const CvScreen1() : const AuthSplash(),
-        Advice(),
+        const Advice(),
         const Information(),
         const Map(),
       ];
@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const Home(),
     const Search(),
     const AuthSplash(),
-    Advice(),
+    const Advice(),
     const Information(),
     const Map(),
   ];

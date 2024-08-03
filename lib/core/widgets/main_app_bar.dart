@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MainAppBar extends AppBar {
   MainAppBar({
-    Key? key,
+    super.key,
     this.actionsWidget = const [],
     required this.size,
     required this.titleText,
@@ -13,7 +13,6 @@ class MainAppBar extends AppBar {
     this.fontSize,
     this.onTap,
   }) : super(
-          key: key,
           backgroundColor: backColor,
           foregroundColor: foreColor,
           leading: leadingWidget,

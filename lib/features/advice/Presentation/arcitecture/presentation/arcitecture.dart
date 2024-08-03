@@ -14,7 +14,7 @@ class Arcitecture extends StatefulWidget {
 class _ArcitectureState extends State<Arcitecture> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

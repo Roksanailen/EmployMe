@@ -1,9 +1,8 @@
-import 'package:emplooo/core/extensions/widget_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class AdviceType2 extends StatelessWidget {
-  AdviceType2(
+  const AdviceType2(
       {super.key, required this.type, required this.image, required this.Page});
   final String type;
   final String image;
@@ -27,12 +26,12 @@ class AdviceType2 extends StatelessWidget {
             Image.asset(image,
                 height: MediaQuery.of(context).size.height * 0.20,
                 width: MediaQuery.of(context).size.width * 0.60),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
               type,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.blue,
                 fontSize: 15,
               ),

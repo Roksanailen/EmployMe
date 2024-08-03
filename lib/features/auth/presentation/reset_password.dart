@@ -43,7 +43,7 @@ class ResetPassword extends StatelessWidget {
                   contentPadding: const EdgeInsets.all(5),
                   width: MediaQuery.of(context).size.width * 0.55,
                   prefixIcon: const Icon(Icons.lock)),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               ElevatedButton(
@@ -55,7 +55,7 @@ class ResetPassword extends StatelessWidget {
                     fixedSize: const Size(90, 35)),
                 child:  Text(
                   LocaleKeys.resetPassword_reset3.tr(),
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  style: const TextStyle(color: Colors.black, fontSize: 16),
                   textAlign: TextAlign.center,
                 ),
               ),

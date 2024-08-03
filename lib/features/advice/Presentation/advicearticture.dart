@@ -1,5 +1,3 @@
-import 'package:emplooo/core/extensions/widget_extensions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -11,6 +9,7 @@ class AdviceArt extends StatelessWidget {
   final String type;
   final String image;
   final Widget Page;
+  @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
@@ -30,13 +29,13 @@ class AdviceArt extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.20,
                     width: MediaQuery.of(context).size.width * 0.70)
                 .animate()
-                .slideX(duration: Duration(milliseconds: 900)),
-            SizedBox(
+                .slideX(duration: const Duration(milliseconds: 900)),
+            const SizedBox(
               height: 10,
             ),
             Text(
               type,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.blue,
                 fontSize: 15,
               ),

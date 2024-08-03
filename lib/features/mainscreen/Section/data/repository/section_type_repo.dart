@@ -6,9 +6,9 @@ import 'package:emplooo/features/mainscreen/Section/data/model/section_type_resp
 
 class SectionTypeRepo with HandlingExceptionManager {
   Future<Either<Failure, SectionTypeRespnoseModel>> getSectionType(
-      String section_id) async {
+      String sectionId) async {
     return await wrapHandling(tryCall: () async {
-      final result = await SectionTypeDataSource().getSectionType(section_id);
+      final result = await SectionTypeDataSource().getSectionType(sectionId);
       return Right(result);
     });
   }
