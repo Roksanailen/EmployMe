@@ -10,9 +10,9 @@ import '../bloc/profile_bloc.dart';
 
 class ProfilEdit extends StatefulWidget {
   const ProfilEdit({
-    Key? key,
+    super.key,
     required this.user,
-  }) : super(key: key);
+  });
   final User user;
 
   @override

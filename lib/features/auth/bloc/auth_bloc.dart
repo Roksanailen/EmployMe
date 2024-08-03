@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:emplooo/features/auth/data/repository/auth_repo.dart';
 import 'package:emplooo/features/auth/data/requests/auth_request.dart';
-import 'package:flutter/src/widgets/editable_text.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';

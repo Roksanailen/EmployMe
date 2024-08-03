@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -14,7 +13,7 @@ class Home_Information extends StatelessWidget {
       SingleChildScrollView(
         child: Center(
           child: Column(children: [
-            Container(
+            SizedBox(
               width: 200,
               height: 200,
               child: LottieBuilder.asset(
@@ -27,16 +26,16 @@ class Home_Information extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.65,
                 width: MediaQuery.of(context).size.width * 0.85,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 232, 240, 247),
+                  color: const Color.fromARGB(255, 232, 240, 247),
                   border: Border.all(color: Colors.blue, width: 3),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(160),
                     topLeft: Radius.elliptical(50, 50),
                     bottomLeft: Radius.elliptical(50, 50),
                     bottomRight: Radius.circular(160),
                   ),
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -105,7 +104,7 @@ class Home_Information extends StatelessWidget {
                     ),
                   ],
                 )),
-            SizedBox(
+            const SizedBox(
               height: 20,
             )
           ]),

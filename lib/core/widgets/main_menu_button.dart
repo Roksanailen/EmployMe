@@ -3,7 +3,7 @@ import 'package:menu_button/menu_button.dart';
 
 class MainMenuButton extends StatelessWidget {
   const MainMenuButton({
-    Key? key,
+    super.key,
     required this.itemList,
     required this.title,
     required this.child,
@@ -12,7 +12,7 @@ class MainMenuButton extends StatelessWidget {
     this.onItemSelected,
     this.buttonColor,
     this.menuColor = Colors.white,
-  }) : super(key: key);
+  });
 
   final List<String> itemList;
   final String title;

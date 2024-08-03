@@ -10,7 +10,6 @@ import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bl
 import 'package:emplooo/features/mainscreen/home_screen.dart';
 import 'package:emplooo/features/profile/bloc/profile_bloc.dart';
 import 'package:emplooo/features/search/presentation/bloc/search_bloc.dart';
-import 'package:emplooo/features/splashscreen/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
@@ -21,7 +20,7 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
-    path: 'assets/translations',supportedLocales: [Locale('ar'), Locale('en')],
+    path: 'assets/translations',supportedLocales: const [Locale('ar'), Locale('en')],
     child: const MainApp()));
 }
 
@@ -71,7 +70,7 @@ class _MainAppState extends State<MainApp> {
 
           builder: BotToastInit(),
           debugShowCheckedModeBanner: false,
-          home: HomeScreen()),
+          home: const HomeScreen()),
     );
   }
 }

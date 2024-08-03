@@ -21,18 +21,18 @@ class _Informatic_TypeState extends State<Informatic_Type> {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             elevation: 7,
             margin: const EdgeInsets.all(10),
-            child: Column(
+            child: const Column(
               children: [
                 Stack(
                   children: [
                     ClipRRect(
-                      borderRadius: const BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                       ),
                     ),
                   ],
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Row(
                     children: [

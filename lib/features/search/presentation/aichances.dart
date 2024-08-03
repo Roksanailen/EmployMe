@@ -3,13 +3,12 @@ import 'package:emplooo/features/search/data/models/get_jobs_ai_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-import 'chancesdetails.dart';
 
 class AiChances extends StatelessWidget {
   const AiChances({
-    Key? key,
+    super.key,
     required this.job,
-  }) : super(key: key);
+  });
   final SearchJobAi job;
   @override
   Widget build(BuildContext context) {

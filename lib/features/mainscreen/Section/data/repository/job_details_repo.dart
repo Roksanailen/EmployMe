@@ -8,9 +8,9 @@ import '../model/job_details_respons_model.dart';
 
 class JobDetailsRepo with HandlingExceptionManager {
   Future<Either<Failure, JobDetailsRespnoseModel>> getjobId(
-      String Job_Id) async {
+      String jobId) async {
     return await wrapHandling(tryCall: () async {
-      final result = await JobDetailsDataSource().getJobId(Job_Id);
+      final result = await JobDetailsDataSource().getJobId(jobId);
       return Right(result);
     });
   }

@@ -149,7 +149,7 @@ class _ProfileState extends State<Profile> {
                       dense: true,
                       isThreeLine: true,
                       enabled: true,
-                      leading: Icon(Icons.numbers),
+                      leading: const Icon(Icons.numbers),
                       title: '${state.user?.idNumber}'),
                 ]))
           ]);

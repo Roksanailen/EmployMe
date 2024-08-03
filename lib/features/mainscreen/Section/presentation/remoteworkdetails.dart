@@ -18,18 +18,18 @@ class Remote_Work_Details extends StatelessWidget {
         body: SingleChildScrollView(
           child: Stack(
           children: [
-            Container(
+            SizedBox(
+              height: screenheight*0.5,
               child: Image.asset(imageremote,
               width: double.infinity,
               fit: BoxFit.cover,
-             ),
-              height: screenheight*0.5,),
+             ),),
             Container(
               margin: EdgeInsets.only(top: screenheight*0.3),
               child: Material(
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(100.0)),
+                borderRadius: const BorderRadius.only(topLeft: Radius.circular(100.0)),
                 child: Container(
-                  padding: EdgeInsets.only(left: 30.0,top: 30.0 , bottom: 30.0),
+                  padding: const EdgeInsets.only(left: 30.0,top: 30.0 , bottom: 30.0),
                  child: Padding(
                    padding: const EdgeInsets.all(8.0),
                    child: Column(
@@ -37,56 +37,56 @@ class Remote_Work_Details extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                            Icon(Icons.info_outline),
-                            SizedBox(width: 10,),
-                        Text(nameremot,style: TextStyle(
+                            const Icon(Icons.info_outline),
+                            const SizedBox(width: 10,),
+                        Text(nameremot,style: const TextStyle(
                           color: Colors.blue,
                           fontSize: 25.0,
                           fontWeight: FontWeight.bold,
                         ),),
                      
                       ],),
-                      SizedBox(height: 40.0 ,),
+                      const SizedBox(height: 40.0 ,),
                     Row( 
                       children: [
-                        Text('Age: ',style: TextStyle(color: Colors.blue,),),
-                        SizedBox(width: 150.0,),
+                        const Text('Age: ',style: TextStyle(color: Colors.blue,),),
+                        const SizedBox(width: 150.0,),
                         Text(remoteage),
                       ],
                     ),
-                    SizedBox(height: 40.0,),
+                    const SizedBox(height: 40.0,),
                       Row(
                       
                       children: [
-                        Text('Experience: ',style: TextStyle(color: Colors.blue,),),
-                        SizedBox(width: 105.0,),
+                        const Text('Experience: ',style: TextStyle(color: Colors.blue,),),
+                        const SizedBox(width: 105.0,),
                         Text(experiencesremote),
                       ],
                     ),
-                    SizedBox(height: 40.0,),
+                    const SizedBox(height: 40.0,),
                       Row(
                       
                       children: [
-                      Text('Salary:',style: TextStyle(color: Colors.blue,),),
-                      SizedBox(width: 135.0,),
+                      const Text('Salary:',style: TextStyle(color: Colors.blue,),),
+                      const SizedBox(width: 135.0,),
                       Text(salaryremote),
                       ],
                     ),
-                    SizedBox(height: 40.0,),
+                    const SizedBox(height: 40.0,),
                     Row(
                       
                       children: [
-                        Text('Connect With us:',style: TextStyle(color: Colors.blue,),),
-                        SizedBox(width: 70.0,),
+                        const Text('Connect With us:',style: TextStyle(color: Colors.blue,),),
+                        const SizedBox(width: 70.0,),
                         Text(phoneremote),
                       ],
                     ),
                 
-                        SizedBox(height: 40.0,),
+                        const SizedBox(height: 40.0,),
                           Row(crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Certificates required:',style: TextStyle(color: Colors.blue,),),
-                        SizedBox(width: 45.0,),
+                        const Text('Certificates required:',style: TextStyle(color: Colors.blue,),),
+                        const SizedBox(width: 45.0,),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -104,12 +104,12 @@ class Remote_Work_Details extends StatelessWidget {
                         ),
                       ],
                     ),
-                       SizedBox(height: 40.0,),
+                       const SizedBox(height: 40.0,),
                          Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Skills required:',style: TextStyle(color: Colors.blue,),),
-                        SizedBox(width: 75.0,),
+                        const Text('Skills required:',style: TextStyle(color: Colors.blue,),),
+                        const SizedBox(width: 75.0,),
                           Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [

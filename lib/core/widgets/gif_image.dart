@@ -27,17 +27,13 @@ class GifCache {
 /// control gif
 class FlutterGifController extends AnimationController {
   FlutterGifController({
-    required TickerProvider vsync,
-    double value = 0.0,
-    Duration? reverseDuration,
-    Duration? duration,
+    required super.vsync,
+    super.value,
+    super.reverseDuration,
+    super.duration,
     AnimationBehavior? animationBehavior,
   }) : super.unbounded(
-          value: value,
-          reverseDuration: reverseDuration,
-          duration: duration,
           animationBehavior: animationBehavior ?? AnimationBehavior.normal,
-          vsync: vsync,
         );
 
   @override

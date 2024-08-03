@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -15,7 +14,7 @@ class AboutCourses extends StatelessWidget {
       SingleChildScrollView(
         child: Center(
           child: Column(children: [
-            Container(
+            SizedBox(
               width: 200,
               height: 200,
               child: LottieBuilder.asset(
@@ -28,16 +27,16 @@ class AboutCourses extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.30,
                 width: MediaQuery.of(context).size.width * 0.90,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 232, 240, 247),
+                  color: const Color.fromARGB(255, 232, 240, 247),
                   border: Border.all(color: Colors.blue, width: 3),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(190),
                     topLeft: Radius.elliptical(50, 50),
                     bottomLeft: Radius.circular(100),
                     bottomRight: Radius.elliptical(50, 50),
                   ),
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -93,16 +92,16 @@ class AboutCourses extends StatelessWidget {
                     ),
                   ],
                 )),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
               height: MediaQuery.of(context).size.height * 0.15,
               width: MediaQuery.of(context).size.width * 0.90,
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 232, 240, 247),
+                color: const Color.fromARGB(255, 232, 240, 247),
                 border: Border.all(color: Colors.blue, width: 3),
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(190),
                   topLeft: Radius.elliptical(50, 50),
                   bottomLeft: Radius.circular(100),
@@ -121,7 +120,7 @@ class AboutCourses extends StatelessWidget {
                                     'https://www.facebook.com/roroksan?mibextid=ZbWKwL'),
                                 mode: LaunchMode.inAppWebView);
                           },
-                          child: Text(
+                          child: const Text(
                             "if you have a suggestion about a better book or cours, please contact with us by this url",
                             style: TextStyle(color: Colors.blue, fontSize: 14),
                           )),

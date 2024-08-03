@@ -10,7 +10,7 @@ abstract class Failure extends Equatable {
 
 // General failures
 class ServerFailure extends Failure {
-  const ServerFailure(String message) : super(message);
+  const ServerFailure(super.message);
 }
 
 class UnauthenticatedFailure extends Failure {
@@ -18,21 +18,21 @@ class UnauthenticatedFailure extends Failure {
 }
 
 class ValidationFailure extends Failure {
-  const ValidationFailure(String message) : super(message);
+  const ValidationFailure(super.message);
 }
 
 class EmailUsedFailure extends Failure {
-  const EmailUsedFailure(String message) : super(message);
+  const EmailUsedFailure(super.message);
 }
 
 class PhoneNumberUsedFailure extends Failure {
-  const PhoneNumberUsedFailure(String message) : super(message);
+  const PhoneNumberUsedFailure(super.message);
 }
 
 class PasswordOrUsernameFailure extends Failure {
-  const PasswordOrUsernameFailure(String message) : super(message);
+  const PasswordOrUsernameFailure(super.message);
 }
 
 class UserBlockedFailure extends Failure {
-  const UserBlockedFailure(String message) : super(message);
+  const UserBlockedFailure(super.message);
 }

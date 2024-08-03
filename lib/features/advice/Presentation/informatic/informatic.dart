@@ -20,7 +20,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'front/css.dart';
 
 class Informatic extends StatefulWidget {
-  Informatic({super.key});
+  const Informatic({super.key});
 
   @override
   State<Informatic> createState() => _InformaticState();
@@ -58,27 +58,27 @@ class _InformaticState extends State<Informatic> {
   final type2 = ['Ccna Security', 'ccna cybre ops'];
   final type3 = ['Machine Learning', 'NLP'];
   final type4 = ['flutter'];
-  final Page = [Css(), Html(), Js()];
-  final Page1 = [Php(), NodeJs(), Python()];
-  final Page2 = [Ccna(), Cyper()];
-  final Page3 = [Machine(), Nlp()];
-  final Page4 = [Flutter()];
+  final Page = [const Css(), const Html(), const Js()];
+  final Page1 = [const Php(), const NodeJs(), const Python()];
+  final Page2 = [const Ccna(), const Cyper()];
+  final Page3 = [const Machine(), const Nlp()];
+  final Page4 = [const Flutter()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
             LocaleKeys.informatic_frontEnd.tr(),
-            style: TextStyle(color: Colors.blue, fontSize: 25),
+            style: const TextStyle(color: Colors.blue, fontSize: 25),
           )
               .animate(
                   onPlay: (controller) => controller.repeat(
-                      reverse: true, period: Duration(seconds: 2)))
+                      reverse: true, period: const Duration(seconds: 2)))
               .fadeIn(duration: 600.ms)
               .then(delay: 200.ms)
               .slide(),
@@ -102,13 +102,13 @@ class _InformaticState extends State<Informatic> {
               ),
             ),
           ),
-          Text(
+          const Text(
             'Backend',
             style: TextStyle(color: Colors.blue, fontSize: 25),
           )
               .animate(
                   onPlay: (controller) => controller.repeat(
-                      reverse: true, period: Duration(seconds: 1)))
+                      reverse: true, period: const Duration(seconds: 1)))
               .fadeIn(duration: 600.ms)
               .then(delay: 200.ms)
               .slide(),
@@ -132,13 +132,13 @@ class _InformaticState extends State<Informatic> {
               ),
             ),
           ),
-          Text(
+          const Text(
             'NetWorks',
             style: TextStyle(color: Colors.blue, fontSize: 25),
           )
               .animate(
                   onPlay: (controller) => controller.repeat(
-                      reverse: true, period: Duration(seconds: 3)))
+                      reverse: true, period: const Duration(seconds: 3)))
               .fadeIn(duration: 600.ms)
               .then(delay: 200.ms)
               .slide(),
@@ -162,13 +162,13 @@ class _InformaticState extends State<Informatic> {
               ),
             ),
           ),
-          Text(
+          const Text(
             'Ai',
             style: TextStyle(color: Colors.blue, fontSize: 25),
           )
               .animate(
                   onPlay: (controller) => controller.repeat(
-                      reverse: true, period: Duration(seconds: 2)))
+                      reverse: true, period: const Duration(seconds: 2)))
               .fadeIn(duration: 600.ms)
               .then(delay: 200.ms)
               .slide(),
@@ -192,7 +192,7 @@ class _InformaticState extends State<Informatic> {
               ),
             ),
           ),
-          Text(
+          const Text(
             'Flutter',
             style: TextStyle(color: Colors.blue, fontSize: 25),
           )

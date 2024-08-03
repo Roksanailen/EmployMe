@@ -42,7 +42,7 @@ class _Cv_ScreenState extends State<Cv_Screen> {
                 height: MediaQuery.of(context).size.height * 0.92,
                 decoration: BoxDecoration(
                     color: Colors.blue.shade100,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(106),
                         bottomRight: Radius.circular(130))),
                 child: SingleChildScrollView(
@@ -314,7 +314,7 @@ class _Cv_ScreenState extends State<Cv_Screen> {
                 ))),
           )),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         )
       ]),

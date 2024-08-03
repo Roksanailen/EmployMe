@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/Home.dart';
@@ -53,7 +52,7 @@ class Menu extends StatelessWidget {
             name: ' change Language',
             onTap: () {
              var newLocale =context.locale.languageCode=='en'?
-             Locale('ar'):Locale('en');
+             const Locale('ar'):const Locale('en');
              context.setLocale(newLocale);
 
             },

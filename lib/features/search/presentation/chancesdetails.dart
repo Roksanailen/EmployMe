@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AiDetailes extends StatelessWidget {
@@ -9,27 +8,27 @@ class AiDetailes extends StatelessWidget {
     var screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ai Work details'),
+        title: const Text('Ai Work details'),
       ),
       body: SingleChildScrollView(
         child: Stack(
           children: [
-            Container(
+            SizedBox(
+              height: screenheight * 0.5,
               child: Image.asset(
                 'assets/images/rr.png',
                 fit: BoxFit.cover,
               ),
-              height: screenheight * 0.5,
             ),
             Container(
               margin: EdgeInsets.only(top: screenheight * 0.3),
               child: Material(
                 borderRadius:
-                    BorderRadius.only(topLeft: Radius.circular(100.0)),
+                    const BorderRadius.only(topLeft: Radius.circular(100.0)),
                 child: Container(
-                  padding: EdgeInsets.only(left: 30.0, top: 30.0, bottom: 30.0),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(left: 30.0, top: 30.0, bottom: 30.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

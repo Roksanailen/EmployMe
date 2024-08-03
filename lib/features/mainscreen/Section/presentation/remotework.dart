@@ -21,8 +21,8 @@ class Remote_Work extends StatelessWidget {
           return Remote_Work_Details(imageremote: imageremote, nameremot:nameremot,salaryremote: salaryremote,
           remoteage: remoteage, experiencesremote: experiencesremote,phoneremote: phoneremote,)
               .animate()
-              .flipH(delay: Duration(milliseconds: 300))
-              .fadeIn(delay: Duration(microseconds: 200));
+              .flipH(delay: const Duration(milliseconds: 300))
+              .fadeIn(delay: const Duration(microseconds: 200));
         }));
       },
       child: SizedBox(
@@ -49,7 +49,7 @@ class Remote_Work extends StatelessWidget {
                   opacity: 0.7,
                   child: Image.asset(imageremote,
                     fit: BoxFit.cover,
-                  ).animate().scale(duration: Duration(milliseconds: 900)),
+                  ).animate().scale(duration: const Duration(milliseconds: 900)),
                 ),
               ),
             ),
@@ -60,32 +60,32 @@ class Remote_Work extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.info_outline,
                           color: Colors.black,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 7.0,
                         ),
-                        Text(nameremot,style: TextStyle(
+                        Text(nameremot,style: const TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10.0,
                     ),
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.attach_money_outlined,
                           color: Colors.black,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 7.0,
                         ),
                         Text(salaryremote,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                       ],

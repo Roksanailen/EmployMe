@@ -18,7 +18,7 @@ class _Search_InformationState extends State<Search_Information> {
       SingleChildScrollView(
         child: Center(
           child: Column(children: [
-            Container(
+            SizedBox(
               width: 200,
               height: 200,
               child: LottieBuilder.asset(
@@ -31,16 +31,16 @@ class _Search_InformationState extends State<Search_Information> {
                 height: MediaQuery.of(context).size.height * 0.55,
                 width: MediaQuery.of(context).size.width * 0.80,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 232, 240, 247),
+                  color: const Color.fromARGB(255, 232, 240, 247),
                   border: Border.all(color: Colors.blue, width: 3),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topRight: Radius.elliptical(50, 50),
                     topLeft: Radius.circular(160),
                     bottomLeft: Radius.elliptical(50, 50),
                     bottomRight: Radius.circular(160),
                   ),
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -74,7 +74,7 @@ class _Search_InformationState extends State<Search_Information> {
                     ),
                   ],
                 )),
-            SizedBox(
+            const SizedBox(
               height: 20,
             )
           ]),

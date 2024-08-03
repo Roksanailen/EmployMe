@@ -13,7 +13,7 @@ class AboutMaps extends StatelessWidget {
       SingleChildScrollView(
         child: Center(
           child: Column(children: [
-            Container(
+            SizedBox(
               width: 200,
               height: 200,
               child: LottieBuilder.asset(
@@ -26,16 +26,16 @@ class AboutMaps extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.55,
                 width: MediaQuery.of(context).size.width * 0.70,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 232, 240, 247),
+                  color: const Color.fromARGB(255, 232, 240, 247),
                   border: Border.all(color: Colors.blue, width: 3),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(160),
                     topLeft: Radius.elliptical(50, 50),
                     bottomLeft: Radius.elliptical(50, 50),
                     bottomRight: Radius.circular(160),
                   ),
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(""" _ To find out the company's location via a link to
@@ -47,7 +47,7 @@ class AboutMaps extends StatelessWidget {
                         )),
                   ],
                 )),
-            SizedBox(
+            const SizedBox(
               height: 20,
             )
           ]),

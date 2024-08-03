@@ -5,10 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/unified_api/status.dart';
-import '../data/model/job_details_respons_model.dart';
 
 class Oppertunities_Details extends StatefulWidget {
-  Oppertunities_Details({
+  const Oppertunities_Details({
     super.key,required this.id
   });
 final int id;
@@ -25,6 +24,7 @@ class _Oppertunities_DetailsState extends State<Oppertunities_Details> {
         .add(GetJobIdEvent(Job_Id: '${widget.id}'));
     super.initState();
   }
+  @override
   Widget build(BuildContext context) {
      final List<String> skills=['hgcc','gtcgjv'];
      final List<String> Certificates=['hgcc','gtcgjv'];
@@ -44,21 +44,21 @@ class _Oppertunities_DetailsState extends State<Oppertunities_Details> {
           return SingleChildScrollView(
             child: Stack(
               children: [
-                Container(
+                SizedBox(
+                  height: screenheight * 0.5,
                   child: Image.asset(
                     'assets/images/dd.png',
                     fit: BoxFit.cover,
                   ),
-                  height: screenheight * 0.5,
                 ),
                 Container(
                   margin: EdgeInsets.only(top: screenheight * 0.3),
                   child: Material(
                     borderRadius:
-                        BorderRadius.only(topLeft: Radius.circular(100.0)),
+                        const BorderRadius.only(topLeft: Radius.circular(100.0)),
                     child: Container(
                       padding:
-                          EdgeInsets.only(left: 30.0, top: 30.0, bottom: 30.0),
+                          const EdgeInsets.only(left: 30.0, top: 30.0, bottom: 30.0),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
@@ -66,12 +66,12 @@ class _Oppertunities_DetailsState extends State<Oppertunities_Details> {
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.info_outline),
-                                SizedBox(
+                                const Icon(Icons.info_outline),
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Text(state.jobdetails!.data!.title!,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.blue,
                                     fontSize: 25.0,
                                     fontWeight: FontWeight.bold,
@@ -79,27 +79,27 @@ class _Oppertunities_DetailsState extends State<Oppertunities_Details> {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 40.0,
                             ),
                             Row(
                               children: [
-                                Text(
+                                const Text(
                                   'Age: ',
                                   style: TextStyle(
                                     color: Colors.blue,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 150.0,
                                 ),
                                 Text(state.jobdetails!.data!.age.toString()),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 40.0,
                             ),
-                            Row(
+                            const Row(
                               children: [
                                 Text(
                                   'Gender: ',
@@ -113,44 +113,44 @@ class _Oppertunities_DetailsState extends State<Oppertunities_Details> {
                                 Text('feminine and masculine'),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 40.0,
                             ),
                             Row(
                               children: [
-                                Text(
+                                const Text(
                                   'Count: ',
                                   style: TextStyle(
                                     color: Colors.blue,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 130.0,
                                 ),
                                 Text(state.jobdetails!.data!.count!.toString()),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 40.0,
                             ),
                             Row(
                               children: [
-                                Text(
+                                const Text(
                                   'Salary:',
                                   style: TextStyle(
                                     color: Colors.blue,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 135.0,
                                 ),
                                 Text(state.jobdetails!.data!.salary!.toString()),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 40.0,
                             ),
-                            Row(
+                            const Row(
                               children: [
                                 Text(
                                   'The required number:',
@@ -164,10 +164,10 @@ class _Oppertunities_DetailsState extends State<Oppertunities_Details> {
                                 Text('2'),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 40.0,
                             ),
-                            Row(
+                            const Row(
                               children: [
                                 Text(
                                   'Connect With us:',
@@ -181,36 +181,36 @@ class _Oppertunities_DetailsState extends State<Oppertunities_Details> {
                                 Text('0935230788'),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 40.0,
                             ),
                             Row(
                               children: [
-                                Text(
+                                const Text(
                                   'company name:',
                                   style: TextStyle(
                                     color: Colors.blue,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 80.0,
                                 ),
                                 Text(state.jobdetails!.data!.title!),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 40.0,
                             ),
                             Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Certificates required:',
                                   style: TextStyle(
                                     color: Colors.blue,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 45.0,
                                 ),
                                    Column(
@@ -230,19 +230,19 @@ class _Oppertunities_DetailsState extends State<Oppertunities_Details> {
                         ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 40.0,
                             ),
                             Row(
                                crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Skills required:',
                                   style: TextStyle(
                                     color: Colors.blue,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 75.0,
                                 ),
                                 Column(

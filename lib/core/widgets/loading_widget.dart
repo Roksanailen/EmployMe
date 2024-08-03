@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class LoadingWidget extends StatelessWidget {
   const LoadingWidget({
-    Key? key,
+    super.key,
     this.color,
-  }) : super(key: key);
+  });
   final Color? color;
 
   @override

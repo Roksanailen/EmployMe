@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class Advice extends StatefulWidget {
-  Advice({super.key});
+  const Advice({super.key});
 
   @override
   State<Advice> createState() => _AdviceState();
@@ -48,14 +48,14 @@ class _AdviceState extends State<Advice> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         InkWell(
@@ -63,15 +63,15 @@ class _AdviceState extends State<Advice> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Informatic()));
+                                    builder: (context) => const Informatic()));
                           },
-                          child: AdviceType(
+                          child: const AdviceType(
                             type:
                                 ('if you are informatic engineer develope your self '),
                             image: ('assets/images/copp.jpg'),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         InkWell(
@@ -81,13 +81,13 @@ class _AdviceState extends State<Advice> {
                                 MaterialPageRoute(
                                     builder: (context) => const Arcitecture()));
                           },
-                          child: AdviceType(
+                          child: const AdviceType(
                             type:
                                 ('if you are arciture engineer develope your self '),
                             image: ('assets/images/arti.jpg'),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         InkWell(
@@ -97,12 +97,12 @@ class _AdviceState extends State<Advice> {
                                 MaterialPageRoute(
                                     builder: (context) => const Economic()));
                           },
-                          child: AdviceType(
+                          child: const AdviceType(
                             type: ('if you are economic develope your self '),
                             image: ('assets/images/ec.jpg'),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         InkWell(
@@ -110,20 +110,20 @@ class _AdviceState extends State<Advice> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Others()));
+                                    builder: (context) => const Others()));
                           },
-                          child: AdviceType(
+                          child: const AdviceType(
                             type: ('develop your self '),
                             image: ('assets/images/ec.jpg'),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         )
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   )
                 ]),

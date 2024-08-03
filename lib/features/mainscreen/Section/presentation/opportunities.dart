@@ -1,9 +1,6 @@
-import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/job_details_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/opportunitiesdetails.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../data/model/job_details_respons_model.dart';
 
 class Opportunities extends StatefulWidget {
   const Opportunities({

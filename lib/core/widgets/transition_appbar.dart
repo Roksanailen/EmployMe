@@ -5,7 +5,7 @@ class TransitionAppBar extends StatelessWidget {
   final Widget title;
   final double extent;
 
-  const TransitionAppBar({required this.avatar, required this.title, this.extent = 250, Key? key}) : super(key: key);
+  const TransitionAppBar({required this.avatar, required this.title, this.extent = 250, super.key});
 
   @override
   Widget build(BuildContext context) {

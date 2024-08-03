@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton(
-      {Key? key,
+      {super.key,
       required this.text,
       this.width,
       this.height,
@@ -13,8 +13,7 @@ class MainButton extends StatelessWidget {
       required this.color,
       required this.onPressed,
       this.textColor = Colors.white,
-      this.elevation})
-      : super(key: key);
+      this.elevation});
 
   final String text;
   final double? width;
@@ -32,16 +31,16 @@ class MainButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
-        elevation: MaterialStatePropertyAll(elevation),
-        shadowColor: shadowColor != null ? MaterialStateProperty.all(shadowColor) : null,
-        backgroundColor: MaterialStateProperty.all(color),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        elevation: WidgetStatePropertyAll(elevation),
+        shadowColor: shadowColor != null ? WidgetStateProperty.all(shadowColor) : null,
+        backgroundColor: WidgetStateProperty.all(color),
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: borderRadius ?? BorderRadius.circular(10),
             side: const BorderSide(color: Colors.transparent),
           ),
         ),
-        fixedSize: MaterialStateProperty.all(
+        fixedSize: WidgetStateProperty.all(
           Size(
             width ?? 150,
             height ?? 60,

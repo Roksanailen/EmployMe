@@ -233,7 +233,7 @@ class Signup extends StatelessWidget {
                               fixedSize: const Size(100, 35)),
                           child:  Text(
                             LocaleKeys.signUp_Register.tr(),
-                            style: TextStyle(color: Colors.black, fontSize: 16),
+                            style: const TextStyle(color: Colors.black, fontSize: 16),
                             textAlign: TextAlign.center,
                           ),
                         ),

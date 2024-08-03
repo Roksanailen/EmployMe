@@ -7,9 +7,9 @@ import 'bloc/search_bloc.dart';
 
 class Search extends StatefulWidget {
   const Search({
-    Key? key,
+    super.key,
     this.keyword,
-  }) : super(key: key);
+  });
   final String? keyword;
 
   @override
