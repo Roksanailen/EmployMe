@@ -26,6 +26,11 @@ class Opportunities extends StatefulWidget {
 
 class _OpportunitiesState extends State<Opportunities> {
   @override
+  void initState() { 
+    super.initState();
+    print(widget.list)
+;  }
+  @override
   Widget build(BuildContext context) {
     return  InkWell(
             onTap: () {              Navigator.of(context).push(
@@ -53,6 +58,11 @@ class _OpportunitiesState extends State<Opportunities> {
                           ),
                           child: Image.network(
                             widget.list,
+                            errorBuilder: (context, error, stackTrace) {
+                              return Text(error.toString());
+
+                            },
+                            
                             height: 250,
                             width: double.infinity,
                             fit: BoxFit.cover,

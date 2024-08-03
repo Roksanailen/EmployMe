@@ -21,7 +21,7 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
-    path: 'assets/resources/Longs',supportedLocales: [Locale('ar'), Locale('en')],
+    path: 'assets/translations',supportedLocales: [Locale('ar'), Locale('en')],
     child: const MainApp()));
 }
 
@@ -39,7 +39,7 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     MediaQuery.of(context).size.height;
     return MultiBlocProvider(
-  
+
   
       providers: [
         BlocProvider<AuthBloc>(
@@ -65,6 +65,10 @@ class _MainAppState extends State<MainApp> {
         BlocProvider<CvBloc>(create: (context) => CvBloc())
       ],
       child: MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+
           builder: BotToastInit(),
           debugShowCheckedModeBanner: false,
           home: HomeScreen()),

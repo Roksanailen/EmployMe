@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/Flutter/flutter.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/ai/machine.dart';
 import 'package:emplooo/features/advice/Presentation/informatic/ai/nlp.dart';
@@ -71,7 +73,7 @@ class _InformaticState extends State<Informatic> {
             height: 20,
           ),
           Text(
-            'Front end',
+            LocaleKeys.informatic_frontEnd.tr(),
             style: TextStyle(color: Colors.blue, fontSize: 25),
           )
               .animate(

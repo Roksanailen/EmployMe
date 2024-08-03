@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/auth/presentation/sign_in.dart';
 import 'package:emplooo/features/auth/presentation/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -23,11 +25,11 @@ class _AuthSplashState extends State<AuthSplash> {
                 const SizedBox(
                   height: 40,
                 ),
-                const Center(
+                Center(
                   child: Padding(
                     padding: EdgeInsets.all(20.0),
                     child: Text(
-                      'Find your best job in our application EmployMe',
+                      LocaleKeys.authSplash_Authsplash.tr(),
                       style: TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 20,
@@ -52,8 +54,8 @@ class _AuthSplashState extends State<AuthSplash> {
                           width: 3),
                       elevation: 0,
                       fixedSize: const Size(250, 40)),
-                  child: const Text(
-                    'Signin',
+                  child:  Text(
+                    LocaleKeys.authSplash_Signin.tr(),
                     style: TextStyle(color: Colors.black, fontSize: 16),
                     textAlign: TextAlign.center,
                   ),
@@ -74,8 +76,8 @@ class _AuthSplashState extends State<AuthSplash> {
                           width: 3),
                       elevation: 0,
                       fixedSize: const Size(250, 40)),
-                  child: const Text(
-                    'Signup',
+                  child:  Text(
+                    LocaleKeys.authSplash_Signup.tr(),
                     style: TextStyle(color: Colors.black, fontSize: 16),
                     textAlign: TextAlign.center,
                   ),

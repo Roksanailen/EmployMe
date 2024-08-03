@@ -1,0 +1,65 @@
+// DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
+
+abstract class  LocaleKeys {
+  static const Home_company = 'Home_company';
+  static const Home_home = 'Home_home';
+  static const Home_remotename1 = 'Home_remotename1';
+  static const Home_remotesalary = 'Home_remotesalary';
+  static const Home_remotesalary1 = 'Home_remotesalary1';
+  static const Home_remotesalary2 = 'Home_remotesalary2';
+  static const Home_remotesalary3 = 'Home_remotesalary3';
+  static const Home_remotework2 = 'Home_remotework2';
+  static const Home_remotework3 = 'Home_remotework3';
+  static const Home_remotework4 = 'Home_remotework4';
+  static const Home_remotework5 = 'Home_remotework5';
+  static const Home_remotwork = 'Home_remotwork';
+  static const Home_tryagain = 'Home_tryagain';
+  static const Home_tryagain4 = 'Home_tryagain4';
+  static const authSplash_Authsplash = 'authSplash_Authsplash';
+  static const authSplash_Signin = 'authSplash_Signin';
+  static const authSplash_Signup = 'authSplash_Signup';
+  static const businessclassification_tryagainb = 'businessclassification_tryagainb';
+  static const companydetails_companydetails = 'companydetails_companydetails';
+  static const companydetails_companydetails3 = 'companydetails_companydetails3';
+  static const companydetails_companylocation = 'companydetails_companylocation';
+  static const companydetails_emailcompany = 'companydetails_emailcompany';
+  static const companydetails_mobailcompany = 'companydetails_mobailcompany';
+  static const companydetails_phonecompany = 'companydetails_phonecompany';
+  static const informatic_frontEnd = 'informatic_frontEnd';
+  static const opportunitiesdetails_oppertunitiesdetail = 'opportunitiesdetails_oppertunitiesdetail';
+  static const resetPassword_Email6 = 'resetPassword_Email6';
+  static const resetPassword_Email7 = 'resetPassword_Email7';
+  static const resetPassword_passwordhint2 = 'resetPassword_passwordhint2';
+  static const resetPassword_passwordr = 'resetPassword_passwordr';
+  static const resetPassword_reset3 = 'resetPassword_reset3';
+  static const signIn_Login = 'signIn_Login';
+  static const signIn_Signup = 'signIn_Signup';
+  static const signIn_Username = 'signIn_Username';
+  static const signIn_Username1 = 'signIn_Username1';
+  static const signIn_Validpassword = 'signIn_Validpassword';
+  static const signIn_authvalid = 'signIn_authvalid';
+  static const signIn_notifiersignin = 'signIn_notifiersignin';
+  static const signIn_password = 'signIn_password';
+  static const signIn_password2 = 'signIn_password2';
+  static const signIn_passwors1 = 'signIn_passwors1';
+  static const signUp_Email = 'signUp_Email';
+  static const signUp_Emailhint = 'signUp_Emailhint';
+  static const signUp_Firstname = 'signUp_Firstname';
+  static const signUp_Lastname = 'signUp_Lastname';
+  static const signUp_Lastname1 = 'signUp_Lastname1';
+  static const signUp_Nationalhint = 'signUp_Nationalhint';
+  static const signUp_Password4 = 'signUp_Password4';
+  static const signUp_Phonehint = 'signUp_Phonehint';
+  static const signUp_Register = 'signUp_Register';
+  static const signUp_Username3 = 'signUp_Username3';
+  static const signUp_Usernamehint = 'signUp_Usernamehint';
+  static const signUp_Validemail = 'signUp_Validemail';
+  static const signUp_Validpassword3 = 'signUp_Validpassword3';
+  static const signUp_Validphone = 'signUp_Validphone';
+  static const signUp_Validsignup = 'signUp_Validsignup';
+  static const signUp_national = 'signUp_national';
+  static const signUp_phone = 'signUp_phone';
+  static const signUp_validsignup1 = 'signUp_validsignup1';
+  static const signUp_validusername1 = 'signUp_validusername1';
+
+}

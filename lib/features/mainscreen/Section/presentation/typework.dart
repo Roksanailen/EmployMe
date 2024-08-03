@@ -49,7 +49,7 @@ class TypeWork extends StatelessWidget {
                             borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(20),
                             ),
-                            child: Image.asset(
+                            child: Image.network(
                               image,
                               height: 250,
                               width: double.infinity,

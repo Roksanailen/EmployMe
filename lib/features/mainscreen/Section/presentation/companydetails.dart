@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -25,7 +27,7 @@ class Company_Details extends StatelessWidget {
     var screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Company details'),
+        title: Text(LocaleKeys.companydetails_companydetails.tr()),
       ),
       body: SingleChildScrollView(
         child: Stack(
@@ -72,7 +74,7 @@ class Company_Details extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              'Location:',
+                              LocaleKeys.companydetails_companylocation.tr(),
                               style: TextStyle(
                                 color: Colors.blue,
                               ),
@@ -89,7 +91,7 @@ class Company_Details extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              'Type of Company:',
+                              LocaleKeys.companydetails_companydetails3.tr(),
                               style: TextStyle(
                                 color: Colors.blue,
                               ),
@@ -106,7 +108,7 @@ class Company_Details extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              'email:',
+                              LocaleKeys.companydetails_emailcompany.tr(),
                               style: TextStyle(
                                 color: Colors.blue,
                               ),
@@ -123,7 +125,7 @@ class Company_Details extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              'Phone:',
+                              LocaleKeys.companydetails_phonecompany.tr(),
                               style: TextStyle(
                                 color: Colors.blue,
                               ),
@@ -140,7 +142,7 @@ class Company_Details extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              'Mobile:',
+                              LocaleKeys.companydetails_mobailcompany.tr(),
                               style: TextStyle(
                                 color: Colors.blue,
                               ),

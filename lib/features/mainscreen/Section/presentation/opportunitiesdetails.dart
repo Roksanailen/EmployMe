@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/job_details_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +31,7 @@ class _Oppertunities_DetailsState extends State<Oppertunities_Details> {
     var screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Oppertunities Details'),
+        title: Text(LocaleKeys.opportunitiesdetails_oppertunitiesdetail.tr()),
       ),
       body: BlocBuilder<JobDetailsBloc, JobDetailsState>(
         builder: (context, state) {

@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/core/unified_api/status.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/opportunities.dart';
 import 'package:flutter/material.dart';
@@ -59,8 +61,8 @@ class _Business_ClassificationState extends State<Business_Classification> {
             ),
           );
         } else
-          return const Center(
-            child: Text('Try Agian'),
+          return Center(
+            child: Text(LocaleKeys.businessclassification_tryagainb.tr()),
           );
       }),
     );

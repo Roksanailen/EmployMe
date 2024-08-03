@@ -44,4 +44,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
-    - assets/resources/Longs/
+    - assets/translations/

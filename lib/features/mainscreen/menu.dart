@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/Home.dart';
 import 'package:emplooo/features/profile/presentation/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -46,9 +49,14 @@ class Menu extends StatelessWidget {
             height: 40,
           ),
           DrawerButton(
-            iconData: Icons.settings,
-            name: 'Settings',
-            onTap: () {},
+            iconData: Icons.language,
+            name: ' change Language',
+            onTap: () {
+             var newLocale =context.locale.languageCode=='en'?
+             Locale('ar'):Locale('en');
+             context.setLocale(newLocale);
+
+            },
           ),
         ],
       ),

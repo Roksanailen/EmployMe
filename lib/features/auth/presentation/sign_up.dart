@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/core/extensions/validation_extensions.dart';
 import 'package:emplooo/core/resources/global_function.dart';
 import 'package:emplooo/core/toaster.dart';
@@ -67,9 +69,9 @@ class Signup extends StatelessWidget {
                         MainTextField(
                             validator: (p0) => p0 != null && p0.length > 2
                                 ? null
-                                : 'must consisting of letters for example ahmad  ',
+                                : LocaleKeys.signUp_Validsignup.tr(),
                             controller: firstnameController,
-                            label: 'First Name',
+                            label: LocaleKeys.signUp_Firstname.tr(),
                             keyboardType: TextInputType.name,
                             fillColor: Colors.transparent,
                             height: MediaQuery.of(context).size.height * 0.1,
@@ -83,15 +85,15 @@ class Signup extends StatelessWidget {
                         MainTextField(
                           validator: (p0) => p0 != null && p0.length > 2
                               ? null
-                              : 'must consisting of letters for example ali  ',
+                              : LocaleKeys.signUp_validsignup1.tr(),
                           controller: lastnameController,
                           fillColor: Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
-                          label: 'Last Name',
+                          label: LocaleKeys.signUp_Lastname.tr(),
                           keyboardType: TextInputType.name,
                           borderColor: Colors.black,
                           keyboardAppearance: true,
-                          hint: 'enter your last name',
+                          hint: LocaleKeys.signUp_Lastname1.tr(),
                           contentPadding: const EdgeInsets.all(5),
                           height: MediaQuery.of(context).size.height * 0.1,
                           width: MediaQuery.of(context).size.width * 0.52,
@@ -103,17 +105,17 @@ class Signup extends StatelessWidget {
                         MainTextField(
                           validator: (p0) => p0 != null && p0.length > 2
                               ? null
-                              : 'must consisting of letters for example ahmad  ',
+                              : LocaleKeys.signUp_validusername1.tr(),
                           controller: usernameController,
                           fillColor: Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
-                          label: 'User Name',
+                          label: LocaleKeys.signUp_Username3.tr(),
                           keyboardType: TextInputType.name,
                           borderColor: Colors.black,
                           height: MediaQuery.of(context).size.height * 0.1,
                           width: MediaQuery.of(context).size.width * 0.52,
                           keyboardAppearance: true,
-                          hint: 'enter your full name',
+                          hint: LocaleKeys.signUp_Usernamehint.tr(),
                           contentPadding: const EdgeInsets.all(5),
                           prefixIcon: const Icon(Icons.person_3_rounded),
                         ),
@@ -123,16 +125,16 @@ class Signup extends StatelessWidget {
                               if (value != null && value.isValidEmail()) {
                                 return null;
                               } else {
-                                return 'must be valid email as (ss@gmail.com) ';
+                                return LocaleKeys.signUp_Validemail.tr();
                               }
                             },
                             controller: emailController,
                             fillColor: Colors.transparent,
                             borderRadius: BorderRadius.circular(20),
-                            label: 'Email',
+                            label: LocaleKeys.signUp_Email.tr(),
                             keyboardType: TextInputType.emailAddress,
                             borderColor: Colors.black,
-                            hint: 'enter your email',
+                            hint: LocaleKeys.signUp_Emailhint.tr(),
                             height: MediaQuery.of(context).size.height * 0.1,
                             width: MediaQuery.of(context).size.width * 0.52,
                             contentPadding: const EdgeInsets.all(5),
@@ -151,10 +153,10 @@ class Signup extends StatelessWidget {
                                         value.isValidPassword()) {
                                       return null;
                                     } else {
-                                      return 'It must consist of 8 letters or numbers ';
+                                      return LocaleKeys.signUp_Validpassword3.tr();
                                     }
                                   },
-                                  label: 'password',
+                                  label: LocaleKeys.signUp_Password4.tr(),
                                   fillColor: const Color.fromARGB(0, 0, 0, 0),
                                   borderColor: Colors.black,
                                   height:
@@ -177,19 +179,19 @@ class Signup extends StatelessWidget {
                             if (value != null && value.isValidPhone()) {
                               return null;
                             } else {
-                              return 'must consisting of numbers example 0989877679 ';
+                              return LocaleKeys.signUp_Validphone.tr();
                             }
                           },
                           controller: phoneController,
                           fillColor: Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
-                          label: 'Phone',
+                          label: LocaleKeys.signUp_phone.tr(),
                           keyboardType: TextInputType.number,
                           height: MediaQuery.of(context).size.height * 0.1,
                           width: MediaQuery.of(context).size.width * 0.52,
                           borderColor: Colors.black,
                           keyboardAppearance: true,
-                          hint: 'enter your phone',
+                          hint: LocaleKeys.signUp_Phonehint.tr(),
                           contentPadding: const EdgeInsets.all(5),
                           prefixIcon: const Icon(Icons.phone),
                         ),
@@ -200,13 +202,13 @@ class Signup extends StatelessWidget {
                           controller: nationalNumbercontroller,
                           fillColor: Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
-                          label: 'national number',
+                          label: LocaleKeys.signUp_national.tr(),
                           keyboardType: TextInputType.number,
                           height: MediaQuery.of(context).size.height * 0.1,
                           width: MediaQuery.of(context).size.width * 0.52,
                           borderColor: Colors.black,
                           keyboardAppearance: true,
-                          hint: 'enter your national number',
+                          hint: LocaleKeys.signUp_Nationalhint.tr(),
                           contentPadding: const EdgeInsets.all(5),
                           prefixIcon: const Icon(Icons.numbers),
                         ),
@@ -229,8 +231,8 @@ class Signup extends StatelessWidget {
                               side: const BorderSide(style: BorderStyle.solid),
                               elevation: 0,
                               fixedSize: const Size(100, 35)),
-                          child: const Text(
-                            'Register',
+                          child:  Text(
+                            LocaleKeys.signUp_Register.tr(),
                             style: TextStyle(color: Colors.black, fontSize: 16),
                             textAlign: TextAlign.center,
                           ),

@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/company.dart';
@@ -112,15 +114,15 @@ class _HomeState extends State<Home> {
     'assets/images/w9.png',
   ];
   final remotename = [
-    'flutter developer',
-    'backend developer',
-    'UI_UX Desiner',
-    'Web developer',
-    'Manual Tester',
-    'flutter developer',
-    'backend developer',
-    'UIUX Desiner',
-    'Web developer',
+    LocaleKeys.Home_remotename1.tr(),
+    LocaleKeys.Home_remotework2.tr(),
+    LocaleKeys.Home_remotework3.tr(),
+    LocaleKeys.Home_remotework4.tr(),
+    LocaleKeys.Home_remotework5.tr(),
+    LocaleKeys.Home_remotename1.tr(),
+    LocaleKeys.Home_remotework2.tr(),
+    LocaleKeys.Home_remotework3.tr(),
+    LocaleKeys.Home_remotework4.tr(),
   ];
 
   final remoteage = [
@@ -148,16 +150,15 @@ class _HomeState extends State<Home> {
     '1',
   ];
   final salaryremote = [
-    '1700000 P.s',
-    '1600000 P.s',
-    '1400000 P.s',
-    '2000000 P.s',
-    '1400000 P.s',
-    '1700000 P.s',
-    '1600000 P.s',
-    '1400000 P.s',
-    '2000000 P.s',
-    '1400000 P.s',
+    LocaleKeys.Home_remotesalary.tr(),
+    LocaleKeys.Home_remotesalary1.tr(),
+    LocaleKeys.Home_remotesalary2.tr(),
+    LocaleKeys.Home_remotesalary3.tr(),
+    LocaleKeys.Home_remotesalary1.tr(),
+    LocaleKeys.Home_remotesalary.tr(),
+    LocaleKeys.Home_remotesalary1.tr(),
+    LocaleKeys.Home_remotesalary2.tr(),
+    LocaleKeys.Home_remotesalary3.tr()
   ];
   final phoneremote = [
     '0935230788',
@@ -181,8 +182,8 @@ class _HomeState extends State<Home> {
           child: SingleChildScrollView(
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              const Text(
-                "Discover your Suitable job ",
+               Text(
+                LocaleKeys.Home_home.tr(),
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 25.0,
@@ -204,16 +205,18 @@ class _HomeState extends State<Home> {
                       itemBuilder: (BuildContext context, int index) {
                         return TypeWork(
                           id: state.sections[index].id ?? 1,
-                          image: image[index],
+                          image:state.sections[index].media?.firstOrNull?.mediaUrl??'https://th.bing.com/th/id/OIP.3_HUaKDzlLojariqt8vFoQAAAA?rs=1&pid=ImgDetMain',
                           type: state.sections[index].name ?? "null",
-                          list: list[index],
+                          list: state.sections[index].media?.firstOrNull?.medaUrl??'',
                           name: state.sections[index].name ?? "null",
                           locationcompany: locationcompany[index],
                         );
                       },
                     );
                   } else
-                    return const Center(child: Text('Try again'));
+                    return Center(
+                      child: 
+                      Text( LocaleKeys.Home_tryagain.tr() ));
                 }),
               ),
               const SizedBox(
@@ -236,11 +239,11 @@ class _HomeState extends State<Home> {
                             .animate()
                             .scale(duration: const Duration(milliseconds: 900)),
                       )),
-                  const Positioned(
+                   Positioned(
                       top: 40,
                       left: 50,
                       child: Text(
-                        'Remot Work',
+                        LocaleKeys.Home_remotwork.tr(),
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 25,
@@ -270,7 +273,7 @@ class _HomeState extends State<Home> {
               const SizedBox(
                 height: 20,
               ),
-              const Text('Take a look at our companies ',
+               Text(LocaleKeys.Home_company.tr(),
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
@@ -298,8 +301,8 @@ class _HomeState extends State<Home> {
                         },
                       );
                     } else
-                      return const Center(
-                        child: Text('Try Again'),
+                      return Center(
+                        child: Text(LocaleKeys.Home_tryagain4.tr()),
                       );
                   },
                 ),

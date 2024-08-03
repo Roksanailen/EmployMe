@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/core/extensions/validation_extensions.dart';
 import 'package:emplooo/features/auth/bloc/auth_bloc.dart';
 import 'package:emplooo/features/auth/presentation/reset_password.dart';
@@ -33,7 +35,7 @@ class Signin extends StatelessWidget {
                 Toaster.showLoading();
               } else if (state.status == AuthStatus.failed) {
                 Toaster.closeLoading();
-                Toaster.showToast('Try Again');
+                Toaster.showToast(LocaleKeys.signIn_notifiersignin.tr());
               } else if (state.status == AuthStatus.success) {
                 await GlobalFunctions().storeToken(state.token!);
                 Toaster.closeLoading();
@@ -71,15 +73,15 @@ class Signin extends StatelessWidget {
                             if (value != null && value.isNotShortText()) {
                               return null;
                             } else {
-                              return 'must consisting of letters for example ahmad  ';
+                              return LocaleKeys.signIn_authvalid.tr();
                             }
                           },
                           controller: userNameController,
-                          label: 'UserName',
+                          label: LocaleKeys.signIn_Username.tr(),
                           borderSide: const BorderSide(width: 1),
                           keyboardType: TextInputType.name,
                           fillColor: Colors.transparent,
-                          hint: 'enter your Name',
+                          hint: LocaleKeys.signIn_Username1.tr(),
                           borderColor: Colors.black,
                           borderRadius: BorderRadius.circular(20),
                           width: MediaQuery.of(context).size.width * 0.55,
@@ -101,16 +103,16 @@ class Signin extends StatelessWidget {
                                         value.isValidPassword()) {
                                       return null;
                                     } else {
-                                      return 'must consisting of 8 letters or numbers  ';
+                                      return LocaleKeys.signIn_Validpassword.tr();
                                     }
                                   },
                                   isPassword: isPasswordValue,
                                   controller: passwordController,
                                   fillColor: Colors.transparent,
                                   borderRadius: BorderRadius.circular(20),
-                                  label: 'Password',
+                                  label: LocaleKeys.signIn_password.tr(),
                                   borderColor: Colors.black,
-                                  hint: 'enter your password',
+                                  hint: LocaleKeys.signIn_passwors1.tr(),
                                   autovalidateMode:
                                       AutovalidateMode.onUserInteraction,
                                   keyboardType: TextInputType.text,
@@ -137,9 +139,9 @@ class Signin extends StatelessWidget {
                               backgroundColor: Colors.transparent,
                               side: const BorderSide(style: BorderStyle.solid),
                               elevation: 0,
-                              fixedSize: const Size(90, 35)),
-                          child: const Text(
-                            'Login',
+                              fixedSize:  Size(90, 35)),
+                          child:  Text(
+                            LocaleKeys.signIn_Login.tr(),
                             style: TextStyle(color: Colors.black, fontSize: 16),
                             textAlign: TextAlign.center,
                           ),
@@ -158,8 +160,8 @@ class Signin extends StatelessWidget {
                                           builder: (context) =>
                                               const Signup()));
                                 },
-                                child: const Text(
-                                  'sign Up',
+                                child:  Text(
+                                  LocaleKeys.signIn_Signup.tr(),
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black),
@@ -176,8 +178,8 @@ class Signin extends StatelessWidget {
                                               const ResetPassword()));
                                 },
                                 style: TextButton.styleFrom(),
-                                child: const Text(
-                                  'forget password',
+                                child:  Text(
+                                  LocaleKeys.signIn_password2.tr(),
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       color: Color.fromARGB(255, 29, 27, 27),
