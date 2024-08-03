@@ -48,6 +48,7 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
     EducationalInstituteAi(name: 'Arts and Humanities', value: 16),
     EducationalInstituteAi(name: 'Business Adminstartion Institute', value: 20),
     EducationalInstituteAi(name: 'Faculty Of Economics', value: 22),
+    EducationalInstituteAi(name: 'Faculty of FIne and Applied Arts', value: 8),
   ];
   List<SpecializationNameAi> specializationName = [
     SpecializationNameAi(name: 'Cardiology', educationId: 1, value: 1),
@@ -80,6 +81,7 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
         name: 'Assistant Architecture', educationId: 11, value: 36),
     SpecializationNameAi(name: 'Interior design', educationId: 11, value: 37),
     SpecializationNameAi(name: 'Civil Engineer', educationId: 9, value: 39),
+    SpecializationNameAi(name: 'graphic design', educationId: 8, value: 32),
     SpecializationNameAi(name: 'Physics', educationId: 14, value: 43),
     SpecializationNameAi(name: 'Chemistry', educationId: 14, value: 45),
     SpecializationNameAi(
@@ -297,6 +299,7 @@ class _Cirtificate_ScreenState extends State<Cirtificate_Screen> {
                                     9 => element.educationId == 9,
                                     4 => element.educationId == 22 ||
                                         element.educationId == 7,
+                                    32 => element.educationId == 32,
                                     _ => true
                                   };
                                 }).map(
