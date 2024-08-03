@@ -28,7 +28,8 @@ class _CompanyOffersState extends State<CompanyOffers> {
       appBar: AppBar(
         title: Text(widget.company.name!),
       ),
-      body: BlocBuilder<CompanyBloc, CompaniesState>(builder: (context, state) {
+      body: BlocBuilder<CompanyBloc, CompaniesState>(
+        builder: (context, state) {
         if (state.getJobsStatus == Status.loading) {
           return const Center(
             child: CircularProgressIndicator(),
@@ -39,6 +40,7 @@ class _CompanyOffersState extends State<CompanyOffers> {
             itemBuilder: (c, i) => Opportunities(
               name: state.jobs[i].title!,
               locationcompany: '',
+              id:state.jobs[i].id!,
               list: state.jobs[i].media!.mediaUrl!,
               salary: state.jobs[i].salary!.toString(),
             ),

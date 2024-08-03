@@ -1,3 +1,4 @@
+import 'package:emplooo/features/mainscreen/Section/presentation/opportunitiesdetails.dart';
 import 'package:emplooo/features/search/data/models/get_jobs_ai_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,7 +17,7 @@ class AiChances extends StatelessWidget {
       onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (BuildContext context) {
-          return const AiDetailes();
+          return Oppertunities_Details(id:job.id!);
         }));
       },
       child: SizedBox(

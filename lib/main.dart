@@ -1,7 +1,9 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/auth/bloc/auth_bloc.dart';
 import 'package:emplooo/features/cv/presentation/bloc/cv_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
+import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/job_details_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/sectiontype_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
 
@@ -15,8 +17,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 // import 'features/mainscreen/drawerscreen.dart';
 
-void main() {
-  runApp(const MainApp());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(EasyLocalization(
+    path: 'assets/resources/Longs',supportedLocales: [Locale('ar'), Locale('en')],
+    child: const MainApp()));
 }
 
 class MainApp extends StatefulWidget {
@@ -33,6 +39,8 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     MediaQuery.of(context).size.height;
     return MultiBlocProvider(
+  
+  
       providers: [
         BlocProvider<AuthBloc>(
           create: (context) => AuthBloc(),
@@ -49,6 +57,9 @@ class _MainAppState extends State<MainApp> {
         ),
         BlocProvider<SectiontypeBloc>(
           create: (context) => SectiontypeBloc(),
+        ),
+        BlocProvider<JobDetailsBloc>(
+          create: (context) => JobDetailsBloc(),
         ),
         BlocProvider<ProfileBloc>(create: (context) => ProfileBloc()),
         BlocProvider<CvBloc>(create: (context) => CvBloc())

@@ -51,8 +51,9 @@ class _Business_ClassificationState extends State<Business_Classification> {
           return ListView.builder(
             itemCount: state.sectiontype!.data!.length,
             itemBuilder: (c, i) => Opportunities(
+              id: state.sectiontype!.data![i].id!,
               name: state.sectiontype!.data![i].title!,
-              locationcompany: '',
+              locationcompany:'' ,
               list: state.sectiontype!.data![i].media!.mediaUrl!,
               salary: state.sectiontype!.data![i].salary!.toString(),
             ),
