@@ -31,16 +31,17 @@ class MainButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
-        elevation: WidgetStatePropertyAll(elevation),
-        shadowColor: shadowColor != null ? WidgetStateProperty.all(shadowColor) : null,
-        backgroundColor: WidgetStateProperty.all(color),
-        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+        elevation: MaterialStatePropertyAll(elevation),
+        shadowColor:
+            shadowColor != null ? MaterialStateProperty.all(shadowColor) : null,
+        backgroundColor: MaterialStateProperty.all(color),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: borderRadius ?? BorderRadius.circular(10),
             side: const BorderSide(color: Colors.transparent),
           ),
         ),
-        fixedSize: WidgetStateProperty.all(
+        fixedSize: MaterialStateProperty.all(
           Size(
             width ?? 150,
             height ?? 60,
