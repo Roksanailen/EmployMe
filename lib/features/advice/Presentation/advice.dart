@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/advice/Presentation/advicetype.dart';
 import 'package:emplooo/features/advice/Presentation/arcitecture/presentation/arcitecture.dart';
 import 'package:emplooo/features/advice/Presentation/economic/economyic.dart';
@@ -15,11 +17,11 @@ class Advice extends StatefulWidget {
 }
 
 class _AdviceState extends State<Advice> {
-  final List<String> Pages = [
-    'Informatics',
-    'Economy',
-    'Architecture',
-    'others'
+   List<String> Pages = [
+    LocaleKeys.advice_advice.tr(),
+    LocaleKeys.advice_advice1.tr(),
+    LocaleKeys.advice_advice2.tr(),
+    LocaleKeys.advice_advice3.tr()
   ];
 
   final image = [
@@ -30,10 +32,10 @@ class _AdviceState extends State<Advice> {
   ];
 
   final type = [
-    'if you are informatic engineer develope your self '
-        'if you are arciture engineer develope your self '
-        'if you are economic develope your self '
-        'if you want to work develope your self '
+    LocaleKeys.advice_advice5.tr(),
+        LocaleKeys.advice_advice6.tr(),
+        LocaleKeys.advice_advice7.tr(),
+        LocaleKeys.advice_adviced9.tr()
   ];
 
   @override
@@ -65,9 +67,9 @@ class _AdviceState extends State<Advice> {
                                 MaterialPageRoute(
                                     builder: (context) => const Informatic()));
                           },
-                          child: const AdviceType(
+                          child:  AdviceType(
                             type:
-                                ('if you are informatic engineer develope your self '),
+                                (LocaleKeys.advice_advice11.tr()),
                             image: ('assets/images/copp.jpg'),
                           ),
                         ),
@@ -81,9 +83,9 @@ class _AdviceState extends State<Advice> {
                                 MaterialPageRoute(
                                     builder: (context) => const Arcitecture()));
                           },
-                          child: const AdviceType(
+                          child: AdviceType(
                             type:
-                                ('if you are arciture engineer develope your self '),
+                                (LocaleKeys.advice_advice12.tr()),
                             image: ('assets/images/arti.jpg'),
                           ),
                         ),
@@ -97,8 +99,8 @@ class _AdviceState extends State<Advice> {
                                 MaterialPageRoute(
                                     builder: (context) => const Economic()));
                           },
-                          child: const AdviceType(
-                            type: ('if you are economic develope your self '),
+                          child:  AdviceType(
+                            type: (LocaleKeys.advice_adviced13.tr()),
                             image: ('assets/images/ec.jpg'),
                           ),
                         ),
