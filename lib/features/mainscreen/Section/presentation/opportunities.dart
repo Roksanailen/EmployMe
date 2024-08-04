@@ -86,14 +86,14 @@ class _OpportunitiesState extends State<Opportunities> {
                         Row(
                           children: [
                             const Icon(
-                              Icons.location_on_outlined,
+                              Icons.attach_money_outlined,
                               color: Colors.blue,
                             ),
                             const SizedBox(
                               width: 7,
                             ),
                             Text(
-                              widget.locationcompany,
+                              widget.salary,
                             ),
                           ],
                         ),
