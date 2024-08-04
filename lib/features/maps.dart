@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -40,9 +42,9 @@ class _MapState extends State<Map> {
             const SizedBox(
               height: 20,
             ),
-            const Center(
+             Center(
               child: Text(
-                "PlatForm",
+                LocaleKeys.maps_maps1.tr(),
                 style: TextStyle(
                     color: Colors.blue,
                     fontSize: 20,
@@ -58,8 +60,8 @@ class _MapState extends State<Map> {
                             "https://www.google.com/maps/place/Platform+Consulting+and+Investment+Services/@36.2103548,37.1570642,17z/data=!3m1!4b1!4m6!3m5!1s0x152ff962c29b1b93:0x5f1fa47e77d15acf!8m2!3d36.2103505!4d37.1544893!16s%2Fg%2F11h6l53z5d?entry=ttu"),
                         mode: LaunchMode.inAppWebView);
                   },
-                  child: const Text(
-                    'click here to see the location of platform',
+                  child:  Text(
+                    LocaleKeys.maps_maps.tr(),
                     style: TextStyle(color: Colors.blue, fontSize: 14),
                   )),
             ),
@@ -73,9 +75,9 @@ class _MapState extends State<Map> {
             const SizedBox(
               height: 10,
             ),
-            const Center(
+            Center(
               child: Text(
-                "Elcode",
+                LocaleKeys.maps_maps2.tr(),
                 style: TextStyle(
                     color: Colors.blue,
                     fontSize: 20,
@@ -91,8 +93,8 @@ class _MapState extends State<Map> {
                             "https://www.google.com/maps/place/%D9%8FELKOOD%E2%80%AD/@36.2133118,37.1459836,16z/data=!4m7!3m6!1s0x152ff9109d87c037:0x90726271f6b3a97!8m2!3d36.2127665!4d37.1363491!15sCjXZhdmI2YLYuSDYtNix2YPYqSBFbGNvZGUg2KjYp9mE2K7YsdmK2LfYqSDZgdmKINit2YTYqFo3IjXZhdmI2YLYuSDYtNix2YPYqSBlbGNvZGUg2KjYp9mE2K7YsdmK2LfYqSDZgdmKINit2YTYqJIBEHNvZnR3YXJlX2NvbXBhbnmaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUXROQzE1YkdaM0VBReABAA!16s%2Fg%2F11fv3kjbm6?entry=ttu"),
                         mode: LaunchMode.inAppWebView);
                   },
-                  child: const Text(
-                    'click here to see the location',
+                  child: Text(
+                    LocaleKeys.maps_maps4.tr(),
                     style: TextStyle(color: Colors.blue, fontSize: 14),
                   )),
             ),
@@ -106,9 +108,9 @@ class _MapState extends State<Map> {
             const SizedBox(
               height: 10,
             ),
-            const Center(
+           Center(
               child: Text(
-                "Qameh",
+                LocaleKeys.maps_maps6.tr(),
                 style: TextStyle(
                     color: Colors.blue,
                     fontSize: 20,
@@ -124,8 +126,8 @@ class _MapState extends State<Map> {
                             "https://www.google.com/maps/place/%D9%8FELKOOD%E2%80%AD/@36.2133118,37.1459836,16z/data=!4m7!3m6!1s0x152ff9109d87c037:0x90726271f6b3a97!8m2!3d36.2127665!4d37.1363491!15sCjXZhdmI2YLYuSDYtNix2YPYqSBFbGNvZGUg2KjYp9mE2K7YsdmK2LfYqSDZgdmKINit2YTYqFo3IjXZhdmI2YLYuSDYtNix2YPYqSBlbGNvZGUg2KjYp9mE2K7YsdmK2LfYqSDZgdmKINit2YTYqJIBEHNvZnR3YXJlX2NvbXBhbnmaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUXROQzE1YkdaM0VBReABAA!16s%2Fg%2F11fv3kjbm6?entry=ttu"),
                         mode: LaunchMode.inAppWebView);
                   },
-                  child: const Text(
-                    'click here to see the location',
+                  child: Text(
+                    LocaleKeys.maps_maps9.tr(),
                     style: TextStyle(color: Colors.blue, fontSize: 14),
                   )),
             ),
@@ -139,9 +141,9 @@ class _MapState extends State<Map> {
             const SizedBox(
               height: 10,
             ),
-            const Center(
+             Center(
               child: Text(
-                "Elcode",
+                LocaleKeys.maps_maps11.tr(),
                 style: TextStyle(
                     color: Colors.blue,
                     fontSize: 20,
@@ -157,8 +159,8 @@ class _MapState extends State<Map> {
                             "https://www.google.com/maps/place/%D9%8FELKOOD%E2%80%AD/@36.2133118,37.1459836,16z/data=!4m7!3m6!1s0x152ff9109d87c037:0x90726271f6b3a97!8m2!3d36.2127665!4d37.1363491!15sCjXZhdmI2YLYuSDYtNix2YPYqSBFbGNvZGUg2KjYp9mE2K7YsdmK2LfYqSDZgdmKINit2YTYqFo3IjXZhdmI2YLYuSDYtNix2YPYqSBlbGNvZGUg2KjYp9mE2K7YsdmK2LfYqSDZgdmKINit2YTYqJIBEHNvZnR3YXJlX2NvbXBhbnmaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUXROQzE1YkdaM0VBReABAA!16s%2Fg%2F11fv3kjbm6?entry=ttu"),
                         mode: LaunchMode.inAppWebView);
                   },
-                  child: const Text(
-                    'click here to see the location',
+                  child: Text(
+                    LocaleKeys.maps_maps12.tr(),
                     style: TextStyle(color: Colors.blue, fontSize: 14),
                   )),
             ),

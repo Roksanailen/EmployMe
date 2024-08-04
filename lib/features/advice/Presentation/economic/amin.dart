@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -17,26 +19,26 @@ class Amin extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Text(
-                'أفضل كورسات بتوصية مطورين',
+           Text(
+                LocaleKeys.amin_amin.tr(),
                 style: TextStyle(color: Colors.blue, fontSize: 20),
               ).animate().scaleX(),
               const SizedBox(
                 height: 50,
               ),
-              const Course(
+               Course(
                 image: 'assets/images/amin1.jpg',
                 uri: "https://www.youtube.com/watch?v=OZBGcAaRZGI",
-                text: 'Watch this course to develop yourself',
+                text: LocaleKeys.amin_amin1.tr(),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Course(
+              Course(
                 uri:
                     "https://www.noor-book.com/en/tag/%D8%AA%D8%B9%D9%84%D9%85-%D8%B9%D9%84%D9%85-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF",
                 image: 'assets/images/book.jpg',
-                text: '"Read this book to develop yourself"',
+                text: LocaleKeys.amin_amin2.tr(),
               ),
               const SizedBox(
                 height: 20,

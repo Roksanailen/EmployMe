@@ -1,3 +1,4 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/Home.dart';
@@ -16,10 +17,10 @@ class Menu extends StatelessWidget {
           SizedBox(
               width: MediaQuery.of(context).size.width * 0.50,
               height: MediaQuery.of(context).size.height * 0.20,
-              child: const Column(
+              child:  Column(
                 children: [
                   Text(
-                    'EmployMe',
+                    LocaleKeys.menu_menu1.tr(),
                     style: TextStyle(color: Colors.blue, fontSize: 30),
                   ),
                 ],
@@ -29,7 +30,7 @@ class Menu extends StatelessWidget {
           ),
           DrawerButton(
               iconData: Icons.home,
-              name: 'Home',
+              name: LocaleKeys.menu_menu2.tr(),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const Home()));
@@ -39,7 +40,7 @@ class Menu extends StatelessWidget {
           ),
           DrawerButton(
               iconData: Icons.person,
-              name: 'profile',
+              name: LocaleKeys.menu_menu3.tr(),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const Profile()));
@@ -49,7 +50,7 @@ class Menu extends StatelessWidget {
           ),
           DrawerButton(
             iconData: Icons.language,
-            name: ' change Language',
+            name: LocaleKeys.menu_menu5.tr(),
             onTap: () {
              var newLocale =context.locale.languageCode=='en'?
              const Locale('ar'):const Locale('en');

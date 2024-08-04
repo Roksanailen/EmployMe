@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/information/presentation/information_screen.dart';
 import 'package:emplooo/features/profile/bloc/profile_bloc.dart';
 import 'package:emplooo/features/profile/presentation/profile_edit.dart';
@@ -80,7 +82,7 @@ class _ProfileState extends State<Profile> {
                 onTap: () {
                   context.read<ProfileBloc>().add(IndexUser());
                 },
-                child: const Text('Try Agian')),
+                child:  Text(LocaleKeys.ProfileScreen_pro16.tr())),
           );
         } else if (state.indexStatus == ProfileStatus.success) {
           return Column(children: [
@@ -99,8 +101,8 @@ class _ProfileState extends State<Profile> {
                   width: 100,
                 ),
                 const SizedBox(height: 20),
-                const Text(
-                  'Profile',
+                 Text(
+                  LocaleKeys.ProfileScreen_pro17.tr(),
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 16,
@@ -154,8 +156,8 @@ class _ProfileState extends State<Profile> {
                 ]))
           ]);
         } else
-          return const Center(
-            child: Text('Try Agian'),
+          return Center(
+            child: Text(LocaleKeys.ProfileScreen_pro18.tr()),
           );
       }),
     );

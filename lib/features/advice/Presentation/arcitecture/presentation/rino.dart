@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -17,27 +19,27 @@ class Rino extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Text(
-                'أفضل كورسات بتوصية مطورين',
+             Text(
+                LocaleKeys.rino_rino.tr(),
                 style: TextStyle(color: Colors.blue, fontSize: 20),
               ).animate().scaleX(),
               const SizedBox(
                 height: 50,
               ),
-              const Course(
+              Course(
                 image: 'assets/images/rino.jpg',
                 uri:
                     "https://www.youtube.com/watch?v=4Tk904u9xqM&list=PL5oANHTyXIzZqVHn4pANSpqaraXNQT5PI",
-                text: 'Watch this course to develop yourself',
+                text: LocaleKeys.rino_rino1.tr(),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Course(
+               Course(
                 uri:
                     "https://www.architectlibrary.com/2020/10/rhino-arabic-course.html",
                 image: 'assets/images/book.jpg',
-                text: '"Read this book to develop yourself"',
+                text: LocaleKeys.rino_rino2.tr(),
               ),
               const SizedBox(
                 height: 20,

@@ -102,8 +102,8 @@ class _InformaticState extends State<Informatic> {
               ),
             ),
           ),
-          const Text(
-            'Backend',
+          Text(
+            LocaleKeys.informatic_info.tr(),
             style: TextStyle(color: Colors.blue, fontSize: 25),
           )
               .animate(
@@ -132,8 +132,8 @@ class _InformaticState extends State<Informatic> {
               ),
             ),
           ),
-          const Text(
-            'NetWorks',
+           Text(
+            LocaleKeys.informatic_info1.tr(),
             style: TextStyle(color: Colors.blue, fontSize: 25),
           )
               .animate(
@@ -162,8 +162,8 @@ class _InformaticState extends State<Informatic> {
               ),
             ),
           ),
-          const Text(
-            'Ai',
+           Text(
+            LocaleKeys.informatic_info3.tr(),
             style: TextStyle(color: Colors.blue, fontSize: 25),
           )
               .animate(
@@ -192,8 +192,8 @@ class _InformaticState extends State<Informatic> {
               ),
             ),
           ),
-          const Text(
-            'Flutter',
+           Text(
+            LocaleKeys.informatic_info4.tr(),
             style: TextStyle(color: Colors.blue, fontSize: 25),
           )
               .animate(onPlay: (controller) => controller.repeat(reverse: true))

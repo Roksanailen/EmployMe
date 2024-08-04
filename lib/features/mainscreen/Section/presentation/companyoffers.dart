@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/company_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -46,8 +48,8 @@ class _CompanyOffersState extends State<CompanyOffers> {
             ),
           );
         } else
-          return const Center(
-            child: Text('Try Agian'),
+          return Center(
+            child: Text(LocaleKeys.companyoffers_companyo.tr()),
           );
       }),
     );

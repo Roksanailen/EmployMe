@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class Remote_Work_Details extends StatelessWidget {
@@ -11,7 +13,12 @@ class Remote_Work_Details extends StatelessWidget {
   final String nameremot;
   @override
   Widget build(BuildContext context) {
-    final List<String> skillsremote=['dxcvb','zrxfcgvjhbk','dzxcfvg','zrxfcgvjhbk','dzxcfvg','zrxfcgvjhbk','dzxcfvg','zrxfcgvjhbk','dzxcfvg','zrxfcgvjhbk','dzxcfvg','zrxfcgvjhbk','dzxcfvg'];
+    final List<String> skillsremote=[LocaleKeys.remoteworkdetails_remoteskills.tr(),
+    LocaleKeys.remoteworkdetails_remoteskills1.tr(),
+    LocaleKeys.remoteworkdetails_remoteskilles2.tr(),
+    LocaleKeys.remoteworkdetails_remoteskills3.tr(),
+    LocaleKeys.remoteworkdetails_remteskills5.tr(),
+    LocaleKeys.remoteworkdetails_remoteskills7.tr()];
     var screenheight=MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(title: Text(nameremot),),
@@ -49,7 +56,7 @@ class Remote_Work_Details extends StatelessWidget {
                       const SizedBox(height: 40.0 ,),
                     Row( 
                       children: [
-                        const Text('Age: ',style: TextStyle(color: Colors.blue,),),
+                       Text(LocaleKeys.remoteworkdetails_remoted.tr(),style: TextStyle(color: Colors.blue,),),
                         const SizedBox(width: 150.0,),
                         Text(remoteage),
                       ],
@@ -58,7 +65,7 @@ class Remote_Work_Details extends StatelessWidget {
                       Row(
                       
                       children: [
-                        const Text('Experience: ',style: TextStyle(color: Colors.blue,),),
+                       Text(LocaleKeys.remoteworkdetails_remoted2.tr(),style: TextStyle(color: Colors.blue,),),
                         const SizedBox(width: 105.0,),
                         Text(experiencesremote),
                       ],
@@ -67,7 +74,7 @@ class Remote_Work_Details extends StatelessWidget {
                       Row(
                       
                       children: [
-                      const Text('Salary:',style: TextStyle(color: Colors.blue,),),
+                     Text(LocaleKeys.remoteworkdetails_remoted4.tr(),style: TextStyle(color: Colors.blue,),),
                       const SizedBox(width: 135.0,),
                       Text(salaryremote),
                       ],
@@ -76,7 +83,7 @@ class Remote_Work_Details extends StatelessWidget {
                     Row(
                       
                       children: [
-                        const Text('Connect With us:',style: TextStyle(color: Colors.blue,),),
+                       Text(LocaleKeys.remoteworkdetails_remoted5.tr(),style: TextStyle(color: Colors.blue,),),
                         const SizedBox(width: 70.0,),
                         Text(phoneremote),
                       ],
@@ -85,30 +92,17 @@ class Remote_Work_Details extends StatelessWidget {
                         const SizedBox(height: 40.0,),
                           Row(crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('Certificates required:',style: TextStyle(color: Colors.blue,),),
+                       Text(LocaleKeys.remoteworkdetails_remoted8.tr(),style: TextStyle(color: Colors.blue,),),
                         const SizedBox(width: 45.0,),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: 250,
-                              height: 160,
-                              child:
-                               ListView.builder(
-                                itemCount: 10,
-                                itemBuilder: (BuildContext context, int index){
-                                return Text(skillsremote[index]);
-                               }),
-                            ),
-                          ],
-                        ),
+                        Text(LocaleKeys.remoteworkdetails_remoted7.tr()),
+                          
                       ],
                     ),
                        const SizedBox(height: 40.0,),
                          Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('Skills required:',style: TextStyle(color: Colors.blue,),),
+                      Text(LocaleKeys.remoteworkdetails_remotd9.tr(),style: TextStyle(color: Colors.blue,),),
                         const SizedBox(width: 75.0,),
                           Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -118,7 +112,7 @@ class Remote_Work_Details extends StatelessWidget {
                               height: 160,
                               child:
                                ListView.builder(
-                                itemCount: 10,
+                                itemCount: skillsremote.length,
                                 itemBuilder: (BuildContext context, int index){
                                 return Text(skillsremote[index]);
                                }),

@@ -1,3 +1,5 @@
+import 'package:emplooo/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/core/extensions/validation_extensions.dart';
 import 'package:emplooo/core/toaster.dart';
 import 'package:emplooo/features/profile/data/model/profile_model.dart';
@@ -65,12 +67,12 @@ class _ProfilEditState extends State<ProfilEdit> {
                             ),
                             MainTextField(
                                 controller: nameController,
-                                label: 'Name',
+                                label: LocaleKeys.profileEdit_pro1.tr(),
                                 keyboardType: TextInputType.name,
                                 fillColor: Colors.transparent,
                                 validator: (p0) => p0 != null && p0.length > 4
                                     ? null
-                                    : 'Please add A Valid UserName',
+                                    : LocaleKeys.profileEdit_pro2.tr(),
                                 borderColor: Colors.black,
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 contentPadding: const EdgeInsets.all(5),
@@ -84,11 +86,11 @@ class _ProfilEditState extends State<ProfilEdit> {
                                 borderRadius: BorderRadius.circular(20),
                                 validator: (p0) => p0?.isValidEmail() ?? false
                                     ? null
-                                    : 'Please Add A Valid Email',
-                                label: 'Email',
+                                    : LocaleKeys.profileEdit_pro3.tr(),
+                                label: LocaleKeys.profileEdit_pro4.tr(),
                                 keyboardType: TextInputType.emailAddress,
                                 borderColor: Colors.black,
-                                hint: 'enter your email',
+                                hint: LocaleKeys.profileEdit_pro6.tr(),
                                 contentPadding: const EdgeInsets.all(5),
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 prefixIcon: const Icon(Icons.lock)),
@@ -97,13 +99,13 @@ class _ProfilEditState extends State<ProfilEdit> {
                             ),
                             MainTextField(
                                 controller: phoneController,
-                                label: 'Phone',
+                                label: LocaleKeys.profileEdit_pro7.tr(),
                                 keyboardType: TextInputType.name,
                                 fillColor: Colors.transparent,
                                 borderColor: Colors.black,
                                 validator: (p0) => p0?.isValidPhone() ?? false
                                     ? null
-                                    : 'Please Add A Valid Phone Number',
+                                    : LocaleKeys.profileEdit_pro8.tr(),
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 contentPadding: const EdgeInsets.all(5),
                                 prefixIcon: const Icon(Icons.phone)),
@@ -114,7 +116,7 @@ class _ProfilEditState extends State<ProfilEdit> {
                                 controller: passwordController,
                                 fillColor: Colors.transparent,
                                 borderRadius: BorderRadius.circular(20),
-                                label: 'Password',
+                                label: LocaleKeys.profileEdit_pro10.tr(),
                                 validator: (p0) =>
                                     p0?.isValidPassword() ?? false
                                         ? null
@@ -132,9 +134,9 @@ class _ProfilEditState extends State<ProfilEdit> {
                                 controller: TextEditingController(),
                                 fillColor: Colors.transparent,
                                 borderRadius: BorderRadius.circular(20),
-                                label: 'Language',
+                                label: LocaleKeys.profileEdit_pre12.tr(),
                                 borderColor: Colors.black,
-                                hint: 'change your language',
+                                hint: LocaleKeys.profileEdit_pro13.tr(),
                                 contentPadding: const EdgeInsets.all(5),
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 prefixIcon: const Icon(Icons.language)),
@@ -165,8 +167,8 @@ class _ProfilEditState extends State<ProfilEdit> {
                       side: const BorderSide(style: BorderStyle.solid),
                       elevation: 0,
                       fixedSize: const Size(100, 35)),
-                  child: const Text(
-                    'Save',
+                  child: Text(
+                    LocaleKeys.profileEdit_pro15.tr(),
                     style: TextStyle(color: Colors.black, fontSize: 16),
                     textAlign: TextAlign.center,
                   ),

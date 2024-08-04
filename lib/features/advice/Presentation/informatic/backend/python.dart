@@ -18,7 +18,7 @@ class Python extends StatelessWidget {
                 height: 20,
               ),
               const Text(
-                'أفضل كورسات بتوصية مطورين',
+                'The best courses in the opinion of the developers',
                 style: TextStyle(color: Colors.blue, fontSize: 20),
               ).animate().scaleX(),
               const SizedBox(
