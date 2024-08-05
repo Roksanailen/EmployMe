@@ -6,7 +6,6 @@ import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/compa
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/job_details_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/bloc/sectiontype_bloc.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/bloc/section_bloc.dart';
-
 import 'package:emplooo/features/mainscreen/home_screen.dart';
 import 'package:emplooo/features/profile/bloc/profile_bloc.dart';
 import 'package:emplooo/features/search/presentation/bloc/search_bloc.dart';
@@ -17,12 +16,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 // import 'features/mainscreen/drawerscreen.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
-    path: 'assets/translations',supportedLocales: const [Locale('ar'), Locale('en')],
-    child: const MainApp()));
+      path: 'assets/translations',
+      supportedLocales: const [Locale('ar'), Locale('en')],
+      child: const MainApp()));
 }
 
 class MainApp extends StatefulWidget {
@@ -39,8 +39,6 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     MediaQuery.of(context).size.height;
     return MultiBlocProvider(
-
-  
       providers: [
         BlocProvider<AuthBloc>(
           create: (context) => AuthBloc(),
@@ -51,7 +49,6 @@ class _MainAppState extends State<MainApp> {
         BlocProvider<SearchBloc>(
           create: (context) => SearchBloc(),
         ),
-       
         BlocProvider<CompanyBloc>(
           create: (context) => CompanyBloc(),
         ),
@@ -65,10 +62,10 @@ class _MainAppState extends State<MainApp> {
         BlocProvider<CvBloc>(create: (context) => CvBloc())
       ],
       child: MaterialApp(
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          theme: ThemeData(fontFamily: 'Roboto'),
+          locale: context.locale,
           builder: BotToastInit(),
           debugShowCheckedModeBanner: false,
           home: const HomeScreen()),

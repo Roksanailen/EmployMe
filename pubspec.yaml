@@ -45,3 +45,7 @@ flutter:
   assets:
     - assets/images/
     - assets/translations/
+  fonts:
+    - family: "Roboto"
+      fonts:
+        - asset: assets/Roboto-Regular.ttf

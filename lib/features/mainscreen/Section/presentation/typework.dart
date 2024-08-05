@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/businessclassification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -67,7 +68,7 @@ class TypeWork extends StatelessWidget {
                         height: 30.0,
                       ),
                       Text(
-                        type,
+                        type.tr(),
                         style: const TextStyle(color: Colors.black),
                       )
                     ],

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/features/mainscreen/Section/data/model/company_response_model.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/companydetails.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/companyoffers.dart';
@@ -56,7 +57,7 @@ class Company extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            company.name!,
+                            company.name!.tr(),
                             style: const TextStyle(color: Colors.black),
                           ),
                           const SizedBox(

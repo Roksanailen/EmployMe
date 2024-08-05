@@ -1,7 +1,7 @@
-import 'package:emplooo/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:emplooo/core/unified_api/status.dart';
 import 'package:emplooo/features/mainscreen/Section/presentation/opportunities.dart';
+import 'package:emplooo/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,7 +41,7 @@ class _Business_ClassificationState extends State<Business_Classification> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.type),
+        title: Text(widget.type.tr()),
       ),
       body: BlocBuilder<SectiontypeBloc, SectionTypeState>(
           builder: (context, state) {
@@ -54,8 +54,8 @@ class _Business_ClassificationState extends State<Business_Classification> {
             itemCount: state.sectiontype!.data!.length,
             itemBuilder: (c, i) => Opportunities(
               id: state.sectiontype!.data![i].id!,
-              name: state.sectiontype!.data![i].title!,
-              locationcompany:'' ,
+              name: state.sectiontype!.data![i].title!.tr(),
+              locationcompany: '',
               list: state.sectiontype!.data![i].media!.mediaUrl!,
               salary: state.sectiontype!.data![i].salary!.toString(),
             ),
